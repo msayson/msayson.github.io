@@ -1,0 +1,637 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"boo",
+				"book_category"
+			],
+			[
+				"Categor",
+				"Categorization"
+			],
+			[
+				"first",
+				"first_or_create"
+			],
+			[
+				"cate",
+				"category_id"
+			],
+			[
+				"catego",
+				"categorizations"
+			],
+			[
+				"pro",
+				"products_categories"
+			],
+			[
+				"produc",
+				"product_id"
+			],
+			[
+				"p",
+				"patfh	path_from_here( .. )"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/mark/dev/blog/_includes/footer.html",
+			"settings":
+			{
+				"buffer_size": 802,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 28 files for \"contact-list\" (case sensitive, whole word)\n\n/home/mark/dev/blog/.sass-cache/dea967aea01fed889daaafcd43ebbaa747fec0db/_layout.scssc:\n    <binary>\n\n/home/mark/dev/blog/_includes/footer.html:\n    5      <div class=\"footer-col-wrapper\">\n    6        <div class=\"footer-col footer-col-1\">\n    7:         <ul class=\"contact-list-labels\">\n    8            <li>Email</li>\n    9            <li>LinkedIn</li>\n   ..\n   13  \n   14        <div class=\"footer-col footer-col-2\">\n   15:         <ul class=\"contact-list-links\">\n   16            <li><a href=\"mailto:{{ site.email }}\">{{ site.email }}</a></li>          \n   17            <li><a href=\"{{ site.linkedin }}\">LinkedIn Profile</a></li>\n\n/home/mark/dev/blog/_sass/_layout.scss:\n  108  }\n  109  \n  110: .contact-list,\n  111  .social-media-list {\n  112      list-style: none;\n\n/home/mark/dev/blog/_site/index.html:\n   84      <div class=\"footer-col-wrapper\">\n   85        <div class=\"footer-col footer-col-1\">\n   86:         <ul class=\"contact-list-labels\">\n   87            <li>Email</li>\n   88            <li>LinkedIn</li>\n   ..\n   92  \n   93        <div class=\"footer-col footer-col-2\">\n   94:         <ul class=\"contact-list-links\">\n   95            <li><a href=\"mailto:masayson@gmail.com\">masayson@gmail.com</a></li>          \n   96            <li><a href=\"https://www.linkedin.com/in/mark-sayson-87208748\">LinkedIn Profile</a></li>\n\n/home/mark/dev/blog/_site/about/index.html:\n   85      <div class=\"footer-col-wrapper\">\n   86        <div class=\"footer-col footer-col-1\">\n   87:         <ul class=\"contact-list-labels\">\n   88            <li>Email</li>\n   89            <li>LinkedIn</li>\n   ..\n   93  \n   94        <div class=\"footer-col footer-col-2\">\n   95:         <ul class=\"contact-list-links\">\n   96            <li><a href=\"mailto:masayson@gmail.com\">masayson@gmail.com</a></li>          \n   97            <li><a href=\"https://www.linkedin.com/in/mark-sayson-87208748\">LinkedIn Profile</a></li>\n\n/home/mark/dev/blog/_site/css/main.css:\n  220    margin-bottom: 15px; }\n  221  \n  222: .contact-list,\n  223  .social-media-list {\n  224    list-style: none;\n\n/home/mark/dev/blog/_site/jekyll/update/2016/07/03/welcome-to-jekyll.html:\n   91      <div class=\"footer-col-wrapper\">\n   92        <div class=\"footer-col footer-col-1\">\n   93:         <ul class=\"contact-list-labels\">\n   94            <li>Email</li>\n   95            <li>LinkedIn</li>\n   ..\n   99  \n  100        <div class=\"footer-col footer-col-2\">\n  101:         <ul class=\"contact-list-links\">\n  102            <li><a href=\"mailto:masayson@gmail.com\">masayson@gmail.com</a></li>          \n  103            <li><a href=\"https://www.linkedin.com/in/mark-sayson-87208748\">LinkedIn Profile</a></li>\n\n13 matches across 7 files\n",
+			"settings":
+			{
+				"buffer_size": 2754,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "_layout.scss",
+			"settings":
+			{
+				"buffer_size": 4307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mark/dev/blog/_config.yml",
+			"settings":
+			{
+				"buffer_size": 689,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mark/dev/blog/about.md",
+			"settings":
+			{
+				"buffer_size": 572,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 372.0,
+		"last_filter": "Package Control: Inst",
+		"selected_items":
+		[
+			[
+				"Package Control: Inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: en",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: del",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"Package Control: Insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"ruby version",
+			"ruby --version",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/mark/dev/blog",
+		"/home/mark/dev/blog/_includes",
+		"/home/mark/dev/blog/_layouts",
+		"/home/mark/dev/blog/_sass",
+		"/home/mark/dev/blog/css"
+	],
+	"file_history":
+	[
+		"/home/mark/dev/blog/.gitignore",
+		"/home/mark/dev/blog/_sass/_layout.scss",
+		"/home/mark/dev/blog/_site/about/index.html",
+		"/home/mark/dev/blog/css/main.scss",
+		"/home/mark/dev/blog/_config.yml",
+		"/home/mark/dev/blog/_layouts/default.html",
+		"/home/mark/dev/blog/_layouts/page.html",
+		"/home/mark/Documents/Finances/Gnucash/MyBudget.gnucash",
+		"/home/mark/dev/productsDashboard/app/views/products/_form.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/products/edit.html.erb",
+		"/home/mark/dev/productsDashboard/app/controllers/products_controller.rb",
+		"/home/mark/dev/productsDashboard/app/views/products/_filterrific_search_form.html.erb",
+		"/home/mark/dev/productsDashboard/db/schema.rb",
+		"/home/mark/dev/productsDashboard/app/views/products/index.html.erb",
+		"/home/mark/dev/productsDashboard/app/helpers/products_helper.rb",
+		"/home/mark/dev/productsDashboard/app/views/products/_list.html.erb",
+		"/home/mark/dev/productsDashboard/app/models/product.rb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160605230325_create_categorizations.rb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160601025856_create_categories.rb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160421193703_create_products.rb",
+		"/home/mark/dev/productsDashboard/config/environments/test.rb",
+		"/home/mark/dev/productsDashboard/db/seeds.rb",
+		"/home/mark/dev/productsDashboard/app/views/categories/index.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/products/_productPagesMenu.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/categories/_categoryPagesMenu.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/categories/show.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/categories/show.json.jbuilder",
+		"/home/mark/dev/productsDashboard/app/assets/stylesheets/application.css",
+		"/home/mark/dev/productsDashboard/Gemfile",
+		"/home/mark/dev/productsDashboard/config/locales/en.yml",
+		"/home/mark/dev/productsDashboard/app/assets/stylesheets/products.scss",
+		"/home/mark/dev/productsDashboard/app/views/shared/_menu.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/products/show.html.erb",
+		"/home/mark/dev/productsDashboard/test/helpers/products_helper_test.rb",
+		"/home/mark/dev/productsDashboard/test/controllers/categories_controller_test.rb",
+		"/home/mark/dev/productsDashboard/test/controllers/welcome_controller_test.rb",
+		"/home/mark/dev/productsDashboard/test/controllers/products_controller_test.rb",
+		"/home/mark/dev/productsDashboard/app/views/products/index.js",
+		"/home/mark/dev/productsDashboard/config/initializers/assets.rb",
+		"/home/mark/dev/productsDashboard/app/assets/javascripts/application.js",
+		"/home/mark/dev/productsDashboard/app/models/category.rb",
+		"/home/mark/dev/productsDashboard/app/views/products/new.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/products/summary.html.erb",
+		"/home/mark/dev/productsDashboard/app/controllers/categories_controller.rb",
+		"/home/mark/dev/productsDashboard/config/routes.rb",
+		"/home/mark/dev/productsDashboard/app/views/categories/edit.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/categories/_form.html.erb",
+		"/home/mark/dev/productsDashboard/app/views/categories/new.html.erb",
+		"/home/mark/dev/productsDashboard/app/models/categorization.rb",
+		"/home/mark/dev/productsDashboard/test/fixtures/products.yml",
+		"/home/mark/dev/productsDashboard/db/migrate/20160601034606_create_categories_products.rb",
+		"/home/mark/dev/productsDashboard/app/controllers/application_controller.rb",
+		"/home/mark/dev/productsDashboard/config/secrets.yml",
+		"/home/mark/dev/productsDashboard/config/environments/production.rb",
+		"/home/mark/dev/productsDashboard/public/404.html",
+		"/home/mark/dev/productsDashboard/public/500.html",
+		"/home/mark/dev/productsDashboard/app/views/layouts/application.html.erb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160601034606_create_products_categories.rb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160601034023_add_references_to_products.rb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160601032754_add_category_link_to_products.rb",
+		"/home/mark/dev/productsDashboard/test/models/category_test.rb",
+		"/home/mark/dev/productsDashboard/test/fixtures/categories.yml",
+		"/home/mark/dev/productsDashboard/test/models/product_test.rb",
+		"/home/mark/dev/productsDashboard/db/migrate/20160601022347_add_price_to_products.rb",
+		"/home/mark/dev/productsDashboard/README.rdoc",
+		"/home/mark/dev/productsDashboard/productsDashboard.sublime-project",
+		"/home/mark/dev/productsDashboard/config.ru",
+		"/home/mark/dev/productsDashboard/.gitignore",
+		"/home/mark/dev/productsDashboard/Rakefile",
+		"/home/mark/dev/productsDashboard/bin/bundle",
+		"/home/mark/dev/productsDashboard/.travis.yml",
+		"/home/mark/dev/productsDashboard/app/controllers/welcome_controller.rb",
+		"/home/mark/dev/productsDashboard/test/test_helper.rb",
+		"/home/mark/dev/productsDashboard/app/views/welcome/index.html.erb",
+		"/home/mark/dev/productsDashboard/public/favicon.ico",
+		"/home/mark/dev/productsDashboard/public/robots.txt",
+		"/home/mark/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/mark/dev/productsDashboard/.sublime-project",
+		"/home/mark/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/mark/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/mark/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/mark/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/mark/dev/productsDashboard/app/helpers/welcome_helper.rb",
+		"/home/mark/dev/productsDashboard/app/helpers/application_helper.rb",
+		"/home/mark/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/mark/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/mark/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/mark/.config/sublime-text-3/Packages/User/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"*",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"contact-list",
+			"github_username",
+			"footer-col-2",
+			"email",
+			"twitter_username",
+			"blog",
+			"options_for_sorted_by",
+			"search_by_title",
+			"do",
+			"Product\\.create\\(title: ('[\\w+\\s-]+'), status: ('[\\w+\\s-]+')\\)",
+			"Product.create(title: 'World Encyclopedia Vol 4', status: 'Requested')",
+			"Product\\.create\\(title: ('[\\w+\\s-]+'), status: ('[\\w+\\s-]+')\\)",
+			"Product.create(title: %s,",
+			"sort_column",
+			"sort_direction",
+			"name_asc",
+			"Displaying",
+			"productsbytitle",
+			"precompile",
+			"will_paginate",
+			"sortable_column",
+			"Update Category",
+			"supportedFeatures",
+			"product",
+			"<p id=\"notice\"><%= notice %></p>",
+			"notice",
+			"set_product",
+			"911",
+			"\"",
+			"#{",
+			"product_path",
+			"Save Product",
+			"create",
+			"\"",
+			"index",
+			"sortable_column",
+			"ctrl+i",
+			"reindent",
+			"sortableColumn",
+			"80",
+			"line",
+			"80",
+			"line",
+			"ctrl+r",
+			"ctrl+shift+r",
+			"indent"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"{ title: $1, status: $2 },",
+			"{title: $1, status: $2},",
+			"{title: 'World Encyclopedia Vol 4', status: 'Requested'}",
+			"create_product_if_not_exists($1, $2)",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/mark/dev/blog/_includes/footer.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 802,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								559,
+								559
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2754,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										334,
+										346
+									],
+									[
+										514,
+										526
+									],
+									[
+										769,
+										781
+									],
+									[
+										1000,
+										1012
+									],
+									[
+										1180,
+										1192
+									],
+									[
+										1568,
+										1580
+									],
+									[
+										1748,
+										1760
+									],
+									[
+										2059,
+										2071
+									],
+									[
+										2325,
+										2337
+									],
+									[
+										2505,
+										2517
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								779,
+								779
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_layout.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1841,
+								1841
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1322.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/mark/dev/blog/_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								496,
+								496
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/mark/dev/blog/about.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.776429809359,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 341.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 212.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
