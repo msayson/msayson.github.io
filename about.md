@@ -13,4 +13,4 @@ My main interests are in technology and the sciences, and I enjoy discussing new
 
 You can find the source code for this blog at
 {% include icon-github.html username="msayson" %} /
-[blog](https://github.com/msayson/blog).
+[msayson.github.io](https://github.com/msayson/msayson.github.io).
