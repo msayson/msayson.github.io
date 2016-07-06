@@ -16,3 +16,6 @@ github_username:  msayson
 
 # Build settings
 markdown: kramdown
+
+# Google Analytics settings
+google_analytics_tracking_id: UA-80369609-1
