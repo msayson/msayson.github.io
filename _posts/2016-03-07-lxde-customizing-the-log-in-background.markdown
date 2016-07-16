@@ -8,7 +8,7 @@ For this next post I’ll update the background image for the log in screen.  I�
 
 For my log in screen background I’ll use the following image of the Orion Nebula:
 
-![alt-text](/images/orion_nebula_nasa_images600.jpg "Picture of the Orion Nebula, courtesy of NASA Images")
+![alt-text](/images/20160307_orion_nebula_nasa_images600.jpg "Picture of the Orion Nebula, courtesy of NASA Images")
 
 File source: [https://www.nasa.gov/mission_pages/spitzer/multimedia/spitzer20100401.html](https://www.nasa.gov/mission_pages/spitzer/multimedia/spitzer20100401.html)
 
@@ -24,11 +24,11 @@ Aside: In general, I’ll try a command without using sudo first, and only use s
 
 For example:
 
-<img alt="Permission denied when copy to desktop-base without sudo" src="/images/cptodesktoppermissiondenied.png" width="600" />
+<img alt="Permission denied when copy to desktop-base without sudo" src="/images/20160307_cptodesktoppermissiondenied.png" width="600" />
 
 We need sudo here:
 
-<img alt="Successful sudo copy to desktop-base" src="/images/cptodesktopbasesuccess.png" width="600" />
+<img alt="Successful sudo copy to desktop-base" src="/images/20160307_cptodesktopbasesuccess.png" width="600" />
 
 Success!  Replace orion-nebula.jpg with any image file you’d like to use for your login background.
 
@@ -50,4 +50,4 @@ Save your changes and close the text editor.
 
 Let’s log out to check our changes.
 
-![alt text](/images/loginscreen_orion.png "Log in screen with Orion Nebula background")
+![alt text](/images/20160307_loginscreen_orion.png "Log in screen with Orion Nebula background")

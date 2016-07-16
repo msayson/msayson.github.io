@@ -35,7 +35,7 @@ Add the following to the end of the file:
 Defaults:fred timestamp_timeout=1
 {% endhighlight %}
 
-![alt-text](/images/visudo_setting_timeout.png "Setting default sudo timeout")
+![alt-text](/images/20160307_visudo_setting_timeout.png "Setting default sudo timeout")
 
 Enter Ctrl+X to exit visudo.  Enter Y to save your changes to /etc/sudoers.tmp.
 
