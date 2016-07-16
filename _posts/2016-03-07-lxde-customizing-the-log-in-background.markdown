@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "(LXDE) Customizing the log in background"
-date:   2016-03-07 21:30:00 -0700
+date:   2016-03-07 21:30:00 -0800
 categories: debian linux
 ---
 For this next post I’ll update the background image for the log in screen.  I’m using Debian LXDE, so the instructions may differ if you are using another distribution or desktop.  I have verified these steps on Debian GNU/Linux 8.3 (jessie) using the LXDE desktop.
