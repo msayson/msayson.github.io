@@ -2,7 +2,7 @@
 layout: post
 title:  "Setting up Sublime Text Editor for Ruby on Rails"
 date:   2016-05-04 20:30:00 -0800
-categories: sublimetexteditor
+categories: ides-and-editors
 ---
 In this post I'll go over how I set up Sublime Text Editor for Ruby on Rails development.
 
