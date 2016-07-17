@@ -2,7 +2,7 @@
 layout: post
 title:  "Adding a new sudo user"
 date:   2016-03-07 21:10:35 -0800
-categories: linux debian
+categories: linux
 ---
 Now that we’ve installed Debian, we’ll want to add our main user to the sudo group.
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Starting out on Debian"
 date:   2016-03-07 20:54:16 -0800
-categories: linux debian
+categories: linux
 ---
 I recently installed Debian alongside Windows 10 to replace Lubuntu, and will be trying it out for the next month or so to see how well it fits into my use cases as a student and software developer in training.
 

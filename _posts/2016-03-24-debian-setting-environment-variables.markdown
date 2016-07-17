@@ -2,7 +2,7 @@
 layout: post
 title:  "(Debian) Setting environment variables"
 date:   2016-03-24 20:30:00 -0800
-categories: linux debian
+categories: linux
 ---
 In this post we'll set up environment variables for Debian, using Golang as an example.
 
