@@ -33,7 +33,7 @@ While the rich source of material has been a boon for learning algorithms and ne
 
 {% include image.html img="/images/20160606_long_tail_labeled.png"
   title="The long tail problem"
-  caption="The long tail problem in computer vision. Labels added to base image by Husky.  The majority of all possible patterns are often rare or missing from sample data, which typically contains many variations on a small selection of patterns." %}
+  caption="The long tail problem in computer vision. The majority of all possible patterns are often rare or missing from sample data, which typically contains many variations on a small selection of patterns." %}
 
 This skew, often referred to as “the long tail problem”, is a general phenomenon in artificial intelligence, and several strategies have been proposed for limiting its influence. Common methods include careful construction of learning algorithms to balance the weights assigned to various patterns, attempting to collect as wide a set of edge case samples as possible, and breaking down images into smaller components to better capture the relation between those components.
 
