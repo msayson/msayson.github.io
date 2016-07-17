@@ -47,6 +47,15 @@ img {
     vertical-align: middle;
 }
 
+.image-wrapper {
+    text-align: center;
+
+    .image-caption {
+        color: #4f748e;
+        margin-top: $spacing-unit / 3;
+    }
+}
+
 
 
 /**
