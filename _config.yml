@@ -13,9 +13,13 @@ description: Mark Sayson's personal blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.marksayson.com" # the base hostname & protocol for your site
 github_username:  msayson
+paginate: 16 # maximum number of blog posts per page
 
 # Build settings
 markdown: kramdown
 
 # Google Analytics settings
 google_analytics_tracking_id: UA-80369609-1
+
+gems:
+  - jekyll-paginate
