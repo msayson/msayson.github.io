@@ -1,6 +1,6 @@
 # Readme
 
-This project contains the source code for Mark Sayson's personal blog.
+This project contains the source code for Mark Sayson's personal blog ([http://www.marksayson.com/](http://www.marksayson.com/)).
 
 The source code is open source under the MIT license, so you are free to copy and modify the code as you like.
 
