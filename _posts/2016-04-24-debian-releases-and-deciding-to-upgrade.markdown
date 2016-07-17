@@ -33,7 +33,7 @@ The Debian Wiki recommends the following steps before upgrading to Debian Testin
 
 Moving from stable -> testing is advertised as a one-way street unless you plan to start from a fresh install.  There are probably ways to downgrade manually, but this isn't officially supported, so be sure to check the state of the testing release before upgrading.
 
-In the next post I'll go over [the steps I took to get it working](/debian/linux/2016/04/27/upgrading-to-debian-testing), since it seems to be very smooth if you know how to upgrade, but with pits that are easy to fall into if you're doing this for the first time.
+In the next post I'll go over [the steps I took to get it working]({% post_url 2016-04-27-upgrading-to-debian-testing %}), since it seems to be very smooth if you know how to upgrade, but with pits that are easy to fall into if you're doing this for the first time.
 
 Helpful resources:
 

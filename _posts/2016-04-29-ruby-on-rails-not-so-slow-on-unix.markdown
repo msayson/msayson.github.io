@@ -16,4 +16,4 @@ These answers are not satisfactory, and there's a lot of work to be done on this
 
 The Rails development experience is said to be quite excellent on Linux and OSX, with a development community that continues to grow.
 
-Next time I'll go over [how to set up Ruby on Rails on Linux](/rubyonrails/2016/04/30/linux-setting-up-ruby-on-rails-using-rvm).
+Next time I'll go over [how to set up Ruby on Rails on Linux]({% post_url 2016-04-30-linux-setting-up-ruby-on-rails-using-rvm %}).
