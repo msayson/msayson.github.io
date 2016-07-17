@@ -2,7 +2,7 @@
 layout: post
 title:  "(LXDE) Customizing key bindings"
 date:   2016-03-08 20:30:00 -0800
-categories: debian linux
+categories: linux debian
 ---
 A few key bindings are helpful to save time, especially for tasks such as changing volume or screen brightness settings.  These key bindings did not work out of the box for me, so this was one of the first things I wanted to set up.
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Upgrading to Debian Testing"
 date:   2016-04-27 20:30:00 -0800
-categories: debian linux
+categories: linux debian
 ---
 Last time I went over [Debian's releases and reasons to either upgrade to Debian Testing or remain on Debian Stable]({% post_url 2016-04-24-debian-releases-and-deciding-to-upgrade %}).
 
