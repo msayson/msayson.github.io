@@ -1,11 +1,9 @@
 ---
 layout: post
-title:  "Introducing the Go programming language"
+title:  "Concurrency is beautiful with the Go programming language"
 date:   2016-05-02 20:30:00 -0800
 categories: golang
 ---
-You may have heard of the Go programming language, also known as Golang.  You may have heard some programming geeks making a big deal about it, and wondered what all the fuss was about.
-
 Golang is a general programming language designed specifically for scalable and distributed systems.  One of its largest advantages is that concurrent programming is constructed as a natural part of the language, so it is able to present a far simpler approach than many other languages.
 
 It's been picked up by many companies that have to deal with large numbers of requests or transactions at a time (Google, Docker, Heroku, Uber, Canonical), but is also entering other markets as it becomes more popular for general applications.
