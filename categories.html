@@ -1,0 +1,26 @@
+---
+layout: default
+title:  "Categories"
+---
+<div class="categories">
+  <h1 class="page-heading">Categories</h1>
+
+  <div class="categories-list">
+    {% assign sorted_categories = site.categories | sort %}
+    {% for category in sorted_categories %}
+    <h2>{{ category[0] }} ({{ category[1].size }})</h2>
+
+    <ul class="post-list">
+      {% for post in category[1] %}
+        <li>
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}: </span>
+            {{ post.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</div>
+
