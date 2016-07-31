@@ -2,7 +2,7 @@
 layout: post
 title:  "Security Engineering, by Ross Anderson"
 date:   2016-06-24 20:30:00 -0800
-categories: books
+categories: security
 ---
 {% include image.html img="/images/20160624_securityengineering_anderson_cover.jpg"
   title="Security Engineering - A Guide to Building Dependable Distributed Systems"
