@@ -17,7 +17,7 @@ Even so, discomfort around testing and verifying software as a software develope
 
 At a job fair I attended a few months ago, one of the recruiters I chatted with addressed this problem in a way I did not expect.  I had asked her how their development team tested their software, and was looking forward to hearing about their testing practises since they were a fairly well-known software company.
 
-She told me that I wouldn't need to write tests if I worked for them.  Their developers didn't worry about writing unit tests.  "Our Quality Assurance team takes care of testing for us!"  She smiled broadly as she said this, and I immediately resolved not to apply for a position with them.
+She told me that I wouldn't need to write tests if I worked for them.  Their developers didn't worry about writing unit tests.  "Our Quality Assurance team takes care of testing for us!"  She smiled broadly as she said this, and I immediately resolved not to apply to them.
 
 If you're comfortable with introducing testing practises to your team, by all means, you may be able to make a great impact there.  It's possible to gradually introduce changes where you can demonstrate great value for the least amount of effort.  Building out a minimal set of unit tests for the code you write and setting up continuous integration builds is a great place to start.
 
