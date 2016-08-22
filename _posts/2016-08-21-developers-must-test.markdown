@@ -23,16 +23,6 @@ If you're comfortable with introducing testing practises to your team, by all me
 
 However, especially if you're looking to learn good development practises, I think that it's best to seek out companies that integrate testing into their development process, and continually look for ways to improve the way they develop software.  This kind of environment naturally encourages self-development and creative exchange between teams, as developers learn from one another and rethink the way they build systems.
 
-#### Functional verification as part of the review process.
-
-Whether or not your team does code reviews, it's straightforward to integrate functional verification into your development process.  Most teams have some form of issue tracking, and many have a view that allows them to see issues that are on the backlog, in progress, or done.
-
-Try adding a "Done Review" step, and have a developer who didn't work on the feature verify that it's been resolved.  If they're not sure, the issue description may be unclear or you may have surfaced part of the design that needs to be specified.  If no issues are found and the system works as expected, they can close the issue as resolved.
-
-You can start this process informally yourself by introducing the idea to a few receptive team members, and asking if they'd like to try it out with you.
-
-If your experience is anything like mine, your team may start catching a number of potential issues that would have made it through otherwise.  This is an eye-opening experience, and a trial run of a couple of weeks may be all that's needed to interest the rest of the team into adopting some form of review process.
-
 #### Automate where it makes sense to do so.
 
 Software testing is important throughout the development lifecycle.  From the design stage to release and maintenance, an evolving web of user requirements must be balanced with time considerations and the existing code base.  The more complex the system becomes, the wider the effects of code changes at the base level, and the more important automated tests become.
