@@ -9,6 +9,8 @@ categories: testing
 
 There is no way around it; no "buts", and especially no "but Quality Assurance does that for us".
 
+Having an independent person functionally verify changes is a great practice, but should be done in addition to unit testing, not in place of it.
+
 If software is not properly tested at the code level, problems will inevitably remain hidden for longer and become embedded into the system as it continues to grow in size and complexity.  Any developer can say how difficult it can be to triage issues from vague bug reports or inconsistent system behaviour, and even simple issues can sometimes take hours to track down and fix.
 
 Many developers are warming up to the idea of writing unit tests and higher level functional tests.  It's now easy to find resources on how to effectively test software throughout the development cycle, and there are many excellent continuous integration tools that automatically run tests before pushing changes to the code base or generating a release build.
