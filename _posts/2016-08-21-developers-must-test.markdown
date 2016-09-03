@@ -2,7 +2,7 @@
 layout: post
 title:  "Developers must test"
 date:   2016-08-21 20:30:00 -0800
-categories: testing
+categories: software-development
 ---
 
 #### Software developers must test their own software.

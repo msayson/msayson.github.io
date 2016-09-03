@@ -2,7 +2,7 @@
 layout: post
 title:  "Using JQuery to show or hide related elements"
 date:   2016-07-16 20:30:00 -0800
-categories: javascript
+categories: programming-languages
 ---
 Sometimes a web page needs to display a very condensed view of information, but also allow users to easily drill down for details.  Summary tables often fit into this category when there are multiple layers of information to display.
 

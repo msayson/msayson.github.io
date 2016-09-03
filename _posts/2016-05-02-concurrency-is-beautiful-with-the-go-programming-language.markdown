@@ -2,7 +2,7 @@
 layout: post
 title:  "Concurrency is beautiful with the Go programming language"
 date:   2016-05-02 20:30:00 -0800
-categories: golang
+categories: programming-languages
 ---
 Golang is a general programming language designed specifically for scalable and distributed systems.  One of its largest advantages is that concurrent programming is constructed as a natural part of the language, so it is able to present a far simpler approach than many other languages.
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Ruby on Rails not so slow on Unix"
 date:   2016-04-29 20:30:00 -0800
-categories: ruby-on-rails
+categories: programming-languages
 ---
 I've been starting to work in Ruby on Rails, and the Rails experience seems to be much smoother on Linux than on Windows.
 
