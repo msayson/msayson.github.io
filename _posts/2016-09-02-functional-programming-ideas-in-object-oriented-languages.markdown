@@ -52,7 +52,7 @@ private boolean isEnabled(ArtifactEntity entity) {
    // return true if the entity is enabled, else return false
 }
 
-private boolean toArtifact(ArtifactEntity entity) {
+private Artifact toArtifact(ArtifactEntity entity) {
    // convert artifact_entity to an artifact
 }
 ```
