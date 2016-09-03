@@ -10,21 +10,21 @@ Ideally the user shouldn't have to follow a chain of links to get to the informa
 
 Javascript is perfect for this, as we can assign listeners to toggle the visibility of elements based on user interactions.
 
-I'll show one example of how to do this using JQuery, a popular Javascript library.
+I'll show a simple example of how to do this using JQuery, a popular Javascript library.
 
 We'll have a table with aggregate information about categories and subcategories, and write a script that toggles the visibility of Category X's subcategories when the user clicks on the Category X row.
 
 **Specification 1: All subcategory rows should be hidden by default.**
 
-**Specification 2: If the user clicks on Category X's row, all subcategory rows for Category X should be toggled in visibility.  Unrelated rows should not be affected.**
+**Specification 2: If the user clicks on Category X's row, the visibility of its child rows should be toggled.  Unrelated rows should not be affected.**
 
 #### HTML
 
-The key concept is that we need to be able to identify which HTML elements to toggle, based on which category the user selects.  Assigning subcategory rows an HTML class which corresponds to their parent category will allow us to do this.
+Assigning subcategory rows an HTML class that corresponds to their parent category will allow us to identify which HTML elements to toggle when a user selects a parent row.
 
 We'll assign each category row a unique HTML id (eg. "category-a"), and assign each subcategory row an HTML class that can be derived from that id (eg. "category-a-subcategory").
 
-Our specification requires all subcategory rows to be hidden by default, so we'll also assign a shared CSS class of "subcategory-row".
+Our specification states that subcategory rows should be hidden by default, so we'll also assign a shared CSS class of "subcategory-row".
 
 {% highlight html %}
 <table class="table table-bordered">
@@ -65,11 +65,11 @@ Our specification requires all subcategory rows to be hidden by default, so we'l
 
 #### Javascript
 
-Now that we have the CSS classes and ids assigned, we can describe behaviour for elements with those classes and ids in Javascript.
+With ids and classes assigned, we can describe behaviour for those elements using Javascript.
 
-We want elements with class "subcategory-row" to be hidden by default, so our first line will be to hide these elements.
+We want to hide elements with class "subcategory-row" by default, so this will be our first line.
 
-Next, we'll assign a click listener to elements with class "category-row".  When a user clicks on one of these elements, we'll want to extract the id of the category element in order to identify which subcategory rows to toggle.
+Next, we'll assign a click listener to elements with class "category-row".  When a user clicks on one of these elements, we'll extract the element's id in order to identify which subcategory rows to toggle.
 
 Once we have that id (eg. "category-a"), we can construct the subcategory class (eg. "category-a-subcategory") and use JQuery to toggle the visibility of elements with that class.
 
