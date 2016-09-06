@@ -5,7 +5,7 @@ date:   2016-09-02 20:30:00 -0800
 categories: programming-languages
 ---
 
-Over the last several years, many ideas from functional programming languages have been welcomed into the object-oriented world, and are no longer found only in languages like Ruby and Scala, but also in Java 8, C# 3.0, and other languages traditionally thought of as primarily object-oriented.
+Over the last several years, many ideas from functional programming languages have been welcomed into the object-oriented world, and are no longer only found in languages like Ruby and Scala, but also in Java 8, C# 3.0, and other languages traditionally thought of as primarily object-oriented.
 
 Functional programming provides alternative and sometimes more natural ways to think about algorithms and how to approach problems.
 
@@ -94,4 +94,4 @@ We don't actually care about the index of the array we're iterating over; we're 
 
 Given how much closer functional ideas bring us to how we think about what we want to do when we're not thinking in terms of a particular programming language, it's refreshing to see approaches being introduced from languages with different paradigms.
 
-After all, at a functional level, it doesn't really matter which programming language we use.  What matters is how well we can translate our intentions into systems that solve the problems our users care about.
+After all, at a functional level, it doesn't really matter which programming language we use.  What matters is how well we translate our intentions into systems that solve problems our users care about.

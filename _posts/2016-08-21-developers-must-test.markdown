@@ -7,7 +7,7 @@ categories: software-development
 
 #### Software developers must test their own software.
 
-There is no way around it; no "buts", and especially no "but Quality Assurance does that for us".
+There is no way around it; no "but", and especially no "but Quality Assurance does that for us".
 
 Having an independent person functionally verify changes is a great practice, and should be done in addition to unit testing.
 
