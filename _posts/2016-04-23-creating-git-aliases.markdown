@@ -45,7 +45,7 @@ git config --global alias.up "push --set-upstream origin"
 {% endhighlight %}
 
 On Linux devices, global Git settings are stored in ~/.gitconfig.
-On Windows, this is C:/Users/<USER>/.gitconfig.
+On Windows, this is C:/Users/USERNAME/.gitconfig.
 
 Once you've set up an alias, you can start using it immediately, for example, by using "git cfg" to list all global Git config settings.
 
