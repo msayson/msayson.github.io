@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "A Seminar on Computer Vision - Notes and Discussion"
+title:  "Advances In Computer Vision, and Chasing the Long Tail"
 date:   2016-06-06 20:30:00 -0800
 categories: artificial-intelligence
+redirect_from: /artificial-intelligence/2016/06/06/a-seminar-on-computer-vision-notes-and-discussion.html/
 ---
 
 {% include image.html img="/images/20160606_terrykimura_stuffedanimals_facialrecognition.jpg"
@@ -13,13 +14,11 @@ categories: artificial-intelligence
   title="Following a person - Vislab"
   caption="\"Following a Person - Image Detection, Color Association and Kalman Filters\" - Vislab" %}
 
-## Advances In Computer Vision, and Chasing the Long Tail
-
-In response to “Understanding visual appearances in the long tail” by Deva Ramanan, Associate Professor at the Robotics Institute at Carnegie Mellon University
-
 #### Note
 
 This text was produced for a seminar-based class in which students were encouraged to attend a series of guest lectures and submit a short paper on one of them.
+
+This post is in response to “Understanding visual appearances in the long tail” by Deva Ramanan, Associate Professor at the Robotics Institute at Carnegie Mellon University.
 
 I thought it could be worth posting, and may continue to post notes on other seminars as interest takes me deeper into various topics.
 

@@ -23,3 +23,7 @@ google_analytics_tracking_id: UA-80369609-1
 
 gems:
   - jekyll-paginate
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
