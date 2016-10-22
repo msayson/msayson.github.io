@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Advances In Computer Vision, and Chasing the Long Tail"
+title:  "Advances in computer vision, and chasing the long tail"
 date:   2016-06-06 20:30:00 -0800
 categories: artificial-intelligence
 redirect_from: /artificial-intelligence/2016/06/06/a-seminar-on-computer-vision-notes-and-discussion.html/
