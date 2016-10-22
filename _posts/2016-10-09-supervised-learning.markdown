@@ -33,7 +33,9 @@ Given that it's likely for future examples to differ at least slightly from our 
 
 We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
 
-A common approach to avoiding over-fitting is to select a random distribution of labelled data for the test data set, and enforce that the training phase must not rely on test error, however tempting it may be to retrain on the test data to reduce the test error. Training on the test data we use to evaluate the model simply moves the over-fitting problem to the test set, and the point of the test set is to evaluate how well we do on new data.
+A common way to avoid over-fitting is to select separate random distributions of labelled data for training and testing, and to select the model that minimizes our test error rather than our training error.
+
+In order for this to work, we have to enforce that the training phase must not rely on test error, however tempting it may be to retrain on the test data to reduce the test error. Training on the data that we use to evaluate the model's error rate simply shifts the over-fitting problem from one sample to another, and the point of the test set is to evaluate how well we do on new data.
 
 When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to increase the probability of our results being applicable to future data and reduce the probability of over-fitting.
 
