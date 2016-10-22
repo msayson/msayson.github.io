@@ -28,16 +28,18 @@ The public domain provides a vast array of tagged images, videos, historical dat
 #### Irregularities Between Data Sources
 Data normalization may be non-trivial when combining a variety of data sources with different features, distributions, and levels of reliability. For our learning algorithm to be successful, we may need to pre-process our data to transform data sources into a common format, select a common subset of features to take into consideration, remove records with invalid values, and handle duplicate or missing records.
 
-#### Over-Fitting to Training Data
-Given that it's likely for future examples to differ at least slightly from our training data, we also have to protect against over-fitting our models to our training examples. That is, our model should not so closely align with our training examples that it incorrectly categorizes many examples that were not in our training set.
+#### Overfitting to Training Data
+Given that it's likely for future examples to differ at least slightly from our training data, we also have to protect against overfitting our models to our training examples. That is, our model should not so closely align with our training examples that it incorrectly categorizes many examples that were not in our training set.
 
 We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
 
-A common way to avoid over-fitting is to select separate random distributions of labelled data for training and testing, and to select the model that minimizes our test error rather than our training error.
+A common way to avoid overfitting is to select separate random distributions of labelled data for training and testing, and to select the model that minimizes our test error rather than our training error.
 
-In order for this to work, we have to enforce that the training phase must not rely on test error, however tempting it may be to retrain on the test data to reduce the test error. Training on the data that we use to evaluate the model's error rate simply shifts the over-fitting problem from one sample to another, and the point of the test set is to evaluate how well we do on new data.
+In order for this to work, we have to enforce that the training phase must not rely on test error, however tempting it may be to retrain on the test data to reduce the test error. Training on the data that we use to evaluate the model's error rate simply shifts the overfitting problem from one sample to another, and the point of the test set is to evaluate how well we do on new data.
 
-When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to increase the probability of our results being applicable to future data and reduce the probability of over-fitting.
+Another source of overfitting is when our examples have a high number of features relative to the sample size, or our examples include features that are entirely unrelated to the label. Extraneous features make it much more likely for noise and chance patterns to become integrated into the model, which increases our risk of misclassifying future data.
+
+When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to increase the probability of our results being applicable to future data and reduce the probability of overfitting.
 
 ### K-Fold Cross-Validation:
 
