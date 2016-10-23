@@ -4,6 +4,8 @@ title:  "Supervised learning"
 date:   2016-10-20 20:30:00 -0800
 categories: artificial-intelligence
 ---
+I'm currently taking an undergraduate course in machine learning at UBC, and one of the topics we're covering is supervised learning and its major concepts and algorithms.
+
 Supervised learning is the machine learning task of inferring a predictive model from an initial set of labelled examples.
 
 The most common application is classification of data, however, supervised learning can also be applied to predictive scores - "How will customers like this product, given their ratings of related products?" - and autonomous decision making - "What is the expected risk associated with a given decision?" "(Deepmind's AlphaGo:) What is the best response to Lee Sedol's last move?" "(Self-driving cars:) How should each of my components adjust to the latest feedback from my sensors?".
