@@ -35,30 +35,30 @@ For our learning algorithm to be successful, we may need to transform data sourc
 #### Avoiding overfitting to training data
 Given that it's likely for future examples to differ at least slightly from our training data, we also have to protect against overfitting our models to our training examples. That is, our model should not so closely align with our training examples that it incorrectly categorizes many examples that were not in our training set.
 
-We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
-
 A common way to avoid overfitting is to select separate random distributions of labelled data for training and testing, and to select the model that minimizes our test error rather than our training error.
 
 In order for this to work, we have to enforce that the training phase must not rely on test error, however tempting it may be to retrain on the test data to reduce the test error. Training on the data that we use to evaluate the model's error rate simply shifts the overfitting problem from one sample to another, and the point of the test set is to evaluate how well we do on new data.
 
 Another source of overfitting is when our examples have a high number of features relative to the sample size, or our examples include features that are entirely unrelated to the label. Extraneous features make it much more likely for noise and chance patterns to become integrated into the model, which increases our risk of misclassifying future data.
 
-When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to increase the probability of our results being applicable to future data and reduce the probability of overfitting.
-
-### K-fold cross-validation
-
-1. Randomly partition the labelled data set into k equally-sized samples.
-2. Set aside one sample to use for validation, and train a small number of models with different parameters on the remaining k-1 training samples.
-3. Evaluate each model's error rate using the validation set, and select the model with the lowest validation error.
-4. Repeat steps 2-3 to generate k sub-models for each of the k possible validation sets.
-5. Average the k sub-models to produce a single model as output.
-
-The way we combine sub-models depends on the learning algorithm, but the general idea is widely applicable. As long as our samples are well-distributed and we only train a small number of likely models on each training sample, the cross-validation process reduces the risk that our model will be biased towards any given set of our data.
-
 Supervised learning can be most successfully applied when the following hold true:
 
 * We have a reliable source of labelled training data.
 * Our training data is well-distributed across feature values from the problem domain.
+
+### K-fold cross-validation
+
+We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
+
+When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to more accurately estimate how applicable our results will be to future data.
+
+1. Randomly partition the labelled data set into k equally-sized samples.
+2. Set aside one sample to use as the validation set, and train a model on the remaining k-1 training samples.
+3. Calculate the model's error rate using the validation set.
+4. Repeat steps 2-3 to generate k errors for each of the k possible validation sets.
+5. Average the k validation errors to produce a single value as the expected test error of the model.
+
+As long as our samples are well-distributed and we only train a small number of likely models on each training sample, the cross-validation process allows us to evaluate each model to select the best one, with a limited risk of bias towards any given set of our data.
 
 ### Caveats
 
@@ -88,7 +88,7 @@ If our problem space has features that change significantly over time, then clas
 
 Supervised learning algorithms use an initial set of labelled data to "learn" a prediction model that can be applied to future data. Labelled data is divided into training and test samples, which are ideally independent and representative of the distribution of actual data, and the training phase must not be influenced by the test data in any way to avoid overfitting our model to our data.
 
-If there isn't enough labelled data for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can be applied to average training results across multiple cross-sections of our data to produce a fairly accurate and unbiased prediction model.
+If there isn't enough labelled data for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can be applied to evaluate our models while training on all our data.  If we evaluate a small number of models using cross-evaluation and pick the one with the lowest error, we can produce a fairly accurate and unbiased prediction model.
 
 Supervised learning isn't a magic solution to every problem, and each algorithm makes some assumptions that must be true of your data for it to work well.  However, it can be a powerful tool if you understand where and how to apply it.
 
