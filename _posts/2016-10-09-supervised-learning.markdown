@@ -12,7 +12,7 @@ The most common application is classification of data, however, supervised learn
 
 Some of the most popular algorithms in supervised learning are random forests, support vector machines and neural networks. Factors to consider in selecting which algorithm to use for an application include the prediction accuracy and liveness required, the scale of the data and the number of features that need to be considered, the computational power and memory available, the amount of time allowable for the training phase, and the amount of expertise available.
 
-### General Structure
+### General structure
 
 At an abstract level, supervised classification algorithms programmatically construct a classification model based on labelled training examples. Potential models are compared by evaluating their error rates against an independent set of labelled test examples, and the model with the lowest test error is selected.
 
@@ -20,17 +20,19 @@ At an abstract level, supervised classification algorithms programmatically cons
 2. Generate a model using the training set.
 3. Evaluate the model's error rate on the test set.
 
-### Challenges and Considerations
+### Considerations
 
-#### Limited or Skewed Data
+#### Working with limited or skewed data
 In order for the model to make successful predictions on real-world examples, it's necessary to train on a large number of well-distributed examples.
 
 The public domain provides a vast array of tagged images, videos, historical data sets and other documents, which, if applicable to the application, can often provide an accessible source of labelled examples. However, obtaining training data that can represent the entire problem domain can still be a challenge - see [Advances In Computer Vision, and Chasing the Long Tail]({% post_url 2016-06-06-advances-in-computer-vision-and-chasing-long-tail %}) for more on that topic.
 
-#### Irregularities Between Data Sources
-Data normalization may be non-trivial when combining a variety of data sources with different features, distributions, and levels of reliability. For our learning algorithm to be successful, we may need to pre-process our data to transform data sources into a common format, select a common subset of features to take into consideration, remove records with invalid values, and handle duplicate or missing records.
+#### Pre-processing data
+Machine learning algorithms generally assume that their input examples have the same structure and are equally reliable.
 
-#### Overfitting to Training Data
+For our learning algorithm to be successful, we may need to transform data sources into a common format, select a common subset of features to take into consideration, remove records with invalid values, and handle duplicate or missing records.
+
+#### Avoiding overfitting to training data
 Given that it's likely for future examples to differ at least slightly from our training data, we also have to protect against overfitting our models to our training examples. That is, our model should not so closely align with our training examples that it incorrectly categorizes many examples that were not in our training set.
 
 We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
@@ -43,7 +45,7 @@ Another source of overfitting is when our examples have a high number of feature
 
 When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to increase the probability of our results being applicable to future data and reduce the probability of overfitting.
 
-### K-Fold Cross-Validation:
+### K-fold cross-validation:
 
 1. Randomly partition the labelled data set into k equally-sized samples.
 2. Set aside one sample to use for validation, and train a small number of models with different parameters on the remaining k-1 training samples.
@@ -58,11 +60,11 @@ Supervised learning can be most successfully applied when the following hold tru
 * We have a reliable source of labelled training data.
 * Our training data is well-distributed across feature values from the problem domain.
 
-### Conclusion
+### Summary
 
-In summary, supervised learning algorithms use an initial set of labelled data to "learn" a prediction model that can be applied to future data. Labelled data is divided into training and test samples, which are ideally independent and representative of the distribution of actual data, and the training phase must not be influenced by the test data in any way.
+Supervised learning algorithms use an initial set of labelled data to "learn" a prediction model that can be applied to future data. Labelled data is divided into training and test samples, which are ideally independent and representative of the distribution of actual data, and the training phase must not be influenced by the test data in any way to avoid overfitting our model to our data.
 
-If there is not enough labelled data available for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can often be applied to average training results across multiple cross-sections of our data to produce a fairly accurate and unbiased prediction model.
+If there is not enough labelled data available for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can be applied to average training results across multiple cross-sections of our data to produce a fairly accurate and unbiased prediction model.
 
 Resources:
 
