@@ -23,7 +23,7 @@ At an abstract level, supervised classification algorithms programmatically cons
 ### Considerations
 
 #### Working with limited or skewed data
-In order for the model to make successful predictions on real-world examples, it's necessary to train on a large number of well-distributed examples.
+In order for our model to make successful predictions on real-world examples, we need to train on a large number of well-distributed examples.
 
 The public domain provides a vast array of tagged images, videos, historical data sets and other documents, which, if applicable to the application, can often provide an accessible source of labelled examples. However, obtaining training data that can represent the entire problem domain can still be a challenge - see [Advances In Computer Vision, and Chasing the Long Tail]({% post_url 2016-06-06-advances-in-computer-vision-and-chasing-long-tail %}) for more on that topic.
 
@@ -45,7 +45,7 @@ Another source of overfitting is when our examples have a high number of feature
 
 When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to increase the probability of our results being applicable to future data and reduce the probability of overfitting.
 
-### K-fold cross-validation:
+### K-fold cross-validation
 
 1. Randomly partition the labelled data set into k equally-sized samples.
 2. Set aside one sample to use for validation, and train a small number of models with different parameters on the remaining k-1 training samples.
@@ -53,18 +53,44 @@ When labelled data is very limited, a technique called [cross-validation](https:
 4. Repeat steps 2-3 to generate k sub-models for each of the k possible validation sets.
 5. Average the k sub-models to produce a single model as output.
 
-The way in which the sub-models are combined depends on the learning algorithm, but the general idea is widely applicable. As long as our samples are well-distributed and we only train a small number of likely models on each training sample, the cross-validation process reduces the risk that our model will be biased towards any given set of our data.
+The way we combine sub-models depends on the learning algorithm, but the general idea is widely applicable. As long as our samples are well-distributed and we only train a small number of likely models on each training sample, the cross-validation process reduces the risk that our model will be biased towards any given set of our data.
 
 Supervised learning can be most successfully applied when the following hold true:
 
 * We have a reliable source of labelled training data.
 * Our training data is well-distributed across feature values from the problem domain.
 
+### Caveats
+
+* Supervised learning is not magic.
+
+If you have enough reliable data, you may be able to apply statistical methods and simplified models to make reasonable predictions of what other data will look like.
+
+That sounds less powerful than saying, "supervised learning can predict the future!", but it's probably more accurate.  Supervised learning algorithms make generous use of heuristics that appear to work reasonably well in practise.
+
+Also, supervised learning can only solve certain problems.  If we can characterize a problem as a classification problem and we have a significant number of labelled examples, then supervised learning may be able to provide useful results.
+
+The good thing is that there are many models that scale up well, so if the model's assumptions hold for our data and we keep on accumulating training data, we can generate more and more accurate models.
+
+* It's easy to overfit.
+
+Evaluating our model with an independent test set helps a bit, but we need to be aware of all the factors that go into overfitting for our given model.
+
+For example, in the condensed version of the [k-nearest neighbours](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm, the order of training examples can have a significant impact on our model, and we need to remember to randomize the order of training examples to get accurate results.
+
+* Learning models with historical data don't necessarily predict future results.
+
+A random sample from a population can give us information that has a _high probability_ of being true of the population _at that time_.
+
+If our problem space has features that change significantly over time, then classification algorithms that give all examples the same weight may not work as well if most of our data is from several years ago.
+
 ### Summary
 
 Supervised learning algorithms use an initial set of labelled data to "learn" a prediction model that can be applied to future data. Labelled data is divided into training and test samples, which are ideally independent and representative of the distribution of actual data, and the training phase must not be influenced by the test data in any way to avoid overfitting our model to our data.
 
-If there is not enough labelled data available for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can be applied to average training results across multiple cross-sections of our data to produce a fairly accurate and unbiased prediction model.
+If there isn't enough labelled data for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can be applied to average training results across multiple cross-sections of our data to produce a fairly accurate and unbiased prediction model.
+
+Supervised learning isn't a magic solution to every problem, and each algorithm makes some assumptions that must be true of your data for it to work well.  However, it can be a powerful tool if you understand where and how to apply it.
 
 Resources:
 
