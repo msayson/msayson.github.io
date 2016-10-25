@@ -58,7 +58,9 @@ When labelled data is very limited, a technique called [cross-validation](https:
 4. Repeat steps 2-3 to generate k errors for each of the k possible validation sets.
 5. Average the k validation errors to produce a single value as the expected test error of the model.
 
-As long as our samples are well-distributed and we only train a small number of likely models on each training sample, the cross-validation process allows us to evaluate each model to select the best one, with a limited risk of bias towards any given set of our data.
+Training on millions of possible model parameters and selecting the one with the best cross-validation error will almost certainly give us an overfitted model that won't work as well on new data.  A few models are likely to have lower error values just by chance, especially if our training examples are similar to one another.
+
+However, as long as we only train a small number of likely models and our samples are well-distributed, the cross-validation process allows us to select the best one with a limited risk of bias.
 
 ### Caveats
 
