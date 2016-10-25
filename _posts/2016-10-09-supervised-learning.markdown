@@ -50,7 +50,7 @@ Supervised learning can be most successfully applied when the following hold tru
 
 We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
 
-When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to more accurately estimate how applicable our results will be to future data.
+When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to allow us to train on all our data and still estimate our test error reasonably accurately.
 
 1. Randomly partition the labelled data set into k equally-sized samples.
 2. Set aside one sample to use as the validation set, and train a model on the remaining k-1 training samples.
@@ -60,7 +60,7 @@ When labelled data is very limited, a technique called [cross-validation](https:
 
 Training on millions of possible model parameters and selecting the one with the best cross-validation error will almost certainly give us an overfitted model that won't work as well on new data.  A few models are likely to have lower error values just by chance, especially if our training examples are similar to one another.
 
-However, as long as we only train a small number of likely models and our samples are well-distributed, the cross-validation process allows us to select the best one with a limited risk of bias.
+However, as long as we only train a small number of likely models and our samples are well-distributed, the cross-validation process allows us to select the best model without too much bias towards any given set of our data.
 
 ### Caveats
 
