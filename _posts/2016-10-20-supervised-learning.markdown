@@ -46,19 +46,31 @@ Supervised learning can be most successfully applied when the following hold tru
 * We have a reliable source of labelled training data.
 * Our training data is well-distributed across feature values from the problem domain.
 
-### K-fold cross-validation
+### Cross-validation
 
 We want to be able to evaluate our models in a way that approximates the real-world error rate, so that we don't report a 10% error rate on our model during training but observe a 75% error rate in practise.
 
 When labelled data is very limited, a technique called [cross-validation](https://en.wikipedia.org/wiki/Cross-validation_%28statistics%29) is often used to allow us to train on all our data and still estimate our test error reasonably accurately.
 
-1. Randomly partition the labelled data set into k equally-sized samples.
-2. Set aside one sample to use as the validation set, and train a model on the remaining k-1 training samples.
-3. Calculate the model's error rate using the validation set.
-4. Repeat steps 2-3 to generate k errors for each of the k possible validation sets.
-5. Average the k validation errors to produce a single value as the expected test error of the model.
+K-fold cross-validation is one example of cross-validation.
 
-Training on millions of possible model parameters and selecting the one with the best cross-validation error will almost certainly give us an overfitted model that won't work as well on new data.  A few models out of the million are likely to have lower error values just by chance, especially if our training examples are similar to one another.
+#### K-fold cross-validation algorithm
+
+1. Randomly partition the labelled data set into k equally-sized sample sets.
+2. Set one sample as a validation set, and the remaining samples as a training set.
+3. Train and calculate the error of a model using step 2's training and validation sets.
+4. Repeat steps 2-3 to generate an error for each of the k possible training/validation sets.
+5. Average the k errors to obtain the cross-validation error.
+
+#### Using cross-validation error
+
+The main idea is that the cross-validation error approximates the error rate of a model trained on all of our labelled data.  Randomizing the order of examples before splitting them into validation sets helps with this, as does having training examples that are independently and randomly selected from the population.
+
+Increasing the number of folds, k, generally increases the accuracy of our error approximation, while making it more expensive to calculate.
+
+If cross-validation error is a reasonable approximation of test error on new data, then we should be able to use cross-validation error to choose between possible models.
+
+Training on millions of possible model parameters and selecting the one with the best cross-validation error will almost certainly give us an overfitted model.  If we try out millions of possible combinations of parameters, the combinations that are the closest match to our training data won't necessarily extrapolate as well to new data.
 
 However, as long as we only train a small number of likely models and our samples are well-distributed, the cross-validation process allows us to select the best model without too much bias towards any given set of our data.
 
