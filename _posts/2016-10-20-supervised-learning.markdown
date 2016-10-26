@@ -58,13 +58,13 @@ When labelled data is very limited, a technique called [cross-validation](https:
 4. Repeat steps 2-3 to generate k errors for each of the k possible validation sets.
 5. Average the k validation errors to produce a single value as the expected test error of the model.
 
-Training on millions of possible model parameters and selecting the one with the best cross-validation error will almost certainly give us an overfitted model that won't work as well on new data.  A few models are likely to have lower error values just by chance, especially if our training examples are similar to one another.
+Training on millions of possible model parameters and selecting the one with the best cross-validation error will almost certainly give us an overfitted model that won't work as well on new data.  A few models out of the million are likely to have lower error values just by chance, especially if our training examples are similar to one another.
 
 However, as long as we only train a small number of likely models and our samples are well-distributed, the cross-validation process allows us to select the best model without too much bias towards any given set of our data.
 
 ### Caveats
 
-* Supervised learning is not magic.
+*Supervised learning is not magic.*
 
 If you have enough reliable data, you may be able to apply statistical methods and simplified models to make reasonable predictions of what other data will look like.
 
@@ -74,13 +74,13 @@ Also, supervised learning can only solve certain problems.  If we can characteri
 
 The good thing is that there are many models that scale up well, so if the model's assumptions hold for our data and we keep on accumulating training data, we can generate more and more accurate models.
 
-* It's easy to overfit.
+*It's easy to overfit.*
 
 Evaluating our model with an independent test set helps a bit, but we need to be aware of all the factors that go into overfitting for our given model.
 
 For example, in the condensed version of the [k-nearest neighbours](https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm) algorithm, the order of training examples can have a significant impact on our model, and we need to remember to randomize the order of training examples to get accurate results.
 
-* Learning models with historical data don't necessarily predict future results.
+*Learning models with historical data don't necessarily predict future results.*
 
 A random sample from a population can give us information that has a _high probability_ of being true of the population _at that time_.
 
