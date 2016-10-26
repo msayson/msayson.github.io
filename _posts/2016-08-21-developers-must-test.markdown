@@ -12,21 +12,19 @@ There's no way around it, and especially no "but Quality Assurance does that for
 
 Having an independent person functionally verify changes is a great practice, and should be done _in addition to_ unit testing.
 
-If software isn't properly tested at the code level, problems inevitably remain hidden for longer and become embedded into the system as it grows in complexity.  Any developer can talk about how difficult it can be to triage issues from vague bug reports or inconsistent system behaviour, and even simple issues can sometimes take hours to track down and fix.
+If software isn't properly tested at the code level, problems inevitably remain hidden for longer and become embedded into the system as it grows in complexity.
 
-Many developers are warming up to the idea of writing unit tests and higher level functional tests.  It's now easy to find resources on how to effectively test software throughout the development cycle, and there are many excellent continuous integration tools that automatically run tests before pushing changes to the code base or generating a release build.
+Many developers are warming up to the idea of writing unit tests and higher level functional tests, and it's easy to find good resources on effective testing of software throughout the development cycle.  Test automation keeps improving, and many continuous integration tools now automatically verify tests before pushing changes to the code base or generating builds.
 
-Even so, discomfort around verifying and writing tests for software as a software developer appears to persist in some workplaces, even at established companies that rely on internally developed software for a major part of their revenue.
+Even so, discomfort around verifying and writing tests as a software developer seems to linger at some workplaces, even at a few established companies that rely on internally developed software for most of their revenue.
 
-At a job fair I attended a few months ago, this came up with one of the recruiters I chatted with.  I asked her how their development team tested their software, and was looking forward to hearing about their testing practices since they were a fairly well-known software company.
+This came up in a conversation I had with a recruiter at a university job fair.  I asked her how their development team tested their software, and was looking forward to hearing about their testing practices since they were a fairly well-known software company.
 
-She told me that I wouldn't need to write tests if I worked for them.  Their developers didn't worry about writing unit tests.  "Our Quality Assurance team takes care of testing for us!"  She smiled broadly as she said this, and I immediately resolved not to apply to them.
+She told me that I wouldn't need to write tests if I worked for them.  Their developers didn't worry about unit tests.  "Our Quality Assurance team takes care of testing for us!"  She smiled broadly as she said this, and I immediately resolved not to apply to them.
 
 This might seem extreme, but not writing unit tests is a major red flag, and suggests significant development and maintenance challenges down the road.
 
-If you're comfortable with introducing testing practices to your team, by all means, you may be able to make a great impact at a company where testing isn't the norm.  You can take time to listen first, to learn how their team works and adapt to their processes.  You're in a much better place to suggest changes once you've proven yourself and established strong relationships with the rest of your team.
-
-It is possible to gradually introduce changes where you can demonstrate great value for the least amount of effort.  Building out a minimal set of unit tests for the code you write and setting up continuous integration builds is a great place to start.
+If you're comfortable with introducing testing practices to your team, by all means, you might be able to make a great impact at a company where testing isn't the norm.  Once you've proven yourself and established strong relationships with the rest of your team, it is possible to introduce changes where you can demonstrate great value for the least amount of effort.  Building out a minimal set of unit tests for the code you write and setting up continuous integration builds is a great place to start.
 
 However, especially if you're looking to learn good development practices, it might be more productive to seek out companies that already integrate testing into their development process, and continually look for ways to improve the way they develop software.  This kind of environment naturally encourages self-development and creative exchange between teams, as developers learn from one another and rethink the way they build systems.
 
