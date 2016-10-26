@@ -10,7 +10,7 @@ excerpt: "Software developers must test their own software.  There's no way arou
 
 There's no way around it, and especially no "but Quality Assurance does that for us."
 
-Having an independent person functionally verify changes is a great practice, and should be done in addition to unit testing.
+Having an independent person functionally verify changes is a great practice, and should be done _in addition to_ unit testing.
 
 If software isn't properly tested at the code level, problems inevitably remain hidden for longer and become embedded into the system as it grows in complexity.  Any developer can talk about how difficult it can be to triage issues from vague bug reports or inconsistent system behaviour, and even simple issues can sometimes take hours to track down and fix.
 
