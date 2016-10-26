@@ -4,7 +4,7 @@ title:  "Supervised learning"
 date:   2016-10-20 20:30:00 -0800
 categories: artificial-intelligence
 ---
-I'm currently taking an undergraduate course in machine learning at UBC, and one of the topics we're covering is supervised learning and its major concepts and algorithms.
+One of the main areas covered in the machine learning course I'm taking at UBC is supervised learning and its major concepts and algorithms.
 
 Supervised learning is the machine learning task of inferring a predictive model from an initial set of labelled examples.
 
