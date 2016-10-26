@@ -3,15 +3,16 @@ layout: post
 title:  "Security Engineering, by Ross Anderson"
 date:   2016-06-24 20:30:00 -0800
 categories: security
+excerpt:
 ---
+"Security Engineering: A Guide to Building Dependable Distributed Systems", by Ross Anderson, is one of the most engaging technical books I've seen, and I've taken to reading it on my commute.
+
+It's highly readable, unlike most textbooks, and provides an accessible view into the many areas of security.  The author has made the full book freely available online, so I highly recommend checking it out.
+
 {% include image.html img="/images/20160624_securityengineering_anderson_cover.jpg"
   title="Security Engineering - A Guide to Building Dependable Distributed Systems"
   url="https://www.cl.cam.ac.uk/~rja14/book.html" %}
 <br>
-
-I've started reading "Security Engineering: A Guide to Building Dependable Distributed Systems", by Ross Anderson, and will be reviewing key topics from it over the summer.
-
-It's an interesting read, written in a fluid style closer to what I'd expect from a series of lectures from skilled speakers than from a textbook, and I've taken to reading it on my commute.  The author has made the full book freely available online, so I highly recommend checking it out.
 
 Software Engineering 2/E website: [https://www.cl.cam.ac.uk/~rja14/book.html](https://www.cl.cam.ac.uk/~rja14/book.html)
 

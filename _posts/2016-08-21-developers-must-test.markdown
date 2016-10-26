@@ -3,11 +3,12 @@ layout: post
 title:  "Developers must test"
 date:   2016-08-21 20:30:00 -0800
 categories: software-development
+excerpt: "Software developers must test their own software.  There's no way around it, and especially no \"but Quality Assurance does that for us.\""
 ---
 
 #### Software developers must test their own software.
 
-There is no way around it, and especially no "but Quality Assurance does that for us".
+There's no way around it, and especially no "but Quality Assurance does that for us."
 
 Having an independent person functionally verify changes is a great practice, and should be done in addition to unit testing.
 
