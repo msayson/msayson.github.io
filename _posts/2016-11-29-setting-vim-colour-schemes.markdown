@@ -48,9 +48,25 @@ To test different colour schemes, open a file in vim and set your colour scheme 
 
 ![alt text](/images/20161129_vimSelectingNewColourScheme.png "Vim command to select from installed colour schemes.")
 
-You can similarly just type :color followed by a space, and press tab to browse through all currently installed colour schemes.  ":color m" followed by a tab will autocomplete to allow you to browse all colour schemes starting with an "m".
+You can similarly just type :color followed by a space, and press tab to browse through all currently installed colour schemes.  ```:color m``` followed by a tab will autocomplete to allow you to browse all colour schemes starting with an "m".
 
 ![alt text](/images/20161129_vimMonokaiColourScheme.png "Vim with the Monokai colour scheme - Ah, much better.")
+
+If you want to be able to use custom colour schemes in sudo mode, you can add the colour scheme files to ```/etc/vim/colors/```.  Default Vim settings are stored in ```/etc/vim/vimrc```.
+
+```bash
+sudo cp -r ~/.vim/colors/ /etc/vim/colors/
+sudo vim /etc/vim/vimrc
+```
+
+Lines changed in vimrc (optional):
+
+```bash
+" Vim5 and later versions support syntax highlighting. Uncommenting the next
+" line enables syntax highlighting by default.
+:syntax on
+:colorscheme monokai
+```
 
 Helpful resources:
 
