@@ -35,7 +35,7 @@ For our learning algorithm to be successful, we may need to transform data sourc
 #### Avoiding overfitting to training data
 Given that it's likely for future examples to differ at least slightly from our training data, we also have to protect against overfitting our models to our training examples. That is, our model should not so closely align with our training examples that it incorrectly categorizes many examples that were not in our training set.
 
-A common way to avoid overfitting is to select separate random distributions of labelled data for training and testing, and to select the model that minimizes our test error rather than our training error.
+A common way to avoid overfitting is to randomly split our labelled samples into two partitions - one for training and one for testing - and select the model that minimizes our test error rather than our training error.
 
 In order for this to work, we have to enforce that the training phase must not rely on test error, however tempting it may be to retrain on the test data to reduce the test error. Training on the data that we use to evaluate the model's error rate simply shifts the overfitting problem from one sample to another, and the point of the test set is to evaluate how well we do on new data.
 
