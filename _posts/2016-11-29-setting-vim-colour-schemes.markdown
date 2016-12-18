@@ -29,7 +29,7 @@ vim ~/.vimrc
 
 The .vimrc configuration file below enables syntax highlighting and sets the Monokai colour scheme as our default.
 
-```txt
+```vim
 " Configuration settings for Vim
 " Executed on Vim start for the current user
 
@@ -61,7 +61,7 @@ sudo vim /etc/vim/vimrc
 
 Lines changed in vimrc (optional):
 
-```bash
+```vim
 " Vim5 and later versions support syntax highlighting. Uncommenting the next
 " line enables syntax highlighting by default.
 :syntax on
