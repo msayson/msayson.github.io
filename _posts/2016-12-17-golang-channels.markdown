@@ -7,7 +7,7 @@ categories: programming-languages
 
 The Go Programming Language has built-in communication channels, which provide type-safe one-way or two-way communication between processes.  This can be very useful for concurrent programming, such as in master-slave and map-reduce programs.
 
-Channels can be buffered or unbuffered, where buffered channels can store multiple messages up to a declared capacity.  Once a channel is full, it blocks further writes until messages have been removed (read).
+Channels can be buffered or unbuffered, where buffered channels can store multiple messages up to a declared capacity.  Once a channel is full, it blocks further writes until a process initiates a read operation.
 
 ```go
 // An unbuffered integer channel, which blocks writes
