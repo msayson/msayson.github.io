@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Golang Channels"
+title:  "Golang channels"
 date:   2016-12-17 18:00:00 -0800
 categories: programming-languages
 ---
