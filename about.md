@@ -9,7 +9,7 @@ permalink: /about/
 
 Hello!  My name is Mark Sayson, and I’m a fourth year computer science student at the University of British Columbia.
 
-I've focused my upper-year coursework in distributed systems, computer security, algorithms, databases and machine learning, and look forward to developing great systems that present elegant solutions to difficult problems and expand the realm of the possible.
+I've focused my upper-year coursework in distributed systems, computer security, algorithms, databases and machine learning, and look forward to developing robust systems that expand the realm of the possible.
 
 In my free time I also like to read, and play and teach the strategic board game Go.
 
