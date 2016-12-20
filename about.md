@@ -9,7 +9,9 @@ permalink: /about/
 
 Hello!  My name is Mark Sayson, and I’m a fourth year computer science student at the University of British Columbia.
 
-My main interests are in technology and the sciences, and I enjoy discussing new ideas and working on challenging problems.  In my free time I also like to read online and offline, spend time with friends, and play and teach the strategic board game Go.
+I've focused my upper-year coursework in distributed systems, computer security, algorithms, databases and machine learning, and look forward to developing great systems that present elegant solutions to difficult problems and expand the realm of the possible.
+
+In my free time I also like to read, and play and teach the strategic board game Go.
 
 You can find the source code for this blog at
 {% include icon-github.html username="msayson" %} /
