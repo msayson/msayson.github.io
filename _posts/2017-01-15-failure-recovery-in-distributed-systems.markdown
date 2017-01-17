@@ -22,12 +22,12 @@ A lot of the work that results in failure recovery occurs at the design level of
 
 Common questions to ask include:
 
-* What are the participants in the system?
-* What is the role of each participant in the system?
-* What happens when one participant crashes during or between transactions? (Cycle through each participant in asking this.)
+* What are the participants in the system?  What are their roles?
+* What interactions occur between participants in the system?
+* What happens when a participant crashes during or between transactions?
 * How can we ensure that our system remains in a good state after a given participant crashes?
 * How can we ensure that we continue providing service after an arbitrary server or client crashes or goes offline?
-* Are there _simple_ design choices we can make to allow us to recover from a failure and continue providing service?
+* Are there simple design choices we can make to allow us to recover from a failure and continue providing service?
 * How can we best test our distributed systems, including testing of failure recovery?
 
 Helpful resources:
