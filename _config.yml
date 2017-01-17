@@ -9,7 +9,7 @@
 title: Mark Sayson
 email: masayson@gmail.com
 linkedin: https://www.linkedin.com/in/mark-sayson-87208748
-description: Mark Sayson's personal blog.
+description: Notes on software development and technology.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.marksayson.com" # the base hostname & protocol for your site
 github_username:  msayson
