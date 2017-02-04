@@ -9,7 +9,7 @@ There are several common workflows for managing projects using Git, and which on
 
 If you deploy frequently, you may benefit from a structure that maintains an always-stable branch to release from, while allowing developers to work on unstable features.  If you don't host your products on your own servers, but instead have customers download software to install themselves, you may have to maintain multiple release branches that you can apply hot-fixes to.
 
-I'll go over the pros and cons of a few simple Git workflows, hopefully providing a few ideas for developing a version control strategy if you've just started using Git.
+I'll go over the pros and cons of a few simple Git workflows, hopefully providing a few ideas for developing a version control strategy.
 
 ### Introduction
 
@@ -90,7 +90,7 @@ Even if you don't use GitHub, the general idea behind their workflow makes sense
 
 ### Workflow 4: One master branch, multiple feature branches, multiple release branches
 
-The previous workflows implicitly assume that only one software version will be in production at a given time.  This works if you host software-as-a-service on servers that are always up-to-date.  However, if you have multiple versions of your code base in production and don't control the update process, you may be forced to support multiple releases.
+The previous workflows implicitly assume that only one software version will be in production at a given time.  This works if you provide software-as-a-service on servers that you control.  However, if you have multiple versions of your code base in production and don't control the update process, you may be forced to support multiple releases.
 
 In this case, tagging specific commits on your master branch as release versions may not be enough.  You may have to provide patches and bug fixes to old versions of your product on an as-needed basis, in which case dedicated release branches may be more suitable than tags.
 
