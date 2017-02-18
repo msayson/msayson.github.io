@@ -4,4 +4,8 @@ _site
 
 .bundle
 
+# Temp files
+*.swp
+
+# Workspace files
 blog.sublime-workspace
