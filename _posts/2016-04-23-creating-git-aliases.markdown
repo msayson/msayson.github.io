@@ -24,19 +24,55 @@ Git aliases are set using the following command:
 git config alias.<CUSTOM_NAME> "<COMMAND> <COMMAND_ARGS>"
 {% endhighlight %}
 
-If you want the alias to apply to all repositories on your user account, add the --global argument.
+If you want the alias to apply to all repositories on your user account, add the -\-global argument.
+
+### Particularly useful commands to alias
+
+#### Branching
+
+- "branch": list local branches, follow with parameters for other commands
+- "checkout -b BRANCH-NAME": create a new branch and check it out
+- "push -\-set-upstream origin BRANCH-NAME": push local history to a new remote branch
+
+#### Logging
+
+- "log -\-follow -p -\- FILE-PATH": display history of a file across file moves and renames
+  - eg. ```git log --follow -p -- **/*computer-vision*```
+- "log -\-graph -\-name-status -\-oneline": display a concise view of your commit history
+  - I have this aliased to "lg": easier to remember.
+
+{% highlight bash %}
+$ git lg
+* 97daf65 Added blog post - A Seminar on Computer Vision - Notes and Discussion
+| A     _includes/image.html
+| A     _posts/2016-06-06-a-seminar-on-computer-vision-notes-and-discussion.markdown
+| M     _sass/_base.scss
+| A     images/20160606_long_tail_labeled.png
+| A     images/20160606_realtimefacialrecognition.jpg
+| A     images/20160606_skeletalhand_razvan.jpg
+| A     images/20160606_terrykimura_stuffedanimals_facialrecognition.jpg
+| A     images/20160606_vislab_followingaperson.jpg
+* b0afc06 Added pagination to the blog posts listing, with page size 16
+| M     Gemfile
+| M     Gemfile.lock
+| M     _config.yml
+| A     _includes/pagination_bar.html
+| M     index.html
+{% endhighlight %}
+
+### Personal aliases
 
 As an example, the following commands set global aliases that I have for my current user.  You can set the names of aliases to whatever you like.
 
 {% highlight bash %}
 git config --global alias.aa "add ."
 git config --global alias.ad add
-git config --global alias.bl "branch -l"
 git config --global alias.br branch
 git config --global alias.cb "checkout -b"
 git config --global alias.ci "commit -m"
 git config --global alias.cfg "config --global -l"
 git config --global alias.co checkout
+git config --global alias.lf "log --follow -p --"
 git config --global alias.lg "log --graph --name-status --oneline"
 git config --global alias.pl pull
 git config --global alias.pu push
