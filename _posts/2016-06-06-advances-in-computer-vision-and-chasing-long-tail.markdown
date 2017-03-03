@@ -9,11 +9,11 @@ redirect_from: /artificial-intelligence/2016/06/07/a-seminar-on-computer-vision-
 
 {% include image.html img="/images/20160606_terrykimura_stuffedanimals_facialrecognition.jpg"
   title="Facial recognition and stuffed animals"
-  caption="\"Face Recognition Software Recognizes Animals Now Too\" - Terry Kimura" %}
+  caption="Face Recognition Software Recognizes Animals Now Too - Terry Kimura" %}
 
 {% include image.html img="/images/20160606_vislab_followingaperson.jpg"
   title="Following a person - Vislab"
-  caption="\"Following a Person - Image Detection, Color Association and Kalman Filters\" - Vislab" %}
+  caption="Following a Person - Image Detection, Color Association and Kalman Filters - Vislab" %}
 
 #### Note
 
