@@ -3,6 +3,7 @@ layout: post
 title:  "Setting Vim colour schemes"
 date:   2016-11-29 18:00:00 -0800
 categories: ides-and-editors
+redirect_from: "/ides-and-editors/2016/11/30/setting-vim-colour-schemes"
 ---
 
 The default syntax highlighting scheme is so-so, especially when it comes to the dark blue comments against a black background.

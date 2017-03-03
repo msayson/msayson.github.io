@@ -3,6 +3,7 @@ layout: post
 title:  "Checking in on the \"Let's Use Linux\" experiment"
 date:   2016-06-12 20:30:00 -0800
 categories: linux
+redirect_from: "/linux/2016/06/13/checking-in-on-the-lets-use-linux-experiment"
 ---
 {% include image.html img="/images/20160612_debian_openlogo-100.png"
   title="Debian Logo"

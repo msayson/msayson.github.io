@@ -3,6 +3,7 @@ layout: post
 title:  "(LXDE) Monitoring battery life"
 date:   2016-03-10 20:30:00 -0800
 categories: linux
+redirect_from: "/linux/2016/03/11/monitoring-battery-life"
 ---
 I've noticed that my battery's lifetime decreases by quite a bit when I run Debian.  I'll look into improving this in a couple days, but for now I've installed fdpowermon as a graphical battery life monitor.
 

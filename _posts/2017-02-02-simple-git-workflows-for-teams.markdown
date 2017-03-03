@@ -3,6 +3,7 @@ layout: post
 title:  "Simple Git workflows for teams"
 date:   2017-02-02 20:00:00 -0800
 categories: git
+redirect_from: "/git/2017/02/03/simple-git-workflows-for-teams"
 ---
 
 There are several common workflows for managing projects using Git, and which one works best will depend on your team's structure and the complexity of your project.

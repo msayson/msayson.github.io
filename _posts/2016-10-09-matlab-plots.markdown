@@ -3,6 +3,7 @@ layout: post
 title:  "Visualizing data in Matlab"
 date:   2016-10-09 20:30:00 -0800
 categories: programming-languages
+redirect_from: "/programming-languages/2016/10/10/matlab-plots"
 ---
 
 Data visualizations are a useful way to condense a large amount of information, and represent it in a format that is easy to read and interpret.

@@ -3,6 +3,7 @@ layout: post
 title:  "Debian releases and deciding to upgrade"
 date:   2016-04-24 20:30:00 -0800
 categories: linux
+redirect_from: "/linux/2016/04/25/debian-releases-and-deciding-to-upgrade"
 ---
 Debian Stable, or just "stable", is the default release for new Debian installs, with "testing" and "unstable" being the next releases along the development pipeline.
 

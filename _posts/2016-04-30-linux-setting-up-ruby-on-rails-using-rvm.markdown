@@ -3,6 +3,7 @@ layout: post
 title:  "(Linux) Setting up Ruby on Rails using RVM"
 date:   2016-04-30 20:30:00 -0800
 categories: programming-languages
+redirect_from: "/programming-languages/2016/05/01/linux-setting-up-ruby-on-rails-using-rvm"
 ---
 In this post I'll go over how to install Ruby on Rails on Linux using [Ruby Version Manager, or RVM](https://rvm.io).
 

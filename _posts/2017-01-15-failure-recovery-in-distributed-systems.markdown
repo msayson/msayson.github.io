@@ -3,6 +3,7 @@ layout: post
 title:  "Failure recovery in distributed systems"
 date:   2017-01-15 18:00:00 -0800
 categories: distributed-systems
+redirect_from: "/distributed-systems/2017/01/16/failure-recovery-in-distributed-systems"
 ---
 
 Failure recovery is an interesting problem in many applications, but especially in distributed systems, where there may be multiple devices participating and multiple points of failure.

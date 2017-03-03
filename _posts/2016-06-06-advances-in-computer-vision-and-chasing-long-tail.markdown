@@ -3,8 +3,7 @@ layout: post
 title:  "Advances in computer vision, and chasing the long tail"
 date:   2016-06-06 20:30:00 -0800
 categories: artificial-intelligence
-redirect_from: /artificial-intelligence/2016/06/06/a-seminar-on-computer-vision-notes-and-discussion.html/
-redirect_from: /artificial-intelligence/2016/06/07/a-seminar-on-computer-vision-notes-and-discussion.html/
+redirect_from: "/artificial-intelligence/2016/06/07/advances-in-computer-vision-and-chasing-long-tail"
 ---
 
 {% include image.html img="/images/20160606_terrykimura_stuffedanimals_facialrecognition.jpg"

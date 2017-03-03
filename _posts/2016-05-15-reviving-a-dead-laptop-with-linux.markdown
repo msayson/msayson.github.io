@@ -3,6 +3,7 @@ layout: post
 title:  "Reviving a dead laptop with Linux"
 date:   2016-05-15 20:30:00 -0800
 categories: linux
+redirect_from: "/linux/2016/05/16/reviving-a-dead-laptop-with-linux"
 ---
 My Acer Aspire One has been sitting idle for almost three years now, unable to boot up to Windows 7 32bit.  Hard drive errors prevented operating systems loaded from USB from accessing files on disk.
 

@@ -3,6 +3,7 @@ layout: post
 title:  "Golang channels"
 date:   2016-12-17 18:00:00 -0800
 categories: programming-languages
+redirect_from: "/programming-languages/2016/12/18/golang-channels"
 ---
 
 The Go Programming Language has built-in communication channels, which provide type-safe one-way or two-way communication between processes.  This can be very useful for concurrent programming, such as in master-slave and map-reduce programs.

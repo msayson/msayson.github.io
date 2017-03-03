@@ -3,7 +3,7 @@ layout: post
 title:  "Security Engineering, by Ross Anderson"
 date:   2016-06-24 20:30:00 -0800
 categories: security
-excerpt:
+redirect_from: "/security/2016/06/25/security-engineering-by-ross-anderson"
 ---
 "Security Engineering: A Guide to Building Dependable Distributed Systems", by Ross Anderson, is one of the most engaging technical books I've seen, and I've taken to reading it on my commute.
 

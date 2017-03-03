@@ -3,6 +3,7 @@ layout: post
 title:  "Supervised learning"
 date:   2016-10-20 20:30:00 -0800
 categories: artificial-intelligence
+redirect_from: "/artificial-intelligence/2016/10/21/supervised-learning"
 ---
 One of the main areas covered in the machine learning course I'm taking at UBC is supervised learning and its major concepts and algorithms.
 

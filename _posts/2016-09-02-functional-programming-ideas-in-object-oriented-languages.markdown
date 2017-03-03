@@ -3,6 +3,7 @@ layout: post
 title:  "Functional programming ideas in object-oriented languages"
 date:   2016-09-02 20:30:00 -0800
 categories: programming-languages
+redirect_from: "/programming-languages/2016/09/03/functional-programming-ideas-in-object-oriented-languages"
 ---
 
 Over the last several years, many ideas from functional programming languages have been welcomed into the object-oriented world, and are no longer only found in languages like Ruby and Scala, but also in Java 8, C# 3.0, and other languages traditionally thought of as primarily object-oriented.

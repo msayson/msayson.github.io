@@ -3,6 +3,7 @@ layout: post
 title:  "(Epson) Configuring printers on Linux"
 date:   2016-05-16 20:30:00 -0800
 categories: linux
+redirect_from: "/linux/2016/05/17/epson-configuring-printers-on-linux"
 ---
 Configuring printers on Linux computers often takes a bit of trial and error, especially since many printer companies don't tend to update drivers for Linux distributions as often as with Windows and Mac OS.
 

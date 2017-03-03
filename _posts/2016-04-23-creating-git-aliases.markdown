@@ -3,6 +3,7 @@ layout: post
 title:  "Creating Git aliases"
 date:   2016-04-23 20:30:00 -0800
 categories: git
+redirect_from: "/git/2016/04/24/creating-git-aliases"
 ---
 A few months ago a friend introduced me to Git aliases, and I've come to enjoy using them enough to set them up on every workspace I use.
 
