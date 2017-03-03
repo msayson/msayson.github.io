@@ -7,7 +7,8 @@
 
 # Site settings
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.marksayson.com" # the base hostname & protocol for your site
+url: "https://www.marksayson.com" # the base hostname & protocol for your site
+enforce_ssl: www.marksayson.com   # enforce SSL for site
 
 # Site variables
 title: Mark Sayson

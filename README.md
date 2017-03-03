@@ -1,7 +1,7 @@
 # Readme
 
 This project contains the source code for Mark Sayson's personal blog:
-[http://www.marksayson.com/](http://www.marksayson.com/)
+[https://www.marksayson.com/](https://www.marksayson.com/)
 
 Jekyll is used to generate the blog's layout and pages from Markdown.  See [https://jekyllrb.com](https://jekyllrb.com) for information on how to use Jekyll to build static web sites.
 
