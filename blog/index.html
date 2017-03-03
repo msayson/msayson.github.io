@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">Posts</h1>
+
+  <p>
+    <a class="page-link" href="{{ "/blog/categories" | prepend: site.baseurl }}">View Categories</a>
+  </p>
+
+  <ul class="post-list">
+    {% for post in paginator.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>{{ post.title }}</h2>
+          {{ post.excerpt }}
+          <p>
+             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Continue reading...</a>
+          </p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% include pagination_bar.html %}
+
+  <br>
+  <div>
+    <p class="rss-subscribe">
+      subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+    </p>
+  </div>
+</div>

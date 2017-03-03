@@ -1,9 +1,13 @@
 ---
 layout: default
-title:  "Categories"
+redirect_from: "/categories"
 ---
 <div class="categories">
   <h1 class="page-heading">Categories</h1>
+
+  <p>
+    <a class="page-link" href="{{ "/blog" | prepend: site.baseurl }}">Return to Posts</a>
+  </p>
 
   <div class="categories-list">
     {% assign sorted_categories = site.categories | sort %}

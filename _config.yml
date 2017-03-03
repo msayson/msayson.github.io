@@ -6,17 +6,23 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.marksayson.com" # the base hostname & protocol for your site
+
+# Site variables
 title: Mark Sayson
 email: masayson@gmail.com
 linkedin: https://www.linkedin.com/in/mark-sayson-87208748
 description: Notes on software development and technology.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.marksayson.com" # the base hostname & protocol for your site
 github_username:  msayson
+
+# Pagination settings
 paginate: 8 # maximum number of blog posts per page
+paginate_path: "/blog/page:num/"
 
 # Build settings
 markdown: kramdown
+permalink: /blog/:title/
 
 # Google Analytics settings
 google_analytics_tracking_id: UA-80369609-1
