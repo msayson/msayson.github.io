@@ -3,28 +3,9 @@ layout: default
 ---
 
 <div class="home">
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>{{ post.title }}</h2>
-          {{ post.excerpt }}
-          <p>
-             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Continue reading...</a>
-          </p>
-      </li>
-    {% endfor %}
-  </ul>
-
-  {% include pagination_bar.html %}
-
-  <br>
-  <div>
-    <p class="rss-subscribe">
-      subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
-    </p>
-  </div>
+  <a href="/blog">
+    {% include image.html img="/images/blog_icon.jpg"
+      title="Image by Javier Ferreiro - https://www.flickr.com/photos/dekuwa/5983723237, available under Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (https://creativecommons.org/licenses/by-nc-sa/2.0/)"
+      caption="Blog" %}
+  </a>
 </div>
