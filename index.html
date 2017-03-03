@@ -6,6 +6,23 @@ layout: default
   <a href="/blog">
     {% include image.html img="/images/blog_icon.jpg"
       title="Image by Javier Ferreiro - https://www.flickr.com/photos/dekuwa/5983723237, available under Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic (https://creativecommons.org/licenses/by-nc-sa/2.0/)"
-      caption="Blog" %}
+      caption="Blog Posts" %}
   </a>
+</div>
+
+<div id="latest-post">
+  <h1 class="page-heading">Latest post</h1>
+  
+  {% assign post = site.posts.first %}
+  {% assign content = post.content %}
+  <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+  <h2>{{ post.title }}</h2>
+  {{ post.content }}
+</div>
+
+<div class="horizontal-rule"></div>
+
+<div id="more-posts-link">
+  <a class="page-heading" href="/blog">View all posts</a>
 </div>

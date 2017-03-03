@@ -113,6 +113,10 @@ a {
     }
 }
 
+.black-page-link {
+    color: $text-color;
+}
+
 
 
 /**
@@ -212,4 +216,17 @@ pre {
             fill: $grey-color;
         }
     }
+}
+
+
+
+/**
+ * Page Dividers
+ */
+.horizontal-rule {
+    padding-bottom: 17px;
+    padding-top: 17px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 2px solid $grey-color;
 }
