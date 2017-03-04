@@ -21,7 +21,7 @@ I liked the fact that their website is easy to navigate and read, and provides a
 
 The LXLE Desktop home page: [http://lxle.net/](http://lxle.net/)
 
-![alt-text](/images/20160515_lxlewebsite.png "Screenshot of the LXLE Linux home page")
+![alt-text](/images/20160515_lxlewebsite.jpg "Screenshot of the LXLE Linux home page")
 
 It uses more resources than distributions that aim to be able to run on antiquated systems with very limited memory such as Puppy Linux and Crunchbang, and is comparable to Lubuntu, which is still on the light and speedy end of the spectrum.  I've found Lubuntu to be very suitable for netbooks or lower-spec desktops that are struggling to continue running Windows XP.
 
@@ -45,7 +45,7 @@ The volume and network icons are easily recognizable, and CPU and RAM usage is d
 
 As has been widely remarked, LXLE comes with 100 very attractive wallpapers, and you can click on a task bar icon to switch to a new wallpaper.  I couldn't help but enjoy this feature, and spent some time looking through desktop wallpapers like I might on Wallbase or WallHaven.  Similar features can be manually added to any other distribution, but it's a nice touch, and good marketing as more people try out the distribution.
 
-![alt-text](/images/20160515_lxle_screen.png "One of the pre-installed LXLE wallpapers")
+![alt-text](/images/20160515_lxle_screen.jpg "One of the pre-installed LXLE wallpapers")
 
 It comes with a number of software applications pre-installed, including the full LibreOffice suite, Audacity, RecordMyDesktop, GIMP, BleachBit, Seamonkey, KeePassX, and a number of miscellaneous games.
 

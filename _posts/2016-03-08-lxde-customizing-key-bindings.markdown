@@ -79,7 +79,7 @@ We can use the xev tool to help with this.
 
 Once we run "xev", it will generate a small window which will capture our following key sequences.  When we're done we can close that window to end the xev session.
 
-![alt-text](/images/20160308_xevrunning.png "Picture of the xev tool running")
+![alt-text](/images/20160308_xevrunning.jpg "Picture of the xev tool running")
 
 Using this tool I was able to determine that Fn+F9, Fn+F10 and Fn+F11 translate to "XF86AudioLowerVolume", "XF86AudioRaiseVolume" and "XF86AudioMute" for my computer.
 
