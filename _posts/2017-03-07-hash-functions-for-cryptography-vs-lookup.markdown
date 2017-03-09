@@ -3,6 +3,7 @@ layout: post
 title:  "Hash functions for cryptography versus look-up"
 date:   2017-03-07 20:00:00 -0800
 categories: security
+excerpt: "A hash function accepts an arbitrary sequence of bits, such as a string or file, and outputs a corresponding sequence of bits of fixed size.  This output is known as the \"hash\" of the input."
 ---
 
 ## Hash functions and why we use them
