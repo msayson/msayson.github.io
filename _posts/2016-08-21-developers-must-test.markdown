@@ -3,7 +3,7 @@ layout: post
 title:  "Developers must test"
 date:   2016-08-21 20:30:00 -0800
 categories: software-development
-excerpt: "Software developers must test their own software.  There's no way around it, and especially no \"but Quality Assurance does that for us.\""
+excerpt: "<p>Software developers must test their own software.  There's no way around it, and especially no \"but Quality Assurance does that for us.\"</p>"
 redirect_from: "/software-development/2016/08/22/developers-must-test"
 ---
 
