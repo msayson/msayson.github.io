@@ -102,26 +102,26 @@ It's notoriously difficult to develop cryptographic algorithms without subtle de
 ## General-purpose cryptographic hash functions
 
 ### SHA-2: The current standard
-SHA-2 is a general-purpose hashing algorithm that can be set to different hash space sizes.  It's currently irreversible in practice and collision-resistant, as well as very efficient.
+[SHA-2](https://en.wikipedia.org/wiki/SHA-2) is a general-purpose hashing algorithm that can be set to different hash space sizes.  It's currently irreversible in practice and collision-resistant, as well as very efficient.
 
 SHA-256 and SHA-512 are the common names for SHA-2 when set to use 256 or 512 bits for its hashes.  They are much stronger than older hash functions such as SHA-1 and MD5, and still fast at computing hashes.  Both are considered "unbreakable" until proven otherwise, and SHA-256 is likely enough for many applications.
 
 ### SHA-3: A back-up standard
-SHA-3 has its own SHA3-256, SHA3-512, etc, variants and was published as the next-generation standard in 2015 but isn't yet supported by all devices and services.
+[SHA-3](https://en.wikipedia.org/wiki/SHA-3) has its own SHA3-256, SHA3-512, etc, variants and was published as the next-generation standard in 2015 but isn't yet supported by all devices and services.
 
 SHA-3 isn't necessarily stronger than SHA-2, but was developed as a back-up algorithm in case weaknesses to SHA-2 are discovered in the future.
 
 ## Cryptographic hash functions for passwords
 
 ### PBKDF2
-For scenarios such as login authentication, PBKDF2 is preferrable over basic SHA-X algorithms and was endorsed by the [US National Institute of Standards and Technology (NIST) in 2010](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf).  It's been thoroughly vetted and still holds up as a solid choice.
+For scenarios such as login authentication, [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) is preferrable over basic SHA-X algorithms and was endorsed by the [US National Institute of Standards and Technology (NIST) in 2010](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-132.pdf).  It's been thoroughly vetted and still holds up as a solid choice.
 
 PBKDF2 takes a hash function, password, salt, number of iterations, and desired key length as its parameters, allowing developers to configure it for their use case.  Higher iteration counts slow down hash calculations more.
 
 Since PBKDF2 doesn't consume much memory, it's possible to use GPUs to speed up offline reversal attempts in the same way as SHA-X and other simple hash functions.  Other password hash functions now try to use more memory to mitigate such attacks.
 
 ### Other password hash functions
-BCrypt and SCrypt are alternatives that are specifically designed to make it more difficult to use GPUs to speed up attacks.  SCrypt also intentionally uses a large amount of memory to mitigate RAM attacks.
+[BCrypt](https://en.wikipedia.org/wiki/Bcrypt) and [SCrypt](https://en.wikipedia.org/wiki/Scrypt) are alternatives that are specifically designed to make it more difficult to use GPUs to speed up attacks.  SCrypt also intentionally uses a large amount of memory to mitigate RAM attacks.
 
 A [Password Hashing Competition](https://password-hashing.net/) which completed in 2015 recommended Argon2 as a future password hash function, and time will tell whether it will supercede earlier algorithms.
 
