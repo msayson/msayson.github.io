@@ -10,9 +10,9 @@ excerpt: "<p>A hash function accepts an arbitrary sequence of bits, such as a st
 
 A hash function accepts an arbitrary sequence of bits, such as a string or file, and outputs a corresponding sequence of bits of fixed size.  This output is known as the "hash" of the input.
 
-Why is this helpful?  If you can work on fixed-length strings instead of files, you can compare files extremely quickly without having to read the whole file each time.  Hashes are typically small compared to their input counterparts, and are inexpensive to store or keep in memory.
+Why is this helpful?  If you can work on fixed-length strings instead of files, you can compare files extremely quickly without having to read the whole file each time.  Hashes are typically small compared to their input counterparts, and therefore less expensive to store or keep in memory.
 
-Because many hash functions are very fast at computing hashes, they are used in a large number of algorithms and data structures.  In hash tables and caches, the hash function maps inputs to table indices to yield constant-time look-up and comparison of entries.
+Because many hash functions are very fast at computing hashes, they are used in a large number of algorithms and data structures.  In hash tables and caches, the hash function maps inputs to table indices to yield constant-time look-up and equality comparison of entries.
 
 ## Hash function collisions
 
@@ -27,7 +27,7 @@ boolean hash(string input) {
 }
 ```
 
-This hash has the set of all strings as its input set, and the set of boolean values as its output set.  All odd-length strings will hash to True, so we will have collisions.  In general, *any* hash function that has fewer possible outputs than inputs will have collisions.
+This hash has the set of all strings as its input set, and the set of boolean values as its output set.  Clearly, we will have collisions, even if we only receive three inputs.  In general, *any* hash function that has fewer possible outputs than inputs will have collisions.
 
 ## Approaches for handling collisions
 
@@ -37,13 +37,13 @@ If our algorithm doesn't need to assume that hashes correspond to single values,
 
 ### Approach 2: Check for collisions and manage them
 
-If we require no more than one value per hash and don't want to overwrite previous values, we'll have to check additional properties of our input.  For example, we may check a file's name and size in addition to its hash.  This doesn't guarantee equality, but makes it less likely for us to accidentally overwrite or access the wrong file.
+If we require values to have unique hashes, we'll have to check additional properties of our input.  For example, we might check a file's name and size as well as its hash.  This doesn't guarantee equality, but makes us less likely to accidentally overwrite or access the wrong file.
 
 We can then check for collisions before adding files, and either prevent a collision from entering the system or update our hash function to use a larger hash space and update all of our hashes (a fairly expensive operation which may not always help).
 
 ### Approach 3: Don't handle collisions
 
-If we don't do anything to handle collisions, then we will simply end up mapping multiple data entries to the same hash value, which can have the following side effects:
+If we don't do anything to handle collisions, then we'll simply end up mapping multiple data entries to the same hash value, which can have the following side effects:
 
 - Overwriting data unintentionally
 - Passing the wrong data to users
@@ -51,13 +51,13 @@ If we don't do anything to handle collisions, then we will simply end up mapping
 - Unexpected logical errors in code
   -- Eg. [SVN repositories have been corrupted](http://www.csoonline.com/article/3174793/security/sha-1-collision-can-break-svn-code-repositories.html) by passing in two files with the same hash
 
-Some applications don't have to worry about collisions, because there don't exist collisions for the range of inputs they need to handle.  Not all applications can take this for granted.
+Some applications don't need to worry about collisions because collisions don't exist for the range of inputs they handle.  Not all applications can take this for granted.
 
 ## Properties of good hash functions
 
-- Deterministic: A given input should always produce the same output.  This is required for almost all algorithms that use hash functions to work.
+- Deterministic: A given input should always produce the same output.  This is required by almost all algorithms that use hash functions.
 - Uniform: Every possible hash should have a similar probability of being produced for a random input.  This isn't strictly necessary, but reduces clustering of collisions.
-- Appropriate range: A hash function should have an output size appropriate for the task, with a large enough hash space for applications that need to handle many unique inputs.
+- Appropriate range: A hash function should have a large enough hash space to handle all the unique inputs the application will receive.
 
 ## Properties of good look-up hash functions
 
@@ -80,13 +80,13 @@ Cryptographic applications particularly benefit from hash functions that make co
 
 Some applications only require the weaker property that given a *particular* input and its hash, it should be impractical to find a second input that hashes to the same value.
 
-Hashes are often used to verify files, authenticate individuals and services, and prove knowledge of a set of information, so it's important that a hash be difficult to produce with "incorrect" or different data.
+Hashes are often used to verify files, authenticate individuals and services, and prove knowledge of information, so it's important that a hash be difficult to produce with "incorrect" data.
 
 Collision resistance is often prioritized over speed and efficient resource management.
 
 - (For password hash functions) As slow as acceptable: Unlike look-up functions, hash functions that are used to verify a person's identity often try to increase the time and memory required to compute a hash.
 
-While this may seem surprising at first, it discourages third parties from trying to "brute-force" their way through authentication, and makes it much more expensive for a third party to use their own resources to break hashes.  This property ties in with practical irreversibility.
+While it may seem surprising to intentionally slow down an algorithm, this discourages unauthorized individuals from trying to brute-force their way through authentication.  It also makes it more expensive for third parties to use their own resources to iterate through hash calculations to find matches to known hashes.  This property ties in with practical irreversibility.
 
 If it's acceptable for a login attempt to take 3 seconds, then it should take 3 seconds.  This means that a million guesses will take 10^6 guesses * (3s/guess) * (1m/60s) * (1h/60m) * (1d/24h) = 34 days.  If a billion guesses are required on average, this attack will be impractical for the average person.
 
@@ -104,7 +104,7 @@ It's notoriously difficult to develop cryptographic algorithms without subtle de
 ### SHA-2: The current standard
 [SHA-2](https://en.wikipedia.org/wiki/SHA-2) is a general-purpose hashing algorithm that can be set to different hash space sizes.  It's currently irreversible in practice and collision-resistant, as well as very efficient.
 
-SHA-256 and SHA-512 are the common names for SHA-2 when set to use 256 or 512 bits for its hashes.  They are much stronger than older hash functions such as SHA-1 and MD5, and still fast at computing hashes.  Both are considered "unbreakable" until proven otherwise, and SHA-256 is likely enough for many applications.
+SHA-256 and SHA-512 are the common names for SHA-2 when set to use 256- or 512-bit hashes.  They're much stronger than older hash functions such as SHA-1 and MD5, and are still fast.  Both are considered "unbreakable" until proven otherwise, and SHA-256 is likely enough for many applications.
 
 ### SHA-3: A back-up standard
 [SHA-3](https://en.wikipedia.org/wiki/SHA-3) has its own SHA3-256, SHA3-512, etc, variants and was published as the next-generation standard in 2015 but isn't yet supported by all devices and services.
