@@ -121,7 +121,7 @@ PBKDF2 takes a hash function, password, salt, number of iterations, and desired 
 Since PBKDF2 doesn't consume much memory, it's possible to use GPUs to speed up offline reversal attempts in the same way as SHA-X and other simple hash functions.  Other password hash functions now try to use more memory to mitigate such attacks.
 
 ### Other password hash functions
-[BCrypt](https://en.wikipedia.org/wiki/Bcrypt) and [SCrypt](https://en.wikipedia.org/wiki/Scrypt) are alternatives that are specifically designed to make it more difficult to use GPUs to speed up attacks.  SCrypt also intentionally uses a large amount of memory to mitigate RAM attacks.
+[BCrypt](https://en.wikipedia.org/wiki/Bcrypt) and [SCrypt](https://en.wikipedia.org/wiki/Scrypt) are alternatives that are specifically designed to make it more difficult to use GPUs to speed up offline attacks (when a third party has obtained your user database).  SCrypt also intentionally uses a large amount of memory to mitigate offline RAM attacks.
 
 A [Password Hashing Competition](https://password-hashing.net/) which completed in 2015 recommended Argon2 as a future password hash function, and time will tell whether it will supercede earlier algorithms.
 
