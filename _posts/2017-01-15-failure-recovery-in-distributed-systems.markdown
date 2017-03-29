@@ -12,7 +12,7 @@ It's very education to identify the distinct roles in a system, and ask for each
 
 There are several types of failures that come up in practise, including but not restricted to the following.
 
-* Network failures: participants are still running, but the connection between two or more is lost, or one or more messages are dropped before reaching the the recipient.  Some systems may also have issues with unexpected delays in message delivery.
+* Network failures: participants are still running, but the connection between two or more is lost, or one or more messages are dropped before reaching the recipient.  Some systems may also have issues with unexpected delays in message delivery.
 * Crash failures: a participant shuts down unexpectedly.  This can occur as a result of application or environment errors, or simply a loss of power.
 * Byzantine failures: a participant may act arbitrarily.  This may be due to an adversary taking control of a server, after which they may actively attempt to undermine the system.  Byzantine failures remain an open research area, and are often difficult to handle unless the system was explicitly designed with potentially compromised participants in mind.
 * Simultaneous or repeated failures: these are somewhat meta-failures, in which multiple participants fail at the same time, or a single participant experiences recurring failures.
