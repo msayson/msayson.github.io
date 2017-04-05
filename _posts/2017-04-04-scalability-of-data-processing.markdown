@@ -77,11 +77,13 @@ The shared memory model works well for a single machine with multiple data proce
 
 What if we have too much work for a single machine to take on, or we want to chain machines together to spread processing stages across a network?
 
-We can use our earlier model to implement nodes that each have a self-contained structure, and the input/output processes can now act as proxies to other services.
+We can use our earlier model to implement nodes that each have a self-contained structure.
 
 ![alt text](/images/20170404_distributedCommunication.png "Distributed extension, in which multiple self-contained data processing nodes may send results to one another across a network")
 
-We retain the scalability and fault tolerance of individual nodes, which are able to fully utilize their processes.  Multiple processes on either end of the network are able to deliver and pick up work to ensure healthy throughput for varying frequencies of input messages.
+We can use the input process of a downstream node as a lightweight proxy that accepts and passes messages to its node's shared memory.  This reduces the risk of it acting as a bottleneck, while allowing us to distribute work efficiently.
+
+We retain the scalability and fault tolerance of individual nodes, which are able to fully utilize their output processes.  Multiple nodes can be set up to pick up work to ensure healthy throughput for varying frequencies of input messages.
 
 We can extend and modify these models to produce resilient and scalable systems.
 
