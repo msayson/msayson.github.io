@@ -25,7 +25,7 @@ The traditional model of process communication is in which one process makes a d
 
 ![alt text](/images/20170404_singleSocket.jpg "Sending data from one process to another through a socket")
 
-This strategy is simple and easy to implement, but has a few design flaws that limit its utility in systems that require high throughputs.
+This strategy is simple and easy to implement, but has a few design flaws that limit its throughput.
 
 1. Data processing rates are limited by the performance of Process B.
 
@@ -41,7 +41,7 @@ This strategy is simple and easy to implement, but has a few design flaws that l
 
 ![alt text](/images/20170404_singleSocketWithLocalBuffers.png "Sending data from one process to another through a socket, where each process has a local buffer")
 
-We can defer the socket overflow issue by maintaining local buffers in A and B.  This will allow A to continue working until each of the buffers have filled, but only buys us time in the case that B is less efficient than A.
+Maintaining local buffers in A and B allows A to continue working until the buffers have filled, but only buys us time in the case that B is less efficient than A.
 
 If we receive a large, continuous stream of data and B processes data slower than A, then we will eventually hit the same message overflow issue.
 
