@@ -39,7 +39,7 @@ If our algorithm doesn't need to assume that hashes correspond to single values,
 
 If we require values to have unique hashes, we'll have to check additional properties of our input.  For example, we might check a file's name and size as well as its hash.  This doesn't guarantee equality, but makes us less likely to accidentally overwrite or access the wrong file.
 
-We can then check for collisions before adding files, and either prevent a collision from entering the system or update our hash function to use a larger hash space and update all of our hashes (a fairly expensive operation which may not always help).
+We can then check for collisions before adding files, and either prevent a collision from entering the system, or update our hash function to use a larger hash space and update all of our hashes.
 
 ### Approach 3: Don't handle collisions
 
@@ -124,6 +124,8 @@ Since PBKDF2 doesn't consume much memory, it's possible to use GPUs to speed up 
 [BCrypt](https://en.wikipedia.org/wiki/Bcrypt) and [SCrypt](https://en.wikipedia.org/wiki/Scrypt) are alternatives that are specifically designed to make it more difficult to use GPUs to speed up offline attacks (when a third party has obtained your user database).  SCrypt also intentionally uses a large amount of memory to mitigate offline RAM attacks.
 
 A [Password Hashing Competition](https://password-hashing.net/) which completed in 2015 recommended Argon2 as a future password hash function, and time will tell whether it will supercede earlier algorithms.
+
+BCrypt, SCrypt, and Argon2 are all very reasonable options that improve on earlier password hash functions.  Note that in the event that a third party obtains access to your database, these algorithms will simply buy you time to ask your users to change their passwords, as the third party can run each user's salt against common passwords ('123456', 'password', 'qwerty', etc.).
 
 Whichever algorithms you end up using, use a standard library instead of implementing your own if possible.  Many security vulnerabilities have come out of developers [misusing cryptographic algorithms](http://www.infoworld.com/article/2940551/encryption/software-developers-are-failing-to-implement-crypto-correctly-data-reveals.html) or trying to make their own.
 
