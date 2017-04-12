@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "(LXDE) Adding user-specific start menu items"
-date:   2017-04-12 20:30:00 -0800
+date:   2017-04-11 20:30:00 -0800
 categories: linux
 ---
 
@@ -9,8 +9,8 @@ In this post we'll add a user-specific start menu item for an npm application, [
 
 To create a start menu item with a custom icon, we will:
 
-1. Create a local .desktop file that will define the start menu item
-2. Add an icon of our choice to the filepath we specified in the .desktop file
+1. Define the start menu item in a .desktop file
+2. Add an icon to the filepath specified in the .desktop file
 3. Refresh the start menu to view our changes
 
 The following steps were verified on Debian Linux "Stretch" with the LXDE desktop environment.  As such, they should apply to other Linux distributions using LXDE, and other environments such as KDE may differ in the commands or filepaths used.
@@ -45,13 +45,13 @@ The Icon field is optional; if you don't include it, then a default gear icon wi
 
 Start menu icons have standard dimensions of 48x48 pixels, so I resized the Pencil logo in advance.
 
-![alt text](/images/20170412_evoluspencillogo48x48.png "The image we'll use for the Evolus Pencil 3 start menu icon")
+![alt text](/images/20170411_evoluspencillogo48x48.png "The image we'll use for the Evolus Pencil 3 start menu icon")
 
 We'll add the icon to ~/.local/share/pixmaps/ since the application will be local to our user.
 
 {% highlight bash %}
 $ mkdir ~/.local/share/pixmaps
-$ cp 20170412_evoluspencillogo48x48.png ~/.local/share/pixmaps/
+$ cp 20170411_evoluspencillogo48x48.png ~/.local/share/pixmaps/
 {% endhighlight %}
 
 You can update your .desktop Icon fields at any point if you decide to change your start menu icons.
@@ -66,11 +66,11 @@ This command restarts the lxpanelctl utility, and updates the start menu to use 
 
 Under the start menu, Graphics, we now have a menu item for "Evolus Pencil v3".
 
-![alt text](/images/20170412_evoluspencil3startmenuitem.jpg "The Evolus Pencil 3 start menu icon and hover text")
+![alt text](/images/20170411_evoluspencil3startmenuitem.jpg "The Evolus Pencil 3 start menu icon and hover text")
 
 We can now start Evolus Pencil 3 from the start menu as well as from terminal.
 
-![alt text](/images/20170412_evolusPencil3.png "Running Evolus Pencil 3")
+![alt text](/images/20170411_evolusPencil3.png "Running Evolus Pencil 3")
 
 Resources:
 
