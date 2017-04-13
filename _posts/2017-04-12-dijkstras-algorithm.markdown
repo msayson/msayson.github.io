@@ -123,3 +123,4 @@ Resources:
 * Wikipedia article on Dijkstra's algorithm: [https://en.wikipedia.org/wiki/Dijkstra's_algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)
 * Notes from UBC CPSC 221, Basic Algorithms and Data Structures: [http://www.ugrad.cs.ubc.ca/~cs221/current/](http://www.ugrad.cs.ubc.ca/~cs221/current/)
 * Notes on Java implementations of Fibonacci heaps: [https://nlfiedler.github.io/2008/05/31/analysis-of-java-implementations-of-fibonacci-heap.html](https://nlfiedler.github.io/2008/05/31/analysis-of-java-implementations-of-fibonacci-heap.html)
+* An efficient Java implementation of Dijkstra's algorithm using a Fibonacci heap: [http://jgrapht.org/javadoc/org/jgrapht/alg/shortestpath/DijkstraShortestPath.html](http://jgrapht.org/javadoc/org/jgrapht/alg/shortestpath/DijkstraShortestPath.html)
