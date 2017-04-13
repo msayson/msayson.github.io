@@ -146,6 +146,18 @@
 /**
  * Page content
  */
+.home-large-section-icons {
+    text-align: center;
+
+    a {
+        display: inline-block;
+        max-width: 300px;
+        .image-wrapper img {
+            border: medium solid gray;
+        }
+    }
+}
+
 .page-content {
     padding: $spacing-unit 0;
 }
