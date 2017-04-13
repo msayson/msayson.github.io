@@ -71,18 +71,22 @@ We mark e as visited.  There are no further unvisited nodes, so Dijkstra's algor
 
 Base case: Dijkstra's algorithm finds the shortest path to the start node s, distance(s)=0.
 
-Inductive hypothesis: Assume that Dijkstra's algorithm finds the shortest path to the first k nodes it visits.
+Inductive hypothesis: Assume that distance(v) is the shortest distance from the start node to v for each of the first k nodes that Dijkstra's algorithm visits.  Assume that the first k nodes that Dijkstra's algorithm visits are the k closest nodes to the start node.
 
 Inductive step:
 Let u be the (k+1)-th node visited.  Then u is the unvisited node with the minimum distance value as set by the first k iterations of the while loop.
 
-Then distance(u) = min { distance(w), distance(v) + weight(v,w) }, where v is the visited node that minimizes this value.
+distance(u) = min { distance(w), distance(v) + weight(v,w) }, where v is the visited node that minimizes this value.  Therefore, Dijkstra's algorithm finds the shortest path P from the set of visited nodes to u.
 
-Therefore, Dijkstra's algorithm finds the shortest path from the set of visited nodes to u.
+Suppose that P is not the shortest overall path from the start node to u.  In that case, there must exist a shorter path to u such that some node t in the path is not in the set of visited nodes.
 
-Suppose that this path is not the shortest overall path from the start node to u.  In that case, there must exist a shorter path such that some node t in the path before u is not in the set of visited nodes.
+The k previously visited nodes are the k closest nodes to the start node.  Therefore, in order for Dijkstra's algorithm to visit u before t, it must be the case that distance(t) >= distance(v) for every v in the visited set.
 
-However, in order for Dijkstra's algorithm to visit u before t, it must be the case that distance(t) >= distance(v) for every v in the set of visited nodes.  This contradicts our initial assumption.  Therefore, Dijkstra's algorithm always finds the shortest path from the start node to the k-th node.
+u is the closest node to the visited set, therefore the shortest path from the visited set to t is no shorter than the shortest path from the visited set to u.  All edge weights are non-negative, and distance(t) >= distance(v) for every v in the visited set, therefore any path to u containing t is no shorter than P.
+
+Therefore, Dijkstra's algorithm always finds the shortest path from the start node to the (k+1)-th node visited.
+
+The first k iterations visit the k closest nodes to the start node, and the (k+1)-th iteration finds the shortest path from any subset of visited nodes to an unvisited node.  Therefore, the (k+1)-th iteration visits the (k+1)-th closest node to the start node.
 
 By induction, Dijkstra's algorithm always finds the shortest path from the start node to every other node.
 
