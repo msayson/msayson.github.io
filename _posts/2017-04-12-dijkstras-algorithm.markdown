@@ -57,7 +57,7 @@ We mark d as visited and update its neighbours' distances.
 
 Distances to unvisited nodes: e:17, f:17.
 
-The distances are equal, so we can chose either.  We mark f as visited and update its neighbours' distances.
+The distances are equal, so we can use either.  We mark f as visited and update its neighbours' distances.
 
 ![alt text](/images/20170412_dijkstraStep5.png "Example graph for Djikstra's algorithm, step 5")
 
