@@ -50,13 +50,13 @@ echo "PostgreSQL ready, starting Rails application..."
 bundle exec rails s -p 3000 -b '0.0.0.0'
 ```
 
-In theory this sounds reasonable, but I found that I kept on running into tcp errors in my builds due to the application container accessing the database container at the same time as the database queries.
+This seemed reasonable, but I found that builds kept on running into tcp errors due to the application container accessing the database container at the same time as the script's queries.  I had to keep increasing the initial wait time, which brings us back to an arbitrary fixed wait time.
 
 Instead, I looked at how we know when a Docker container is ready when we're running docker-compose locally.  What do we look for to indicate that containers are set up?
 
 ![alt text](/images/20170415_dockerComposeUpOutput.png "Console output from 'docker-compose up'")
 
-I don't know about you, but this is what I look for before running additional commands.  "Listening on tcp://0.0.0.0:3000", and "PostgreSQL init process complete; ready for start up."  Even if we start Docker in the background, say with ```docker-compose up --build -d```, can't we look at the same logs?
+This is what I look for before running additional commands.  "Listening on tcp://0.0.0.0:3000", and "PostgreSQL init process complete; ready for start up."  Even if we start Docker in the background, say with ```docker-compose up --build -d```, can't we look at the same logs?
 
 ```text
 $ docker-compose --help | grep log
@@ -118,7 +118,7 @@ waitUntilServiceIsReady dbIsReady "PostgreSQL"
 waitUntilServiceIsReady railsIsReady "Rails"
 ```
 
-This is the approach I'm using in my Travis CI builds, and it's worked very well so far, with none of the false failures I was seeing before and a minimal amount of required waiting time before tests are run.
+This is the approach I'm using in my Travis CI builds, and it's worked very well so far, with none of the false failures I was seeing before and a minimal amount of wait time before tests are run.
 
 Example of a test script that uses waitForContainerSetup.sh:
 
@@ -140,4 +140,10 @@ docker-compose down
 
 ![alt text](/images/20170415_travisCIWaitForDocker.png "Travis CI waiting for containers to be set up before running database migration and tests")
 
-Unlike earlier Travis CI builds that intermittently failed to access the database, this approach appears to be much more robust, allowing us to focus on real issues.
+This approach seems to be fairly robust.  It's mitigated my builds' intermittent database set up errors, allowing me to focus on development and tests.
+
+Resources:
+
+* Docker documentation: [https://docs.docker.com/](https://docs.docker.com/)
+* "docker-compose up" documentation: [https://docs.docker.com/compose/reference/up/](https://docs.docker.com/compose/reference/up/)
+* Travis CI documentation: [https://docs.travis-ci.com/](https://docs.travis-ci.com/)
