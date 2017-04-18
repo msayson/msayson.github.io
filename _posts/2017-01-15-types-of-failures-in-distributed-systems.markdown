@@ -1,14 +1,16 @@
 ---
 layout: post
-title:  "Failure recovery in distributed systems"
+title:  "Types of failures in distributed systems"
 date:   2017-01-15 18:00:00 -0800
 categories: distributed-systems
-redirect_from: "/distributed-systems/2017/01/16/failure-recovery-in-distributed-systems"
+redirect_from:
+  - "/distributed-systems/2017/01/16/failure-recovery-in-distributed-systems"
+  - "/blog/failure-recovery-in-distributed-systems/"
 ---
 
 Failure recovery is an interesting problem in many applications, but especially in distributed systems, where there may be multiple devices participating and multiple points of failure.
 
-It's very education to identify the distinct roles in a system, and ask for each one, "What would happen if *that* part of the system failed?"
+It's very educational to identify the distinct roles in a system, and ask for each one, "What would happen if *that* part of the system failed?"
 
 There are several types of failures that come up in practise, including but not restricted to the following.
 
