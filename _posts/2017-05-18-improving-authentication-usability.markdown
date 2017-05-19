@@ -17,7 +17,7 @@ For instance, we're seeing more experimentation with authentication methods that
 
 * OAuth providers such as Google, GitHub, and Facebook encourage third parties to leverage their services.  This removes the need for companies like Quora and Meetup to reinvent the wheel, and for users to manage additional passwords.
 
-  * [Authentiq](https://www.authentiq.com/) takes OAuth further by allowing the user to use a phone app to authenticate online log-ins, without ever needing a password.  This is a promising but young product currently on iPhones and under development for Android.
+  * [Authentiq](https://www.authentiq.com/) takes OAuth further by allowing the user to use a phone app to authenticate online log-ins, without ever needing a password.  This is a promising but young product currently supported for iPhones and under development for Android.
 
 * Pattern locks are sometimes used in cell phones in place of character passwords.  Many patterns are fairly [simple or commonly used](http://www.popularmechanics.com/technology/security/a17015/common-android-pattern-password/), so these may be much less secure than passwords in practise.
 
