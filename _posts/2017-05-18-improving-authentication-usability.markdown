@@ -31,7 +31,7 @@ Fortunately, there are ways to improve both the usability and the security of us
 
 ### Improvements and alternatives to passwords
 
-* Password managers such as KeePassX and LastPass make it easier to securely store passwords for any number of services.  This encourages unique, stronger passwords to be used.
+* Password managers such as KeePass and LastPass make it easier to securely store passwords for any number of services.  This encourages unique, stronger passwords to be used.
 
 * OAuth providers such as Google, GitHub, and Facebook encourage third parties to leverage their services.  This removes the need for companies like Quora and Meetup to reinvent the wheel, and for users to manage additional passwords.
 
@@ -39,6 +39,10 @@ Fortunately, there are ways to improve both the usability and the security of us
 <br><br>
 * Pattern locks are sometimes used in cell phones in place of character passwords.  Many patterns are fairly [simple or commonly used](http://www.popularmechanics.com/technology/security/a17015/common-android-pattern-password/), so these may be much less secure than passwords in practise.
 
+* Physical tokens are used by some companies in combination with another form of authentication.
+  * [RSA SecurID](https://en.wikipedia.org/wiki/RSA_SecurID) is a one-time passcode generator that is still used by some financial institutions.
+  * USB keys are another option, however, [not everyone thinks that they're a good idea](https://www.secsign.com/usb-authentication-keys-tokens-bad-idea/) given the vulnerabilities inherent to USB devices.
+<br><br>
 * Biometric authentication is making its way to desktops and mobile devices.  Current methods are often biased towards false positives to avoid locking out legitimate users, but are improving.
 
   * Fingerprint recognition is becoming more common, with Apple Touch ID leading the way.  There have been [successful attacks on fingerprint scanners](https://arstechnica.com/security/2013/09/defeating-apples-touch-id-its-easier-than-you-may-think/) that use a photocopy of fingerprints from a smooth surface, one of the earliest of which used [gummy bears](https://www.theregister.co.uk/2002/05/16/gummi_bears_defeat_fingerprint_sensors/).
