@@ -11,19 +11,19 @@ excerpt: "<p>Usable security has become a more explicit goal, now that we've rec
 
 In this decade, usability is king, and for good reason.  If a user can't figure out how to install a product or accomplish their primary task within a few minutes, then you've lost a potential customer.
 
-We implicitly understand this as software users, and are starting to get it as developers.  Complex designs, unnecessary customizations, and long sequences of user actions are now being trimmed in favour of cleaner, more streamlined interfaces.  Usability testing is coming into its own as a part of the iterative development process.
+We implicitly understand this as software users, and we're starting to get it as developers.  Complex designs, unnecessary customizations, and long sequences of user actions are now being trimmed in favour of cleaner, more streamlined interfaces.  Usability testing is coming into its own as a part of the development process.
 
-Usability is just as important in the security sector, as we know that tools that are too challenging to use [will not be widely accepted](https://medium.com/local-voices-global-change/what-good-are-secure-communications-tools-if-no-one-uses-them-690ce2bdf9ec), no matter their utility.  Likewise, users who are annoyed by onerous processes will look for ways to bypass them, rendering them moot.
+Usability is just as important in the security sector, as we know that tools that are too challenging to use [will not be widely accepted](https://medium.com/local-voices-global-change/what-good-are-secure-communications-tools-if-no-one-uses-them-690ce2bdf9ec), no matter their utility.  Likewise, users who are annoyed by onerous processes will look for ways to bypass them.
 
 ### How has the security field evolved with respect to usability?
 
 Usable security has become a more explicit goal in the industry, and has become a mainstay at security conferences as more companies have taken an interest.  We can see many of the results already.
 
-Full-disk encryption can now be easily enabled on many desktops and mobile devices, many cloud storage services offer automatic backups, mobile apps such as Signal promote secure communication, and we're seeing more experimentation with authentication methods that make passwords easier to use, or that do away with them entirely.
+Full-disk encryption can now be easily enabled on many desktops and mobile devices, many cloud storage services offer automatic backups, mobile apps like Signal promote secure communication, and we're seeing more experimentation with authentication methods that make passwords easier to use, or do away with them entirely.
 
 ### What's wrong with traditional authentication?
 
-The traditional approach to authentication is to have a user choose their own user ID and password for every new service.  We already know that this is a bad idea.  It's difficult to remember a large number of unique passwords, so people end up using simple passwords and sharing them across accounts.
+The traditional approach to authentication is to have the user choose their own user ID and password for each service.  We already know that this is a bad idea.  It's difficult to remember a large number of unique passwords, so people end up using simple passwords and sharing them across accounts.
 
 Worse, these accounts often share identifying information about the person such as their name and email address, so if one website's passwords are leaked, the security of other services are affected.
 
