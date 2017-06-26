@@ -88,6 +88,34 @@ li {
 
 
 /**
+ * Tables
+ */
+.small-table {
+     border-collapse: collapse;
+     margin-bottom: 15px;
+
+     > table, td, th {
+         font-size: 15px;
+         padding-left: 8px;
+         padding-right: 8px;
+     }
+}
+
+.small-borderless-table {
+     @extend .small-table;
+}
+
+.small-bordered-table {
+     @extend .small-table;
+
+     > table, td, th {
+         border: 1px solid black;
+     }
+}
+
+
+
+/**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
