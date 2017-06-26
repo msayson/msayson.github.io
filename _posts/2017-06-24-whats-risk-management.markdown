@@ -3,6 +3,7 @@ layout: post
 title:  "What's risk management?"
 date:   2017-06-24 19:00:00 -0800
 categories: security
+excerpt: "<p>Risk management is one of the topics covered in the introductory computer security course at UBC, and it's relevant to many other fields including finance, engineering, and project management.</p><p>The main idea is simple: when there are many high-value assets, or many risks that may not be easily solved, an effective approach is to identify all of the risks and evaluate their impact and likelihood in order to prioritize them and determine appropriate countermeasures.</p>"
 ---
 
 Risk management is one of the topics covered in the introductory computer security course at UBC, and it's relevant to many other fields including finance, engineering, and project management.
@@ -110,7 +111,7 @@ Below is a simple qualitative risk level table.
 | <b>High Likelihood</b> | Medium Risk | High Risk | Critical Risk |
 {:.small-bordered-table}
 
-### Conclusion
+### Summary
 
 A typical risk assessment consists of:
 
@@ -118,7 +119,6 @@ A typical risk assessment consists of:
 * Assessing which threat-vulnerability pairs provide relevant threat actions
 * Determining the impact and likelihood of each threat action
 * Calculating each threat actions's risk level as impact X likelihood
-* Prioritizing work by risk level and monitoring risk levels over time
 
 Determining the impact and likelihood of threat actions can be difficult without accurate data, but qualitative scales can yield ranks that are reasonable for our purpose.
 
