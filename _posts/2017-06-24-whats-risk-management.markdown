@@ -128,8 +128,8 @@ Helpful resources:
 
 * [IEEE Computer Society’s Center for Secure Design](https://cybersecurity.ieee.org/center-for-secure-design)
 * [OWASP Top 10 Application Security Risks](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
-* <a target="_blank" href="https://www.amazon.com/gp/product/1420063804/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1420063804&linkCode=as2&tag=masblog0c-20&linkId=8f7fcccbd311d41a0d308d5f035e3879">Security Software Development: Assessing and Managing Security Risks, by Douglas Ashbaugh</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=masblog0c-20&l=am2&o=1&a=1420063804" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />\*
-* <a target="_blank" href="https://www.amazon.com/gp/product/0321356705/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=0321356705&linkCode=as2&tag=masblog0c-20&linkId=274bd8088d023e0632bee5206038ecda">Software Security: Building Security In, by Gary McGraw</a><img src="//ir-na.amazon-adsystem.com/e/ir?t=masblog0c-20&l=am2&o=1&a=0321356705" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />\*
+* <a target="_blank" href="https://www.amazon.com/gp/product/1420063804/ref=as_li_tl?ie=UTF8&tag=masblog0c-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1420063804&linkId=78d62188804e1a4ec318be21c11b2e06">Security Software Development: Assessing and Managing Security Risks, by Douglas Ashbaugh</a>\*
+* <a target="_blank" href="https://www.amazon.com/gp/product/0321356705/ref=as_li_tl?ie=UTF8&tag=masblog0c-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0321356705&linkId=41035ec6c1a8dab889475358b0afce38">Software Security: Building Security In, by Gary McGraw</a>\*
 * [UBC CPEN 442 Introduction to Computer Security](http://courses.ece.ubc.ca/cpen442/syllabus/index.html), taught by Konstantin Beznosov
 
 <div style="font-size: 14px">*We are a participant in the Amazon Associates Program, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon and affiliated sites.</div>
