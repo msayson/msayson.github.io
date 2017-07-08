@@ -18,7 +18,7 @@ In a Human Resources department, risks may include unexpected staff departures, 
 
 For example, suppose we identify a few individuals without which our department would collapse.  If they're engaged in their work but we expect other companies to court them, then we might rate the impact of one of their departures as high and the likelihood as medium.  We've identified a potential point of failure, and can look for ways to improve our organization's robustness.
 
-In parallel to any employee retention strategies, we can move forward by encouraging subject experts to mentor other promising employees, assigning tasks to a more varied set of people so that specialized knowledge spreads across the team, and encouraging basic documentation so that new team members can easily ramp up.
+In parallel to any employee retention strategies, we can encourage subject experts to mentor other promising employees, assign tasks to a more varied set of people so that specialized knowledge spreads across the team, and encourage basic documentation so that new team members can easily ramp up.
 
 If these measures go into practise, we expect the impact of individual employee departures to shift to a manageable level, decreasing the overall risk of such events.
 
@@ -26,17 +26,15 @@ If these measures go into practise, we expect the impact of individual employee 
 
 Many modern software applications are web-based and interact with many users and external services.  This wider attack surface increases the potential for vulnerabilities that may be exploited, and security incidents can often have a [high financial cost](https://securityintelligence.com/media/2016-cost-data-breach-study) if they disrupt business operations or impact user data.
 
-Security is of growing importance to businesses of all sizes, as [many attackers are starting to target small businesses](https://www.theguardian.com/small-business-network/2016/feb/08/huge-rise-hack-attacks-cyber-criminals-target-small-businesses) with the perception that they will be a "soft" target.
-
 For large systems, it's often impractical to find and fix every possible vulnerability.  However, it's still possible to track and manage many of the risks.
 
-Moreover, when we have a means for measuring the risk of a given event before and after a safeguard is put into place, we can better judge which safeguards are worth implementing.
+When we're able to measure an event's risk level before and after implementing a safeguard, we can also better judge which safeguards are most worthwhile.
 
 ### Identifying assets
 
-The first step in any risk analysis is to identify the assets in the system.  These may include physical resources, services, intellectual property, and various types of company and user data.
+The first step in any risk analysis is to identify the critical assets.  These may include physical resources, services, intellectual property, and various types of company and user data.
 
-We can identify assets by brainstorming with team representatives, reviewing organizational documents such as system architecture and data flow diagrams, or referencing lists from similar projects or information security sites.  This doesn't have to take long, and the simple act of recognizing the items of value improves your chances of designing a system that appropriately protects them.
+We can identify assets by brainstorming with team representatives, reviewing organizational documents such as system architecture and data flow diagrams, and referencing lists from similar projects and security websites.  This doesn't have to take long, and the simple act of recognizing the items of value improves our chances of adequately protecting them.
 
 For example, we may consider the following assets for an ATM bank machine:
 
@@ -51,7 +49,7 @@ For example, we may consider the following assets for an ATM bank machine:
 
 ### Identifying threats
 
-Threats are any source of danger to the organization, and can be categorized as business-oriented or system-oriented, or by the nature of the source: human, technical, or environmental.  Threats can be targeted or untargeted, and deliberate or unintentional.
+Threats are any source of danger to the organization, both business-oriented and system-oriented.  Threats can be human, technical, or environmental, targeted or untargeted, and deliberate or unintentional.
 
 Business threats affect underlying business operations or resources, and often arise from unexpected system states or interactions.  For example, incorrect client information may result in a missed contract.
 
@@ -80,9 +78,9 @@ The [IEEE Computer Society’s Center for Secure Design](https://cybersecurity.i
 
 ### Determining risk levels
 
-Once we've identified our system's threats and vulnerabilities, we can cross-reference the two lists to produce applicable threat-vulnerability pairs and their corresponding threat actions.
+Once we've identified our system's potential threats and vulnerabilities, we can join the two lists to produce relevant threat-vulnerability pairs and their corresponding threat actions.
 
-For example, consider a third party who may listen to network traffic (threat), and an authentication process that transmits user credentials in plain text (vulnerability).  A clear threat action would be for a third party to eavesdrop on user logins, which would give them the credentials of users who log in on the same network.
+For example, consider a third party who may listen to network traffic (threat), and an authentication process that transmits user credentials in plain text (vulnerability).  A matching threat action would be for the third party to eavesdrop on authentication traffic, giving them access to the credentials of users on the same network.
 
 #### How should we determine the risk level of each threat action?
 
