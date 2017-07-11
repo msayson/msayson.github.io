@@ -3,12 +3,14 @@ layout: post
 title:  "What's risk management?"
 date:   2017-06-24 19:00:00 -0800
 categories: security
-excerpt: "<p>Risk management is one of the topics covered in the introductory computer security course at UBC, and it's relevant to many other fields including finance, engineering, and project management.</p><p>The main idea is simple: when there are many high-value assets, or many risks that may not be easily solved, an effective approach is to identify all of the risks and evaluate their impact and likelihood in order to prioritize them and determine appropriate countermeasures.</p>"
+excerpt: "<p>Risk management is one of the topics covered in the introductory computer security course at UBC, and it's relevant to many other fields including finance, engineering, and project management.</p><p>The main idea is simple: when a project involves high-value assets, an effective approach is to identify all of the relevant risks and evaluate their impact and likelihood in order to prioritize them and determine appropriate countermeasures.</p>"
 ---
 
 Risk management is one of the topics covered in the introductory computer security course at UBC, and it's relevant to many other fields including finance, engineering, and project management.
 
-The main idea is simple: when there are many high-value assets, or many risks that may not be easily solved, an effective approach is to identify all of the risks and evaluate their impact and likelihood in order to prioritize them and determine appropriate countermeasures.
+The main idea is simple: when a project involves high-value assets, an effective approach is to identify all of the relevant risks and evaluate their impact and likelihood in order to prioritize them and determine appropriate countermeasures.
+
+For new projects, one of the best ways to head off issues is to integrate security requirements into the development process, along with the traditional approach of periodically performing risk assessments and risk mitigation.
 
 This post draws from my notes from Security Software Development: Assessing and Managing Security Risks (Ashbaugh), Software Security: Building Security In (McGraw), and UBC CPEN 442 Introduction to Computer Security (Beznosov).
 
@@ -82,17 +84,13 @@ Once we've identified our system's potential threats and vulnerabilities, we can
 
 For example, consider a third party who may listen to network traffic (threat), and an authentication process that transmits user credentials in plain text (vulnerability).  A matching threat action would be for the third party to eavesdrop on authentication traffic, giving them access to the credentials of users on the same network.
 
-#### How should we determine the risk level of each threat action?
+Traditionally, risk level is calculated as the impact times the likelihood of the threat action.
 
-The impact of a threat action to the business is an important part of our risk level.  How much would the threat action cost the business?  Would the damage be recoverable or not?
-
-Also important is the likelihood of the threat action being carried out.  If there's no motivation for a person to exploit a vulnerability, or the event is highly unlikely to occur, this reduces our risk level.
-
-Common risk assessment methods state risk level as the impact times the likelihood of the threat action.  This rates threat actions by their expected damage per unit of time.
-
-<b>Risk level = Impact X Likelihood</b>
+<b>Risk level = Impact × Likelihood</b>
 
 Therefore, a threat action that we expect to cause $1000 of damage/occurrence and occur 1000 times/year will be considered just as important as a once-a-year event that causes $1M of damage.
+
+### Qualitative vs Quantitative Approaches
 
 Either qualitative or quantitative approaches can be used for risk assessments, depending on how much relevant and accurate data is available, and how important precise risk levels are to the business.
 
@@ -100,14 +98,26 @@ Insurance companies manage frequent events that cost a great deal of money, so i
 
 Software companies don't often have the same level of data reporting for security incidents, so it can be difficult to determine the probabilities of many threat actions.  It can also be difficult to determine the value of intangible assets such as user data, intellectual property, and reputation, so qualitative analyses are more often used for software projects.
 
-Below is a simple qualitative risk level table.
-
 | | Low Impact | Medium Impact | High Impact |
 | --- | --- | --- | --- |
 | <b>Low Likelihood</b> | Low Risk | Low Risk | Medium Risk |
 | <b>Medium Likelihood</b> | Low Risk | Medium Risk | High Risk |
 | <b>High Likelihood</b> | Medium Risk | High Risk | Critical Risk |
 {:.small-bordered-table}
+
+### Risk mitigation strategy
+
+Once developers are aware of the highest-risk items, they can put forward possibilities for how to address them, determine which to implement based on cost-to-benefit, and integrate agreed-upon changes into their development plans according to priority.
+
+There are four common ways to address risk:
+
+* Risk can be *reduced* by planning design changes or countermeasures that eliminate the vulnerabilities, or reduce their impact or likelihood of being executed.
+
+* Risk can be *avoided* by eliminating problematic functionality or adjusting the project scope when there are no effective countermeasures and the risk is considered too high.
+
+* Risk can be *transferred* when a third party is willing to insure or take responsibility for specific incidents as part of their business contract, and the critical assets can be recovered.
+
+* Risk can be *accepted* as necessary when there are no effective countermeasures but the feature is considered essential.
 
 ### Summary
 
