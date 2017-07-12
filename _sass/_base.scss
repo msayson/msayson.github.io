@@ -90,7 +90,13 @@ li {
 /**
  * Tables
  */
-.small-table {
+.table-bordered {
+     > table, td, th {
+         border: 1px solid #dddddd;
+     }
+}
+
+.table-small {
      border-collapse: collapse;
      margin-bottom: 15px;
 
@@ -101,16 +107,12 @@ li {
      }
 }
 
-.small-borderless-table {
-     @extend .small-table;
+.table-small-borderless {
+     @extend .table-small;
 }
 
-.small-bordered-table {
-     @extend .small-table;
-
-     > table, td, th {
-         border: 1px solid black;
-     }
+.table-small-bordered {
+     @extend .table-small, .table-bordered;
 }
 
 
@@ -257,4 +259,13 @@ pre {
     margin-bottom: 15px;
     margin-top: 15px;
     border-bottom: 2px solid $grey-color;
+}
+
+
+
+/**
+ * General style classes
+ */
+.full-width {
+    width: 100%
 }

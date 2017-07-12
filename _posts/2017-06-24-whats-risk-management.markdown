@@ -66,7 +66,7 @@ System threats directly target the software and hardware, making them easier to 
 | Policy violations | Data tampering | |
 | Other improper system use | | |
 | Design and development errors | | |
-{:.small-borderless-table}
+{:.table-small-borderless}
 
 Natural disasters are rarely considered, but high potential costs may encourage companies to replicate high-value data in multiple regions.  Financial institutions can't risk losing all their data in case of a hurricane or earthquake, and the same goes for many other major organizations.
 
@@ -103,7 +103,7 @@ Software companies don't often have the same level of data reporting for securit
 | <b>Low Likelihood</b> | Low Risk | Low Risk | Medium Risk |
 | <b>Medium Likelihood</b> | Low Risk | Medium Risk | High Risk |
 | <b>High Likelihood</b> | Medium Risk | High Risk | Critical Risk |
-{:.small-bordered-table}
+{:.table-small-bordered}
 
 ### Risk mitigation strategy
 
