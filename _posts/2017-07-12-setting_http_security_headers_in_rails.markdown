@@ -400,7 +400,7 @@ There are a couple steps required to use this header, but it's supposed to be re
 
 ![alt text](/images/20170712_security_headers_report_after_changes.png "SecurityHeaders.io report after updating HTTP security headers")
 
-There isn't an obvious way to configure HTTP security headers for GitHub Pages sites, so this blog currently fails the SecurityHeaders.io test.  Since the site's content is all static and in the public-domain, cross-site scripting attacks aren't a high risk, but I'll keep an eye out for solutions.
+There isn't an obvious way to configure HTTP security headers for GitHub Pages sites, so this blog currently gets an 'E' from SecurityHeaders.io.  Since the site serves static content, cross-site scripting attacks aren't a high risk, but I'll keep an eye out for solutions.
 
 Helpful resources:
 
