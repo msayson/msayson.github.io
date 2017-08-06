@@ -11,15 +11,15 @@ Recently I was looking into writing custom functions for SQLite in a Rails appli
 
 The REGEXP operator is defined in SQLite, but using it results in an error because [the corresponding database function isn't implemented](https://sqlite.org/lang_expr.html#regexp).
 
-Instead, developers have to provide their own implementation of <code>regexp(pattern, expression)</code>, and then SQL expressions of the form <code>column_name REGEXP pattern</code> will call <code>regexp(pattern, column_name)</code> using the same syntax as other database systems like MySQL.
+Instead, developers have to provide their own implementation of <code>regexp(pattern, expression)</code>, and then SQLite will map <code>column_name REGEXP pattern</code> to <code>regexp(pattern, column_name)</code> to provide the same developer-facing syntax as other database systems like MySQL.
 
-For example, <code>SELECT * FROM products WHERE name REGEXP '^Chipotle.*Burrito';</code> will then return all products with names that begin with "Chipotle" and contain the word "Burrito".
+For example, <code>SELECT * FROM products WHERE name REGEXP '^Chipotle.*Burrito';</code> will return all products with names that begin with "Chipotle" and contain the word "Burrito".
 
 ### Creating custom functions in SQLite
 
 User-defined functions aren't restricted to regexp, and SQLite provides a <code>create_function</code> utility that can be used to set up any function you wish.
 
-The Ruby gem sqlite3 provides the following API for creating functions:
+The Ruby gem [sqlite3](http://www.rubydoc.info/gems/sqlite3/1.3.13/SQLite3/Database:create_function) provides the following <code>create_function</code> API:
 
 ```ruby
 create_function(
