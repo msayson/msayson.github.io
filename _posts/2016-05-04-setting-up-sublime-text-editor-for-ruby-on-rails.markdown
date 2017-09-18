@@ -7,11 +7,15 @@ redirect_from: "/ides-and-editors/2016/05/05/setting-up-sublime-text-editor-for-
 ---
 In this post I'll go over how I set up Sublime Text Editor for Ruby on Rails development.
 
-Sublime Text Editor is a popular proprietary text editor that runs on Windows, Linux and Mac OS.  It's highly customizeable, and there are many user-developed plugins that tweak various parts of the interface.  It can be evaluated for free with no time limit, however, it is paid software ($70 USD as of May 2016).  While in evaluation mode, you'll receive a prompt asking if you want to buy a license after every few saves.
+Sublime Text Editor is a popular proprietary text editor that runs on Windows, Linux and Mac OS.  It's highly customizeable, with many user-developed plugins that tweak various parts of the interface.
 
-#### Step 1: Download Sublime Text Editor 3 from [https://www.sublimetext.com/3](https://www.sublimetext.com/3) and install.
+The full program can be evaluated for free indefinitely.  It is paid software, so in evaluation mode you'll receive a prompt asking if you'd like to purchase a license after every few file saves (*$80 USD as of September 2017*).
 
-Note: Linux users can install .deb files by running "sudo dpkg -i package_name.deb".
+#### Step 1: Download Sublime Text Editor 3.
+
+Follow the download instructions on [https://www.sublimetext.com/3](https://www.sublimetext.com/3) and install.
+
+*Update (2017-09-17): As of September 2017, Sublime provides official repositories for apt, pacman, yum, dnf, and zypper, so Linux users can get updates through their package manager of choice after adding sublime-text to their source list as per their install instructions.*
 
 #### Step 2: Install Package Control Manager.
 
@@ -26,15 +30,15 @@ Enter "Install Package" to get a list of all available plugins.
 I currently use the following plugins.  Links are provided for interest only, you can install the plugins within Sublime Text Editor using the package manager.
 
 * GitGutter: [https://github.com/jisaacks/GitGutter](https://github.com/jisaacks/GitGutter)
-  * Indicates all uncommitted changes by overlaying color-coded icons to the left of the changed lines.
+  * Adds color-coded icons to the left of changed lines to indicate uncommitted changes.
   * Added lines are indicated using a green "+" icon, removed lines with a red arrow, and modified lines with a yellow square.
 * SublimeLinter: [http://www.sublimelinter.com/en/latest](http://www.sublimelinter.com/en/latest)
-  * Base for other programming-language-specific extensions which check against customizeable syntax and code style guidelines.
+  * Base for language-specific extensions which verify syntax and code style.
 * SublimeLinter-ruby: [https://github.com/SublimeLinter/SublimeLinter-ruby](https://github.com/SublimeLinter/SublimeLinter-ruby)
   * Checks against syntax and code style guidelines for the Ruby programming language.
 * SublimeLinter-rubocop: [https://github.com/SublimeLinter/SublimeLinter-rubocop](https://github.com/SublimeLinter/SublimeLinter-rubocop)
   * Adds more advanced static code analysis to the Ruby linter.
-  * Before this plugin can be used, you must run "gem install rubocop" to install the backend code analysis tool.
+  * Prerequisite: run "gem install rubocop" to install the backend code analysis tool.
 
 #### Step 4: Add global key-bindings under "Preferences/Key Bindings - User".
 
