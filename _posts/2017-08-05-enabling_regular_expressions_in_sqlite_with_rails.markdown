@@ -11,15 +11,21 @@ Recently I was looking into writing custom functions for SQLite in a Rails appli
 
 The REGEXP operator is defined in SQLite, but using it results in an error because [the corresponding database function isn't implemented](https://sqlite.org/lang_expr.html#regexp).
 
-Instead, developers have to provide their own implementation of <code>regexp(pattern, expression)</code>, and then SQLite will map <code>column_name REGEXP pattern</code> to <code>regexp(pattern, column_name)</code> to provide the same developer-facing syntax as other database systems like MySQL.
+Instead, developers have to provide their own implementation of `regexp(pattern, expression)`, and then SQLite will map `column_name REGEXP pattern` to `regexp(pattern, column_name)` to provide the same developer-facing syntax as other database systems like MySQL.
 
-For example, <code>SELECT * FROM products WHERE name REGEXP '^Chipotle.*Burrito';</code> will return all products with names that begin with "Chipotle" and contain the word "Burrito".
+For example,
+
+```sql
+SELECT * FROM products WHERE name REGEXP '^Chipotle.*Burrito';
+```
+
+will return all products with names that begin with "Chipotle" and contain the word "Burrito".
 
 ### Creating custom functions in SQLite
 
-User-defined functions aren't restricted to regexp, and SQLite provides a <code>create_function</code> utility that can be used to set up any function you wish.
+User-defined functions aren't restricted to regexp, and SQLite provides a `create_function` utility that can be used to set up any function you wish.
 
-The Ruby gem [sqlite3](http://www.rubydoc.info/gems/sqlite3/1.3.13/SQLite3/Database:create_function) provides the following <code>create_function</code> API:
+The Ruby gem [sqlite3](http://www.rubydoc.info/gems/sqlite3/1.3.13/SQLite3/Database:create_function) provides the following `create_function` API:
 
 ```ruby
 create_function(
@@ -64,9 +70,9 @@ end
 
 ### Calling user-defined SQLite functions
 
-SQLite maps <code>expression REGEXP pattern</code> to <code>regexp(pattern, expression)</code> for compatibility with other database management systems, so you can use either format in your SQL expressions.
+SQLite maps `expression REGEXP pattern` to `regexp(pattern, expression)` for compatibility with other database management systems, so you can use either format in your SQL expressions.
 
-For new functions that you create, you can call them just as you defined them.  If you called <code>create_function('my_function', 1)</code>, you would use <code>my_function(arg)</code> directly in your SQL expressions.  For example, <code>SELECT my_function(name) FROM products;</code>.
+For new functions that you create, you can call them just as you defined them.  If you called `create_function('my_function', 1)`, you would use `my_function(arg)` directly in your SQL expressions.  For example, `SELECT my_function(name) FROM products;`.
 
 ### An aside on SQLite
 
