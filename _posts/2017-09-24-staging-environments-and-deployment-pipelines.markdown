@@ -3,6 +3,7 @@ layout: post
 title:  "Staging environments and deployment pipelines"
 date:   2017-09-24 12:00:00 -0800
 categories: software-development
+excerpt: A staging environment mimics the environment our users interact with as closely as possible, so that we can verify changes and catch issues that may not occur on a local developer environment before promoting changes to production.
 ---
 ## Why have a staging environment?
 
