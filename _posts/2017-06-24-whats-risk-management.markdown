@@ -136,8 +136,6 @@ Helpful resources:
 
 * [IEEE Computer Society’s Center for Secure Design](https://cybersecurity.ieee.org/center-for-secure-design)
 * [OWASP Top 10 Application Security Risks](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)
-* <a target="_blank" href="https://www.amazon.com/gp/product/1420063804/ref=as_li_tl?ie=UTF8&tag=masblog0c-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1420063804&linkId=78d62188804e1a4ec318be21c11b2e06">Security Software Development: Assessing and Managing Security Risks, by Douglas Ashbaugh</a>\*
-* <a target="_blank" href="https://www.amazon.com/gp/product/0321356705/ref=as_li_tl?ie=UTF8&tag=masblog0c-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0321356705&linkId=41035ec6c1a8dab889475358b0afce38">Software Security: Building Security In, by Gary McGraw</a>\*
+* Security Software Development: Assessing and Managing Security Risks, by Douglas Ashbaugh
+* Software Security: Building Security In, by Gary McGraw
 * [UBC CPEN 442 Introduction to Computer Security](http://courses.ece.ubc.ca/cpen442/syllabus/index.html), taught by Konstantin Beznosov
-
-<p class="post-script">*We are a participant in the Amazon Associates Program, an affiliate advertising program designed to provide a means for us to earn fees by linking to Amazon and affiliated sites.</p>
