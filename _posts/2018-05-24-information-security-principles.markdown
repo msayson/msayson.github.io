@@ -3,7 +3,7 @@ layout: post
 title:  "Diving into information security principles"
 date:   2018-05-24 22:00:00 -0800
 categories: security
-excerpt: "<p>I'm very interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take continued effort to get there, but I believe that continual improvement in security is achievable at any scale, and that this change in mindset is an important shift for the industry.</p><p>Over the next few weeks, I'll dive into some of the security design principles that have evolved over the years, adding unsolicited commentary as I go.</p>"
+excerpt: "<p>I'm very interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take continued effort to get there, but I believe that continual improvement in security is achievable at any scale, and that this change in mindset is an important shift for the industry.</p><p>There are new skills to develop and many segmented fields to learn from, which is both exciting and challenging, but the good thing is that there've been many lessons learned that we can take advantage of to develop more secure systems today.</p>"
 ---
 I'm very interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take continued effort to get there, but I believe that continual improvement in security is achievable at any scale, and that this change in mindset is an important shift for the industry.
 
