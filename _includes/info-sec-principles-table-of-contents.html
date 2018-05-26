@@ -1,0 +1,65 @@
+<style>
+.infosec-principles-table-of-contents-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 5px;
+    padding: 10px;
+}
+.dashed-border-dark-blue {
+    border: 3px dashed #000066;
+    border-radius: 5px;
+}
+.infosec-principles-table-of-contents-left {
+    flex: 0 0;
+    min-width: 45%;
+}
+.infosec-principles-table-of-contents-right {
+    flex: 1;
+}
+.infosec-principles-table-of-contents-title {
+    flex: 0 0 100%; /*Fill horizontal space*/
+}
+.infosec-principles-table-of-contents-header {
+    flex: 0 0 100%; /*Fill horizontal space*/
+    margin: 5px auto;
+}
+</style>
+
+<div class="infosec-principles-table-of-contents-container dashed-border-dark-blue">
+  <h2 class="infosec-principles-table-of-contents-title">General principles and goals of information security</h2>
+  <div class="infosec-principles-table-of-contents-container">
+    <div class="infosec-principles-table-of-contents-container dashed-border-dark-blue infosec-principles-table-of-contents-left">
+      <h3 class="infosec-principles-table-of-contents-header">Principles of designing secure systems</h3>
+      <ul>
+        <li>Least privilege</li>
+        <li>Fail-safe defaults</li>
+        <li>Economy of mechanism (simplicity)</li>
+        <li>Complete mediation (access control)</li>
+        <li>Security should not rely on secrecy of design (open design principle)</li>
+        <li>Compartmentalization</li>
+        <li>Usability</li>
+        <li>Defense in depth</li>
+        <li>Question assumptions</li>
+      </ul>
+    </div>
+
+    <div class="infosec-principles-table-of-contents-container dashed-border-dark-blue infosec-principles-table-of-contents-right">
+      <h3 class="infosec-principles-table-of-contents-header">Goals of information security</h3>
+      <h4 class="infosec-principles-table-of-contents-header">Protecting data and services</h4>
+      <ul>
+        <li>Confidentiality</li>
+        <li>Integrity</li>
+        <li>Availability</li>
+        <li>Non-repudiation</li>
+      </ul>
+      <h4 class="infosec-principles-table-of-contents-header">Effective defense</h4>
+      <ul>
+        <li>Deterrence</li>
+        <li>Prevention</li>
+        <li>Detection</li>
+        <li>Recovery</li>
+        <li>Investigation</li>
+      </ul>
+    </div>
+  </div>
+</div>
