@@ -28,7 +28,7 @@ permalink: /blog/:title/
 # Google Analytics settings
 google_analytics_tracking_id: UA-80369609-1
 
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-redirect-from
 
