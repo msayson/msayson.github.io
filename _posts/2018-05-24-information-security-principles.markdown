@@ -3,9 +3,9 @@ layout: post
 title:  "Diving into information security principles"
 date:   2018-05-24 22:00:00 -0800
 categories: security
-excerpt: "<p>I'm very interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take continued effort to get there, but I believe that continual improvement in security is achievable at any scale, and that this change in mindset is an important shift for the industry.</p><p>There are new skills to develop and many segmented fields to learn from, which is both exciting and challenging, but the good thing is that there've been many lessons learned that we can take advantage of to develop more secure systems today.</p>"
+excerpt: "<p>I'm interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take a lot of effort to get there, but continual improvement in security is achievable at any scale.</p><p>There are new skills to develop and many segmented fields to learn from, which is both exciting and challenging, but the good thing is that there've been many lessons learned that we can take advantage of to develop more secure systems today.</p>"
 ---
-I'm very interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take continued effort to get there, but I believe that continual improvement in security is achievable at any scale, and that this change in mindset is an important shift for the industry.
+I'm interested in how information security can be better integrated into software development, and how services can be developed in a way that makes good security a natural part of the process.  It'll take a lot of effort to get there, but continual improvement in security is achievable at any scale.
 
 One of the reasons why it makes sense to build security into development is that many security-related challenges are much easier to address at the planning and design stages than during implementation and system testing, and a lot of this work requires both development and security skill sets.
 
@@ -15,6 +15,6 @@ Many security fields have developed over the years, including encryption, networ
 
 There are new skills to develop and many segmented fields to learn from, which is both exciting and challenging, but the good thing is that there've been many lessons learned that we can take advantage of to develop more secure systems today.
 
-Over the next few weeks, I'll dive into some of the security design principles that have evolved over the years, adding unsolicited commentary as I go.  These posts are mostly for my own reference, with the hope that some of them will be interesting or helpful to other people as well.
+I'll dive into some of the security design principles that have evolved over the years, adding commentary as I go.  These posts are mostly for my own reference, with the hope that some of them will be interesting or helpful to other people as well.
 
 {% include info-sec-principles-table-of-contents.html %}
