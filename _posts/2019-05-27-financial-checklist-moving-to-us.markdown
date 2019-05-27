@@ -2,11 +2,11 @@
 layout: post
 title:  "Financial checklist for moving to the US for work"
 date:   2019-05-27 12:00:00 -0800
-categories: work
+categories: finances
 ---
 If you're moving from Canada to the US for work, there are a few things that are helpful to do before and immediately after moving that will make your short-term finances much, much easier, and I've put together a few of them based on conversations I had with a friend who relocated around a year after I did.
 
-At the end is a checklist you can skip to for a quick overview or to print when you're putting together your own To Do list.
+At the end is a checklist you can skip to for a quick overview.
 
 ## Closing your TFSA and simplifying Canadian investments
 
@@ -20,7 +20,7 @@ The US does recognize Canada's Registered Retirement Savings Plan (RRSP) under a
 
 It's very difficult to open new bank and investment accounts in Canada once you've moved to the US and are no longer a Canadian resident, so I'd suggest making any account changes before moving.
 
-For example, a year after moving, I really wished that I'd moved my investments to lower-cost providers.  I transferred my taxable investments to low-cost index funds in my US Vanguard account without issues, but the RRSP was more difficult, since most banks wouldn't open new accounts for non-residents.  I eventually managed to transfer the RRSP funds from RBC to Questrade, but it took several weeks and multiple phone calls to complete, while it could have taken just a couple of days if I'd made the changes before I'd moved.
+For example, a year after moving, I really wished that I'd moved my investments to lower-cost providers.  I transferred my taxable investments to low-cost index funds in my US Vanguard account without issues, but the RRSP was more difficult, since most banks won't open new accounts for non-residents.  I eventually managed to transfer the RRSP funds from RBC to Questrade, but it took several weeks and multiple phone calls to complete, while it could have taken just a couple of days if I'd made the changes before I'd moved.
 
 Note that I am not a financial professional, and you should talk to someone who is, and who is also familiar with cross-border issues before making major financial decisions.
 
@@ -32,7 +32,7 @@ Once you've received your work authorization and have moved to the US, you can a
 
 You'll need to bring your work authorization permit and passport with you.  You can print out the application form at [https://www.ssa.gov/forms/ss-5.pdf](https://www.ssa.gov/forms/ss-5.pdf) and fill it out before going in to save time, or pick up a form to fill out when you get there.  Some offices take appointments, which is worth checking out since that could trim a hour or so off of your visit.
 
-You can apply for a SSN as soon as you move to the US, and get a print-out with the number the same day, while the physical card can take up to two weeks to be mailed out.
+You can apply for a SSN as soon as you move to the US, and get a print-out with the number the same day, while the physical card can take two weeks to be mailed out.
 
 ## Setting up a US bank account and credit card
 
@@ -50,7 +50,7 @@ Another option for credit cards may be available if your current bank or credit 
 
 It's convenient to get financial accounts out of the way before you start your job, since most US banks have less customer-friendly business hours than Canadian banks (likely to open after you start work and close before you leave, and only be open for few hours on Saturdays and not at all on Sundays).
 
-I was able to visit the city a few months ahead of my job's start date, and used the time to visit several apartments and shared houses I'd scheduled visits with, sign a rental agreement with a landlord who was willing to hold my place for after his current tenant moved out, and set up bank and credit card accounts.  That weekend made life a lot easier when I moved to start work.
+I was able to visit the city a few months ahead of my job's start date, and used the time to visit several apartments and shared houses I'd scheduled visits with, sign a rental agreement with a landlord who was willing to hold my place for after his current tenant moved out, and set up bank and credit card accounts.  That short trip made life a lot easier when I moved and started my new job.
 
 ## Getting a US driver's license or other state ID
 
@@ -58,13 +58,11 @@ You'll need some form of US state ID at some point, and the most common form is 
 
 If you have a driver's license from BC, you can transfer it to a Washington driver's license without taking a test since the driving laws are so similar, [*if you transfer your license within 30 days*](https://www.dol.wa.gov/driverslicense/moving.html) of moving to Washington.  After 30 days, you need to take the test like anyone who is starting without a driver's license.
 
-Check your state's department of licensing website for the latest requirements.
-
-To get a Washington driver's license, you'll need to bring proof of identify such as your non-Washington driver's license, your SSN (yes, that again), proof of residency such as a bank statement that includes your US address, and payment for the license.
+To get a Washington driver's license, you'll need to bring proof of identify such as your non-Washington driver's license, your SSN (yes, that again), proof of residency such as a bank statement that includes your US address, and payment for the license.  Check your state's department of licensing website for the latest requirements.
 
 The waiting lines at licensing offices are notoriously slow, so make sure you have enough time set aside on that day as well as all of the prerequisites checked off.  You can pre-fill your application at https://www.dol.wa.gov to speed up the process.
 
-The first time I went, I spent a couple of hours lining up only to find out that I wouldn't be able to transfer the license that day because I hadn't received my SSN yet.  There is a way to start the license transfer before getting your SSN, but it's a much more complicated process that takes longer than just waiting for the SSN.
+The first time I went, I spent a couple of hours in line only to find out that I wouldn't be able to transfer the license because I hadn't received my SSN yet.  There is a way to start the license transfer without it, but it's a more complicated process that takes longer than just waiting for the SSN.
 
 Learn from my mistakes.  Get the SSN first.
 
@@ -92,6 +90,6 @@ Once you've moved to the US:
 
 Once you have an SSN:
 
-* Apply for a local driver's license.
+* Apply for a local driver's license or state ID.
 * Provide SSN to US financial institutions that you were able to open accounts with previously.
 * Open any remaining financial accounts.
