@@ -14,7 +14,7 @@ enforce_ssl: www.marksayson.com   # enforce SSL for site
 title: Mark Sayson
 email: masayson@gmail.com
 linkedin: https://www.linkedin.com/in/mark-sayson-87208748
-description: Notes on software development and technology.
+description: Notes on software development, technology, and life.
 github_username:  msayson
 
 # Pagination settings
