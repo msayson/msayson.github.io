@@ -1,20 +1,19 @@
 ---
 layout: post
 title:  "JDK distributions, JDK distributions everywhere"
-date:   2019-08-10 12:00:00 -0800
+date:   2019-08-09 12:00:00 -0800
 categories: programming-languages
+excerpt: Taking a look at the number of JDKs, I'd like to start from a simple set of criteria to pick one to use for a new project, assuming zero budget and a desire for maximum flexibility.
 ---
-## JDK distributions, JDK distributions everywhere
-
 ### The end of Oracle JDK's free long-term support (LTS) builds
 
 In 2018, [Oracle announced plans to stop providing free LTS JDK builds for production services](https://blog.joda.org/2018/09/do-not-fall-into-oracles-java-11-trap.html), triggering a stream of angry and confused posts and prompting more developers to consider moving to alternative JDK distributions.
 
 A year later, the number of production-ready JDK distributions has blossomed, more companies are building their own (you can now pick between Oracle, Red Hat, IBM, SAP, Bellsoft, Amazon, Alibaba, Azul, etc.), and it's more difficult to decide which one to use.
 
-This is almost like trying to pick which Linux distribution to use!  Taking a look at the number of JDKs, I'd like to start from a simple set of criteria to pick one to use for a new project, assuming a budget of zero and the desire for as much flexibility as possible.
+This is almost like choosing a Linux distribution!  Taking a look at the number of JDKs, I'd like to start from a simple set of criteria to pick one to use for a new project, assuming zero budget and a desire for maximum flexibility.
 
-https://devexperts.com/blog/oracle-jdk-vs-openjdk-builds-comparison/ has a good comparison of JDK distributions as of February 2019, and while it doesn't include some JDK builds and may become dated, it was very helpful for a first pass.  They compare Oracle JDK, Oracle OpenJDK, Red Hat OpenJDK, Azul Zulu, Amazon Corretto, and AdoptOpenJDK.
+[DevExperts](https://devexperts.com/blog/oracle-jdk-vs-openjdk-builds-comparison/) put out a good comparison of JDK distributions in February 2019, and while it doesn't include some JDK builds and may become dated, it was very helpful for a first pass.  They compare Oracle JDK, Oracle OpenJDK, Red Hat OpenJDK, Azul Zulu, Amazon Corretto, and AdoptOpenJDK.
 
 ### My requirements for a JDK build
 
@@ -64,4 +63,4 @@ Amazon Corretto is an open-source distribution provided by Amazon under the same
 
 This leaves Oracle OpenJDK and Amazon Corretto as my main JDK builds under consideration, while there are doubtless more alternatives out there.
 
-I've not used Amazon Corretto before, but will try it out and see how it goes.
+I haven't used Amazon Corretto before, but will try it out and see how it goes.
