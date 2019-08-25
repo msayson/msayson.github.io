@@ -9,10 +9,10 @@ The [Australian Cyber Security Centre](https://www.cyber.gov.au/) provides a sub
 ## The [Australian Information Security Manual](https://www.cyber.gov.au/ism) (ISM)
 The self-described purpose of the ISM is "to outline a cyber security framework that organisations can apply, using their risk management framework, to protect their information and systems from cyber threats."  It describes guiding principles and describes a broad range of recommended security controls, with provided applicability and priority scores.  I mean it when I say broad, it ranges from patching programs, to system backups, to network security monitoring, to email management, to appropriate measures for destroying hard disks that store sensitive information.
 
-While the ISM doesn't get too deep into each security control, it provides enough of them for the manual to be a bit much at first glance, although there's a lot of gold in there.
+While the ISM doesn't get too deep into each security control, it provides enough of them for the manual to be a bit overwhelming at first glance, although there's a lot of gold in there.
 
 ## The [Essential Eight](https://www.cyber.gov.au/publications/essential-eight-explained)
-A better starting point is their Essential Eight, a paired down set of mitigation strategies which can significantly improve an organizations security posture on their own.
+An excellent starting point is their Essential Eight, a paired down set of mitigation strategies which can significantly improve an organization's security posture on their own.
 
 These consist of:
 
