@@ -29,7 +29,8 @@ Implementing whitelist policies for trusted applications which are able to run o
 
 Restricting administrative privileges (whether to systems, applications, or users) and requiring multi-factor authentication for access to sensitive resources can significantly limit the impact of security incidents, and daily backups of systems and data are essential to quickly recover when outages occur for any reason.
 
-The [Essential Eight Maturity Model](https://www.cyber.gov.au/publications/essential-eight-maturity-model) provides incremental steps to implement each mitigation strategy, assisting organizations with setting clear and achievable milestones.  Each mitigation strategy has three maturity levels, starting with the easiest to implement and increasing in capability in successive levels.
+## The [Essential Eight Maturity Model](https://www.cyber.gov.au/publications/essential-eight-maturity-model)
+The Essential Eight Maturity Model provides incremental steps to implement each mitigation strategy, assisting organizations with setting clear and achievable milestones.  Each mitigation strategy has three maturity levels, starting with the easiest to implement and increasing in capability in successive levels.
 
 For example, Maturity Level One recommends patching operating systems and firmware with high-risk security vulnerabilities within one month of the vulnerabilities being identified by vendors or internal/external parties, with the target patching timeline improving to two weeks in Maturity Level Two, and 48 hours in Maturity Level Three.
 
