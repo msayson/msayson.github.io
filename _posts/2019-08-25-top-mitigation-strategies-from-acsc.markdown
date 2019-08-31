@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Top Mitigation Strategies from the Australian Cyber Security Centre"
+title:  "Top mitigation strategies from the Australian Cyber Security Centre"
 date:   2019-08-24 19:00:00 -0800
 categories: security
 ---
