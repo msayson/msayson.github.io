@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Living in Seattle on a budget"
+title:  "Living in Seattle or Vancouver on a budget"
 date:   2019-10-23 20:00:00 -0700
 categories: finances
 ---
@@ -10,13 +10,6 @@ It's harder to save today than it was a few decades ago thanks to an inflated co
 
 Many, many people do, and to make this concrete I'll share how I spend money and why.
 
-## Key ideas
-
-* It's easiest to cut big expenses like housing.  Then you're automatically saving money every month without ongoing effort.
-* You don't have to micro-manage if you know how much you can afford and stay within your budget.
-* You can keep the things you love and axe the things you don't once you know where money is going.
-* Maintaining a similar lifestyle as you earn more allows you to seamlessly boost your savings rate over time and achieve your goals years earlier.
-
 _Disclaimer #1: This is written from the point of view of a healthy 20-something who had the advantage of growing up in Canada, where a great education can be had for around $6500/year._
 
 _Disclaimer #2: This isn't intended to fit every lifestyle, it's just one example of how you can live well on a tight budget.  I know that I'm more frugal than most, and that's partly because I enjoy saving money, partly because I have clear goals I want to save towards, and partly because the things I enjoy most are free or inexpensive and I've avoided taking on expensive hobbies._
@@ -25,7 +18,7 @@ _Disclaimer #2: This isn't intended to fit every lifestyle, it's just one exampl
 
 For most people including myself, rent is the biggest monthly expense, and if you can find a rental for a few hundred dollars less per month, that's hundreds of dollars of _free money coming in every month_.
 
-In Seattle, the easiest way to cut your rent while staying within 30 minutes of downtown is to live in a shared home.  You can find a number of shared houses, townhouses, and apartments for around $600-$1200/month per person including utilities, garbage collection, and Internet.  The cheapest options are near highways or in seedier areas, which I don't recommend (in Seattle, stay at least 3-5 blocks away from the I-5 highway if you're a light sleeper), but there are a lot of great places in the $800-$1200/month range.  By comparison, individual apartments are closer to $1200-$1800/month or more, not including utilities or Internet.
+In Seattle and Vancouver, the easiest way to cut your rent while staying within 30 minutes of downtown is to live in a shared home.  In Seattle, you can find a number of shared houses, townhouses, and apartments for around $600-$1200/month per person including utilities, garbage collection, and Internet.  The cheapest options are near highways or in seedier areas, which I don't recommend (in Seattle, stay at least 3-5 blocks away from the I-5 highway if you're a light sleeper), but there are a lot of great places in the $800-$1200/month range.  By comparison, individual apartments are closer to $1200-$1800/month or more, not including utilities or Internet.
 
 The most important factor in a shared home is how well everyone gets along.  If you have great housemates, a shared home is a dream home.  I've been lucky in this department, partly because I've helped my landlord to find other tenants, which I highly recommend.  The time you invest in finding a good housemate pays off!  We still keep in touch with old housemates who've since moved to other cities, and a few have returned to visit now and then.
 
@@ -73,11 +66,11 @@ _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alc
 
 Admittedly I have no fashion sense and don't work in a profession where it matters, but most people really don't care whether you're wearing the same outfit as a week ago.
 
-I've had over 90% of my wardrobe for at least 3 years and spend around $100-$300 per year to replace clothing that's starting to wear out, with most of this going towards a new pair of shoes.
+I've had over 90% of my wardrobe for at least 3 years and spend around $100-$300 per year to replace clothing that's starting to wear out, with most of this going towards a new pair of shoes.  We can round up our clothing budget to $1k/year without breaking the bank.
 
-Costco is a good source for reasonably priced, practical clothing, and I often get things like pants and socks there.  I like a few liquidation warehouses that get waves of high quality pieces from other stores that need to be cleared for the next season's stock.  They're less predictable in what they carry and sometimes have sales on specific days or weekends rather than year-round, but they're a great place to get good winter jackets and coats for a fraction of the original sale price, especially if you don't need a particular style or colour.  They often have sections of clothes with minor flaws for steep discounts.  A Stormtech warehouse sale got me and my dad unnecessarily excited, and we got thick rain jackets for around $50 each that have lasted for years.  Thrift shops can also be a lot of fun to browse through and find cool, unexpected pieces on the cheap.
+Costco is a good source for reasonably priced, practical clothing, and I often get things like pants and socks there.  I like a few liquidation warehouses that get waves of high quality pieces from other stores that need to be cleared for the next season's stock.  They're less predictable in what they carry and sometimes have sales on specific days or weekends rather than year-round, but they're a great place to get good winter jackets and coats for a fraction of the original sale price, especially if you don't need a particular style or colour.  They often have sections of clothes with minor flaws for steep discounts.  A Stormtech warehouse sale got me and my dad unnecessarily excited, and we got thick rain jackets for around $50 each that have lasted for years.
 
-We can round our clothing budget up to $1k/year without breaking the bank.
+Thrift shops are a lot of fun to browse through and find cool, unexpected pieces on the cheap.  They vary in quality and selection, but some stores have really nice lightly used clothes.  They're a good counterpart to fast fashion, and as a friend recently pointed out, they're also very eco-friendly!
 
 _Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing = $17.7/year_
 
@@ -85,9 +78,11 @@ _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alc
 
 ## Phone bills
 
-Since I have WiFi at home, work, and most places I frequent, I don't need much data.  I spend $160/year on a Tello pay-as-you-go plan that has 500 MB of data, 500 minutes of calls, and unlimited texting.  I had a similarly priced plan with Rogers while I was living in Vancouver that had a lower limit on calls.
+Since I have WiFi at home, work, and most places I frequent, I don't need much data.  I spend $160/year on a Tello pay-as-you-go plan that has 500 MB of data, 500 minutes of calls, and unlimited texting.  My plan's price recently dropped to $11.27/month after tax or around $135/year, which was a nice surprise.
 
-If you need more data, Tello and several other providers offer 12 GB of data for under $500/year.
+If you need more data, Tello and several other providers offer 12 GB of data for under $500/year.  _[Here's a referral link for a $10 credit](https://tello.com/account/register?_referral=P35J1KH9) if you decide to open a Tello plan.  Of course, you should always compare with other providers and choose the one that works best for you._
+
+I had a bare-bones $5.75/month pay-as-you-go plan with Rogers while I was going to school in Vancouver, which had no data and lower limits on calls and texts.  I'd re-evaluate providers with basic data plans if I moved back.  One of my friends recommends [Public Mobile](https://publicmobile.ca) for inexpensive pay-as-you-go plans in Canada.  As of today, their 500 MB plan will run you $25/month, or $300/year, which is pretty good compared to other Canadian plans.
 
 _Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing + $0.2k/year for phone = $17.9/year_
 
@@ -121,14 +116,19 @@ Most banks that offer savings accounts and CDs/GICs are insured through the [Fed
 
 Once you've paid off any high-interest debt and have a healthy emergency fund with enough to pay for 3-6 months worth of expenses, you're ready to start investing.  That's another post.
 
-I keep essential expenses to around $23k/year and non-essential expenses to around $10k/year, allowing me to save and invest everything else I earn.  This has been easy to maintain since I started out with a $3.5k/month budget and a goal to save at least 20% of my income, and I've just maintained the same lifestyle over the years.
+I keep essential expenses to around $23k/year and non-essential expenses to around $10k/year, including $2k-$3k for travel, allowing me to save and invest everything else I earn.  This has been easy to maintain since I started out with a $3.5k/month budget and a goal to save at least 20% of my income, and I've just maintained the same lifestyle over the years.
 
-## Why is it important to keep fixed expenses low?  Why didn't I spend more time talking about non-essentials?
+## Why is it important to keep fixed expenses low?  Why didn't I focus as much on non-essentials?
 
 The "non-essentials" are the things that make you smile, the things that make for a great day or year.  Also, you don't need to spend too much time worrying about the little things.  If your fixed expenses are at a level you can afford and you know how much you want to allocate to savings and fun money, it doesn't matter how you spend your fun money.  It's your fun money.
 
 Getting monthly bills and large fixed expenses under control is where you can get the most bang for your buck, and once these are at sustainable levels, you'll always have more to work with.
 
-I know that I can live well and enjoy life on a budget, and more importantly, I know that I can survive regardless of what job or salary I happen to have and can provide for myself and potentially others in the future.  I'd like to maintain that discipline, and don't want to get into a position where I feel over-extended or stressed out about paying the bills if anything goes wrong.
+Once you have a balance that works for you for essentials expenses, savings, and non-essential expenses, you're set up for success, and you can get on with enjoying life while knowing you're taken care of in good times and bad.  Deliberately maintaining a similar lifestyle as your income increases can help to avoid getting over-extended or stressed out about paying the bills, and is the first step towards working towards "financial freedom", where you have the freedom to live and work on your terms.
 
-I can see myself continuing to work in some form for the rest of my life and am not as attracted to the "retire early" idea as to the "financial freedom".  I like the idea of always maintaining the freedom to work on whatever is most important to me.
+## Key ideas
+
+* It's easiest to cut big expenses like housing.  Then you're automatically saving money every month without ongoing effort.
+* You don't have to micro-manage if you know how much you can afford and stay within your budget.
+* You can keep the things you love and axe the things you don't once you know where money is going.
+* Maintaining a similar lifestyle as you earn more allows you to seamlessly boost your savings rate over time and achieve your goals years earlier.
