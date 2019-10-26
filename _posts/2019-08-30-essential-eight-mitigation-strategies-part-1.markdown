@@ -6,10 +6,16 @@ categories: security
 ---
 I introduced some of the security guides published by the Australian Cyber Security Centre and their [Essential Eight](https://www.cyber.gov.au/publications/essential-eight-explained) mitigation strategies for businesses [in my last post]({% post_url 2019-08-25-top-mitigation-strategies-from-acsc %}), and I'd like to dive deeper into the first four mitigation strategies for preventing delivery and execution of malware.
 
-* **Application whitelisting**
-* **Patching applications**
-* **Configuring Microsoft Office macro settings**
-* **Hardening user applications**
+The Essential Eight mitigation strategies:
+
+1. **Application whitelisting**
+2. **Patching applications**
+3. **Configuring Microsoft Office macro settings**
+4. **Hardening user applications**
+5. Restricting administrative privileges
+6. Patching operating systems
+7. Multi-factor authentication
+8. Daily backups
 
 The [Essential Eight to ISM Mapping](https://www.cyber.gov.au/publications/essential-eight-to-ISM-mapping) guide recommends specific security controls to implement for each of these mitigation strategies, and reflects a subset of controls from the [Australian Cyber Security Centre's Information Security Manual](https://www.cyber.gov.au/ism) (ISM).
 
@@ -134,7 +140,7 @@ Disabling insecure settings in web browsers and Microsoft Office applications is
 
 Together with the rest of the Essential Eight, these mitigation strategies form an excellent security baseline that you can work towards one concrete step at a time.
 
-In my next post I'll dive into the last four Essential Eight mitigation strategies:
+In a follow-up post I'll dive into the last four Essential Eight mitigation strategies:
 
 * Restricting administrative privileges
 * Patching operating systems
@@ -143,10 +149,18 @@ In my next post I'll dive into the last four Essential Eight mitigation strategi
 
 ## Resources
 
+The Australian Cyber Security Centre:
+
 * [Essential Eight Explained](https://www.cyber.gov.au/publications/essential-eight-explained)
 * [Essential Eight Maturity Model](https://www.cyber.gov.au/publications/essential-eight-maturity-model)
 * [Essential Eight to ISM Mapping](https://www.cyber.gov.au/publications/essential-eight-to-ISM-mapping)
-* The Australian Cyber Security Centre's [Information Security Manual](https://www.cyber.gov.au/ism)
-* The Australian Signals Directorate's [Strategies to Mitigate Cyber Security Incidents](https://www.cyber.gov.au/publications/strategies-to-mitigate-cyber-security-incidents)
-* The US National Institute of Standards and Technology's [Guide to Application Whitelisting](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-167.pdf)
-* The US Department of Homeland Security's [Guidelines for Application Whitelisting in Industrial Control Systems](https://www.us-cert.gov/sites/default/files/documents/Guidelines%20for%20Application%20Whitelisting%20in%20Industrial%20Control%20Systems_S508C.pdf)
+* [Information Security Manual](https://www.cyber.gov.au/ism)
+* [Strategies to Mitigate Cyber Security Incidents](https://www.cyber.gov.au/publications/strategies-to-mitigate-cyber-security-incidents)
+
+The US National Institute of Standards and Technology:
+
+* [Guide to Application Whitelisting](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-167.pdf)
+
+The US Department of Homeland Security:
+
+* [Guidelines for Application Whitelisting in Industrial Control Systems](https://www.us-cert.gov/sites/default/files/documents/Guidelines%20for%20Application%20Whitelisting%20in%20Industrial%20Control%20Systems_S508C.pdf)
