@@ -120,6 +120,7 @@ The mitigation strategies covered in this post have the following difficulty sco
 |**Patching applications**|Low|High|High|
 |**Configuring Microsoft Office macro settings**|Medium|Medium|Medium|
 |**Hardening user applications**|Medium|Medium|Medium|
+{:.table-with-minimal-border}
 
 Not surprisingly, it's fairly difficult to implement application whitelisting, particularly in blocking mode.  However, servers that are used for specific business functions (eg. email servers, Sharepoint servers, payment processing servers) may be easier to begin with as well as a higher priority to protect.  Whitelisting in these domains can help you to build familiarity with best practises before moving on to client devices.  Once you've set up a good baseline and validated that your whitelist works, it's easier to maintain while still requiring attention as applications are added, replaced, or updated.
 
@@ -140,7 +141,7 @@ Disabling insecure settings in web browsers and Microsoft Office applications is
 
 Together with the rest of the Essential Eight, these mitigation strategies form an excellent security baseline that you can work towards one concrete step at a time.
 
-In a follow-up post I'll dive into the last four Essential Eight mitigation strategies:
+In [a follow-up post]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %}) I'll dive into the last four Essential Eight mitigation strategies:
 
 * Restricting administrative privileges
 * Patching operating systems
