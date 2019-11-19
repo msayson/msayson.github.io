@@ -78,7 +78,7 @@ _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alc
 
 ## Phone bills
 
-Since I have WiFi at home, work, and most places I frequent, I don't need much data.  I spend $160/year on a Tello pay-as-you-go plan that has 500 MB of data, 500 minutes of calls, and unlimited texting.  My plan's price recently dropped to $11.27/month after tax or around $135/year, which was a nice surprise.
+Since I have WiFi at home, work, and most places I frequent, I don't need much data.  I spend $160/year on a Tello pay-as-you-go plan that has 1 GB of data and unlimited calling and texting.  A few months ago Tello automatically upgraded my plan from 500 MB of data to 1 GB while dropping in price to $11.27/month after tax, or around $135/year, which was a nice surprise.
 
 If you need more data, Tello and several other providers offer 12 GB of data for under $500/year.  _[Here's a referral link for a $10 credit](https://tello.com/account/register?_referral=P35J1KH9) if you decide to open a Tello plan.  Of course, you should always compare with other providers and choose the one that works best for you._
 
@@ -88,19 +88,39 @@ _Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol 
 
 _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit + $1k/year for clothing + $0.5k/year for phone = $24.3k/year_
 
-## Insurance
+## Health care
 
-Insurance is a fixed cost that I don't cut, so I'm putting it at the end of what I consider the essentials.
+Health care insurance is one area that I don't cut, so I'm putting it near the end of what I consider the essentials.
 
-I pay $5k/year for medical and dental insurance along with a basic vision plan, and $162/year for renter's insurance through State Farm.  Medical insurance premiums are much lower in Canada since we pay for most of it through income tax, and BC Medical Service Plan premiums were at most $900/year the last I checked, with lower rates depending on your income.
+I've been allocating around $4300/year to health care while I've been working in the US, between insurance and savings.  If I were working in Canada, this would be closer to $1200/year due to most emergency services being covered through taxes.
 
-Term life insurance is worth getting if you have any dependents, while disability/accident insurance may help you out if you become injured in a crash or other type of accident.  I get basic coverage through a work plan.
+I pay $348/year for a high-deductible medical plan, $84/year for a basic dental plan that covers check-ups and cleanings, and $168/year for a vision plan, along with $197/year for basic accident and critical illness insurance.
+
+This adds up to approximately $800/year for health care insurance, and the remaining $3500/year is for health care savings, since the US health care system is more of a "you pay for your health care" system.
+
+### Details on high-deductible plans and Health Savings Accounts (specific to US residents)
+
+High-deductible plans have lower monthly premiums than other plans, with the caveat that you have to pay for more of your medical bills up to a fixed amount called the "deductible".  In my case the deductible is $1500, meaning that I'll have to pay for the first $1500 of medical bills for a given year before my insurance will kick in.  For this reason, high-deductible plans are not the right choice for people who have a reasonable expectation that they will use health services on a regular basis, and lower-deductible plans with higher premiums but broader coverage may be a better option.
+
+To compensate for high deductibles and encourage people to save for their own health care expenses, the US government created [Health Savings Accounts](https://www.treasury.gov/resource-center/faqs/Taxes/Pages/Health-Savings-Accounts.aspx) (HSAs), which allow before-tax contributions to savings and investments and provide tax-free growth as long as the withdrawals are used for [eligible medical expenses](https://healthsavings.com/hsa/what-is-covered-by-an-hsa/).  You can contribute up to a fixed limit per year to an HSA, where the 2019 limit was [$3500/year for people with individual health plans](https://dpath.com/2019-hsa-contribution-limits/).
+
+This is a good deal if you're unlikely to use your medical insurance for a few years and can contribute the money you would have spent on monthly premiums to your HSA, since you can put money into high interest savings until you have enough to pay for the deductible, and contribute the rest to investments that can grow tax-free to pay for your health care expenses in the future.  In many ways it's like a retirement savings account for health care.
+
+_Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing + $0.2k/year for phone + $4.3k/year for health care = $22.2/year_
+
+_Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit + $1k/year for clothing + $0.5k/year for phone + $4.3k/year for health care = $28.6k/year_
+
+## Other insurance
+
+Term life insurance is worth getting if you have any dependents, while disability insurance may help you out if you become injured in a crash or another type of accident.  I get basic coverage through a work plan.
+
+I pay $162/year for renter's insurance through State Farm.
 
 Since I don't own a house or car, I don't need additional home or car insurance.
 
-_Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing + $0.2k/year for phone + $5.2k/year for insurance = $23.1/year_
+_Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing + $0.2k/year for phone + $4.3k/year for health care + $0.2k/year for other insurance = $22.4/year_
 
-_Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit + $1k/year for clothing + $0.5k/year for phone + $5.2k/year for insurance = $29.5k/year_
+_Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit + $1k/year for clothing + $0.5k/year for phone + $4.3k/year for health care + $0.2k/year for other insurance = $28.8k/year_
 
 ## Breathing room to save and spend
 
@@ -108,7 +128,7 @@ Even if you don't go anywhere as far as this, there are simple ways to bring ess
 
 Once you know how much you need for your essential expenses, you can decide how much you want to allocate towards savings and non-essential expenses, and automatically transfer savings to a separate account to make it easier to mentally separate spending money from long-term savings.
 
-I recommend putting emergency savings into a high-interest savings account that earns more than inflation, such as those provided by CIT, Synchrony, and Ally in the US, or EQ, Implicity, and Oaken in Canada.  Savings accounts usually limit the number of withdrawals to around 6 per month, while you can add money as often as you like.
+I recommend putting emergency savings into a high-interest savings account that earns more than inflation, such as those provided by CIT, Synchrony, and Ally in the US, or Motive, EQ, and Oaken in Canada.  Savings accounts usually limit the number of withdrawals to around 6 per month, while you can add money as often as you like.
 
 For money you need in a couple of years time, fixed term 1-2 year CDs in the US and GICs in Canada can provide a higher interest rate than most savings accounts, with the caveat that you usually have to pay back most of the interest if you withdraw money before the maturity date.
 
@@ -124,7 +144,7 @@ The "non-essentials" are the things that make you smile, the things that make fo
 
 Getting monthly bills and large fixed expenses under control is where you can get the most bang for your buck, and once these are at sustainable levels, you'll always have more to work with.
 
-Once you have a balance that works for you for essentials expenses, savings, and non-essential expenses, you're set up for success, and you can get on with enjoying life while knowing you're taken care of in good times and bad.  Deliberately maintaining a similar lifestyle as your income increases can help to avoid getting over-extended or stressed out about paying the bills, and is the first step towards working towards "financial freedom", where you have the freedom to live and work on your terms.
+Once you have a balance that works for you for essential expenses, savings, and non-essential expenses, you're set up for success, and you can get on with enjoying life while knowing you're taken care of in good times and bad.  Deliberately maintaining a similar lifestyle as your income increases can help to avoid getting over-extended or stressed out about paying the bills, and is the first step towards "financial freedom", where you have the freedom to live and work on your terms.
 
 ## Key ideas
 
