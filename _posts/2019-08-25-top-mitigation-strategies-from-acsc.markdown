@@ -41,6 +41,12 @@ Similarly, the first maturity level starts with monthly backups of important inf
 ## Summary
 The guides by the Australian Cyber Security Centre are some of the best resources I've seen online, and may help any organization that is developing their security team, whether they're just getting started or are seeking additional sources of tried and tested security controls they can apply to protect their organizations and their customers.
 
+## Posts in this series
+
+* (Current post) {{page.title}}
+* [Diving into the Essential Eight strategies to mitigate security incidents (part 1: preventing delivery and execution of malware)]({% post_url 2019-08-30-essential-eight-mitigation-strategies-part-1 %})
+* [Diving into the Essential Eight strategies to mitigate security incidents (part 2: limiting blast radius and recovering)]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %})
+
 ## Resources
 
 * [Essential Eight Explained](https://www.cyber.gov.au/publications/essential-eight-explained)

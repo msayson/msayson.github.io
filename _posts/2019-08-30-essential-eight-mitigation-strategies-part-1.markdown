@@ -148,6 +148,12 @@ In [a follow-up post]({% post_url 2019-11-17-essential-eight-mitigation-strategi
 * Multi-factor authentication
 * Daily backups
 
+## Posts in this series
+
+* [Top mitigation strategies from the Australian Cyber Security Centre]({% post_url 2019-08-25-top-mitigation-strategies-from-acsc %})
+* (Current post) {{page.title}}
+* [Diving into the Essential Eight strategies to mitigate security incidents (part 2: limiting blast radius and recovering)]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %})
+
 ## Resources
 
 The Australian Cyber Security Centre:
