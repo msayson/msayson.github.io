@@ -44,8 +44,8 @@ The guides by the Australian Cyber Security Centre are some of the best resource
 ## Posts in this series
 
 * (Current post) {{page.title}}
-* [Diving into the Essential Eight strategies to mitigate security incidents (part 1: preventing delivery and execution of malware)]({% post_url 2019-08-30-essential-eight-mitigation-strategies-part-1 %})
-* [Diving into the Essential Eight strategies to mitigate security incidents (part 2: limiting blast radius and recovering)]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %})
+* [Diving into the Essential Eight strategies to mitigate security incidents part 1: preventing delivery and execution of malware]({% post_url 2019-08-30-essential-eight-mitigation-strategies-part-1 %})
+* [Diving into the Essential Eight strategies to mitigate security incidents part 2: limiting blast radius and recovering]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %})
 
 ## Resources
 

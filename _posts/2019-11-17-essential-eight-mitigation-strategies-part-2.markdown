@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Diving into the Essential Eight strategies to mitigate security incidents (part 2: limiting blast radius and recovering)"
+title:  "Diving into the Essential Eight strategies to mitigate security incidents part 2: limiting blast radius and recovering"
 date:   2019-11-17 20:00:00 -0800
 categories: security
 ---
@@ -189,7 +189,7 @@ Daily backups are necessary for any organization and have widely recognized valu
 ## Posts in this series
 
 * [Top mitigation strategies from the Australian Cyber Security Centre]({% post_url 2019-08-25-top-mitigation-strategies-from-acsc %})
-* [Diving into the Essential Eight strategies to mitigate security incidents (part 1: preventing delivery and execution of malware)]({% post_url 2019-08-30-essential-eight-mitigation-strategies-part-1 %})
+* [Diving into the Essential Eight strategies to mitigate security incidents part 1: preventing delivery and execution of malware]({% post_url 2019-08-30-essential-eight-mitigation-strategies-part-1 %})
 * (Current post) {{page.title}}
 
 ## Resources

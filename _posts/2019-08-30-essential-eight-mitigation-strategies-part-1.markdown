@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Diving into the Essential Eight strategies to mitigate security incidents (part 1: preventing delivery and execution of malware)"
+title:  "Diving into the Essential Eight strategies to mitigate security incidents part 1: preventing delivery and execution of malware"
 date:   2019-08-30 12:00:00 -0800
 categories: security
 ---
@@ -152,7 +152,7 @@ In [a follow-up post]({% post_url 2019-11-17-essential-eight-mitigation-strategi
 
 * [Top mitigation strategies from the Australian Cyber Security Centre]({% post_url 2019-08-25-top-mitigation-strategies-from-acsc %})
 * (Current post) {{page.title}}
-* [Diving into the Essential Eight strategies to mitigate security incidents (part 2: limiting blast radius and recovering)]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %})
+* [Diving into the Essential Eight strategies to mitigate security incidents part 2: limiting blast radius and recovering]({% post_url 2019-11-17-essential-eight-mitigation-strategies-part-2 %})
 
 ## Resources
 
