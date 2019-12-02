@@ -17,19 +17,22 @@ My provided examples are in YAML, while you can also use JSON in CloudFormation.
 It's a good idea to encrypt your data wherever it's stored so that only those with access to the keys can read it.  Any sensitive data should always be encrypted, and it's usually only acceptable to leave data unencrypted if it's intended to be readable by everyone, for all time.
 
 AWS S3 supports several mechanisms for server-side encryption of data:
+
 * [S3-managed AES keys (SSE-S3)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html)
-  * Every object that is uploaded to the bucket is automatically encrypted with a unique AES-256 encryption key.
-  * Encryption keys are generated and managed by S3.
+    * Every object that is uploaded to the bucket is automatically encrypted with a unique AES-256 encryption key.
+    * Encryption keys are generated and managed by S3.
 * [Customer-managed keys stored in the AWS Key Management Service (SSE-KMS)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html)
-  * Objects are encrypted using KMS keys, where you can either specify the key ID to use in your [PutObject request](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html), or use the bucket's default KMS key.
-  * You can generate or import custom keys in KMS to allow you to disable or rotate keys in the future.
-  * KMS provides audit logs showing when and where keys were accessed.
+    * Every object that is uploaded to the bucket is automatically encrypted with a unique data key generated from a KMS master key. You can specify the master key to use in your [PutObject request](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html), or use the bucket's default KMS master key.
+    * You can generate or import custom keys in KMS to allow you to disable or rotate keys in the future.
+    * KMS provides audit logs showing when and where keys were accessed.
 * [Customer-managed keys provided in S3 requests (SSE-C)](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html)
-  * Object are encrypted using encryption keys that you provide in S3 [PutObject requests](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html).
+    * Object are encrypted using encryption keys that you provide in S3 [PutObject requests](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html).
 
 It usually makes sense to use SSE-S3 or SSE-KMS unless you have a good reason to do otherwise.  SSE-S3 is very simple to use since all the details are taken care of for you, while SSE-KMS provides additional auditing and credential rotation capabilities.
 
 The decision for which one to use usually depends on your security requirements and support by the services that will be interacting with S3.  Many AWS services natively support KMS encryption, while a few services only support SSE-S3.
+
+If both SSE-S3 and SSE-KMS are options for you, then I'd recommend using SSE-KMS with custom keys generated in KMS, since this provides you with auditing by default and allows you to disable or rotate encryption keys with minimal effort.
 
 ### Enabling encryption by default
 
@@ -305,6 +308,7 @@ See [the S3 security best practices guide](https://docs.aws.amazon.com/AmazonS3/
 ## Resources
 
 AWS documentation:
+
 * [Security best practices for Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html)
 * [CloudFormation properties for S3 buckets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)
 * [CloudFormation S3 properties for enabling encryption by default](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html)
