@@ -10,7 +10,7 @@ It's harder to save today than it was a few decades ago thanks to an inflated co
 
 Many, many people do, and to make this concrete I'll share how I spend money and why.
 
-_Disclaimer #1: This is written from the point of view of a healthy 20-something who had the advantage of growing up in Canada, where a great education can be had for around $6500/year._
+_Disclaimer #1: This is written from the point of view of a healthy 20-something who had the advantage of growing up in Canada, where a great university education can be had for around $6500/year._
 
 _Disclaimer #2: This isn't intended to fit every lifestyle, it's just one example of how you can live well on a tight budget.  I know that I'm more frugal than most, and that's partly because I enjoy saving money, partly because I have clear goals I want to save towards, and partly because the things I enjoy most are free or inexpensive and I've avoided taking on expensive hobbies._
 
