@@ -98,17 +98,19 @@ I pay $348/year for a high-deductible medical plan, $84/year for a basic dental 
 
 This adds up to approximately $800/year for health care insurance, and the remaining $3500/year is for health care savings, since the US health care system is more of a "you pay for your health care" system.
 
+_Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing + $0.2k/year for phone + $4.3k/year for health care = $22.2/year_
+
+_Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit + $1k/year for clothing + $0.5k/year for phone + $4.3k/year for health care = $28.6k/year_
+
 ### Details on high-deductible plans and Health Savings Accounts (specific to US residents)
 
 High-deductible plans have lower monthly premiums than other plans, with the caveat that you have to pay for more of your medical bills up to a fixed amount called the "deductible".  In my case the deductible is $1500, meaning that I'll have to pay for the first $1500 of medical bills for a given year before my insurance will kick in.  For this reason, high-deductible plans are not the right choice for people who have a reasonable expectation that they will use health services on a regular basis, and lower-deductible plans with higher premiums but broader coverage may be a better option.
 
-To compensate for high deductibles and encourage people to save for their own health care expenses, the US government created [Health Savings Accounts](https://www.treasury.gov/resource-center/faqs/Taxes/Pages/Health-Savings-Accounts.aspx) (HSAs), which allow before-tax contributions to savings and investments and provide tax-free growth as long as the withdrawals are used for [eligible medical expenses](https://healthsavings.com/hsa/what-is-covered-by-an-hsa/).  You can contribute up to a fixed limit per year to an HSA, where the 2019 limit was [$3500/year for people with individual health plans](https://dpath.com/2019-hsa-contribution-limits/).
+To compensate for high deductibles and encourage people to save for their own health care expenses, the US government created [Health Savings Accounts](https://www.treasury.gov/resource-center/faqs/Taxes/Pages/Health-Savings-Accounts.aspx) (HSAs), which allow before-tax contributions to savings and investments and provide tax-free growth and withdrawals as long as they're used for [eligible medical expenses](https://healthsavings.com/hsa/what-is-covered-by-an-hsa/).  You can contribute up to a fixed limit per year to an HSA, where the 2019 limit was [$3500/year for people with individual health plans](https://dpath.com/2019-hsa-contribution-limits/).
 
 This is a good deal if you're unlikely to use your medical insurance for a few years and can contribute the money you would have spent on monthly premiums to your HSA, since you can put money into high interest savings until you have enough to pay for the deductible, and contribute the rest to investments that can grow tax-free to pay for your health care expenses in the future.  In many ways it's like a retirement savings account for health care.
 
-_Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit + $0.3k/year for clothing + $0.2k/year for phone + $4.3k/year for health care = $22.2/year_
-
-_Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit + $1k/year for clothing + $0.5k/year for phone + $4.3k/year for health care = $28.6k/year_
+See [this Vanguard post](https://personal.vanguard.com/us/whatweoffer/overview/healthsavings) for more information on Health Savings Accounts.
 
 ## Other insurance
 
