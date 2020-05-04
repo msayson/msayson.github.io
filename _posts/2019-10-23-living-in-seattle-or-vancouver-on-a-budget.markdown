@@ -58,6 +58,8 @@ _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alc
 
 Taking the bus is much less expensive than owning and maintaining a car, especially when accounting for insurance, gas, and parking.  King County Metro Transit monthly passes (ORCA Cards) cost around $100 USD/month, or $1.2k/year.
 
+Depending on where you live, driving may be more convenient or even a necessity, but many cities have good enough bus service and walkability that you can get around as easily without a car.  While I've been in Seattle or Vancouver I haven't seen the need to buy a car, and probably won't for some time.
+
 _Frugal subtotal: $12k/year for fixed housing + $4.2k/year for food and alcohol + $1.2k/year for transit = $17.4/year_
 
 _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alcohol + $1.2k/year for transit = $22.8k/year_
@@ -78,7 +80,7 @@ _Semi-frugal subtotal: $12k/year for fixed housing + $9.6k/year for food and alc
 
 ## Phone bills
 
-Since I have WiFi at home, work, and most places I frequent, I don't need much data.  I spend $160/year on a Tello pay-as-you-go plan that has 1 GB of data and unlimited calling and texting.  A few months ago Tello automatically upgraded my plan from 500 MB of data to 1 GB while dropping in price to $11.27/month after tax, or around $135/year, which was a nice surprise.
+Since I have WiFi at home, work, and most places I frequent, I don't need much data.  I spend $9.07/month, around $110/year, on a Tello pay-as-you-go plan that has 1 GB of data, 300 minutes of calling, and unlimited texting.  Pay-as-you-go plans are much less expensive than standard monthly plans in Canada and the US, and many allow you to customize your data, calling, and texting limits so that you only pay for what you need, not for arbitrary thresholds that you never hit.
 
 If you need more data, Tello and several other providers offer 12 GB of data for under $500/year.  _[Here's a referral link for a $10 credit](https://tello.com/account/register?_referral=P35J1KH9) if you decide to open a Tello plan.  Of course, you should always compare with other providers and choose the one that works best for you._
 
@@ -131,6 +133,8 @@ Even if you don't go anywhere as far as this, there are simple ways to bring ess
 Once you know how much you need for your essential expenses, you can decide how much you want to allocate towards savings and non-essential expenses, and automatically transfer savings to a separate account to make it easier to mentally separate spending money from long-term savings.
 
 I recommend putting emergency savings into a high-interest savings account that earns more than inflation, such as those provided by CIT, Synchrony, and Ally in the US, or Motive, EQ, and Oaken in Canada.  Savings accounts usually limit the number of withdrawals to around 6 per month, while you can add money as often as you like.
+
+To find high-interest savings accounts with the best rates, check https://www.bankrate.com/banking/savings/rates/ for US banks, or https://www.highinterestsavings.ca/chart/ for Canadian banks.
 
 For money you need in a couple of years time, fixed term 1-2 year CDs in the US and GICs in Canada can provide a higher interest rate than most savings accounts, with the caveat that you usually have to pay back most of the interest if you withdraw money before the maturity date.
 
