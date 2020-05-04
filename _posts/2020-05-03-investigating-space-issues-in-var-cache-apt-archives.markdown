@@ -107,7 +107,7 @@ sudo rm -rf /var/run/docker.sock
 sudo rm /usr/local/bin/docker-compose
 ```
 
-## Success!
+## Verifying success
 
 ```
 $ df -h
@@ -125,10 +125,10 @@ tmpfs           586M   12K  586M   1% /run/user/1000
 
 Excellent, we're back down to just using 9.4G out of 26G of the root file system.
 
-After this I was able to complete my system upgrade without issues.
+After this I was able to continue the steps from [Debian upgrade guide](https://www.debian.org/releases/stable/amd64/release-notes/ch-upgrading.en.html) to complete the upgrades without issues.
 
 ## References
 
-* Debian upgrade guide for the stable release: https://www.debian.org/releases/stable/amd64/release-notes/ch-upgrading.en.html
-* StackOverflow post on listing manually installed packages: https://stackoverflow.com/a/60252818
-* AskUbuntu post on how to completely uninstall docker: https://askubuntu.com/questions/935569/how-to-completely-uninstall-docker
+* Debian upgrade guide for the stable release: [https://www.debian.org/releases/stable/amd64/release-notes/ch-upgrading.en.html](https://www.debian.org/releases/stable/amd64/release-notes/ch-upgrading.en.html)
+* StackOverflow post on listing manually installed packages: [https://stackoverflow.com/a/60252818](https://stackoverflow.com/a/60252818)
+* AskUbuntu post on how to completely uninstall docker: [https://askubuntu.com/questions/935569/how-to-completely-uninstall-docker](https://askubuntu.com/questions/935569/how-to-completely-uninstall-docker)
