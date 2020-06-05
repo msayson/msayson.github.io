@@ -37,8 +37,8 @@ In the end, you improve your game by playing, one stone at a time.
 
 ### Resources
 
-* Online materials for learning how to play Go: https://www.usgo.org/learn-play
-* Sensei's Library, a popular English-language wiki for Go: https://senseis.xmp.net/?PagesForBeginners
-* Local clubs listed with the Canadian Go Association: https://canadiango.org/club/list
-* Local clubs listed with the American Go Assocation: https://www.usgo.org/where-play-go
-* Online Go servers: https://www.usgo.org/go-internet
+* Online materials for learning how to play Go: [https://www.usgo.org/learn-play](https://www.usgo.org/learn-play)
+* Sensei's Library, a popular English-language wiki for Go: [https://senseis.xmp.net/?PagesForBeginners](https://senseis.xmp.net/?PagesForBeginners)
+* Local clubs listed with the Canadian Go Association: [https://canadiango.org/club/list](https://canadiango.org/club/list)
+* Local clubs listed with the American Go Assocation: [https://www.usgo.org/where-play-go](https://www.usgo.org/where-play-go)
+* Online Go servers: [https://www.usgo.org/go-internet](https://www.usgo.org/go-internet)
