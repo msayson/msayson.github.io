@@ -67,11 +67,13 @@ AWS Database Migration Service is easy to set up and works well for many use cas
 
 AWS Data Pipeline looked like a perfect match at the start of the project, however, as discussed in this post, it has several feature limitations that we discovered after working with it that limit the projects I would recommend it for.
 
-AWS Glue is a newer service that runs on an AWS-managed Spark environment so that you don't have to manage the compute instances as is the case with Data Pipeline.  It supports CSV, JSON, Parquet, and other file formats, and its jobs can be written in either Scala or Python.
+AWS Glue is a newer service that runs on a Spark environment managed by AWS, which removes the overhead of having to manage compute instances on your end, and users can develop ETL (extract, transform, load) jobs in Python or Scala to run on it.
 
 When I first looked at AWS Data Pipeline and AWS Glue, I found that I was able to stand up a Data Pipeline proof-of-concept within a day, while Glue appeared to have a steeper learning curve.  Since Data Pipeline was the simplest solution that appeared to satisfy our requirements, I recommended we use it instead of Glue, particularly since no one on our team had used Glue before.
 
 Given what I know today, and now that we have more examples from partners who have successfully used Glue for their workflows, I would tend to recommend going straight to AWS Glue instead of AWS Data Pipeline in use cases that require more complex workflows than are supported by AWS Database Migration Service.
+
+It has better support for dynamic discovery of schemas, has built-in support for data encryption in transit and at rest, and supports a variety of file formats including CSV, JSON, Parquet, and others.
 
 ## Lesson 5: AWS Support is an excellent resource for assisting with issues that don't have obvious solutions.
 
