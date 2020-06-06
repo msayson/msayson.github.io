@@ -16,7 +16,7 @@ This turned out to be a less than ideal solution although it did the job, and I 
 
 We had user requirements for the data syncs, and knew that we would encrypt data at rest in S3 and encrypt in transit between S3 and downstream services.
 
-However, I found that integrating with internal services that had specific assumptions for how security requirements would be implemented introduced more work than expected, and a number of Data Pipeline security limitations came up over the course of the project.
+However, I found that integrating with internal services that had specific assumptions for how security requirements would be implemented introduced more work than expected, and a number of Data Pipeline limitations came up over the course of the project.
 
 After several days of debugging an integration with an internal security template for S3 buckets, I found that the template assumed that KMS encryption would be used for all files saved to S3.  The template blocked all other forms of encryption, while AWS Data Pipeline supported AES but not KMS encryption.
 
@@ -87,7 +87,7 @@ After attempting to troubleshoot Data Pipeline issues that were lacking error lo
 
 One particularly tricky Data Pipeline issue took over two days to work through with AWS Support due to the lack of error logs, while another was resolved within a couple of hours since they quickly recognized it as being a symptom of an encryption protocol mismatch between our security template and what was being used by Data Pipeline's backend.
 
-I had not often leveraged AWS Support before, while I knew that we had access to enterprise support.  This project demonstrated the value of AWS Support when other resources are insufficient for root-causing the issue independently, particularly when working with AWS services in a way that applies restrictions beyond the typical use case.
+I hadn't often leveraged AWS Support before, while I knew that we had access to enterprise support.  This project demonstrated the value of AWS Support when other resources are insufficient for root-causing the issue independently, particularly when working with AWS services in a way that applies restrictions beyond the typical use case.
 
 ## Summary of lessons learned
 
