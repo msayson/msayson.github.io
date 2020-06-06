@@ -134,7 +134,7 @@ Once you know how much you need for your essential expenses, you can decide how 
 
 I recommend putting emergency savings into a high-interest savings account that earns more than inflation, such as those provided by CIT, Synchrony, and Ally in the US, or Motive, EQ, and Oaken in Canada.  Savings accounts usually limit the number of withdrawals to around 6 per month, while you can add money as often as you like.
 
-To find high-interest savings accounts with the best rates, check https://www.bankrate.com/banking/savings/rates/ for US banks, or https://www.highinterestsavings.ca/chart/ for Canadian banks.
+To find high-interest savings accounts with the best rates, check [https://www.bankrate.com/banking/savings/rates/](https://www.bankrate.com/banking/savings/rates/) for US banks, or [https://www.highinterestsavings.ca/chart/](https://www.highinterestsavings.ca/chart/) for Canadian banks.
 
 For money you need in a couple of years time, fixed term 1-2 year CDs in the US and GICs in Canada can provide a higher interest rate than most savings accounts, with the caveat that you usually have to pay back most of the interest if you withdraw money before the maturity date.
 
