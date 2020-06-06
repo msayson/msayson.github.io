@@ -41,9 +41,10 @@ Some of these limitations can be worked around, while others make it less suitab
 * Data Pipeline does not support KMS encryption for writing data to S3, while it does support AES encryption.
 * Data Pipeline does not support including column headers in exports of RDS tables to S3 by default.  A workaround for PostgreSQL databases is to update the SQL SELECT statement to force a SQL UNION between column headers and data fields casted to strings.  However, this workaround requires all columns to be specified in the query, which adds manual effort to update data schemas.
 * A number of Data Pipeline attributes cannot be updated after creation.  A workaround is to update the CloudFormation template to no longer include the Data Pipeline resource while retaining other template resources.  This deletes the Data Pipeline without affecting any data.  Then, update the CloudFormation template to include the Data Pipeline with the new attributes.  This creates a new Data Pipeline which continues to sync data to the existing S3 bucket.
-* Data Pipeline supports CSV exports but not JSON or Parquet.
+* Data Pipeline supports CSV but not JSON or Parquet for S3 exports.
 * Data Pipeline compute instances must be explicitly defined by users, meaning that you manage the types and numbers of compute instances to set up for your pipeline.
-* Data Pipeline is no longer being actively developed, as engineering resources have been allocated to the newer and more featureful AWS Glue service.
+
+I also found from my interactions with AWS Support that AWS Data Pipeline is being maintained but not actively developed, as resources have been allocated to the newer and more featureful AWS Glue service.  This indicates that many of these limitations are unlikely to change in the near future.
 
 ## Lesson 3: When producing data for partners, talk directly with the engineers on their team.
 
@@ -92,5 +93,5 @@ I hadn't often leveraged AWS Support before, while I knew that we had access to 
 * Security requirements should be explicitly defined at the start of a project and incorporated into proof-of-concepts.
 * AWS Data Pipeline has several functional limitations to be aware of that make it unsuitable for some use cases that appear to match on the surface.
 * When producing data for partners, talk directly with the engineers on their team to validate the format that they will be able to work with, since they know their services best.
-* AWS Glue is a more suitable solution than AWS Data Pipeline in many cases than are too complex for AWS Database Migration Service to support.
+* AWS Glue is a more suitable solution than AWS Data Pipeline in many cases that are too complex for AWS Database Migration Service to support.
 * AWS Support is an excellent resource, particularly if you have access to enterprise support.
