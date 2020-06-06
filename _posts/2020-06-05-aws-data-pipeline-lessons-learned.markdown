@@ -61,11 +61,7 @@ After our integration with them, we agreed that CSV exports should not be recomm
 
 ## Lesson 4: AWS Glue is a more suitable solution for many modern data sync use cases.
 
-Three of the solutions I considered at the start of the project were:
-
-* [AWS Database Migration Service](https://aws.amazon.com/dms/)
-* [AWS Data Pipeline](https://aws.amazon.com/datapipeline/)
-* [AWS Glue](https://aws.amazon.com/glue/)
+Three of the solutions I considered at the start of the project were [AWS Database Migration Service](https://aws.amazon.com/dms/), [AWS Data Pipeline](https://aws.amazon.com/datapipeline/), and [AWS Glue](https://aws.amazon.com/glue/).
 
 AWS Database Migration Service is easy to set up and works well for many use cases that require syncing data from one AWS service to another.  However, some of our specific use cases were not supported by it, such as requiring distinct S3 paths for each sync so that customers could quickly query for data from a specific day's snapshot as well as compare data between snapshots.
 
