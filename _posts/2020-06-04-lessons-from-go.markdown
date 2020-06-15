@@ -13,7 +13,9 @@ Go forces us to ask ourselves those all-encompassing questions:
 
 *What things are most important to me?*
 
-Or combined into a more useful form: *What is the most important thing for me to do right now?*
+*What should I be focusing on?*
+
+Or combined into a more immediate, actionable form: *What is the most important thing for me to do right now?*
 
 You have a dizzying number of options, where sometimes none of them look good and sometimes far too many beg for consideration, and you can only choose one.
 
