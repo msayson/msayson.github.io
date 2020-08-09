@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Choosing a logging library for Kotlin AWS Lambda functions"
+title:  "Choosing a logging library for Kotlin or Java AWS Lambda functions"
 date:   2020-08-08 20:00:00 -0700
 categories: [aws, programming-languages]
-excerpt: "<p>There are a lot of logging libraries to choose from when writing Kotlin AWS Lambda functions.  Since Kotlin is fully interoperable with Java, we have access to both Kotlin-based and Java-based logging libraries.</p><p>This post compares some of the major options and evaluates which are most suitable for Kotlin Lambda functions.</p>"
+excerpt: "<p>There are a lot of logging libraries to choose from when writing AWS Lambda functions in Kotlin or Java.  Since Kotlin is fully interoperable with Java, Kotlin projects have access to both Kotlin-based and Java-based logging libraries.</p><p>This post compares some of the major options and evaluates which are most suitable for Lambda functions.</p>"
 ---
 
-There are a lot of logging libraries to choose from when writing Kotlin AWS Lambda functions.  Since Kotlin is fully interoperable with Java, we have access to both Kotlin-based and Java-based logging libraries.
+There are a lot of logging libraries to choose from when writing AWS Lambda functions in Kotlin or Java.  Since Kotlin is fully interoperable with Java, Kotlin projects have access to both Kotlin-based and Java-based logging libraries.
 
-This post compares some of the major options and evaluates which are most suitable for Kotlin Lambda functions.
+This post compares some of the major options and evaluates which are most suitable for Lambda functions.
 
 ## Criteria for evaluating libraries
 
@@ -70,7 +70,7 @@ Log4j2 has significantly better performance than both its earlier iteration of L
 
 There are many options for logging in Kotlin AWS Lambda functions since we have access to both Kotlin and Java libraries.
 
-aws-lambda-java-log4j2 is my preferred choice for now since it includes Lambda request IDs in logs, supports standard log levels, handles multi-line log statements, and uses an underlying logging implementation that is more performant than the one used by the other top contender.
+For either Kotlin or Java, aws-lambda-java-log4j2 is my preferred choice for now since it includes Lambda request IDs in logs, supports standard log levels, handles multi-line log statements, and uses an underlying logging implementation that is more performant than the one used by the other top contender.
 
 See the [AWS documentation on Lambda function logging in Java with Log4j 2 and SLF4J](https://docs.aws.amazon.com/lambda/latest/dg/java-logging.html#java-logging-log4j2) for more details on how to use it.
 
