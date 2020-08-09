@@ -72,7 +72,7 @@ There are many options for logging in Kotlin AWS Lambda functions since we have 
 
 aws-lambda-java-log4j2 is my preferred choice for now since it includes Lambda request IDs in logs, supports standard log levels, handles multi-line log statements, and uses an underlying logging implementation that is more performant than the one used by the other top contender.
 
-See the [AWS documentation on Lambda function logging in Java](https://docs.aws.amazon.com/lambda/latest/dg/java-logging.html) for more details on how to use it.
+See the [AWS documentation on Lambda function logging in Java with Log4j 2 and SLF4J](https://docs.aws.amazon.com/lambda/latest/dg/java-logging.html#java-logging-log4j2) for more details on how to use it.
 
 ## Resources
 
