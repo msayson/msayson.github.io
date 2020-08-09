@@ -2,7 +2,7 @@
 layout: post
 title:  "Choosing a logging library for Kotlin AWS Lambda functions"
 date:   2020-08-08 20:00:00 -0700
-categories: aws, programming-languages
+categories: [aws, programming-languages]
 excerpt: "<p>There are a lot of logging libraries to choose from when writing Kotlin AWS Lambda functions.  Since Kotlin is fully interoperable with Java, we have access to both Kotlin-based and Java-based logging libraries.</p><p>This post compares some of the major options and evaluates which are most suitable for Kotlin Lambda functions.</p>"
 ---
 
