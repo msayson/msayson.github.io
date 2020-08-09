@@ -6,6 +6,11 @@ This project contains the source code for Mark Sayson's personal blog:
 Jekyll is used to generate the blog's layout and pages from Markdown.  See [https://jekyllrb.com](https://jekyllrb.com) for information on how to use Jekyll to build static web sites.
 
 ### Developer notes
+#### Setting up a developer workspace
+* Clone this repository to your preferred directory.
+* Install [Ruby](https://www.ruby-lang.org/en/) and [Bundler](https://bundler.io/).
+* Run `bundle install` to install dependencies required by the project.
+
 #### Running the website locally
 `jekyll serve` will run the website on a local server, accessible in a browser via localhost:4000.
 
