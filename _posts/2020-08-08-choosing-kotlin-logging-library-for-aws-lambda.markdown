@@ -3,9 +3,8 @@ layout: post
 title:  "Choosing a logging library for Kotlin AWS Lambda functions"
 date:   2020-08-08 20:00:00 -0700
 categories: aws, programming-languages
+excerpt: "<p>There are a lot of logging libraries to choose from when writing Kotlin AWS Lambda functions.  Since Kotlin is fully interoperable with Java, we have access to both Kotlin-based and Java-based logging libraries.</p><p>This post compares some of the major options and evaluates which are most suitable for Kotlin Lambda functions.</p>"
 ---
-
-## Introduction
 
 There are a lot of logging libraries to choose from when writing Kotlin AWS Lambda functions.  Since Kotlin is fully interoperable with Java, we have access to both Kotlin-based and Java-based logging libraries.
 
@@ -13,7 +12,7 @@ This post compares some of the major options and evaluates which are most suitab
 
 ## Criteria for evaluating libraries
 
-#### 1. Include Lambda request IDs in log statements
+### 1. Include Lambda request IDs in log statements
 
 The most useful logs provide contextual information that allows us to quickly look up events associated with an issue, for example, the user ID or request ID, descriptions of actions taken for a given request, and error messages along with their stack traces.
 
@@ -21,11 +20,11 @@ For AWS Lambda functions, every time a Lambda function is called, a unique reque
 
 Logging libraries that make it easy to automatically include Lambda request IDs in log statements will therefore be rated higher than other libraries that force us to put in more effort to construct the same contextual information.
 
-#### 2. Support multiple log levels
+### 2. Support multiple log levels
 
 It's also helpful for logs to differentiate between informational, warning, and error statements.  Common Java logging APIs such as [SLF4J](http://www.slf4j.org/) have log levels of trace, debug, info, warn, error, and fatal, where you can usually configure the minimum level that should be logged for a given environment.  Trace and debug statements are often only enabled in test environments.
 
-#### 3. Handle multi-line log statements
+### 3. Handle multi-line log statements
 
 Finally, when we include multiple lines of text in a log statement, they should be aggregated into a single CloudWatch log event, otherwise our service will be making unnecessary CloudWatch API calls and we'll have to dig through multiple CloudWatch events that should all really be a single log statement.
 
@@ -73,10 +72,12 @@ There are many options for logging in Kotlin AWS Lambda functions since we have 
 
 aws-lambda-java-log4j2 is my preferred choice for now since it includes Lambda request IDs in logs, supports standard log levels, handles multi-line log statements, and uses an underlying logging implementation that is more performant than the one used by the other top contender.
 
+See the [AWS documentation on Lambda function logging in Java](https://docs.aws.amazon.com/lambda/latest/dg/java-logging.html) for more details on how to use it.
+
 ## Resources
 
 * AWS documentation for Lambda function logging in Java: [https://docs.aws.amazon.com/lambda/latest/dg/java-logging.html](https://docs.aws.amazon.com/lambda/latest/dg/java-logging.html)
 * Source code for aws-lambda-java-core: [https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-core](https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-core)
-Source code for aws-lambda-java-log4j2: [https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-log4j2](https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-log4j2)
+* Source code for aws-lambda-java-log4j2: [https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-log4j2](https://github.com/aws/aws-lambda-java-libs/tree/master/aws-lambda-java-log4j2)
 * Source code for kotlin-logging: [https://github.com/MicroUtils/kotlin-logging](https://github.com/MicroUtils/kotlin-logging)
 * Source code for lambda-logging: [https://github.com/symphoniacloud/lambda-monitoring/tree/master/lambda-logging](https://github.com/symphoniacloud/lambda-monitoring/tree/master/lambda-logging)
