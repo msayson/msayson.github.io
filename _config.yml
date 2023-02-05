@@ -25,7 +25,10 @@ paginate_path: "/blog/page:num/"
 markdown: kramdown
 permalink: /blog/:title/
 
-# Google Analytics settings
+# Google Analytics 4 settings
+ga_tracking: G-0X2FJYXEPK
+
+# Deprecated Google "Universal Analytics" settings
 google_analytics_tracking_id: UA-80369609-1
 
 plugins:
