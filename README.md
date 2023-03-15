@@ -12,7 +12,7 @@ Jekyll is used to generate the blog's layout and pages from Markdown.  See [http
 * Run `bundle install` to install dependencies required by the project.
 
 #### Running the website locally
-`jekyll serve` will run the website on a local server, accessible in a browser via localhost:4000.
+`bundle exec jekyll serve` will run the website on a local server, accessible in a browser via localhost:4000.
 
 Code changes will be reflected on the website after refreshing the page.
 
@@ -25,7 +25,7 @@ _This repository intentionally does not specify dependency versions in the main 
 
 For example, to update the `github-pages` gem and its dependency tree, run `bundle update github-pages`, which will retrieve the latest dependency tree for `github-pages` that is consistent with the Gemfile (here we do not specify the version, so we grab the latest release) and update our local dependency tree.
 
-Test the changes by running `jekyll serve` and verifying website functionality before committing and pushing the changes.
+Test the changes by running `bundle exec jekyll serve` and verifying website functionality before committing and pushing the changes.
 
 ### License
 The following directories and their content are Copyright Mark Sayson.  You may not reuse their content without my permission:
