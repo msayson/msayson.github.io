@@ -6,6 +6,7 @@ _site
 
 # Temp files
 *.swp
+vendor
 
 # Workspace files
 blog.sublime-workspace
