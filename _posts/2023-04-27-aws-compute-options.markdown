@@ -101,3 +101,4 @@ I would only suggest using EC2 (stand-alone or on ECS) when there is a specific 
 * Fargate documentation: <https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html>
 * Lambda documentation: <https://docs.aws.amazon.com/lambda>
 * Lambda scaling: <https://aws.amazon.com/blogs/compute/understanding-aws-lambda-scaling-and-throughput>
+* Quincy Mitchell cost comparison of Lambda, EC2, and Fargate: <https://blogs.perficient.com/2021/06/17/aws-cost-analysis-comparing-lambda-ec2-fargate/>
