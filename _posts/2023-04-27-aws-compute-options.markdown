@@ -88,10 +88,10 @@ I would only suggest using EC2 (stand-alone or on ECS) when there is a specific 
 
 ## References
 
-* AWS blog post on ECS vs EKS: https://aws.amazon.com/blogs/containers/amazon-ecs-vs-amazon-eks-making-sense-of-aws-container-services
-* AWS blog post on Lambda provisioned concurrency: https://aws.amazon.com/blogs/compute/new-for-aws-lambda-predictable-start-up-times-with-provisioned-concurrency
-* ECS documentation: https://docs.aws.amazon.com/ecs
-* EKS documentation: https://docs.aws.amazon.com/eks
-* Fargate documentation: https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html
-* Lambda documentation: https://docs.aws.amazon.com/lambda
-* Lambda scaling: https://aws.amazon.com/blogs/compute/understanding-aws-lambda-scaling-and-throughput
+* AWS blog post on ECS vs EKS: <https://aws.amazon.com/blogs/containers/amazon-ecs-vs-amazon-eks-making-sense-of-aws-container-services>
+* AWS blog post on Lambda provisioned concurrency: <https://aws.amazon.com/blogs/compute/new-for-aws-lambda-predictable-start-up-times-with-provisioned-concurrency>
+* ECS documentation: <https://docs.aws.amazon.com/ecs>
+* EKS documentation: <https://docs.aws.amazon.com/eks>
+* Fargate documentation: <https://docs.aws.amazon.com/AmazonECS/latest/userguide/what-is-fargate.html>
+* Lambda documentation: <https://docs.aws.amazon.com/lambda>
+* Lambda scaling: <https://aws.amazon.com/blogs/compute/understanding-aws-lambda-scaling-and-throughput>
