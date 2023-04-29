@@ -50,7 +50,7 @@ When building services entirely in AWS, I prefer ECS because of how easy it is t
 
 ## Comparison matrix
 
-|                          | Lambda          | Fargate on ECS | EC2 on ECS  | EC2/ECS on EKS  | EC2          |
+|                          | Lambda          | Fargate on ECS | EC2 on ECS  | EC2/Fargate on EKS  | EC2          |
 |--------------------------|-----------------|----------------|-------------|----------------|-------------|
 | Max execution time       | **15 minutes**  | N/A            | N/A         | N/A            | N/A          |
 | Warm-up time             | **Seconds**\*   | N/A            | N/A         | N/A            | N/A          |
