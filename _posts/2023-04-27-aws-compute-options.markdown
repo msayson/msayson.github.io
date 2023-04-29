@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Comparing AWS compute services"
+title:  "Choosing between AWS compute services"
 date:   2023-04-27 20:00:00 -0700
 categories: aws
 ---
@@ -23,16 +23,18 @@ EC2 is the underlying compute service for most other AWS services including Lamb
 Fargate is a "serverless" computing environment that allows you to specify resource requirements and a Docker container image, and AWS fully manages host provisioning and maintenance.
 
 ### Brief comparison of compute services
-|                          |Lambda|EC2             |Fargate|
-|--------------------------|------|----------------|-------|
+
+| |Lambda|EC2|Fargate|
+|-|------|---|-------|
 |Who manages infrastructure|AWS   |You             |AWS    |
 |Tenancy options           |Shared|Shared/Dedicated|Shared |
 |Maintenance overhead      |Lowest|Highest         |Low    |
 |Max execution time        |**15 minutes**|N/A     |N/A    |
 
-All three compute services are by default, "shared tenancy", meaning that multiple AWS customers may have their software running on virtual machines that share a physical server.  For most customers, this is a non-issue, but for highly regulated organizations that need their software running on hardware dedicated only to them, EC2 also supports "dedicated tenancy" hosts.
+<br>
+All three compute services are by default "shared tenancy", meaning that multiple AWS customers may have their software running on virtual machines that share a physical server.  For most customers, this is a non-issue, but for highly regulated organizations that need their software running on hardware dedicated only to them, EC2 also supports "dedicated tenancy" hosts.
 
-In summary:
+Summary:
 * Lambda instances are simplest to use for workflows that take under 15 minutes.
 * Lambda and Fargate instances are managed by AWS on shared-tenancy servers, providing low-maintenance options for customers.
 * EC2 instances are managed by you, with more flexibility and more overhead, and support both shared tenancy and dedicated tenancy.
@@ -57,6 +59,7 @@ When building services entirely in AWS, I prefer ECS because of how easy it is t
 | Automatic rollback support | Yes           | Yes            | Yes         | No           | Yes            |
 | Handles sharp traffic spikes | **No****    | Yes            | Yes         | Yes          | Yes            |
 
+<br>
 For services where executions are expected to always complete in under 15 minutes, AWS Lambda is the simplest and lowest-maintenance compute service to leverage for API services.
 
 ### *Managing Lambda warm-up time
