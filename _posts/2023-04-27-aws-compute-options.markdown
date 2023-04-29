@@ -37,7 +37,7 @@ All three compute services are by default "shared tenancy", meaning that multipl
 Quincy Mitchell wrote a good post comparing the pricing of Lambda, EC2, and Fargate across a few instance types at <https://blogs.perficient.com/2021/06/17/aws-cost-analysis-comparing-lambda-ec2-fargate/>.  The general conclusions were that:
 * Lambda is less expensive than EC2 when run <= 50% of the time, and less expensive than Fargate when run <= 25% of the time.
 * Fargate's flexibility for resource sizing can save money compared to EC2 if you need less resources than provided by the next larger EC2 instance type.
-* EC2 is expensive when right-sized to resource requirements and highly utilized.
+* EC2 is least expensive when right-sized to resource requirements and highly utilized.
 
 Summary:
 * Lambda instances are simplest to use for workflows that take under 15 minutes.
