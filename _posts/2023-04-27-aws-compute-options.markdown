@@ -43,6 +43,7 @@ Summary:
 * Lambda instances are simplest to use for workflows that take under 15 minutes.
 * Lambda and Fargate instances are managed by AWS on shared-tenancy servers, providing low-maintenance options for customers.
 * EC2 instances are managed by you, with more flexibility and more overhead, and support both shared tenancy and dedicated tenancy.
+* Pricing comparisons depend on resource utilization and compute hours, with Lambda being least expensive when hosts will be used less than half of the time.
 
 ### Container management services
 Both EC2 and Fargate can be run via the following container management services:
