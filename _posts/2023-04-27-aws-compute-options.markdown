@@ -32,18 +32,14 @@ Fargate is a "serverless" computing environment that allows you to specify resou
 |Max execution time        |**15 minutes**|N/A     |N/A    |
 
 <br>
+Lambda instances are simplest to use for workflows that take under 15 minutes, and both Lambda and Fargate instances are managed by AWS to provide low-maintenance options for customers.
+
 All three compute services are by default "shared tenancy", meaning that multiple AWS customers may have their software running on virtual machines that share a physical server.  For most customers, this is a non-issue, but for highly regulated organizations that need their software running on hardware dedicated only to them, EC2 also supports "dedicated tenancy" hosts.
 
 Quincy Mitchell wrote a good post comparing the pricing of Lambda, EC2, and Fargate across a few instance types at <https://blogs.perficient.com/2021/06/17/aws-cost-analysis-comparing-lambda-ec2-fargate/>.  The general conclusions were that:
 * Lambda is less expensive than EC2 when run <= 50% of the time, and less expensive than Fargate when run <= 25% of the time.
 * Fargate's flexibility for resource sizing can save money compared to EC2 if you need less resources than provided by the next larger EC2 instance type.
 * EC2 is least expensive when right-sized to resource requirements and highly utilized.
-
-Summary:
-* Lambda instances are simplest to use for workflows that take under 15 minutes.
-* Lambda and Fargate instances are managed by AWS on shared-tenancy servers, providing low-maintenance options for customers.
-* EC2 instances are managed by you, with more flexibility and more overhead, and support both shared tenancy and dedicated tenancy.
-* Pricing comparisons depend on resource utilization and compute hours, with Lambda being least expensive when hosts will be used less than half of the time.
 
 ### Container management services
 Both EC2 and Fargate can be run via the following container management services:
