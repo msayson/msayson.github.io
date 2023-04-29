@@ -34,6 +34,11 @@ Fargate is a "serverless" computing environment that allows you to specify resou
 <br>
 All three compute services are by default "shared tenancy", meaning that multiple AWS customers may have their software running on virtual machines that share a physical server.  For most customers, this is a non-issue, but for highly regulated organizations that need their software running on hardware dedicated only to them, EC2 also supports "dedicated tenancy" hosts.
 
+Quincy Mitchell wrote a good post comparing the pricing of Lambda, EC2, and Fargate across a few instance types at <https://blogs.perficient.com/2021/06/17/aws-cost-analysis-comparing-lambda-ec2-fargate/>.  The general conclusions were that:
+* Lambda is less expensive than EC2 when run <= 50% of the time, and less expensive than Fargate when run <= 25% of the time.
+* Fargate's flexibility for resource sizing can save money compared to EC2 if you need less resources than provided by the next larger EC2 instance type.
+* EC2 is expensive when right-sized to resource requirements and highly utilized.
+
 Summary:
 * Lambda instances are simplest to use for workflows that take under 15 minutes.
 * Lambda and Fargate instances are managed by AWS on shared-tenancy servers, providing low-maintenance options for customers.
@@ -80,7 +85,7 @@ It can be expensive to maintain a large number of hosts year-round if you only h
 
 ## Recommendations
 
-Lambda is the simplest and often least expensive compute service to use for short-lived operations, and is an easy choice for services that process under 1000 requests/second.  It can also handle much higher traffic scenarios, while it can take a few minutes for it to scale up to handle spark traffic spikes of over 50% when above the 1000 requests/second base capacity.  If traffic increases are generally less spiky than this, or temporary throttling is acceptable, then Lambda is still a good choice.
+Lambda is the simplest compute service to use for short-lived operations, and is an easy choice for services that process under 1000 requests/second.  It can also handle much higher traffic scenarios, while it can take a few minutes for it to scale up to handle spark traffic spikes of over 50% when above the 1000 requests/second base capacity.  If traffic increases are generally less spiky than this, or temporary throttling is acceptable, then Lambda is still a good choice.
 
 When Lambda is not an option due to worst-case latency or traffic expectations, Fargate on ECS offers the simplest set-up and management as a fully-managed "serverless" solution, and is my go-to alternative.
 
