@@ -66,6 +66,7 @@ Key features:
 
 |            |CloudFront|API Gateway cache|ElastiCache|DAX|
 |------------|----------|-----------------|-----------|---|
+|Use case|Static resources|API responses|General-purpose|DynamoDB query responses|
 |Cache layer|CDN|API Gateway|Compute code|Database|
 |Layer accessing cache|Server or client code|API Gateway|Server code|Server code|
 |Infrastructure set-up & maintenance|Medium|Low|High|Low|
