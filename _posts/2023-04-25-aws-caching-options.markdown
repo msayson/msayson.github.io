@@ -62,8 +62,6 @@ Key features:
 
 *Example use case*: Your application has a few specific DynamoDB queries that take longer to complete than is acceptable to end users.  By enabling DAX and configuring those use cases to use the DAX code client rather than the DynamoDB code client, you can automatically cache the query results so that the majority of users experience nearly instant responses.
 
-DAX and ElastiCache are comparable in price with the difference depending on the configuration options chosen for ElastiCache, and DAX is much simpler to integrate with, so DAX would be my recommendation if all of your cache use cases are specific to DynamoDB queries.
-
 ### Comparison of AWS caching services
 
 |            |CloudFront|API Gateway cache|ElastiCache|DAX|
@@ -75,6 +73,8 @@ DAX and ElastiCache are comparable in price with the difference depending on the
 <br>
 
 API Gateway caching is simplest to set-up and maintain, followed closely by DAX.  I'd recommend considering these over more complex caching solutions when they fit your use case.
+
+DAX and ElastiCache are comparable in price with the difference depending on the configuration options chosen for ElastiCache, and DAX is much simpler to integrate with, so DAX would be my recommendation if all of your cache use cases are specific to DynamoDB queries.
 
 ElastiCache has the most overhead and most flexibility as AWS' general-purpose cache service.
 
