@@ -64,6 +64,22 @@ Key features:
 
 DAX and ElastiCache are comparable in price with the difference depending on the configuration options chosen for ElastiCache, and DAX is much simpler to integrate with, so DAX would be my recommendation if all of your cache use cases are specific to DynamoDB queries.
 
+### Comparison of AWS caching services
+
+|            |CloudFront|API Gateway cache|ElastiCache|DAX|
+|------------|----------|-----------------|-----------|---|
+|Cache layer|CDN|API Gateway|Compute code|Database|
+|Layer accessing cache|Server or client code|API Gateway|Server code|Server code|
+|Infrastructure set-up & maintenance|Medium|Low|High|Low|
+|Code changes|Medium|N/A|High|Low|
+<br>
+
+API Gateway caching is simplest to set-up and maintain, followed closely by DAX.  I'd recommend considering these over more complex caching solutions when they fit your use case.
+
+ElastiCache has the most overhead and most flexibility as AWS' general-purpose cache service.
+
+CloudFront addresses a somewhat different use as a CDN, and is appropriate to use whenever you want to optimize access of static resources across regions.
+
 ### Summary
 AWS provides several ways to cache data depending on your use case and infrastructure requirements.  In many cases, you don’t need to invent the wheel and can use a fully-managed solution that does not require significant code changes.
 
