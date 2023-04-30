@@ -20,7 +20,9 @@ Lambda functions are intended for short-lived operations and have a maximum runt
 EC2 is the underlying compute service for most other AWS services including Lambda and Fargate, and offers a broad range of instance types that support different memory, storage, and networking capacities.  You can set up long-lived servers directly with EC2, managing provisioning and infrastructure yourself, or use higher-level services like Fargate or ECS that take care of host management for you.
 
 ### Fargate
-Fargate is a "serverless" computing environment that allows you to specify resource requirements and a Docker container image, and AWS fully manages host provisioning and maintenance.
+Fargate is a serverless computing environment that allows you to specify how much memory and processing power you need, provide a Docker file, and let AWS take care of host management.
+
+Fargate has less maintenance overhead than EC2 since AWS automatically chooses instance types optimized to your resource requirements and provisions, patches, and replaces hosts as needed.
 
 ### Brief comparison of compute services
 
