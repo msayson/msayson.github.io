@@ -70,6 +70,7 @@ Key features:
 |Layer accessing cache|Server or client code|API Gateway|Server code|Server code|
 |Infrastructure set-up & maintenance|Medium|Low|High|Low|
 |Code changes|Medium|N/A|High|Low|
+
 <br>
 
 API Gateway caching is simplest to set-up and maintain, followed closely by DAX.  I'd recommend considering these over more complex caching solutions when they fit your use case.
