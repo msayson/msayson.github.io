@@ -115,26 +115,6 @@ li {
      @extend .table-small, .table-bordered;
 }
 
-.table-styled {
-    border: 1px solid #dddddd;
-    border-collapse: collapse;
-    margin: 25px 0;
-    min-width: 400px;
-}
-.table-styled thead tr {
-    text-align: left;
-}
-.table-styled th,
-.table-styled td {
-    padding: 10px 15px;
-}
-.table-styled tbody tr {
-    border: 1px solid #dddddd;
-}
-.table-styled tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
 
 /**
  * Headings

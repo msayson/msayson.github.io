@@ -32,7 +32,7 @@ Fargate has less maintenance overhead than EC2 since AWS automatically chooses i
 |Tenancy options           |Shared|Shared/Dedicated|Shared |
 |Maintenance overhead      |Lowest|Highest         |Low    |
 |Max execution time        |15 minutes|N/A     |N/A    |
-{:.table-styled}
+{:.table-small-bordered}
 
 Lambda instances are simplest to use for workflows that take under 15 minutes, and both Lambda and Fargate instances are managed by AWS to provide low-maintenance options for customers.
 
@@ -62,7 +62,7 @@ When building services entirely in AWS, I prefer ECS because of how easy it is t
 | Maintenance overhead     | **Low**         | **Low**        | Medium      | Medium-High  | High           |
 | Automatic rollback support | Yes           | Yes            | Yes         | No           | Yes            |
 | Handles sharp traffic spikes | **No****    | Yes            | Yes         | Yes          | Yes            |
-{:.table-styled}
+{:.table-small-bordered}
 
 For services where executions are expected to always complete in under 15 minutes, AWS Lambda is the simplest and lowest-maintenance compute service to leverage for API services.
 
