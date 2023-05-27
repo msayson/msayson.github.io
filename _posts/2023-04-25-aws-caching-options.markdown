@@ -64,54 +64,14 @@ Key features:
 
 ### Comparison of AWS caching services
 
-<table class="table-styled">
-    <thead>
-        <tr>
-            <th></th>
-            <th>CloudFront</th>
-            <th>API Gateway cache</th>
-            <th>ElastiCache</th>
-            <th>DAX</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Use case</td>
-            <td>Static resources</td>
-            <td>API responses</td>
-            <td>General-purpose</td>
-            <td>DynamoDB query responses</td>
-        </tr>
-        <tr>
-            <td>Cache layer</td>
-            <td>CDN</td>
-            <td>API Gateway</td>
-            <td>Compute code</td>
-            <td>Database</td>
-        </tr>
-        <tr>
-            <td>Layer accessing cache</td>
-            <td>Server or client code</td>
-            <td>API Gateway</td>
-            <td>Server code</td>
-            <td>Server code</td>
-        </tr>
-        <tr>
-            <td>Infrastructure set-up &amp; maintenance</td>
-            <td>Medium</td>
-            <td>Low</td>
-            <td>High</td>
-            <td>Low</td>
-        </tr>
-        <tr>
-            <td>Code changes</td>
-            <td>Medium</td>
-            <td>N/A</td>
-            <td>High</td>
-            <td>Low</td>
-        </tr>
-    </tbody>
-</table>
+|            |CloudFront|API Gateway cache|ElastiCache|DAX|
+|------------|----------|-----------------|-----------|---|
+|Use case|Static resources|API responses|General-purpose|DynamoDB query responses|
+|Cache layer|CDN|API Gateway|Compute code|Database|
+|Layer accessing cache|Server or client code|API Gateway|Server code|Server code|
+|Infrastructure set-up & maintenance|Medium|Low|High|Low|
+|Code changes|Medium|N/A|High|Low|
+{:.table-styled}
 
 API Gateway caching is simplest to set-up and maintain, followed closely by DAX.  I'd recommend considering these over more complex caching solutions when they fit your use case.
 
