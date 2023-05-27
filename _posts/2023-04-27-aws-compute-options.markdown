@@ -26,14 +26,43 @@ Fargate has less maintenance overhead than EC2 since AWS automatically chooses i
 
 ### Brief comparison of compute services
 
-| |Lambda|EC2|Fargate|
-|-|------|---|-------|
-|Who manages infrastructure|AWS   |You             |AWS    |
-|Tenancy options           |Shared|Shared/Dedicated|Shared |
-|Maintenance overhead      |Lowest|Highest         |Low    |
-|Max execution time        |**15 minutes**|N/A     |N/A    |
+<table class="table-styled">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Lambda</th>
+            <th>EC2</th>
+            <th>Fargate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Who manages infrastructure</td>
+            <td>AWS</td>
+            <td>You</td>
+            <td>AWS</td>
+        </tr>
+        <tr>
+            <td>Tenancy options</td>
+            <td>Shared</td>
+            <td>Shared/Dedicated</td>
+            <td>Shared</td>
+        </tr>
+        <tr>
+            <td>Maintenance overhead</td>
+            <td>Lowest</td>
+            <td>Highest</td>
+            <td>Low</td>
+        </tr>
+        <tr>
+            <td>Max execution time</td>
+            <td><b>15 minutes</b></td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+    </tbody>
+</table>
 
-<br>
 Lambda instances are simplest to use for workflows that take under 15 minutes, and both Lambda and Fargate instances are managed by AWS to provide low-maintenance options for customers.
 
 All three compute services are by default "shared tenancy", meaning that multiple AWS customers may have their software running on virtual machines that share a physical server.  For most customers, this is a non-issue, but for highly regulated organizations that need their software running on hardware dedicated only to them, EC2 also supports "dedicated tenancy" hosts.
@@ -52,18 +81,85 @@ When building services entirely in AWS, I prefer ECS because of how easy it is t
 
 ## Comparison matrix
 
-|                          | Lambda          | Fargate on ECS | EC2 on ECS  | EC2/Fargate on EKS  | EC2          |
-|--------------------------|-----------------|----------------|-------------|----------------|-------------|
-| Max execution time       | **15 minutes**  | N/A            | N/A         | N/A            | N/A          |
-| Warm-up time             | **Seconds**\*   | N/A            | N/A         | N/A            | N/A          |
-| Execution latency SLA    | Seconds         | 100ms range    | 100ms range | 100ms range        | 100ms range |
-| Availability SLA         | 99.95%          | 99.99%         | 99.99%      | 99.95%          | 99.99%      |
-| Requires OS customization | No             | No             | Yes         | Yes          | Yes            |
-| Maintenance overhead     | **Low**         | **Low**        | Medium      | Medium-High  | High           |
-| Automatic rollback support | Yes           | Yes            | Yes         | No           | Yes            |
-| Handles sharp traffic spikes | **No****    | Yes            | Yes         | Yes          | Yes            |
+<table class="table-styled">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Lambda</th>
+            <th>Fargate on ECS</th>
+            <th>EC2 on ECS</th>
+            <th>EC2/Fargate on EKS</th>
+            <th>EC2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Max execution time</td>
+            <td>15 minutes</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>Warm-up time</td>
+            <td>Seconds*</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <td>Execution latency SLA</td>
+            <td>Seconds</td>
+            <td>100ms range</td>
+            <td>100ms range</td>
+            <td>100ms range</td>
+            <td>100ms range</td>
+        </tr>
+        <tr>
+            <td>Availability SLA</td>
+            <td>99.95%</td>
+            <td>99.99%</td>
+            <td>99.99%</td>
+            <td>99.95%</td>
+            <td>99.99%</td>
+        </tr>
+        <tr>
+            <td>Requires OS customization</td>
+            <td>No</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Maintenance overhead</td>
+            <td>Low</td>
+            <td>Low</td>
+            <td>Medium</td>
+            <td>Medium-High</td>
+            <td>High</td>
+        </tr>
+        <tr>
+            <td>Automatic rollback support</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Handles sharp traffic spikes</td>
+            <td>No**</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+    </tbody>
+</table>
 
-<br>
 For services where executions are expected to always complete in under 15 minutes, AWS Lambda is the simplest and lowest-maintenance compute service to leverage for API services.
 
 ### *Managing Lambda warm-up time
