@@ -2,7 +2,7 @@
 layout: post
 title:  "Process for designing distributed systems"
 date:   2023-05-30 20:00:00 -0700
-categories: distributed-systems, system-design
+categories: distributed-systems system-design
 ---
 
 In this post I'll step through my process for designing distributed systems, with example questions and artifacts associated with each step.
