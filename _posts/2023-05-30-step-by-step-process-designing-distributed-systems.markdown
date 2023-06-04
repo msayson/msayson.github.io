@@ -43,7 +43,7 @@ We should identify stakeholders who should have a say in how the service works, 
 The scale of data and traffic make a big difference on the architecture needed to support it.  Services that only receive a few dozen requests at a time can be very simple, but as we scale up to millions of concurrent requests, we have very different needs around load balancing, host scaling, caching, and data management.
 
 Example questions:
-* How many users of each type do we expect to have, and how will be active at a given time?
+* How many users of each type do we expect to have, and how many will be active at a given time?
 * How much data do we expect our system to have, and how quickly will it grow over time?
 * What frequency of read vs write operations do we expect on different types of data?
 * What network bandwidth will we need to support the anticipated traffic?
@@ -69,8 +69,8 @@ Once we've defined our API spec, we can validate it with stakeholders and iterat
 While still treating system internals as a black box, we can define how data will flow in and out of our system and be stored.
 
 Example questions:
-* Who will we consume data from and how?
-* Who will consume data from our service and how?
+* Who will we consume data from, and how?
+* Who will consume data from our service, and how?
 * What data does our service need to store, and what data structures will best support our use cases?
 * What is the end-to-end lifecycle for data entering our system, for each type of data we store or process?
 
