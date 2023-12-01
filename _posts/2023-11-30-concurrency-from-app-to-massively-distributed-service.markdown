@@ -32,15 +32,15 @@ Splitting tasks into threads does not come for free and may not worthwhile for v
 Multi-threading provides the most latency reduction when we're able to run multiple long-running tasks in parallel, especially multi-second tasks.
 
 ### Multi-container hosts
-Within a host, we can run multiple processes or containers, which each receive allocated memory and run an isolated instance of application code.
+Within a host, we can run multiple containers which each receive allocated memory and run an isolated instance of application code.
 
 ![alt text](/images/20231130_DistributedComputeToHandleMillionTps-MultiContainerHost.png "Diagram of a multi-container host")
 
 This allows us to fully utilize a host’s CPU and memory, while we will eventually get to a point where the host no longer has sufficient CPU or memory capacity to add more containers, or where performance begins to drop due to increased context switching and IO bottlenecks.
 
-Splitting concurrent instances of an application into separate containers improves system reliability since regardless of individual application failures, the other containers can continue running.  However, we are still vulnerable to host-level failures.
+Isolating concurrent applications in separate containers also improves system reliability, since regardless of individual application failures, the other containers can continue running.  However, we are still vulnerable to host-level failures.
 
-A single host can be sufficient for many small-scale, single-user scenarios.  For services that need to provide 24/7 availability and/or handle hundreds to thousands of concurrent requests, we will graduate to distributed services where this host will be a single unit of a larger architecture, leading us to the multi-host cluster.
+A single host can be sufficient for some small-scale services that only have a few hundred concurrent requests and are acceptable to periodically take offline for maintenance.  For services that need to provide 24/7 availability or handle more traffic, we will graduate to distributed services where this host will be a single unit of a larger architecture, leading us to the multi-host cluster.
 
 ### Multi-host clusters behind a load balancer
 When we require high availability or more concurrency than a single host can support, we can set up a load balancer that distributes traffic across multiple hosts, forming a cluster of hosts.
