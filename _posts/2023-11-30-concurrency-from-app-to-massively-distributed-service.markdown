@@ -21,6 +21,14 @@ Within application code, we can run multiple threads concurrently.
 
 This approach can be locally applied regardless of whether an application is run on a single host or in a distributed service.  However, multi-threaded code increases code complexity and introduces thread safety issues, and an error in one thread may take down the entire application.
 
+A common use case for multi-threading is when we need to make multiple requests to other services that may each take multiple seconds to complete.  We can trigger each request in a separate thread to run them concurrently, and collect the results at the end of the longest running call, rather than synchronously making one request at a time after the prior response has returned.
+
+If we have requests that each take 2 seconds, 5 seconds, 5 seconds, and 1 second to complete, each thread adds 20 milliseconds of overhead to start and close, and it takes 10 milliseconds to parse and combine results, then our overall runtime with multi-threading will be max(2, 5, 5, 1) + 0.02*4 + 0.01 = 5.09 seconds, compared to the synchronous approach taking 2+5+5+1+0.01 = 13.01 seconds to make all requests and combine the results.  In this scenario, multi-threading reduces our latency by 7.92 seconds.
+
+Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, with 0.01 overhead for combining results, the overhead of starting threads make the synchronous approach more efficient (`1000*0.01 + 0.01` = 10.02 seconds compared to `max(0.01) + 0.02*1000 + 0.01` = 20.02 seconds).
+
+Multi-threading provides the most latency reduction when we're able to run multiple long-running tasks in parallel, especially multi-second tasks.
+
 ### Multi-container hosts
 Within a host, we can run multiple processes or containers, which each receive allocated memory and run an isolated instance of application code.
 
@@ -66,3 +74,15 @@ Many distributed services now start with multi-host clusters for reliability and
 A single load balancer and backend compute cluster can often handle hundreds of thousands of concurrent requests or more, while the load balancer may become a single point of failure for your service.  Distributed DNS load balancers can help to mitigate this concern when it's acceptable for your servers to be accessible from the Internet.
 
 For applications where you need to handle millions of concurrent requests and have business requirements not met by a single DNS load balancer, such as needing granular access control for your backend servers or integrations with other infrastructure, a DNS load balancer in front of multiple load-balanced clusters can meet these demands with the trade-off of an additional layer of complexity.
+
+## Addendum
+
+Before scaling your service to process millions of concurrent requests and paying hundreds of thousands of dollars to do so, make sure this is really necessary.
+
+Would it be more efficient to extract some of your use cases to a separate microservice?
+
+Are your hosts really doing unique work on every call?  Could some of that work be deduplicated, or could the right application of a caching layer reduce your traffic and/or average latency by orders of magnitude?
+
+Also, note that millions of concurrent users do not always translate into millions of transactions per second.  If each user only needs to make a server request every few seconds, with multiple seconds between where they locally interact with rendered results, you may only have tens to hundreds of thousands of transactions per second, which while still high, lowers the required complexity of the system.
+
+If you’ve already answered these questions and optimized your architecture, and have an inherent requirement to complete millions of unique transactions per second, then some of the more complex architectures may be warranted.
