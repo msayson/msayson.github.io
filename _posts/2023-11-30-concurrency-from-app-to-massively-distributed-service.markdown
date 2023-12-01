@@ -23,6 +23,8 @@ This approach can be locally applied regardless of whether an application is run
 
 A common use case for multi-threading is when we need to make multiple requests to other services that may each take multiple seconds to complete.  We can trigger each request in a separate thread to run them concurrently, and collect the results at the end of the longest running call, rather than synchronously making one request at a time after the prior response has returned.
 
+#### Latency trade-offs
+
 If we have requests that each take 2 seconds, 5 seconds, 5 seconds, and 1 second to complete, each thread adds 20 milliseconds of overhead to start and close, and it takes 10 milliseconds to parse and combine results, then our overall runtime with multi-threading will be max(2, 5, 5, 1) + 0.02*4 + 0.01 = 5.09 seconds, compared to the synchronous approach taking 2+5+5+1+0.01 = 13.01 seconds to make all requests and combine the results.  In this scenario, multi-threading reduces our latency by 7.92 seconds.
 
 Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, with 0.01 overhead for combining results, the overhead of starting threads make the synchronous approach more efficient (`1000*0.01 + 0.01` = 10.02 seconds compared to `max(0.01) + 0.02*1000 + 0.01` = 20.02 seconds).
@@ -54,11 +56,13 @@ This is rarely the starting point for a new service.  We only want to add this l
 
 Many cloud providers provide distributed DNS load balancers that remove the single point of failure of a traditional load balancer, scale to millions of concurrent users, and automatically route traffic to the closest regional cluster.
 
+#### DNS load balancer trade-offs
+
 DNS load balancers are more limited in functionality than many specialized load balancers.  For example, AWS network load balancers can support more granular access controls and security configurations, and integrate with compute services to automatically replace unhealthy hosts that fail to respond to the load balancer.
 
-For this reason, in some scenarios it will make sense to have the added complexity of both a frontend DNS load balancer to distribute traffic to the closest cluster, and backend application load balancers that provide more functionality and integration with your local infrastructure.
+DNS also requires its connected endpoints to be accessible to the Internet, which is not always ideal.  Following the security principle of defence-in-depth, when protecting critical data or infrastructure, anything that doesn't need to be connected to the Internet, shouldn't be.  Network load balancers can be set up in protected virtual private networks to only allow access from allow-listed hosts or other trusted networks.
 
-DNS also requires the connected hosts to be accessible to the Internet, which is not always ideal.  Following the security principle of defence-in-depth, when protecting critical data or infrastructure, anything that doesn't need to be connected to the Internet, shouldn't be.  Network load balancers can be set up in protected virtual private networks to only allow access from allow-listed hosts or other trusted networks.
+For these reasons, in some scenarios it will make sense to have the added complexity of both a frontend DNS load balancer to distribute traffic to the closest cluster, and backend application load balancers that provide more functionality and integration with your local infrastructure.
 
 If you don’t need any functionality that isn’t supported by a DNS load balancer, can live with your servers being accessible from the Internet, and already manage your own health monitoring and host replacement strategy, then you can simplify your architecture by having a DNS load balancer directly route traffic to your backend servers.
 
