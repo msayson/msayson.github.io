@@ -40,12 +40,16 @@ This allows us to fully utilize a host’s CPU and memory, while we will eventua
 
 Splitting concurrent instances of an application into separate containers improves system reliability since regardless of individual application failures, the other containers can continue running.  However, we are still vulnerable to host-level failures.
 
+A single host can be sufficient for many small-scale, single-user scenarios.  For services that need to provide 24/7 availability and/or handle hundreds to thousands of concurrent requests, we will graduate to distributed services where this host will be a single unit of a larger architecture, leading us to the multi-host cluster.
+
 ### Multi-host clusters behind a load balancer
-When we require more containers/processes than a single host can support, we can set up a load balancer that distributes traffic across multiple hosts, forming a cluster of hosts.
+When we require high availability or more concurrency than a single host can support, we can set up a load balancer that distributes traffic across multiple hosts, forming a cluster of hosts.
 
 ![alt text](/images/20231130_DistributedComputeToHandleMillionTps-MultiHostCluster.png "Diagram of a multi-host cluster")
 
 This allows us to horizontally scale, that is, add or remove servers to our resource pool as needed.  Horizontal scaling makes our service more robust to individual host failures and enables more flexibility in our infrastructure, allowing us to swap out different types of hosts at will, and pay for just as many hosts as are needed to meet current demand.
+
+This is often the go-to design pattern for services that need to process thousands of concurrent requests, which a single host may no longer be able to handle.
 
 ### Multi-cluster services
 When we have more traffic than a single load balancer can handle, we can set up a DNS load balancer to distribute traffic across multiple clusters.
