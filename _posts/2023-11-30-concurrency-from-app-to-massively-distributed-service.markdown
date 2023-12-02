@@ -31,7 +31,7 @@ Example 2: Splitting tasks into threads does not come for free and may not worth
 
 Since the cost of such a high branching factor is high, in reality, we'll typically break this workflow up into batches of requests per thread, such as 200 requests per thread.
 
-Example 2b: given 1000 requests that each take 0.01 seconds to complete, if we split the work into 5 batches of 200 requests per thread, computing all the results would take `max(200*0.01) + 0.02*5` = 2.1 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  By batching the work before applying multi-threading, we can reduce latency compared to synchronous calls by 7.9 seconds.
+Example 2b: Given 1000 requests that each take 0.01 seconds to complete, if we split the work into 5 batches of 200 requests per thread, computing all the results would take `max(200*0.01) + 0.02*5` = 2.1 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  By batching the work before applying multi-threading, we can reduce latency compared to synchronous calls by 7.9 seconds.
 
 Multi-threading provides the most latency reduction when we're able to run multiple long-running tasks in parallel, especially multi-second tasks, whether each task is a single long-running request or a series of requests adding up to seconds.
 
