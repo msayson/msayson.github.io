@@ -29,7 +29,7 @@ Example 1: Suppose we will run 4 requests that each take 2 seconds, 5 seconds, 5
 
 Example 2: Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, running each request in a separate thread would take `max(0.01) + 0.02*1000` = 20.01 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  In this the synchronous approach is much more efficient than multi-threading.
 
-Since the cost of such as high branching factor is high, in reality, we'll typically break this workflow up into batches of requests per thread, such as 200 requests per thread.
+Since the cost of such a high branching factor is high, in reality, we'll typically break this workflow up into batches of requests per thread, such as 200 requests per thread.
 
 Example 2b: given 1000 requests that each take 0.01 seconds to complete, if we split the work into 5 batches of 200 requests per thread, computing all the results would take `max(200*0.01) + 0.02*5` = 2.1 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  By batching the work before applying multi-threading, we can reduce latency compared to synchronous calls by 7.9 seconds.
 
