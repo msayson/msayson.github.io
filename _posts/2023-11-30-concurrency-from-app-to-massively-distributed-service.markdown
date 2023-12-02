@@ -27,7 +27,7 @@ A common use case for multi-threading is when we need to make multiple requests 
 
 Example 1: Suppose we will run 4 requests that each take 2 seconds, 5 seconds, 5 seconds, and 1 second to complete, and each thread adds 20 milliseconds of overhead to start and close.  We'll exclude the time to combine results as equivalent between multi-threaded and synchronous approaches.  Our runtime with multi-threading will be `max(2, 5, 5, 1) + 0.02*4` = 5.08 seconds, compared to the synchronous approach taking `2 + 5 + 5 + 1` = 13 seconds to make all requests.  In this scenario, multi-threading reduces our latency by 7.92 seconds.
 
-Example 2: Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, running each request in a separate thread would take `max(0.01) + 0.02*1000` = 20.01 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  In this the synchronous approach is much more efficient than multi-threading.
+Example 2: Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, running each request in a separate thread would take `max(0.01) + 0.02*1000` = 20.01 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  In this case, the synchronous approach is twice as efficient as multi-threading.
 
 Since the cost of such a high branching factor is high, in reality, we'll typically break this workflow up into batches of requests per thread, such as 200 requests per thread.
 
