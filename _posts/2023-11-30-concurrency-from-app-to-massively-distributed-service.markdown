@@ -25,11 +25,15 @@ A common use case for multi-threading is when we need to make multiple requests 
 
 #### Latency trade-offs
 
-If we have requests that each take 2 seconds, 5 seconds, 5 seconds, and 1 second to complete, each thread adds 20 milliseconds of overhead to start and close, and it takes 10 milliseconds to parse and combine results, then our overall runtime with multi-threading will be `max(2, 5, 5, 1) + 0.02*4 + 0.01` = 5.09 seconds, compared to the synchronous approach taking `2 + 5 + 5 + 1 + 0.01` = 13.01 seconds to make all requests and combine the results.  In this scenario, multi-threading reduces our latency by 7.92 seconds.
+Example 1: Suppose we will run 4 requests that each take 2 seconds, 5 seconds, 5 seconds, and 1 second to complete, and each thread adds 20 milliseconds of overhead to start and close.  We'll exclude the time to combine results as equivalent between multi-threaded and synchronous approaches.  Our runtime with multi-threading will be `max(2, 5, 5, 1) + 0.02*4` = 5.08 seconds, compared to the synchronous approach taking `2 + 5 + 5 + 1` = 13 seconds to make all requests.  In this scenario, multi-threading reduces our latency by 7.92 seconds.
 
-Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, with 0.01 overhead for combining results, the overhead of starting threads make the synchronous approach more efficient (`1000*0.01 + 0.01` = 10.02 seconds compared to `max(0.01) + 0.02*1000 + 0.01` = 20.02 seconds).
+Example 2: Splitting tasks into threads does not come for free and may not worthwhile for very short-lived requests.  For example, if we have 1000 requests that each take 0.01 seconds to complete, running each request in a separate thread would take `max(0.01) + 0.02*1000` = 20.01 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  In this the synchronous approach is much more efficient than multi-threading.
 
-Multi-threading provides the most latency reduction when we're able to run multiple long-running tasks in parallel, especially multi-second tasks.
+Since the cost of such as high branching factor is high, in reality, we'll typically break this workflow up into batches of requests per thread, such as 200 requests per thread.
+
+Example 2b: given 1000 requests that each take 0.01 seconds to complete, if we split the work into 5 batches of 200 requests per thread, computing all the results would take `max(200*0.01) + 0.02*5` = 2.1 seconds, compared to the synchronous approach taking `1000*0.01` = 10 seconds.  By batching the work before applying multi-threading, we can reduce latency compared to synchronous calls by 7.9 seconds.
+
+Multi-threading provides the most latency reduction when we're able to run multiple long-running tasks in parallel, especially multi-second tasks, whether each task is a single long-running request or a series of requests adding up to seconds.
 
 ### Multi-container hosts
 Within a host, we can run multiple containers which each receive allocated memory and run an isolated instance of application code.
