@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Concurrency all the way from single host applications up to massively distributed services"
+title:  "Concurrency from single host applications up to massively distributed services"
 date:   2023-11-30 20:00:00 -0700
 categories: distributed-systems system-design
 ---
@@ -51,7 +51,7 @@ When we require high availability or more concurrency than a single host can sup
 
 ![alt text](/images/20231130_DistributedComputeToHandleMillionTps-MultiHostCluster.png "Diagram of a multi-host cluster")
 
-This allows us to horizontally scale, that is, add or remove servers to our resource pool as needed.  Horizontal scaling makes our service more robust to individual host failures and enables more flexibility in our infrastructure, allowing us to swap out different types of hosts at will, and pay for just as many hosts as are needed to meet current demand.
+This allows us to horizontally scale, that is, add or remove servers to our resource pool as needed.  Horizontal scaling makes our service more robust to individual host failures and enables more flexibility in our infrastructure, allowing us to swap out different types of hosts at will, patch or update individual hosts without affecting service availability, and pay for just as many hosts as are needed to meet current demand.
 
 This is often the go-to design pattern for services that need to process thousands of concurrent requests, which a single host may no longer be able to handle.
 
@@ -97,4 +97,4 @@ Are your hosts really doing unique work on every call?  Could some of that work 
 
 Also, note that millions of concurrent users do not always translate into millions of transactions per second.  If each user only needs to make a server request every few seconds, with multiple seconds between where they locally interact with rendered results, you may only have tens to hundreds of thousands of transactions per second, which while still high, lowers the required complexity of the system.
 
-If you’ve already answered these questions and optimized your architecture, and have an inherent requirement to complete millions of unique transactions per second, then some of the more complex architectures may be warranted.
+Software architecture design is an iterative process, and the optimal design will change along with the business, so it's often worth starting with the simplest approach that meets current needs and can be scaled up or down as needed based on customer traffic.  There's no prize for building the most expensive service that no one uses.
