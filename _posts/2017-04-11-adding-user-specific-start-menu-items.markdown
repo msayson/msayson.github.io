@@ -13,6 +13,8 @@ To create a start menu item with a custom icon, we will:
 2. Add an icon to the filepath specified in the .desktop file
 3. Refresh the start menu to view our changes
 
+<!--more-->
+
 The following steps were verified on Debian Linux "Stretch" with the LXDE desktop environment.  As such, they should apply to other Linux distributions using LXDE, and other environments such as KDE may differ in the commands or filepaths used.
 
 ## Creating the .desktop file

@@ -9,6 +9,8 @@ redirect_from:
 ---
 Golang is a general programming language designed specifically for scalable and distributed systems.  One of its largest advantages is that concurrent programming is constructed as a natural part of the language, so it is able to present a far simpler approach than many other languages.
 
+<!--more-->
+
 It's been picked up by many companies that have to deal with large numbers of requests or transactions at a time (Google, Docker, Heroku, Uber, Canonical), but is also entering other markets as it becomes more popular for general applications.
 
 ### General features:

@@ -12,6 +12,8 @@ The default syntax highlighting scheme is so-so, especially when it comes to the
 
 Fortunately, we can easily install our own.  I prefer a colour scheme called Monokai to the pre-installed set, and the steps to install it are the same as for any other schemes.
 
+<!--more-->
+
 To set up a colour scheme that will cross over sessions for the current user, add a .vim/colors directory to your home directory if it doesn't already exist.
 
 ```bash

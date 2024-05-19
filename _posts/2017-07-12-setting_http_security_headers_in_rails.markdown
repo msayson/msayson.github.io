@@ -8,6 +8,8 @@ HTTP security headers are easy to configure, and provide a flexible way to mitig
 
 They're worth adding to any dynamic website, since they only take a few minutes to set up and are supported by most modern browsers.
 
+<!--more-->
+
 ## Strict-Transport-Security
 
 The Strict-Transport-Security header requires the browser to use HTTPS, and should be used by all sites that intend for their users to connect over SSL.
@@ -335,7 +337,7 @@ The Referrer-Policy header controls how much information about the current URL t
   <tr>
     <td><code>strict-origin-when-cross-origin</code></td>
     <td>
-      When navigating from HTTPS to HTTP, exclude the referrer. 
+      When navigating from HTTPS to HTTP, exclude the referrer.
       Otherwise, when navigating within the origin site, send the full URL, and when navigating to other sites, send the URL without path information.
     </td>
   </tr>

@@ -9,6 +9,8 @@ Debian Stable, or just "stable", is the default release for new Debian installs,
 
 Debian Stable is the rock-solid release with few major changes going in and slightly older supported packages, while many downstream distributions like Ubuntu pull from Debian Testing, which gets more action throughout the year.
 
+<!--more-->
+
 Each release is given a Toys Story-derived name from when it enters Testing through the remainder of its life, such as "woody", "wheezy" or "jessie".  Unstable is always called "sid", in reference to the child down the block in the original movie.
 
 You can choose to track releases by their name to stick with them as they move from testing -> stable, or by their position in the life cycle in order to pick up whatever is currently in the stable/testing/unstable release.

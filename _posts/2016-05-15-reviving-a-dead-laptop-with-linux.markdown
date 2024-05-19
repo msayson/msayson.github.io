@@ -11,6 +11,8 @@ I decided to give it another go to see if the netbook could be reincarnated unde
 
 I'm happy to say that the process was successful, and reformatting restored the hard drive to a functioning state!
 
+<!--more-->
+
 This netbook has an Intel Atom N455 CPU (1.66 GHz, 512 KB cache) and 1 GB of RAM, with 250 GB HDD storage.  I aimed for a lightweight Linux distribution that would also be relatively kind to someone coming from a Mac OS or Windows background.
 
 ### The LXLE Desktop

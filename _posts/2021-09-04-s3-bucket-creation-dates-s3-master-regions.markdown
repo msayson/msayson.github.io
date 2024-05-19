@@ -9,6 +9,8 @@ While working on functionality that depended on AWS S3 bucket ages, I noticed th
 
 For example, when I called the S3 ListBuckets API a few minutes after updating a bucket access policy, the CreationDate value returned for that bucket was the time that I had modified the policy rather than the time that I had created the bucket.  This was also reproduced when using the AWS CLI via the `aws s3api list-buckets` command.
 
+<!--more-->
+
 It turns out that the [S3 CLI documentation for list-buckets](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/s3api/list-buckets.html) explicitly states that CreationDate values can change when you make changes to your bucket:
 
 > CreationDate -> (timestamp)

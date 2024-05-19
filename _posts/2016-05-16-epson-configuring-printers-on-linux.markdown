@@ -11,6 +11,8 @@ On the plus side, if someone finds a solution for any Debian-derived distributio
 
 I've been trying to configure an Epson Workforce 3640 printer for a netbook running the LXLE Linux distribution, which is closely derived from Lubuntu and Ubuntu.
 
+<!--more-->
+
 Although LXLE's printer wizard is able to detect the printer and recommend a driver, system-config-printer keeps on freezing during the driver installation.  This issue has been noted by Ubuntu users using other printers (Bugs [#1253361](https://bugs.launchpad.net/ubuntu/+source/system-config-printer/+bug/1253361) and [#1248303](https://bugs.launchpad.net/ubuntu/+source/gnome-control-center/+bug/1248303)), and some have reported success in manually downloading printer drivers instead of going through their respective wizards.
 
 Fortunately, Seiko Epson Corporation provides a GPL-licensed [Epson Inkjet Printer Driver for Linux](https://www.openprinting.org/driver/epson-escpr) that supports a large number of Epson printers.  It's available to Debian-derived distributions as "printer-driver-escpr", so Ubuntu, Kubuntu, LXLE and other derivations that pull from Debian can also access the same package.

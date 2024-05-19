@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Serializing and deserializing DynamoDB pagination tokens to support paginated APIs"
-date:   2024-05-18 10:00:00 -0700
+title: "Serializing and deserializing DynamoDB pagination tokens to support paginated APIs"
+date: 2024-05-18 10:00:00 -0700
 categories: aws
+excerpt: "<p>When using AWS's Java 2.x SDK, DynamoDB scan and query responses provide pagination tokens in a String to AttributeValue Map object, which represents the primary key of the last processed DynamoDB item.  You can then pass this value as the \"exclusive start key\" for the next query to get the next page of results.</p><p>When your service retrieves all pages of results locally, this isn't a problem.  However, when you want to provide a paginated API backed by DynamoDB, you'll need to convert this attribute value map into a format that can be passed over HTTP, AKA \"serialize\" the object into a string.</p>"
 ---
 
 When using AWS's Java 2.x SDK, DynamoDB scan and query responses provide pagination tokens in a `Map<String, AttributeValue> lastEvaluatedKey` object, which represents the primary key of the last processed DynamoDB item.  You can then pass this value as the "exclusive start key" for the next query to get the next page of results.

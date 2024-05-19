@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Concurrency from single host applications up to massively distributed services"
-date:   2023-11-30 20:00:00 -0700
+title: "Concurrency from single host applications up to massively distributed services"
+date: 2023-11-30 20:00:00 -0700
 categories: distributed-systems system-design
+excerpt: "<p>This post will describe several levels of concurrency, how they're commonly applied, and pros and cons of each approach.</p><p>Many distributed services now start with multi-host clusters for reliability and scalability reasons, so that any given host can be replaced without impacting customer service, and additional hosts can be added as needed.</p>"
 ---
 
 Concurrency is when multiple software threads or programs are run at the same time, and is a key aspect of many modern applications.

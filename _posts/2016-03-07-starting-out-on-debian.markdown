@@ -11,6 +11,8 @@ Why Debian?
 
 I’ve been itching to try Arch Linux, but since I’m still a relative beginner to Linux I opted for a distribution that would be easier to set up and integrate into my workflow right away.  For this round I was looking for something fairly stable that I could set up quickly and customize over time.
 
+<!--more-->
+
 {: .float-left }
 [![alt text](/images/20160307_debian_family_tree.jpg "Debian Family Tree")](https://upload.wikimedia.org/wikipedia/commons/6/69/DebianFamilyTree1210.svg)
 

@@ -3,6 +3,7 @@ layout: post
 title:  "AWS caching options"
 date:   2023-04-25 20:00:00 -0700
 categories: aws
+excerpt: "<p>AWS provides several ways to cache data depending on your use case and infrastructure requirements.  In many cases, you don’t need to invent the wheel and can use a fully-managed solution that does not require significant code changes.</p><p>By caching at the appropriate layer, you can optimize latencies while minimizing unnecessary load to your backend services, allowing you to scale at a reasonable cost.</p>"
 ---
 
 Caching is a technique used to store frequently accessed data for fast retrieval, reducing the load on backend services and improving application performance.  AWS provides several caching options that can be used at different layers of the infrastructure stack.

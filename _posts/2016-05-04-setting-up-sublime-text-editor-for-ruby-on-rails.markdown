@@ -9,6 +9,8 @@ In this post I'll go over how I set up Sublime Text Editor for Ruby on Rails dev
 
 Sublime Text Editor is a popular proprietary text editor that runs on Windows, Linux and Mac OS.  It's highly customizeable, with many user-developed plugins that tweak various parts of the interface.
 
+<!--more-->
+
 The full program can be evaluated for free indefinitely.  It is paid software, so in evaluation mode you'll receive a prompt asking if you'd like to purchase a license after every few file saves (*$80 USD as of September 2017*).
 
 #### Step 1: Download Sublime Text Editor 3.

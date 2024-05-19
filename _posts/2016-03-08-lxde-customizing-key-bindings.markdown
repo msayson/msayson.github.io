@@ -9,6 +9,8 @@ A few key bindings are helpful to save time, especially for tasks such as changi
 
 I've verified these steps on Debian GNU/Linux 8.3 (jessie) using the LXDE desktop.  Other desktops may have their own locations for key bindings.
 
+<!--more-->
+
 For Debian LXDE, our key bindings are stored in ~/.config/openbox/lxde-rc.xml.
 
 {% highlight bash %}

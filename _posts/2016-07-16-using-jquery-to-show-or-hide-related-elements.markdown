@@ -13,6 +13,8 @@ Javascript is perfect for this, as we can assign listeners to toggle the visibil
 
 I'll show a simple example of how to do this using JQuery, a popular Javascript library.
 
+<!--more-->
+
 We'll have a table with aggregate information about categories and subcategories, and write a script that toggles the visibility of Category X's subcategories when the user clicks on the Category X row.
 
 **Specification 1: All subcategory rows should be hidden by default.**

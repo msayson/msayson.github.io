@@ -21,6 +21,8 @@ The Essential Eight are:
 
 For each of the highlighted strategies, I'll review security controls from the Australian [Information Security Manual](https://www.cyber.gov.au/ism) (ISM), incremental steps to achieve them following the [Essential Eight Maturity Model](https://www.cyber.gov.au/publications/essential-eight-maturity-model), and comments on the overall strategy.
 
+<!--more-->
+
 ## Restricting administrative privileges
 
 _Privileged access in the ISM context refers to having extended permissions on systems or applications or access to confidential information._

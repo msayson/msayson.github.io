@@ -20,6 +20,8 @@ This text was produced for a seminar-based class in which students were encourag
 
 This post is in response to “Understanding visual appearances in the long tail” by Deva Ramanan, Associate Professor at the Robotics Institute at Carnegie Mellon University.
 
+<!--more-->
+
 I thought it could be worth posting, and may continue to post notes on other seminars as interest takes me deeper into various topics.
 
 Images were scoured from the web for this article, with the requirement of being under Creative Commons licenses or the public domain.

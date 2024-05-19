@@ -11,6 +11,8 @@ For my log in screen background I’ll use the following image of the Orion Nebu
 
 ![alt-text](/images/20160307_orion_nebula_nasa_images600.jpg "Picture of the Orion Nebula, courtesy of NASA Images")
 
+<!--more-->
+
 File source: [https://www.nasa.gov/mission_pages/spitzer/multimedia/spitzer20100401.html](https://www.nasa.gov/mission_pages/spitzer/multimedia/spitzer20100401.html)
 
 Image credit: NASA/JPL-Caltech

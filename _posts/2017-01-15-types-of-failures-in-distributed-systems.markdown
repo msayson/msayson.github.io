@@ -12,7 +12,9 @@ Failure recovery is an interesting problem in many applications, but especially 
 
 It's very educational to identify the distinct roles in a system, and ask for each one, "What would happen if *that* part of the system failed?"
 
-There are several types of failures that come up in practise, including but not restricted to the following.
+<!--more-->
+
+There are several types of failures that come up in practise, including but not restricted to the following:
 
 * Network failures: participants are still running, but the connection between two or more is lost, or one or more messages are dropped before reaching the recipient.  Some systems may also have issues with unexpected delays in message delivery.
 * Crash failures: a participant shuts down unexpectedly.  This can occur as a result of application or environment errors, or simply a loss of power.

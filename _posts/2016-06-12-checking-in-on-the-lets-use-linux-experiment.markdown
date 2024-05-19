@@ -14,6 +14,8 @@ In March I started looking at how much of my work I could do on Linux, using Deb
 
 It's gone fairly well, and something that speaks to that is that a little while ago I found that I couldn't remember my Windows password.  I really thought I had it on the fifth try, but that was just the loading screen taking a bit longer.  I got it the sixth time.
 
+<!--more-->
+
 Software development on Linux frequently matches or exceeds the experience on Windows, especially if you're not tied to a Windows-based development environment.  The UNIX terminal is excellent, and Microsoft developers have been working on supporting it within Windows 10.  That project is still in its early phases, but it'll be appreciated by many Windows-based developers who prefer the Linux/Mac OS terminals.
 
 Several of the UNIX compilers are ahead of Windows, including for C and Ruby.  The difference is significant for Ruby on Rails developers, and seems to be partly due to the majority of core Ruby and Rails contributors working from Mac OS or Linux environments.

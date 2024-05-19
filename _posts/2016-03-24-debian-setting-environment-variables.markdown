@@ -11,6 +11,8 @@ I'd like to be able to run Go programs easily from terminal, and also have Golan
 
 Environment variables can be set globally (/etc) or for individual users (~ is a shortcut to the current user's home directory).  I'll set up these environment variables for my user.
 
+<!--more-->
+
 On Debian, ~/.bashrc is the user's configuration file for non-login, interactive bash sessions.  We'll use this for variables we want to access from new *XTerm instances.  I don't have this file yet, so let's create it.
 
 {% highlight bash %}

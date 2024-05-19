@@ -11,6 +11,8 @@ Now that we’ve installed Debian, we’ll want to add our main user to the sudo
 
 “sudo” is Debian’s super user group, and its members can temporarily act as if they are system administrators by using the “sudo” keyword before a given command and confirming their password.
 
+<!--more-->
+
 Let’s call the user “fred” for now.  Once fred is added to the sudo group, sudo powers will still be disabled by default for safety.  However, if an operation requires super user permissions, we’ll be able to use the sudo keyword to get the work done.
 
 Step 1:

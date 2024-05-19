@@ -8,6 +8,8 @@ One of the most reliable ways to build financial security is to save part of eve
 
 It's harder to save today than it was a few decades ago thanks to an inflated cost of living.  However, if you're earning $30k/year or more, there are practical ways to take control of the big things so that even in cities like Seattle and Vancouver, you can live well, build up an emergency fund, and begin saving for the future.
 
+<!--more-->
+
 Many, many people do, and to make this concrete I'll share how I spend money and why.
 
 _Disclaimer #1: This is written from the point of view of a healthy 20-something who had the advantage of growing up in Canada, where a great university education can be had for around $6500/year._

@@ -17,6 +17,9 @@ linkedin: https://www.linkedin.com/in/mark-sayson-87208748
 description: Notes on software development, technology, and life.
 github_username:  msayson
 
+# Excerpt settings
+excerpt_separator: <!--more-->
+
 # Pagination settings
 paginate: 8 # maximum number of blog posts per page
 paginate_path: "/blog/page:num/"

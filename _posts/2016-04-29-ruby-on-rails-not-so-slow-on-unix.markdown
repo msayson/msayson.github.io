@@ -11,6 +11,8 @@ More tools work out of the box, and there are significant performance improvemen
 
 For instance, test builds that take a few seconds to run on Linux often take up to a minute on Windows.  The difference for general Ruby tasks is supposedly closer to 70% - 100% faster on Linux than on Windows.  ([http://programmingzen.com/2009/08/10/how-much-faster-is-ruby-on-linux/](http://programmingzen.com/2009/08/10/how-much-faster-is-ruby-on-linux/))
 
+<!--more-->
+
 These are rough benchmarks, but why this discrepency?  Frequently quoted reasons are that Ruby has primarily been developed on Linux, Windows has been treated as a lower priority since most web applications will be run on Linux servers anyway, Unix has the benefit of an excellent gcc compiler while the Windows version has been compiled using Visual C++, and so on.
 
 These answers are not satisfactory, and there's a lot of work to be done on this front.  However, at least for now, Rails developers are often recommended to either work in Unix or use a virtual machine loaded with Unix.  More tools work out of the box, and performance is less of an issue, especially with builds and test runs.

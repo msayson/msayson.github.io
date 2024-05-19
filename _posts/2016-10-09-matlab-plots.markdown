@@ -12,6 +12,8 @@ Generating a few visualizations is often easy once you have the data, and can be
 
 In this post I'll show how to generate line plots, box plots, histograms and scatter plots for a simple data set in Matlab.  This data was sourced from [Google Flu Trends](https://www.google.org/flutrends) (updated October 2014 model for United States 2013 data)*.
 
+<!--more-->
+
 I'll import data from a text file for simplicity.  Each row of our data source represents a week of 2013.
 
 googleFluTrendsData_US2013.txt:
@@ -89,7 +91,7 @@ title('Estimated influenza-like illness frequencies across regions');
 
 The box plot shows us a few significant values for each week.  The red line inside each box displays the median, or the "middle" flu frequency across regions for that week.  Half of all regions are above this value and half are below.
 
-The top edge of each box is the 75th percentile for the week, or the flu frequency for which 75% of regions have a lower value.  The bottom edge is the 25th percentile, or the frequency for which 25% of regions have a lower value. 
+The top edge of each box is the 75th percentile for the week, or the flu frequency for which 75% of regions have a lower value.  The bottom edge is the 25th percentile, or the frequency for which 25% of regions have a lower value.
 
 It can sometimes be as useful to see where we have outliers in our data as it is to see the most common values, and the box plot marks these outliers with red "+" symbols.
 

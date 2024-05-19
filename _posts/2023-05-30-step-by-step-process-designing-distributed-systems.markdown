@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Process for designing distributed systems"
-date:   2023-05-30 20:00:00 -0700
+title: "Process for designing distributed systems"
+date: 2023-05-30 20:00:00 -0700
 categories: distributed-systems system-design
+excerpt: "<p>In this post I'll step through my process for designing distributed systems, with example questions and artifacts associated with each step.</p><p>We will take the following steps to design a new service:</p><p>1. Validate whether this service needs to exist</p><p>2. Clarify business requirements</p><p>3. Estimate scale</p><p>4. Define system interfaces and data models</p><p>5. Define data flow and storage</p><p>6. Define high-level system components</p><p>7. Design individual components</p><p>The artifacts of each step can be validated with stakeholders to ensure we're on the right track before continuing.  They collectively add to a design document that can be referred to both while building the service, and afterwards to understand its inner workings.</p>"
 ---
 
 In this post I'll step through my process for designing distributed systems, with example questions and artifacts associated with each step.

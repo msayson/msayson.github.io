@@ -6,6 +6,8 @@ categories: finances
 ---
 If you're moving from Canada to the US for work, there are a few things that are helpful to do before and after moving that will make your short-term finances much, much easier, and I've put together a few of them based on conversations I had with a friend who relocated around a year after I did.
 
+<!--more-->
+
 At the end is a checklist you can skip to for a quick overview.
 
 ## Closing your TFSA and simplifying Canadian investments

@@ -9,6 +9,8 @@ Last time I went over [Debian's releases and reasons to either upgrade to Debian
 
 In this post I'll go through the steps I took to upgrade to the current Debian Testing release.
 
+<!--more-->
+
 As mentioned last time, each release has a code name, such as "jessie", and you can choose to track releases by name ("jessie") to follow them from testing -> stable, or to track by life stage ("testing") to always use the release currently in that stage.
 
 I chose to update my source list to use "stretch", the current testing release as of April 2016, because I'd like to track the current testing release into stable and switch over to the next release once it looks fairly solid.  However, many people are comfortable simply using "testing" to automatically roll over every release cycle.

@@ -17,6 +17,8 @@ The Essential Eight mitigation strategies:
 7. Multi-factor authentication
 8. Daily backups
 
+<!--more-->
+
 The [Essential Eight to ISM Mapping](https://www.cyber.gov.au/publications/essential-eight-to-ISM-mapping) guide recommends specific security controls to implement for each of these mitigation strategies, and reflects a subset of controls from the [Australian Cyber Security Centre's Information Security Manual](https://www.cyber.gov.au/ism) (ISM).
 
 ## Application whitelisting

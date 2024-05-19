@@ -17,6 +17,8 @@ Go forces us to ask ourselves those all-encompassing questions:
 
 Or combined into a more immediate, actionable form: *What is the most important thing for me to do right now?*
 
+<!--more-->
+
 You have a dizzying number of options, where sometimes none of them look good and sometimes far too many beg for consideration, and you can only choose one.
 
 Maybe the game will play out in a way that allows you to revisit many of those earlier ideas, and maybe the game will advance in a way that walls them off.

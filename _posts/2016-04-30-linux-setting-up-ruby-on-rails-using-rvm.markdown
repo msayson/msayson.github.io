@@ -9,6 +9,8 @@ In this post I'll go over how to install Ruby on Rails on Linux using [Ruby Vers
 
 RVM simplifies maintaining one or more independent Ruby environments, which can be helpful for development and testing.  You can run builds on multiple gemsets this way, and if you so choose you can set up self-contained environments for each project.
 
+<!--more-->
+
 ### Express install, using default Rails environment:
 
 Step 1: First we'll download the keychain for verifying our download, and install curl.

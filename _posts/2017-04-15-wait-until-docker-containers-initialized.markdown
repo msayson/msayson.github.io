@@ -15,6 +15,8 @@ Neither strategy is ideal.  Fixed wait times are at best unnecessarily long and 
 
 A third strategy that has been suggested for database containers is to query the database every few seconds until it has been set up with the required user credentials.
 
+<!--more-->
+
 Example:
 
 ```bash

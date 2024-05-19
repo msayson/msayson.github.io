@@ -9,6 +9,8 @@ I've noticed that my battery's lifetime decreases by quite a bit when I run Debi
 
 In this post I'll show how to set up .desktop files for processes such as fdpowermon, and how to update your system to run fdpowermon on session start using the new fdpowermon.desktop file.
 
+<!--more-->
+
 #### Step 1: Installing fdpowermon
 
 fdpowermon is a simple battery monitor that periodically checks your battery's status and estimated lifetime, and provides a graphical representation in the desktop task bar.

@@ -6,6 +6,8 @@ categories: security
 ---
 The [Australian Cyber Security Centre](https://www.cyber.gov.au/) provides a substantial amount of clear and actionable information on how to improve an organization's security posture, ranging from basic guides for organizations that are just establishing their security teams, to its regularly updated [Australian Government Information Security Manual](https://www.cyber.gov.au/ism), often referred to as the ISM.
 
+<!--more-->
+
 ## The [Australian Information Security Manual](https://www.cyber.gov.au/ism) (ISM)
 The self-described purpose of the ISM is "to outline a cyber security framework that organisations can apply, using their risk management framework, to protect their information and systems from cyber threats."  It describes guiding principles and describes a broad range of recommended security controls, with provided applicability and priority scores.  I mean it when I say broad, it ranges from patching programs, to system backups, to network security monitoring, to email management, to appropriate measures for destroying hard disks that store sensitive information.
 

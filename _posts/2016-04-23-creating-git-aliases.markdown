@@ -17,6 +17,8 @@ git ci 'User can edit display name'
 git commit -m 'User can edit display name'
 {% endhighlight %}
 
+<!--more-->
+
 They can cut down on the typing required for common commands, but can also be appreciated when you find that you no longer have to keep on searching for that twenty-character command you use every few days.
 
 Git aliases are set using the following command:

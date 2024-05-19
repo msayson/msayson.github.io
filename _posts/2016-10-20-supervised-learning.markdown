@@ -1,9 +1,10 @@
 ---
 layout: post
-title:  "Supervised learning"
-date:   2016-10-20 20:30:00 -0800
+title: "Supervised learning"
+date: 2016-10-20 20:30:00 -0800
 categories: artificial-intelligence
 redirect_from: "/artificial-intelligence/2016/10/21/supervised-learning"
+excerpt: "<p>Supervised learning algorithms use an initial set of labelled data to \"learn\" a prediction model that can be applied to future data. Labelled data is divided into training and test samples, which are ideally independent and representative of the distribution of actual data, and the training phase must not be influenced by the test data in any way to avoid overfitting our model to our data.</p><p>If there isn't enough labelled data for us to split it into training and test samples and still obtain satisfactory results, then cross-validation can be applied to evaluate our models while training on all our data.  If we evaluate a small number of models using cross-evaluation and pick the one with the lowest error, we can produce a fairly accurate and unbiased prediction model.</p><p>Supervised learning isn't a magic solution to every problem, and each algorithm makes some assumptions that must be true of your data for it to work well.  However, it can be a powerful tool if you understand where and how to apply it.</p>"
 ---
 One of the main areas covered in the machine learning course I'm taking at UBC is supervised learning and its major concepts and algorithms.
 

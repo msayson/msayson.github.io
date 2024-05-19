@@ -10,6 +10,8 @@ Many applications using Amazon Web Services (AWS) will interact with the Amazon 
 
 In this post I'll go over a few of the configuration settings that you can use to secure your S3 resources, with a base CloudFormation template at the end that you can play with and extend.
 
+<!--more-->
+
 My provided examples are in YAML, while you can also use JSON in CloudFormation.  Which one you use is largely a matter of personal preference.
 
 ## Encryption at rest

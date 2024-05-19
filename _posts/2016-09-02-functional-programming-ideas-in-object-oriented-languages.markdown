@@ -12,6 +12,8 @@ Functional programming provides alternative and sometimes more natural ways to t
 
 For example, functional programming languages introduce the idea of handling functions as first-class citizens.  This means that functions can be passed as parameters, often generalized to accept a wide range of input types, and algorithms can be even more closely tied to behaviours rather than classes.
 
+<!--more-->
+
 Pure functional languages like Haskell take this to an extreme, where everything is a function and no state is allowed.  There are some interesting benefits to this approach, including easier reasoning about concurrency since all values are immutable.
 
 For now we'll focus on object-oriented languages as a group, using Ruby and Java as examples.

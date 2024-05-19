@@ -7,6 +7,8 @@ categories: aws
 
 When building a new service in AWS, it can be difficult to decide between all the available compute services.  In this post I'll give a brief overview of the main options and describe how I compare and choose between them for a given project.
 
+<!--more-->
+
 ## Overview of AWS compute services
 
 AWS compute services include AWS Lambda, EC2 (Elastic Cloud Compute), and Fargate, where EC2 and Fargate can both be run through container orchestration services ECS (Elastic Container Service) or EKS (Elastic Kubernetes Service).

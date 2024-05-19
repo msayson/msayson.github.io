@@ -10,6 +10,8 @@ The Go Programming Language has built-in communication channels, which provide t
 
 Channels can be buffered or unbuffered, where buffered channels can store multiple messages up to a declared capacity.  Once a channel is full, it blocks further writes until a process initiates a read operation.
 
+<!--more-->
+
 ```go
 // An unbuffered integer channel, which blocks writes
 // until another process is waiting to receive messages

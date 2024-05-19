@@ -9,6 +9,8 @@ redirect_from: "/security/2016/06/25/security-engineering-by-ross-anderson"
 
 It's highly readable, unlike most textbooks, and provides an accessible view into the many areas of security.  The author has made the full book freely available online, so I highly recommend checking it out.
 
+<!--more-->
+
 {% include image.html img="/images/20160624_securityengineering_anderson_cover.jpg"
   title="Security Engineering - A Guide to Building Dependable Distributed Systems"
   url="https://www.cl.cam.ac.uk/~rja14/book.html" %}

@@ -7,6 +7,8 @@ categories: programming-languages
 
 Recently I was looking into writing custom functions for SQLite in a Rails application, specifically to support regular expressions.  It took a few attempts to find a good solution, so I thought it might be worth posting the end result.
 
+<!--more-->
+
 ### REGEXP and SQLite
 
 The REGEXP operator is defined in SQLite, but using it results in an error because [the corresponding database function isn't implemented](https://sqlite.org/lang_expr.html#regexp).

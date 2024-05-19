@@ -7,6 +7,8 @@ categories: linux
 
 I was recently having issues upgrading Debian Linux due to `You don't have enough free space in /var/cache/apt/archives/` errors, and it took an hour or so to resolve the root cause of the issue (one program consuming far too much space).  Hopefully this post will help cut down the debugging time for other people who run into this problem.
 
+<!--more-->
+
 ## Upgrading packages
 
 Debian has decent guides on upgrading packages (see guides for upgrading [stable](https://www.debian.org/releases/stable/amd64/release-notes/ch-upgrading.en.html) or [testing](https://www.debian.org/releases/testing/amd64/release-notes/ch-upgrading.en.html) releases), which are good to follow and give pointers for common issues.

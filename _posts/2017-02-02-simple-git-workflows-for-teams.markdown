@@ -10,6 +10,8 @@ There are several common workflows for managing projects using Git, and which on
 
 If you deploy frequently, you may benefit from a structure that maintains an always-stable branch to release from, while allowing developers to work on unstable features.  If you don't host your products on your own servers, but instead have customers download software to install themselves, you may have to maintain multiple release branches that you can apply hot-fixes to.
 
+<!--more-->
+
 I'll go over the pros and cons of a few simple Git workflows, hopefully providing a few ideas for developing a version control strategy.
 
 ### Introduction
