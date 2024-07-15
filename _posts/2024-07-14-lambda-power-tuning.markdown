@@ -83,7 +83,7 @@ By navigating to that URL, we can view a graph of average latency and execution 
 
 In this case, for my Lambda function, which is written in Java and queries a DynamoDB table, 2048 MB of memory resulted in the lowest average latency, while 1024 MB of memory had the lowest runtime costs.
 
-We can see that lower amount of memory such as 512 MB actually have higher costs even though they are running on smaller instances, and this is due to the duration being several times higher which results in higher GB-second charges.
+We can see that 512 MB instances actually cost more than 1024 MB, and this is due to the duration being several times higher which results in higher GB-second charges.
 
 This was only run for 15 iterations per memory allocation, so I increased the sample size and reran against 1024, 1536, and 2048 MB by setting powerValues and num set to `"powerValues": [1024, 1536, 2048], "num": 50`.
 
@@ -123,3 +123,5 @@ Given this tool is so simple to set up, run, and tear down after use, it's easy 
 AWS Lambda docs introducing AWS Lambda Power Tuning: [https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html](https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html)
 
 AWS Lambda Power Tuning GitHub repository with usage details: [https://github.com/alexcasalboni/aws-lambda-power-tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning)
+
+AWS Lambda pricing: [https://aws.amazon.com/lambda/pricing/](https://aws.amazon.com/lambda/pricing/)
