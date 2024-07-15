@@ -20,6 +20,9 @@ redirect_from:
 
         <h2>{{ post.title }}</h2>
           {{ post.excerpt }}
+          {% if post.featuredImage %}
+          <img src="{{post.featuredImage}}" alt="Featured image">
+          {% endif %}
           <p>
              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">Continue reading...</a>
           </p>
