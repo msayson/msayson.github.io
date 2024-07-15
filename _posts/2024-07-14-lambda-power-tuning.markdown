@@ -110,6 +110,10 @@ You can see a more detailed table view of the underlying data by going to the st
 
 ![alt text](/images/20240714_AWSLambdaPowerTuningResultsAnalyzerDetails.png "AWS Lambda Power Tuning results table view for second run")
 
+## Tear-down
+
+When you no longer need the tool, you can open the AWS CloudFormation console and delete the `serverlessrepo-aws-lambda-power-tuning` CloudFormation template.
+
 ## Outcome
 
 The tool took under 10 minutes to deploy, execute, and fine-tune, and resulted in me changing my test Lambda's memory allocation from 512 MB to 1536 MB.
