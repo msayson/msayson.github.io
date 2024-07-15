@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Optimizing AWS Lambda memory capacity using AWS Lambda Power Tuning"
-date: 2024-07-14 10:00:00 -0700
+date: 2024-07-14 00:00:00 +0000
 categories: aws
 excerpt: "<p>The AWS Lambda Power Tuning tool can be run against any Lambda function in your AWS account to determine its optimal memory capacity to minimize execution latency and/or hardware costs, and takes just a few button clicks to set up.</p>"
 ---
