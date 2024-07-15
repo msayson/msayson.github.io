@@ -85,7 +85,7 @@ In this case, for my Lambda function, which is written in Java and queries a Dyn
 
 We can see that 512 MB instances actually cost more than 1024 MB, and this is due to the duration being several times higher which results in higher GB-second charges.
 
-This was only run for 15 iterations per memory allocation, so I increased the sample size and reran against 1024, 1536, and 2048 MB by setting powerValues and num set to `"powerValues": [1024, 1536, 2048], "num": 50`.
+This was only run for 15 iterations per memory allocation, so I increased the sample size and reran against 1024, 1536, and 2048 MB by setting powerValues and num to `"powerValues": [1024, 1536, 2048], "num": 50`.
 
 I executed the Lambda function a couple times first with a test payload to eliminate cold starts as a compounding factor, and then ran the state machine with the new config, which resulted in the following output and visualization:
 
@@ -120,7 +120,7 @@ The tool took under 10 minutes to deploy, execute, and fine-tune, and resulted i
 
 This lowered my API's average latency from 50ms to 12ms, a 4.17x improvement, AKA 76% latency reduction.  Duration costs increased by 8% to $0.3276/million executions, which is minimal for my service's scale.
 
-Given this tool is so simple to set up, run, and tear down after use, it's easy for me to recommend this to anyone building services on AWS Lambda.
+Given the latency improvements of choosing the right amount of memory, and how easy this tool is to use, I'd recommend it to anyone building services on AWS Lambda.
 
 ## References
 
