@@ -34,9 +34,7 @@ This will create an AWS Lambda Application that encapsulates all the infrastruct
 
 Click on the `powerTuningStateMachine` resource to open the state machine, and click `Start Execution`, then enter the JSON payload to run the benchmark test with, where input parameters are documented on the tool's [GitHub README](https://github.com/alexcasalboni/aws-lambda-power-tuning).
 
-For example, the following payload runs the tool against the given Lambda function, with 15 executions each for 512, 1024, 1536, 2048, and 3008 MB of memory, with a function payload specific to my API service.
-
-I set `parallelInvocation` to false after observing Lambda throttling errors with it set to true, since my test Lambda isn't currently provisioned for high load, and `strategy` to `balanced` to equality weight minimizing latency and minimizing costs, while you can configure the tool to only consider one or use a different weighted average.
+For example, the following payload runs the tool against the given Lambda function, with 15 executions each for 512, 1024, 1536, 2048, and 3008 MB of memory, with a function payload specific to my API service, and the `balanced` optimization strategy.
 
 ```json
 {
@@ -72,6 +70,8 @@ I set `parallelInvocation` to false after observing Lambda throttling errors wit
   "strategy": "balanced"
 }
 ```
+
+I set `parallelInvocation` to false after observing Lambda throttling errors with it set to true, since my test Lambda isn't currently provisioned for high load, and `strategy` to `balanced` to equality weight minimizing latency and minimizing costs, while you can configure the tool to only consider one or use a different weighted average.
 
 ## Analyzing results
 
@@ -114,7 +114,7 @@ You can see a more detailed table view of the underlying data by going to the st
 
 ## Tear-down
 
-When you no longer need the tool, you can open the AWS CloudFormation console and delete the `serverlessrepo-aws-lambda-power-tuning` CloudFormation template.
+When you no longer need the tool, you can open the AWS CloudFormation console and delete the `serverlessrepo-aws-lambda-power-tuning` CloudFormation stack.
 
 ## Outcome
 
