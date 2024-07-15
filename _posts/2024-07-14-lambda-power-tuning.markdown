@@ -1,18 +1,20 @@
 ---
 layout: post
-title: "Optimizing AWS Lambda memory capacity using AWS Lambda Power Tuning"
+title: "Reducing Lambda latency by 76% with AWS Lambda Power Tuning"
 date: 2024-07-14 00:00:00 +0000
 categories: aws
 excerpt: "<p>The AWS Lambda Power Tuning tool can be run against any Lambda function in your AWS account to determine its optimal memory capacity to minimize execution latency and/or hardware costs, and takes just a few button clicks to set up.</p>"
 ---
 
-## Background
+## Introduction
 
 Optimizing AWS Lambda memory capacity can decrease customer-facing latencies by up to 2-5 times without significantly increasing hardware costs.  However, this takes trial and error, and many teams just pick an amount of memory and stick with it, leaving their services several times slower than necessary.
 
 Other teams spend hours setting up custom code and metrics to measure latencies for each of their service's use cases, benchmark each use case against various memory capacities, and use the AWS Cost Estimator or AWS Lambda pricing documentation to estimate costs and choose the amount of memory with the best latency-to-cost tradeoff.
 
 This is no longer necessary with the AWS Lambda Power Tuning tool, which can be run against any Lambda function in your AWS account to automatically determine the optimal memory capacity that minimizes execution latency and/or hardware costs.
+
+There is no cost to deploy and run this besides its underlying hardware costs, which is likely free if you only run it a few times before deleting it from your account.
 
 Since it only relies on AWS-infrastructure-level API calls, the tool works regardless of which programming language your Lambda function uses, and doesn't require any modifications to your service infrastructure or code.
 
