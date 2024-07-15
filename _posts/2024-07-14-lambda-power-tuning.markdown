@@ -22,7 +22,7 @@ The AWS Lambda Power Tuning [GitHub repo](https://github.com/alexcasalboni/aws-l
 
 I used the AWS Serverless Application Repository since this reduces set-up to a few button clicks, and I planned to tear down the tool after optimizing my Lambda function.
 
-To use this deployment option, you can simply log into your AWS account, visit https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:451282441545:applications~aws-lambda-power-tuning, and click Deploy.
+To use this deployment option, you can simply log into your AWS account, visit [https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:451282441545:applications~aws-lambda-power-tuning](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:451282441545:applications~aws-lambda-power-tuning), and click Deploy.
 
 ![alt text](/images/20240714_AWSLambdaPowerTuning_AWSServerlessRepoAppPage.png "AWS Serverless Repo application page for the AWS Lambda Power Tuning tool")
 
@@ -120,6 +120,6 @@ Given this tool is so simple to set up, run, and tear down after use, it's easy 
 
 ## References
 
-AWS Lambda docs introducing AWS Lambda Power Tuning: https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html
+AWS Lambda docs introducing AWS Lambda Power Tuning: [https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html](https://docs.aws.amazon.com/lambda/latest/operatorguide/profile-functions.html)
 
-AWS Lambda Power Tuning GitHub repository with usage details: https://github.com/alexcasalboni/aws-lambda-power-tuning
+AWS Lambda Power Tuning GitHub repository with usage details: [https://github.com/alexcasalboni/aws-lambda-power-tuning](https://github.com/alexcasalboni/aws-lambda-power-tuning)
