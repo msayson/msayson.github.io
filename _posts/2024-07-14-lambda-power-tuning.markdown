@@ -8,7 +8,7 @@ excerpt: "<p>The AWS Lambda Power Tuning tool can be run against any Lambda func
 
 ## Background
 
-It can take trial and error to determine the right amount of memory for an AWS Lambda function, and many teams just pick a number and stick with it even though a more appropriate amount may decrease customer-facing latencies by 2-5 times.
+Optimizing AWS Lambda memory capacity can decrease customer-facing latencies by up to 2-5 times without significantly increasing hardware costs.  However, this takes trial and error, and many teams just pick an amount of memory and stick with it, leaving their services several times slower than necessary.
 
 Other teams spend hours setting up custom code and metrics to measure latencies for each of their service's use cases, benchmark each use case against various memory capacities, and use the AWS Cost Estimator or AWS Lambda pricing documentation to estimate costs and choose the amount of memory with the best latency-to-cost tradeoff.
 
@@ -83,7 +83,7 @@ By navigating to that URL, we can view a graph of average latency and execution 
 
 In this case, for my Lambda function, which is written in Java and queries a DynamoDB table, 2048 MB of memory resulted in the lowest average latency, while 1024 MB of memory had the lowest runtime costs.
 
-We can see that 512 MB instances actually cost more than 1024 MB, and this is due to the duration being several times higher which results in higher GB-second charges.
+We can see that 512 MB actually costs more than 1024 MB, and this is due to the duration being several times higher which results in higher GB-second charges.
 
 This was only run for 15 iterations per memory allocation, so I increased the sample size and reran against 1024, 1536, and 2048 MB by setting powerValues and num to `"powerValues": [1024, 1536, 2048], "num": 50`.
 
