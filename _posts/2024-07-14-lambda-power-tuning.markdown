@@ -3,7 +3,7 @@ layout: post
 title: "Reducing Lambda latency by 76% with AWS Lambda Power Tuning"
 date: 2024-07-14 00:00:00 +0000
 categories: aws
-excerpt: "<p>Optimizing AWS Lambda memory capacity can decrease customer-facing latencies by up to 2-5 times without significantly increasing hardware costs, but can take some trial and error.  The AWS Lambda Power Tuning tool can be used to determine the optimal memory capacity for any Lambda function within minutes, and can be set up in a few button clicks.</p>"
+excerpt: "<p>Optimizing AWS Lambda memory capacity can decrease customer-facing latencies by up to 2-5 times without significantly increasing hardware costs, but can take some trial and error.</p><p>The AWS Lambda Power Tuning tool can be used to determine the optimal memory capacity for any Lambda function within minutes, and can be set up in a few button clicks.</p>"
 featuredImage: /images/20240714_AWSLambdaPowerTuningResults.png
 ---
 
