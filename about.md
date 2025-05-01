@@ -18,7 +18,7 @@ Principles I strive to live by:
 * Understand the "why" before diving into the "how" to ensure we're solving the right problem.
 * Have a positive impact.
 
-I enjoy learning and exploring new ideas, spending free time with my wife and children, reading, and playing and teaching the strategic board game Go.
+I enjoy learning and exploring new ideas, spending time with my wife and children, reading, and playing and teaching the strategic board game Go.
 
 You can find the source code for this blog at
 {% include icon-github.html username="msayson" %} /
