@@ -3,6 +3,7 @@ layout: post
 title: "Using AWS Organizations to standardize security controls across AWS accounts"
 date: 2025-05-07 00:00:00 +0000
 categories: aws
+excerpt: "<p>AWS Organizations provide a helpful, zero-cost way to centralize management of AWS accounts, with support for consolidating billing, role-based permission sets, service and resource control policies, and AWS service configurations.</p>"
 ---
 
 ## Introduction
