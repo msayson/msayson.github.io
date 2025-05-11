@@ -236,6 +236,17 @@ Select the Organizational Units or specific accounts you want to apply the polic
 
 The security controls will now be automatically enforced for the associated member accounts.
 
+We can test this by logging into a member account using the AdministratorAccess role, navigating to AWS Organizations, and selecting to leave the Organization.
+
+![Error leaving AWS Organization](/images/20250507_AwsOrg_ScpValidation_ErrorLeavingOrg.png)
+
+As shown above, the Service Control Policy successfully blocks member accounts from leaving the Organization.  Removing member accounts can now only be initiated from the Organization management account, which reduces the risk of a compromised account bypassing Organization security policies.
+
+## Posts in this series
+
+* (Current post) {{page.title}}
+* [Granting AWS Organization member accounts access to Cost Explorer]({% post_url 2025-05-10-aws-organization-members-cost-explorer-access %})
+
 ## References
 
 AWS Organizations User Guide: [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
