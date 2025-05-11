@@ -184,4 +184,4 @@ AWS Organizations User Guide: [https://docs.aws.amazon.com/organizations/latest/
 
 AWS Organizations Best Practices: [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html)
 
-AWS IAM Identity Center MFA User Guide: [https://docs.aws.amazon.com/singlesignon/latest/userguide/mfa-configure.html](https://docs.aws.amazon.com/singlesignon/latest/userguide/mfa-configure.html)
+AWS IAM Identity Center Permission Sets User Guide: [https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html](https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html)
