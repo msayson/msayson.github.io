@@ -182,6 +182,6 @@ Validate that users assigned this Permission Set on a given account now have rea
 
 AWS Organizations User Guide: [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)
 
-AWS Organizations Best Practices: [https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html)
+AWS Cost Explorer Access User Guide: [https://docs.aws.amazon.com/cost-management/latest/userguide/ce-access.html](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-access.html)
 
 AWS IAM Identity Center Permission Sets User Guide: [https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html](https://docs.aws.amazon.com/singlesignon/latest/userguide/permissionsetsconcept.html)
