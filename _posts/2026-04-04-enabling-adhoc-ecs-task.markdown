@@ -35,9 +35,9 @@ static void longPollQueue() {
     while (true) {
         Optional<MyQueueMessage> message = getMessageFromQueue();
         if (message.isPresent()) {
-            MyParsedRequest request = parseRequest(message);
+            MyParsedRequest request = parseRequest(message.get());
             executeRequest(request);
-            acknowledgeSqsMessage(message);
+            acknowledgeSqsMessage(message.get());
         }
     }
 }
