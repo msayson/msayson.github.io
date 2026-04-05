@@ -77,4 +77,6 @@ aws ecs run-task \
 
 Depending on the integ test environment, you can also use the [ECS RunTask API](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html) in a similar way as the above CLI command.
 
-After implementing this pattern in your service code, your integration tests can run ad hoc ECS tasks with specific test requests and validate the expected output - for example, periodically calling another API to validate a record has been successfully created or updated after a wait time, with a maximum number of retries.  Since the task processes only the injected request, tests can use a much shorter max duration than they would need if waiting for a large queue backlog to drain.
+After implementing this pattern in your service code, your integration tests can run ad hoc ECS tasks with specific test requests and validate the expected output - for example, periodically calling another API to validate a record has been successfully created or updated after a wait time, with a maximum number of retries.
+
+Since the task processes only the injected request, tests can use a much shorter max duration than they would need if waiting for a large queue backlog to drain.
