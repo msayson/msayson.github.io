@@ -3,10 +3,10 @@ layout: post
 title: "Polymorphic JSON deserialization with Java sealed interfaces and Jackson"
 date: 2026-05-15 20:30:00 -0800
 categories: programming-languages
-excerpt: "<p>When building a JSON-based API that accepts multiple request types, you often need a strategy for mapping incoming payloads to the appropriate data model.  Java sealed interfaces combined with Jackson's polymorphic type annotations provide a clean way to support multiple strongly typed backend data models.</p>"
+excerpt: "<p>When building a JSON-based API that accepts multiple request types, you need a strategy for mapping incoming payloads to the appropriate data model.  Java sealed interfaces combined with Jackson's polymorphic type annotations provide a clean way to support multiple strongly typed backend data models.</p>"
 ---
 
-When building a JSON-based API that accepts multiple request types, you often need a strategy for mapping incoming payloads to the appropriate data model.  Java sealed interfaces combined with Jackson's polymorphic type annotations provide a clean way to support multiple strongly typed backend data models.
+When building a JSON-based API that accepts multiple request types, you need a strategy for mapping incoming payloads to the appropriate data model.  Java sealed interfaces combined with Jackson's polymorphic type annotations provide a clean way to support multiple strongly typed backend data models.
 
 ## Problem
 Consider an API that receives data processing requests.  Each request provides a `requestType` field that determines which fields are relevant.
