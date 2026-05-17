@@ -164,7 +164,7 @@ With Java 21+, the compiler enforces that every permitted subtype in switch stat
 
 ## When to apply this pattern
 
-First, consider whether a polymorphic API is the right design.
+**First, consider whether a polymorphic API is the right design.**
 
 A single endpoint accepting multiple JSON schemas is appropriate when all request types go through the same lifecycle and infrastructure (authorization, data processing steps, queues, auditing/reporting) and only diverge in per-request-type execution logic.
 
@@ -196,7 +196,7 @@ They are a poor fit when either of the following are true, in which case abstrac
   </thead>
   <tbody>
     <tr>
-      <td>Sealed interface + Jackson polymorphism</td>
+      <td><b>Sealed interface + Jackson polymorphism</b></td>
       <td>
         <ul>
           <li>Supports strongly typed subtypes with different required and allowed fields</li>
@@ -213,7 +213,7 @@ They are a poor fit when either of the following are true, in which case abstrac
       </td>
     </tr>
     <tr>
-      <td>Single class with nullable fields</td>
+      <td><b>Single class with nullable fields</b></td>
       <td>
         <ul>
           <li>Simple</li>
@@ -230,7 +230,7 @@ They are a poor fit when either of the following are true, in which case abstrac
       </td>
     </tr>
     <tr>
-      <td>Inheritance with abstract class</td>
+      <td><b>Inheritance with abstract class</b></td>
       <td>
         <ul>
           <li>Familiar OOP pattern</li>
@@ -246,7 +246,7 @@ They are a poor fit when either of the following are true, in which case abstrac
       </td>
     </tr>
     <tr>
-      <td><code>@JsonAnySetter</code> with <code>Map&lt;String, Object&gt;</code></td>
+      <td><b><code>@JsonAnySetter</code> with <code>Map&lt;String, Object&gt;</code></b></td>
       <td>
         <ul>
           <li>Maximum flexibility</li>
@@ -262,7 +262,7 @@ They are a poor fit when either of the following are true, in which case abstrac
       </td>
     </tr>
     <tr>
-      <td>Enum and factory method</td>
+      <td><b>Enum and factory method</b></td>
       <td>
         <ul>
           <li>Explicit type registry (as with sealed interface)</li>
