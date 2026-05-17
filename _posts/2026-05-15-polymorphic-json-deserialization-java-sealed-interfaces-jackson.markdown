@@ -13,7 +13,7 @@ Consider an API that receives data processing requests.  Each request provides a
 
 All requests share the same lifecycle and processing steps, but each request type corresponds to a different data model with different required and optional fields.
 
-Eg.
+For example:
 
 * Account deletion: `{"requestId": "request-1234", "requestType": "deleteAccount", "accountId": "1234"}`
 * Profile deletion: `{"requestId": "request-1234", "requestType": "deleteProfile", "accountId": "1234", "profileId": "profile-1234"}`
@@ -45,7 +45,7 @@ public sealed interface DeletionRequest
      */
     static void requireNonBlank(final String value, final String fieldName) {
         if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException(fieldName + " must not be blank");
+            throw new IllegalArgumentException(fieldName + " must not be null or blank");
         }
     }
 }
@@ -56,6 +56,15 @@ Java interfaces allow us to keep core business logic independent of child implem
 When combined with Jackson `@JsonTypeInfo` and `@JsonSubTypes` annotations which wire the JSON discriminator field (here, `requestType`) to the appropriate implementation, this enables a polymorphic contract with automatic, compile-time-checked JSON routing to strongly typed implementations.
 
 ### Step 2: Define concrete implementations as classes or records
+
+In the following implementations of DeletionRequest, we set `@JsonIgnoreProperties(ignoreUnknown = true)` to ignore unmentioned attributes when deserializing JSON strings matching known request types.
+
+This allows us to:
+* Maintain strong typing for attributes relevant to this service while being agnostic of other upstream attributes our service doesn't use
+* Avoid listing irrelevant or redundant attributes including requestType in request-type-specific data models
+* Add/remove/update attributes unrelated to this service in upstream data providers without causing downstream runtime failures
+
+You can drop `@JsonIgnoreProperties` if you prefer to enforce the complete possible schema of input JSON strings, which will throw a runtime exception when receiving any new attribute you haven't defined.
 
 ```java
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -98,6 +107,8 @@ public record ProfileDeletionRequest(
  * Data model for scoped data deletion requests.
  *
  * Used when users want to delete partial data without closing their account.
+ *
+ * Account ID, request ID, and scope are required, profile ID is optional.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record ScopedDataDeletionRequest(
@@ -110,13 +121,15 @@ public record ScopedDataDeletionRequest(
         DeletionRequest.requireNonBlank(accountId, "accountId");
         DeletionRequest.requireNonBlank(requestId, "requestId");
         if (scope == null) {
-            throw new IllegalArgumentException("scope must not be blank");
+            throw new IllegalArgumentException("scope must not be null");
         }
     }
 }
 
 /**
- * Data model for data deletion scope, where must only delete specific categories of data.
+ * Data model for data deletion scope.
+ *
+ * Used when user requests deleting specific categories of data.
  */
 public record DeletionScope(
     Boolean deletePreferences,
@@ -128,32 +141,39 @@ public record DeletionScope(
 ### Step 3: Deserialize input JSON strings to strongly typed data models
 
 ```java
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
 
 // Note: Prefer to instantiate ObjectMapper once as static final field or singleton and reuse across classes.
 // ObjectMapper is thread-safe, and it's expensive to create new instances.
 final ObjectMapper mapper = new ObjectMapper();
 
-final DeletionRequest deletionRequest = mapper.readValue(inputJson, DeletionRequest.class);
-```
-
-With Java 21+, the compiler enforces that every permitted subtype in switch statements such as the following are handled, removing a class of potential runtime errors.
-
-```java
-switch (deletionRequest) {
-    case AccountDeletionRequest -> System.out.println("Delete account " + deletionRequest.accountId());
-    case ProfileDeletionRequest -> System.out.println("Delete profile " + deletionRequest.profileId());
-    case ScopedDataDeletionRequest -> System.out.println("Delete scoped data for account " + deletionRequest.accountId() + ", scope: " + deletionRequest.scope());
+final DeletionRequest deletionRequest;
+try {
+    deletionRequest = mapper.readValue(inputJson, DeletionRequest.class);
+} catch (final InvalidTypeIdException e) {
+    // Replace BadRequestException in catch statements with locally relevant class for 400 Bad Request exceptions
+    throw new BadRequestException("Unsupported request type", e);
+} catch (final JsonProcessingException e) {
+    throw new BadRequestException("Invalid request payload", e);
 }
 ```
 
+With Java 21+, the compiler enforces that every permitted subtype in switch statements on sealed interface instances are handled, removing a class of potential runtime errors.
+
 ## When to apply this pattern
 
-Sealed interfaces and Jackson polymorphism are helpful when:
+Sealed interfaces and Jackson polymorphic type annotations are a good fit when all the following are true:
 
-* Your JSON payloads share a discriminator field but have different schemas per type
-* You want a closed set of permitted subtypes
-* You want subtypes to be strongly typed, each potentially requiring its own validation logic
+* Your JSON payloads share a discriminator field but have different schemas per type.
+* You want a closed set of permitted subtypes.
+* You want subtypes to be strongly typed, each potentially requiring its own validation logic.
+
+They are a poor fit when either of the following are true, in which case abstract classes may be a better replacement for sealed interfaces:
+
+* Other teams need to be able to add subtypes without modifying your code (sealed interface subtypes must be defined in the same module).
+* You cannot use Java 17+, the first Long Term Support version supporting sealed interfaces.
 
 ## Pros and cons vs common alternatives
 
@@ -172,7 +192,7 @@ Sealed interfaces and Jackson polymorphism are helpful when:
         <ul>
           <li>Supports strongly typed subtypes with different required and allowed fields</li>
           <li>Easily add subtypes with minimal code changes</li>
-          <li>Compile-time safety</li>
+          <li>Compile-time rejection of unsupported subtypes</li>
           <li>Clean pattern matching without casting</li>
         </ul>
       </td>
@@ -201,7 +221,7 @@ Sealed interfaces and Jackson polymorphism are helpful when:
       </td>
     </tr>
     <tr>
-      <td>Inheritance with parent abstract class</td>
+      <td>Inheritance with abstract class</td>
       <td>
         <ul>
           <li>Familiar OOP pattern</li>
@@ -212,7 +232,7 @@ Sealed interfaces and Jackson polymorphism are helpful when:
       <td>
         <ul>
           <li>Anyone can subclass, no compile-time restriction on subtypes</li>
-          <li>Explicit code needed</li>
+          <li>Compiler does not enforce exhaustive handling of subtypes</li>
         </ul>
       </td>
     </tr>
@@ -253,9 +273,8 @@ Sealed interfaces and Jackson polymorphism are helpful when:
 
 ## Key takeaways
 
-1. `sealed` provides a closed type hierarchy - the compiler knows every possible implementation.
+1. `sealed` provides a closed type hierarchy so the compiler knows every possible implementation.
 2. Jackson's `@JsonTypeInfo` simplifies routing deserialization to the appropriate type based on a discriminator field.
 3. Java records minimize boilerplate for immutable, validated data models.
-4. Pattern matching with `switch` over sealed types provides compile-time validation validates that every request type is handled.
 
-Sealed interfaces with Jackson polymorphism are especially effective for API contracts where the full schema is owned by your team, and reduces the effort to add new subtypes.
+Sealed interfaces with Jackson polymorphism are especially effective for API contracts where the full schema is owned by your team, and reduce the effort to add new subtypes compared to other options.
