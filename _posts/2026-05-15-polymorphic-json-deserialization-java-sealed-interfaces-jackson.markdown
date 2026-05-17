@@ -21,7 +21,7 @@ Eg.
 
 ## Approach: Sealed interface + Jackson annotations
 
-#### Step 1: Define sealed interface with annotations mapping request types to implementations
+### Step 1: Define sealed interface with annotations mapping request types to implementations
 
 ```java
 import com.fasterxml.jackson.annotation.JsonSubTypes;
@@ -55,7 +55,7 @@ Java interfaces allow us to keep core business logic independent of child implem
 
 When combined with Jackson `@JsonTypeInfo` and `@JsonSubTypes` annotations which wire the JSON discriminator field (here, `requestType`) to the appropriate implementation, this enables a polymorphic contract with automatic, compile-time-checked JSON routing to strongly typed implementations.
 
-#### Step 2: Define concrete implementations as classes or records
+### Step 2: Define concrete implementations as classes or records
 
 ```java
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -125,7 +125,7 @@ public record DeletionScope(
 ) {}
 ```
 
-#### Step 3: Deserialize input JSON strings to strongly typed data models
+### Step 3: Deserialize input JSON strings to strongly typed data models
 
 ```java
 import com.fasterxml.jackson.databind.ObjectMapper;
