@@ -1,0 +1,261 @@
+---
+layout: post
+title: "Polymorphic JSON deserialization with Java sealed interfaces and Jackson"
+date: 2026-05-15 20:30:00 -0800
+categories: programming-languages
+excerpt: "<p>When building a JSON-based API that accepts multiple request types, you often need a strategy for mapping incoming payloads to the appropriate data model.  Java sealed interfaces combined with Jackson's polymorphic type annotations provide a clean way to support multiple strongly typed backend data models.</p>"
+---
+
+When building a JSON-based API that accepts multiple request types, you often need a strategy for mapping incoming payloads to the appropriate data model.  Java sealed interfaces combined with Jackson's polymorphic type annotations provide a clean way to support multiple strongly typed backend data models.
+
+## Problem
+Consider an API that receives data processing requests.  Each request provides a `requestType` field that determines which fields are relevant.
+
+All requests share the same lifecycle and processing steps, but each request type corresponds to a different data model with different required and optional fields.
+
+Eg.
+
+* Account deletion: `{"requestId": "request-1234", "requestType": "deleteAccount", "accountId": "1234"}`
+* Profile deletion: `{"requestId": "request-1234", "requestType": "deleteProfile", "accountId": "1234", "profileId": "profile-1234"}`
+* Scoped data deletion: `{"requestId": "request-1234", "requestType": "deleteScopedData", "accountId": "1234", "profileId": "profile-1234", "scope": {"deletePurchaseHistory": true, "deleteSubscriptions": false, "deletePreferences": false}}`
+
+## Approach: Sealed interface + Jackson annotations
+
+#### Step 1: Define sealed interface with annotations mapping request types to implementations
+
+```java
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+/**
+ * Polymorphic deletion request interface that routes to request-type-specific data models.
+ */
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "requestType")
+@JsonSubTypes({
+    @JsonSubTypes.Type(value = AccountDeletionRequest.class, name = "deleteAccount"),
+    @JsonSubTypes.Type(value = ProfileDeletionRequest.class, name = "deleteProfile"),
+    @JsonSubTypes.Type(value = ScopedDataDeletionRequest.class, name = "deleteScopedData")
+})
+public sealed interface DeletionRequest
+        permits AccountDeletionRequest, ProfileDeletionRequest, ScopedDataDeletionRequest {
+    // Define common method declarations and static methods here.
+
+    /**
+     * Throws IllegalArgumentException if value is null or blank.
+     */
+    static void requireNonBlank(final String value, final String fieldName) {
+        if (value == null || value.isBlank()) {
+            throw new IllegalArgumentException(fieldName + " must not be blank");
+        }
+    }
+}
+```
+
+Java interfaces allow us to keep core business logic independent of child implementation details, making the system easier to test and extend.  Sealed interfaces, available in Java 17+, restrict which classes are allowed to implement the interface via a `permits` clause.
+
+When combined with Jackson `@JsonTypeInfo` and `@JsonSubTypes` annotations which wire the JSON discriminator field (here, `requestType`) to the appropriate implementation, this enables a polymorphic contract with automatic, compile-time-checked JSON routing to strongly typed implementations.
+
+#### Step 2: Define concrete implementations as classes or records
+
+```java
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+/**
+ * Data model for account deletion requests.
+ *
+ * Account and request IDs are required, no other fields needed.
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record AccountDeletionRequest(
+    String accountId,
+    String requestId
+) implements DeletionRequest {
+    public AccountDeletionRequest {
+        DeletionRequest.requireNonBlank(accountId, "accountId");
+        DeletionRequest.requireNonBlank(requestId, "requestId");
+    }
+}
+
+/**
+ * Data model for profile deletion requests.
+ *
+ * Account, profile, and request IDs are required, no other fields needed.
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record ProfileDeletionRequest(
+    String accountId,
+    String profileId,
+    String requestId
+) implements DeletionRequest {
+    public ProfileDeletionRequest {
+        DeletionRequest.requireNonBlank(accountId, "accountId");
+        DeletionRequest.requireNonBlank(profileId, "profileId");
+        DeletionRequest.requireNonBlank(requestId, "requestId");
+    }
+}
+
+/**
+ * Data model for scoped data deletion requests.
+ *
+ * Used when users want to delete partial data without closing their account.
+ */
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record ScopedDataDeletionRequest(
+    String accountId,
+    String profileId,
+    String requestId,
+    DeletionScope scope
+) implements DeletionRequest {
+    public ScopedDataDeletionRequest {
+        DeletionRequest.requireNonBlank(accountId, "accountId");
+        DeletionRequest.requireNonBlank(requestId, "requestId");
+        if (scope == null) {
+            throw new IllegalArgumentException("scope must not be blank");
+        }
+    }
+}
+
+/**
+ * Data model for data deletion scope, where must only delete specific categories of data.
+ */
+public record DeletionScope(
+    Boolean deletePreferences,
+    Boolean deletePurchaseHistory,
+    Boolean deleteSubscriptions
+) {}
+```
+
+#### Step 3: Deserialize input JSON strings to strongly typed data models
+
+```java
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+// Note: Prefer to instantiate ObjectMapper once as static final field or singleton and reuse across classes.
+// ObjectMapper is thread-safe, and it's expensive to create new instances.
+final ObjectMapper mapper = new ObjectMapper();
+
+final DeletionRequest deletionRequest = mapper.readValue(inputJson, DeletionRequest.class);
+```
+
+With Java 21+, the compiler enforces that every permitted subtype in switch statements such as the following are handled, removing a class of potential runtime errors.
+
+```java
+switch (deletionRequest) {
+    case AccountDeletionRequest -> System.out.println("Delete account " + deletionRequest.accountId());
+    case ProfileDeletionRequest -> System.out.println("Delete profile " + deletionRequest.profileId());
+    case ScopedDataDeletionRequest -> System.out.println("Delete scoped data for account " + deletionRequest.accountId() + ", scope: " + deletionRequest.scope());
+}
+```
+
+## When to apply this pattern
+
+Sealed interfaces and Jackson polymorphism are helpful when:
+
+* Your JSON payloads share a discriminator field but have different schemas per type
+* You want a closed set of permitted subtypes
+* You want subtypes to be strongly typed, each potentially requiring its own validation logic
+
+## Pros and cons vs common alternatives
+
+<table>
+  <thead>
+    <tr>
+      <th>Strategy</th>
+      <th>Pros</th>
+      <th>Cons</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sealed interface + Jackson polymorphism</td>
+      <td>
+        <ul>
+          <li>Supports strongly typed subtypes with different required and allowed fields</li>
+          <li>Easily add subtypes with minimal code changes</li>
+          <li>Compile-time safety</li>
+          <li>Clean pattern matching without casting</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Requires all subtypes to be defined in same module</li>
+          <li>Requires Java 17+</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Single class with nullable fields</td>
+      <td>
+        <ul>
+          <li>Simple</li>
+          <li>Works pre-Java 17</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Runtime null checks everywhere</li>
+          <li>No compile-time safety</li>
+          <li>Unclear which fields apply to each type</li>
+          <li>More messy to enforce validations on subtypes</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Inheritance with parent abstract class</td>
+      <td>
+        <ul>
+          <li>Familiar OOP pattern</li>
+          <li>Subclasses can live anywhere</li>
+          <li>Works pre-Java 17</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Anyone can subclass, no compile-time restriction on subtypes</li>
+          <li>Explicit code needed</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td><code>@JsonAnySetter</code> with <code>Map&lt;String, Object&gt;</code></td>
+      <td>
+        <ul>
+          <li>Maximum flexibility</li>
+          <li>Allows for unknown schemas</li>
+          <li>Works pre-Java 17</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>Zero type safety, accepts all inputs</li>
+          <li>Validation is manual and error-prone</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Enum and factory method</td>
+      <td>
+        <ul>
+          <li>Explicit type registry (as with sealed interface)</li>
+          <li>More flexible, full control over deserialization</li>
+          <li>Works pre-Java 17</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>More boilerplate code than sealed interface + annotations</li>
+          <li>No compile-time validation of correct/complete routing</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Key takeaways
+
+1. `sealed` provides a closed type hierarchy - the compiler knows every possible implementation.
+2. Jackson's `@JsonTypeInfo` simplifies routing deserialization to the appropriate type based on a discriminator field.
+3. Java records minimize boilerplate for immutable, validated data models.
+4. Pattern matching with `switch` over sealed types provides compile-time validation validates that every request type is handled.
+
+Sealed interfaces with Jackson polymorphism are especially effective for API contracts where the full schema is owned by your team, and reduces the effort to add new subtypes.
