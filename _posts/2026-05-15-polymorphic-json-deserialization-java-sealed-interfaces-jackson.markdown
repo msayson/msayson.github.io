@@ -132,9 +132,9 @@ public record ScopedDataDeletionRequest(
  * Used when user requests deleting specific categories of data.
  */
 public record DeletionScope(
-    Boolean deletePreferences,
-    Boolean deletePurchaseHistory,
-    Boolean deleteSubscriptions
+    boolean deletePreferences,
+    boolean deletePurchaseHistory,
+    boolean deleteSubscriptions
 ) {}
 ```
 
@@ -164,7 +164,16 @@ With Java 21+, the compiler enforces that every permitted subtype in switch stat
 
 ## When to apply this pattern
 
-Sealed interfaces and Jackson polymorphic type annotations are a good fit when all the following are true:
+First, consider whether a polymorphic API is the right design.
+
+A single endpoint accepting multiple JSON schemas is appropriate when all request types go through the same lifecycle and infrastructure (authorization, data processing steps, queues, auditing/reporting) and only diverge in per-request-type execution logic.
+
+Prefer separate endpoints when:
+* Request types have different authorization rules or rate limits.
+* Request types have diverging lifecycles.
+* You need clean separation of concerns and auto-generated data models or documentation for each request type's schema.  Frameworks like OpenAPI, Swagger, and Smithy don't work as well with polymorphic schemas, which can be more difficult for clients to consume and understand.
+
+Sealed interfaces and Jackson polymorphic type annotations are a good fit for implementing polymorphic schemas when all the following are true:
 
 * Your JSON payloads share a discriminator field but have different schemas per type.
 * You want a closed set of permitted subtypes.
