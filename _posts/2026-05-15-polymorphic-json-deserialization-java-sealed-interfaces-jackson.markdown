@@ -16,8 +16,7 @@ All requests share the same lifecycle and processing steps, but each request typ
 For example:
 
 * Account deletion: `{"requestId": "request-1234", "requestType": "deleteAccount", "accountId": "1234"}`
-* Profile deletion: `{"requestId": "request-1234", "requestType": "deleteProfile", "accountId": "1234", "profileId": "profile-1234"}`
-* Scoped data deletion: `{"requestId": "request-1234", "requestType": "deleteScopedData", "accountId": "1234", "profileId": "profile-1234", "scope": {"deletePurchaseHistory": true, "deleteSubscriptions": false, "deletePreferences": false}}`
+* Scoped data deletion: `{"requestId": "request-1234", "requestType": "deleteScopedData", "accountId": "1234", "scope": {"deletePurchaseHistory": true, "deleteSubscriptions": false, "deletePreferences": false}}`
 
 ## Approach: Sealed interface + Jackson annotations
 
@@ -33,21 +32,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "requestType")
 @JsonSubTypes({
     @JsonSubTypes.Type(value = AccountDeletionRequest.class, name = "deleteAccount"),
-    @JsonSubTypes.Type(value = ProfileDeletionRequest.class, name = "deleteProfile"),
     @JsonSubTypes.Type(value = ScopedDataDeletionRequest.class, name = "deleteScopedData")
 })
 public sealed interface DeletionRequest
-        permits AccountDeletionRequest, ProfileDeletionRequest, ScopedDataDeletionRequest {
+        permits AccountDeletionRequest, ScopedDataDeletionRequest {
     // Define common method declarations and static methods here.
-
-    /**
-     * Throws IllegalArgumentException if value is null or blank.
-     */
-    static void requireNonBlank(final String value, final String fieldName) {
-        if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException(fieldName + " must not be null or blank");
-        }
-    }
 }
 ```
 
@@ -59,10 +48,7 @@ When combined with Jackson `@JsonTypeInfo` and `@JsonSubTypes` annotations which
 
 In the following implementations of DeletionRequest, we set `@JsonIgnoreProperties(ignoreUnknown = true)` to ignore unmentioned attributes when deserializing JSON strings matching known request types.
 
-This allows us to:
-* Maintain strong typing for attributes relevant to this service while being agnostic of other upstream attributes our service doesn't use
-* Avoid listing irrelevant or redundant attributes including requestType in request-type-specific data models
-* Add/remove/update attributes unrelated to this service in upstream data providers without causing downstream runtime failures
+This allows us to maintain strong typing for attributes relevant to this service while being agnostic of other upstream attributes our service doesn't use.
 
 You can drop `@JsonIgnoreProperties` if you prefer to enforce the complete possible schema of input JSON strings, which will throw a runtime exception when receiving any new attribute you haven't defined.
 
@@ -71,59 +57,23 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Data model for account deletion requests.
- *
- * Account and request IDs are required, no other fields needed.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record AccountDeletionRequest(
     String accountId,
     String requestId
 ) implements DeletionRequest {
-    public AccountDeletionRequest {
-        DeletionRequest.requireNonBlank(accountId, "accountId");
-        DeletionRequest.requireNonBlank(requestId, "requestId");
-    }
 }
 
 /**
- * Data model for profile deletion requests.
- *
- * Account, profile, and request IDs are required, no other fields needed.
- */
-@JsonIgnoreProperties(ignoreUnknown = true)
-public record ProfileDeletionRequest(
-    String accountId,
-    String profileId,
-    String requestId
-) implements DeletionRequest {
-    public ProfileDeletionRequest {
-        DeletionRequest.requireNonBlank(accountId, "accountId");
-        DeletionRequest.requireNonBlank(profileId, "profileId");
-        DeletionRequest.requireNonBlank(requestId, "requestId");
-    }
-}
-
-/**
- * Data model for scoped data deletion requests.
- *
- * Used when users want to delete partial data without closing their account.
- *
- * Account ID, request ID, and scope are required, profile ID is optional.
+ * Data model for scoped data deletion requests
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record ScopedDataDeletionRequest(
     String accountId,
-    String profileId,
     String requestId,
     DeletionScope scope
 ) implements DeletionRequest {
-    public ScopedDataDeletionRequest {
-        DeletionRequest.requireNonBlank(accountId, "accountId");
-        DeletionRequest.requireNonBlank(requestId, "requestId");
-        if (scope == null) {
-            throw new IllegalArgumentException("scope must not be null");
-        }
-    }
 }
 
 /**
@@ -162,16 +112,15 @@ try {
 
 With Java 21+, the compiler enforces that every permitted subtype in switch statements on sealed interface instances are handled, removing a class of potential runtime errors.
 
-## When to apply this pattern
+## When to use a polymorphic API
 
-**First, consider whether a polymorphic API is the right design.**
+A single endpoint accepting multiple JSON schemas can make sense when all request types share the same lifecycle and infrastructure (authorization, queues, auditing) and only diverge in execution logic.
 
-A single endpoint accepting multiple JSON schemas is appropriate when all request types go through the same lifecycle and infrastructure (authorization, data processing steps, queues, auditing/reporting) and only diverge in per-request-type execution logic.
+Prefer separate endpoints when request types have different authorization rules, rate limits, or lifecycle rules, or when you need clean OpenAPI/Swagger/Smithy documentation, which don't work well with polymorphic schemas.
 
-Prefer separate endpoints when:
-* Request types have different authorization rules or rate limits.
-* Request types have diverging lifecycles.
-* You need clean separation of concerns and auto-generated data models or documentation for each request type's schema.  Frameworks like OpenAPI, Swagger, and Smithy don't work as well with polymorphic schemas, which can be more difficult for clients to consume and understand.
+Polymorphic APIs are more difficult for clients to consume and understand compared to stand-alone APIs, so they are a better fit for internal APIs between services your team controls.
+
+## When to use sealed interfaces to implement polymorphic APIs
 
 Sealed interfaces and Jackson polymorphic type annotations are a good fit for implementing polymorphic schemas when all the following are true:
 
@@ -179,7 +128,7 @@ Sealed interfaces and Jackson polymorphic type annotations are a good fit for im
 * You want a closed set of permitted subtypes.
 * You want subtypes to be strongly typed, each potentially requiring its own validation logic.
 
-They are a poor fit when either of the following are true, in which case abstract classes may be a better replacement for sealed interfaces:
+They are a poor fit when either of the following is true, in which case abstract classes may be a better replacement for sealed interfaces:
 
 * Other teams need to be able to add subtypes without modifying your code (sealed interface subtypes must be defined in the same module).
 * You cannot use Java 17+, the first Long Term Support version supporting sealed interfaces.
