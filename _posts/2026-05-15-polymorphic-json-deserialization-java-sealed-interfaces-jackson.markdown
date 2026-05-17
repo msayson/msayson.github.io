@@ -235,4 +235,4 @@ They are a poor fit when either of the following is true, in which case abstract
 2. Jackson's `@JsonTypeInfo` simplifies routing deserialization to the appropriate type based on a discriminator field.
 3. Java records minimize boilerplate for immutable, validated data models.
 
-Sealed interfaces with Jackson polymorphism are especially effective for API contracts where the full schema is owned by your team, and reduce the effort to add new subtypes compared to other options.
+In practice, this pattern has reduced the effort to support new data processing types from roughly a week per type to a few hours.  The sealed interface and Jackson annotations handle the routing, leaving only type-specific models and logic to implement.
