@@ -70,6 +70,19 @@ Organizations may use anonymization or de-identification when full deletion is n
 * Common in marketing and advertising
 * Typically implemented via fine-grained access controls
 
+### Comparison of deletion patterns and their desired outcomes
+
+| Deletion pattern | Original data retained? | Recoverable? | Desired outcome                             |
+| ---------------- | ----------------------- | ------------ | ------------------------------------------- |
+| Hard delete      | No                      | No           | Data should no longer exist                 |
+| Soft delete      | Yes                     | Yes          | Data may need to be restored                |
+| Tombstone        | Temporarily             | Sometimes    | Deletion must be communicated to other systems |
+| Anonymization    | Partially               | No           | Identity should be removed while preserving analytical value |
+| Key destruction  | Yes                     | No           | Data should become permanently inaccessible |
+| Suppression      | Yes                     | Yes          | Data must be retained but not actively used |
+
+<br>
+
 ## Why inconsistent deletion semantics create operational problems
 
 The existence of multiple deletion models is not inherently problematic.
@@ -83,17 +96,31 @@ The problem arises when organizations assume they are equivalent.
 * Downstream systems continue to process soft-deleted data due to inconsistent enforcement of deletion semantics.
 * Result: Data remains accessible internally, against intended policy.
 
-**Example 2: Derived data retention**
+![Diagram illustrating compliance gaps from soft deletion mismatching expectation](/images/20260608_SoftDeletionComplianceGapExcalidraw.svg)
 
-* Transactional database deletes data.
-* Analytics retains aggregated or derived datasets.
-* Result: Personally identifiable information can still be inferred from aggregate data.
+**Example 2: Suppression inconsistently applied across data use cases**
 
-**Example 3: Data reappearance via backups or replays**
+* Customer requests deletion.
+* Marketing platform suppresses customer data from email campaigns.
+* Personal data remains accessible to other operational systems.
+* Result: Teams disagree on whether preventing their system's use of data is equivalent to deleting personal data.
+
+**Example 3: Anonymized data re-identified in derived datasets**
+
+* Privacy team expects customer personally identifiable information (PII) to be removed.
+* Analytics platform de-identifies records rather than deleting.
+* Data scientists continue querying aggregated datasets.
+* Privacy reviewers discover that individuals become re-identified when datasets are joined.
+* Result: Teams disagree on cross-system anonymization requirements.
+
+**Example 4: Data reappearance via event replays**
 
 * Source system deletes data.
-* Restored backup or replay from upstream pipeline rehydrates deleted records.
+* Replaying historical pipeline events rehydrates AKA recreates deleted records.
+* Systems lack mechanisms to prevent or remove rehydrated data after replay.
 * Result: Systems differ on whether deletion should prevent historical state from being reintroduced, resulting in an enforcement gap.
+
+![Diagram illustrating compliance gaps from deleted data being rehydrated](/images/20260608_RestoredDeletedDataExcalidraw.svg)
 
 Key insight: Many deletion failures are semantic mismatches rather than execution failures.
 
@@ -110,4 +137,4 @@ Instead of treating deletion as a collection of service-specific scripts, organi
 * How success is verified
 * What evidence should be collected
 
-The challenge is explicitly defining deletion semantics, ensuring each system enforces and verifies the correct deletion mechanism, and validating that personal data has been removed across the organization.
+The challenge is explicitly defining deletion semantics, ensuring each system enforces and verifies the intended deletion mechanism, and validating that personal data has been removed across the organization.
