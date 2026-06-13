@@ -80,6 +80,7 @@ Organizations may use anonymization or de-identification when full deletion is n
 | Anonymization    | Partially               | No           | Identity should be removed while preserving analytical value |
 | Key destruction  | Yes                     | No           | Data should become permanently inaccessible |
 | Suppression      | Yes                     | Yes          | Data must be retained but not actively used |
+{:.table-small-bordered}
 
 <br>
 
