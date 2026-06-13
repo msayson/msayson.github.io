@@ -3,6 +3,7 @@ layout: post
 title:  "Diving into the Essential Eight strategies to mitigate security incidents part 2: limiting blast radius and recovering"
 date:   2019-11-17 20:00:00 -0800
 categories: security
+excerpt: "This is the second part of a deep dive into the ACSC Essential Eight, covering the final four security controls for reducing enterprise risk. It reviews ISM controls, maturity levels, and practical implementation guidance to help teams operationalize these safeguards."
 ---
 This is the second part of a deep dive into the Australian Cyber Security Centre's Essential Eight mitigation strategies, following up on [an overview of guides from the Australian Cyber Security Centre (ACSC)]({% post_url 2019-08-25-top-mitigation-strategies-from-acsc %}), and [a deep dive into the first four of the Essential Eight]({% post_url 2019-08-30-essential-eight-mitigation-strategies-part-1 %}).
 

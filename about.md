@@ -7,9 +7,7 @@ permalink: /about/
 {: #profile-picture }
 ![alt text](/images/profile_picture.jpg "Profile Picture")
 
-My name is Mark Sayson, and I'm a software developer based in Seattle, WA, USA, with a focus on developing distributed backend services.
-
-I currently work as a Senior Software Engineer at Amazon, leading and collaborating on cross-team initiatives to automate company-wide security and consumer privacy.
+I currently work as a software engineering tech lead at Amazon, where I lead and collaborate on cross-team initiatives to build systems that automate security controls and privacy enforcement.
 
 Principles I strive to live by:
 * Always be learning and taking on new challenges.

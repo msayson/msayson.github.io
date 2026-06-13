@@ -3,7 +3,7 @@ layout: post
 title: "Strategies for querying periodic S3 data snapshots"
 date: 2025-05-31 00:00:00 +0000
 categories: aws
-excerpt: "<p>A common AWS analytics use case is making aggregate queries across multiple data sets stored in S3.  For example, one partner team may store product metadata, while another team stores purchase order metadata, and we may want to join these data sets to determine which products are most popular across each marketplace.</p><p>In this post I'll cover a few options for syncing data to S3 and retrieving data snapshots for use in aggregate queries, and specifically discuss the use case where we need to maintain access patterns to complete, recent data snapshots without partial unavailability during data syncs.</p>"
+excerpt: "A common AWS analytics pattern involves running aggregate queries across multiple S3 datasets. This post explores approaches for syncing and querying S3 snapshot data, with a focus on maintaining consistent access to complete datasets during ongoing data updates."
 ---
 
 ## Background

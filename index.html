@@ -2,26 +2,58 @@
 layout: default
 ---
 
-<div class="home-large-section-icons">
-  <a href="/blog">
-    {% include image.html img="/images/blog_icon.jpg"
-      title="Image of Scalability of Data Processing post (https://www.marksayson.com/blog/scalability-of-data-processing/)"
-      caption="Blog Posts" %}
-  </a>
-</div>
+<div class="introduction">
+  <p>
+    Software engineering tech lead building security and privacy infrastructure,
+    focused on simplifying how organizations implement security and privacy
+    across distributed systems.
+  </p>
 
-<div id="latest-post">
-  <h1 class="page-heading">Latest post</h1>
-  
-  {% assign post = site.posts.first %}
-  {% assign content = post.content %}
-  <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-  <h1>{{ post.title }}</h1>
-  {{ post.content }}
+  <p>
+    I write about software architecture, distributed systems, AWS,
+    information security, and privacy engineering.
+  </p>
 </div>
 
 <div class="horizontal-rule"></div>
+
+<div class="featured-posts">
+  <h2>Selected Articles</h2>
+
+  {% assign featured_slugs = "
+    why-data-deletion-is-still-unsolved,
+    step-by-step-process-designing-distributed-systems,
+    concurrency-from-app-to-massively-distributed-service,
+    strategies-for-querying-snapshot-s3-data,
+    aws-organizations,
+    essential-eight-mitigation-strategies-part-2
+  " | split: "," %}
+
+  {% for slug in featured_slugs %}
+    {% assign trimmed_slug = slug | strip %}
+
+    {% for post in site.posts %}
+      {% if post.slug == trimmed_slug %}
+
+        <article class="featured-post">
+          <h3>
+            <a href="{{ post.url }}">
+              {{ post.title }}
+            </a>
+          </h3>
+
+          <span class="post-meta">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </span>
+
+          {{ post.excerpt }}
+        </article>
+
+        <br>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
 
 <div id="more-posts-link">
   <a class="page-heading" href="/blog">View all posts</a>
