@@ -32,26 +32,23 @@ layout: default
   {% for slug in featured_slugs %}
     {% assign trimmed_slug = slug | strip %}
 
-    {% for post in site.posts %}
-      {% if post.slug == trimmed_slug %}
+    {% assign post = site.posts | where: "slug", trimmed_slug | first %}
 
-        <article class="featured-post">
-          <h3>
-            <a href="{{ post.url }}">
-              {{ post.title }}
-            </a>
-          </h3>
+    <article class="featured-post">
+      <h3>
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h3>
 
-          <span class="post-meta">
-            {{ post.date | date: "%b %-d, %Y" }}
-          </span>
+      <span class="post-meta">
+        {{ post.date | date: "%b %-d, %Y" }}
+      </span>
 
-          {{ post.excerpt }}
-        </article>
+      {{ post.excerpt }}
+    </article>
 
-        <br>
-      {% endif %}
-    {% endfor %}
+    <br>
   {% endfor %}
 </div>
 
