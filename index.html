@@ -10,8 +10,8 @@ layout: default
   </p>
 
   <p>
-    I write about software architecture, distributed systems, AWS,
-    information security, and privacy engineering.
+    I write about distributed systems, with recent work focused on privacy engineering
+    and data deletion infrastructure.
   </p>
 </div>
 
@@ -23,11 +23,9 @@ layout: default
   {% assign featured_slugs = "
     why-data-deletion-is-still-unsolved,
     gaps-in-data-deletion-verification-auditability,
-    step-by-step-process-designing-distributed-systems,
-    concurrency-from-app-to-massively-distributed-service,
-    strategies-for-querying-snapshot-s3-data,
     aws-organizations,
-    essential-eight-mitigation-strategies-part-2
+    step-by-step-process-designing-distributed-systems,
+    concurrency-from-app-to-massively-distributed-service
   " | split: "," %}
 
   {% for slug in featured_slugs %}

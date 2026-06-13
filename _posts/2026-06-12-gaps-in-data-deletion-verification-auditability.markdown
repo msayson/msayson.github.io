@@ -3,7 +3,7 @@ layout: post
 title: "Gaps in data deletion verification and auditability"
 date: 2026-06-12 20:30:00 -0800
 categories: privacy-engineering right-to-be-forgotten
-excerpt: "All systems reported \"Deletion succeeded\" after Kathy submitted a data deletion request on the company website last month.  Yet she is still receiving personalized marketing emails, internal services are still passing around her data, and her order history still appears in business analytics reports."
+excerpt: "All systems reported \"Deletion succeeded\", yet customer data continues to appear across marketing, analytics, and internal systems."
 ---
 
 All systems reported "Deletion succeeded" after Kathy submitted a data deletion request on the company website last month.  Yet she is still receiving personalized marketing emails, internal services are still passing around her data, and her order history still appears in business analytics reports.
