@@ -18,6 +18,8 @@ That gap between "operation completed" and "data is fully removed from processin
 
 ## What was tracked as success
 
+![Diagram illustrating what deletion succeeded actually measures](/images/20260612_WhatDeletionSuccessActuallyMeasures.svg)
+
 In distributed systems, a deletion request typically passes through an orchestrated workflow:
 
 * a central service receives the request
