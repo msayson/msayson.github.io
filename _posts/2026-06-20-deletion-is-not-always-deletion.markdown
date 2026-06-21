@@ -6,8 +6,6 @@ categories: privacy-engineering right-to-be-forgotten
 excerpt: One of the more surprising aspects of privacy engineering is how many different deletion and retention requirements can apply to the same customer data. A single deletion request may result in immediate deletion in some systems, multi-year retention in others, and event-driven retention in cases such as legal holds.
 ---
 
-# Deletion is not always deletion: retention exceptions and competing obligations
-
 One of the more surprising aspects of privacy engineering is how many different deletion and retention requirements can apply to the same customer data. A single deletion request may result in immediate deletion in some systems, multi-year retention in others, and event-driven retention in cases such as legal holds.
 
 In other words, deletion is not always deletion. While the intent of a customer's deletion request may be straightforward, legal, financial, fraud prevention, security, and operational obligations often require organizations to retain specific categories of data. Understanding when data should be deleted, when it must be retained, and how retained data must be restricted is one of the more challenging aspects of building effective deletion programs.
