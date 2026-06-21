@@ -3,7 +3,7 @@ layout: post
 title: "Process for designing distributed systems"
 date: 2023-05-30 20:00:00 -0700
 categories: distributed-systems system-design
-excerpt: "This post presents a structured approach to designing distributed systems, along with example questions and artifacts used at each stage."
+excerpt: "A step-by-step framework for designing distributed systems, from validating the problem and gathering requirements to defining APIs, data flows, architecture, and technology choices that scale with future needs."
 ---
 
 This post presents a structured approach to designing distributed systems, along with example questions and artifacts used at each stage.
