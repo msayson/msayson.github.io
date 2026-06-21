@@ -100,6 +100,6 @@ This evidence is often distributed across APIs, data pipelines, and storage syst
 
 In more mature implementations, organizations treat deletion requests as **auditable workflows rather than point-in-time operations**. Each step — propagation, enforcement, and retention exception handling — is recorded in a way that can be reconstructed later for audit, regulatory inquiry, or internal validation.
 
-Finally, audit trails demonstrating that systems acted on a deletion request and reported "deletion successful" do not prove that personal data is actually *absent* and removed from future processing. Proving absence is a substantially harder problem, one that often amounts to showing no data was found after querying for it.
+Finally, audit trails demonstrating that systems acted on a deletion request and reported "deletion successful" do not prove that personal data is actually *absent* and removed from future processing. Proving absence is a substantially harder problem that often amounts to showing no data was found after querying for it.
 
 Ultimately, compliance in deletion programs is less about proving that data was deleted everywhere at once, and more about demonstrating that each system behaved consistently with its defined retention and processing obligations over time.
