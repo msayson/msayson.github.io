@@ -3,7 +3,7 @@ layout: post
 title: "Why deletion means different things in different systems"
 date: 2026-06-03 20:30:00 -0800
 categories: privacy-engineering right-to-be-forgotten
-excerpt: "A data deletion request may have a single intent, but the systems receiving it often implement deletion in very different ways."
+excerpt: "A deletion request may succeed in every system yet produce different outcomes across databases, data warehouses, search indexes, and event streams. Effective deletion begins with defining what \"delete\" means in each system."
 ---
 
 A customer submits a data deletion request. The deletion workflow executes across dozens of systems, and every system reports success.

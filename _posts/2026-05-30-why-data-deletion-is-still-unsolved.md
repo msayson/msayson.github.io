@@ -3,7 +3,7 @@ layout: post
 title: "Why data deletion is still an unsolved infrastructure problem"
 date: 2026-05-30 20:30:00 -0800
 categories: privacy-engineering right-to-be-forgotten
-excerpt: "Why data deletion is the hardest privacy challenge in modern distributed systems."
+excerpt: "Customer data may span hundreds of services, datasets, and integrations. Deleting it consistently requires coordinating execution, validation, and auditability across distributed systems, not just propagating a privacy request."
 ---
 
 A customer submits a data deletion request that propagates across backend services. One service only partially deletes the customer's records due to a bug. Another misses the request because it was down for maintenance, and several analytics datasets were never integrated into the deletion process.
