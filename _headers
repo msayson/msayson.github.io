@@ -1,0 +1,30 @@
+/*
+  # This file defines headers that will be enforced by CloudFlare Pages
+  # Ref: https://developers.cloudflare.com/pages/configuration/headers/
+
+  # Reject incorrect MIME types (XSS mitigation)
+  X-Content-Type-Options: nosniff
+
+  # Prevent clickjacking
+  X-Frame-Options: DENY
+
+  # Controls how much referrer information is sent with requests
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Enforce HTTPS (HSTS). 5-minute test window before increasing duration
+  Strict-Transport-Security: max-age=300
+
+  # Blocks access to hardware and sensitive browser APIs
+  Permissions-Policy:
+    accelerometer=(),
+    ambient-light-sensor=(),
+    bluetooth=(),
+    camera=(),
+    display-capture=(),
+    geolocation=(),
+    gyroscope=(),
+    hid=(),
+    magnetometer=(),
+    microphone=(),
+    serial=(),
+    usb=()
