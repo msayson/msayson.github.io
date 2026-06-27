@@ -26,13 +26,3 @@ _This repository intentionally does not specify dependency versions in the main 
 For example, to update the `github-pages` gem and its dependency tree, run `bundle update github-pages`, which will retrieve the latest dependency tree for `github-pages` that is consistent with the Gemfile (here we do not specify the version, so we grab the latest release) and update our local dependency tree.
 
 Test the changes by running `bundle exec jekyll serve` and verifying website functionality before committing and pushing the changes.
-
-### License
-The following directories and their content are Copyright Mark Sayson.  You may not reuse their content without my permission:
-
-* _posts
-* images
-
-All other files are open source under the MIT license, so feel free to reuse and modify the code as you like.
-
-Best wishes!
