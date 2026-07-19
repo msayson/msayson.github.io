@@ -76,3 +76,10 @@ In more mature implementations, organizations treat deletion requests as **audit
 Even when audit trails demonstrate that systems acted on a deletion request and reported success, this does not prove that personal data is absent or no longer subject to processing. Proving absence is a substantially harder problem because it requires validating that personal data cannot be found in any systems where it should have been removed, while distinguishing those systems from others where retention is justified.
 
 Ultimately, compliance in deletion programs is less about proving that data was deleted everywhere at once, and more about demonstrating that each system behaved consistently with its defined retention and processing obligations over time.
+
+## Posts in this series
+
+1. [Why data deletion is still an unsolved infrastructure problem]({% post_url 2026-05-30-why-data-deletion-is-still-unsolved %})
+2. [Why deletion means different things in different systems]({% post_url 2026-06-03-why-deletion-means-different-things %})
+3. [Gaps in data deletion verification and auditability]({% post_url 2026-06-12-gaps-in-data-deletion-verification-auditability %})
+4. (Current post) Deletion is not always deletion: retention exceptions and competing obligations

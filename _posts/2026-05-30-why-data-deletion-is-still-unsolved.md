@@ -81,3 +81,10 @@ If deletion is fundamentally an infrastructure problem, the next step is underst
 In upcoming posts, we'll explore common failure modes in deletion programs, including inconsistent deletion semantics, coverage gaps as architectures evolve, rehydration of previously deleted data, and gaps in verification and auditability.
 
 After that, we'll examine the structural properties of deletion programs that allow organizations to consistently orchestrate, execute, and verify deletion across distributed systems.
+
+## Posts in this series
+
+1. (Current post) Why data deletion is still an unsolved infrastructure problem
+2. [Why deletion means different things in different systems]({% post_url 2026-06-03-why-deletion-means-different-things %})
+3. [Gaps in data deletion verification and auditability]({% post_url 2026-06-12-gaps-in-data-deletion-verification-auditability %})
+4. [Deletion is not always deletion: retention exceptions and competing obligations]({% post_url 2026-06-20-deletion-is-not-always-deletion %})

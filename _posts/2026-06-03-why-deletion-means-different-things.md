@@ -137,3 +137,10 @@ Instead of treating deletion as a collection of service-specific scripts, organi
 * What evidence should be collected
 
 The challenge is explicitly defining deletion semantics, ensuring each system enforces and verifies the intended deletion mechanism, and validating that personal data has been removed across the organization.
+
+## Posts in this series
+
+1. [Why data deletion is still an unsolved infrastructure problem]({% post_url 2026-05-30-why-data-deletion-is-still-unsolved %})
+2. (Current post) Why deletion means different things in different systems
+3. [Gaps in data deletion verification and auditability]({% post_url 2026-06-12-gaps-in-data-deletion-verification-auditability %})
+4. [Deletion is not always deletion: retention exceptions and competing obligations]({% post_url 2026-06-20-deletion-is-not-always-deletion %})

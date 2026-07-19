@@ -131,3 +131,10 @@ Privacy tooling often focuses on answering where personal data lives, and whethe
 As architectures evolve, new systems, integrations, and data flows continually expand the scope of deletion obligations. Verification must therefore be continuous rather than point-in-time.
 
 Without system-wide visibility into deletion state and enforcement outcomes, organizations are left validating workflow execution rather than deletion itself, leaving them unable to determine whether customers like Kathy are still being processed.
+
+## Posts in this series
+
+1. [Why data deletion is still an unsolved infrastructure problem]({% post_url 2026-05-30-why-data-deletion-is-still-unsolved %})
+2. [Why deletion means different things in different systems]({% post_url 2026-06-03-why-deletion-means-different-things %})
+3. (Current post) Gaps in data deletion verification and auditability
+4. [Deletion is not always deletion: retention exceptions and competing obligations]({% post_url 2026-06-20-deletion-is-not-always-deletion %})
