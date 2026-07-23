@@ -4,22 +4,19 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
-        <ul class="contact-list-labels">
-          <li>Email</li>
-          <li>LinkedIn</li>
-          <li>GitHub</li>
-        </ul>
+        <dl class="contact-list">
+          <dt>Email</dt>
+          <dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+
+          <dt>LinkedIn</dt>
+          <dd><a href="{{ site.linkedin }}">Mark Sayson</a></dd>
+
+          <dt>GitHub</dt>
+          <dd>{% include icon-github.html username=site.github_username %}</dd>
+        </dl>
       </div>
 
       <div class="footer-col footer-col-2">
-        <ul class="contact-list-links">
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>          
-          <li><a href="{{ site.linkedin }}">Mark Sayson</a></li>
-          <li>{% include icon-github.html username=site.github_username %}</li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
         <p>{{ site.description }}</p>
       </div>
     </div>

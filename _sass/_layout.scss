@@ -107,10 +107,23 @@
     margin-bottom: $spacing-unit / 2;
 }
 
-.contact-list-labels,
-.contact-list-links {
-    list-style: none;
-    margin-left: 0;
+.contact-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 15px;
+  row-gap: 5px;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list dt {
+  color: #828282;
+}
+
+.contact-list dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .footer-col-wrapper {
