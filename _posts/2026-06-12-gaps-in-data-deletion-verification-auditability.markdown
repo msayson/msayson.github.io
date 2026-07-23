@@ -102,13 +102,15 @@ When a customer finds evidence that their data was not actually deleted, this ca
 
 We need continuous discovery of systems and datasets containing personal data, and unified deletion state tracking.
 
-This is an incremental process that may initially only cover a few technologies where automation is easiest, and many organizations may lean on periodic manual attestations where service owners indicate where new personal data processing has been introduced, and are provided guidance on next steps to meet privacy expectations.
+This is an incremental process that may initially only cover a few technologies where automation is easiest.
+
+Many organizations may rely on periodic manual processes where service owners attest to new personal data processing use cases and follow guidance on privacy expectations.
 
 ### Lowering compliance effort through automation and tooling
 
-Compliance outcomes improve when we have automatic tracking of deletion expectations, reporting, and accountability mechanisms, and simple, low-effort mechanisms for onboarding datasets to deletion mechanisms appropriate to the given service.
+Compliance outcomes improve when we have automatic tracking and accountability for deletion expectations, and low-effort mechanisms for onboarding datasets to service-appropriate deletion mechanisms.
 
-This is not one-size-fits-all, as each system may have different deletion semantics (hard deletion, retention but suppression from downstream processing, scheduled archival and eventual deletion, anonymization).
+This is not one-size-fits-all, as each system may have different deletion semantics, such as hard deletion, retention but suppression from downstream processing, scheduled archival and eventual deletion, or anonymization.
 
 However, organizations can achieve more consistent deletion outcomes when reusable tooling and patterns exist for common deletion strategies.
 
@@ -122,7 +124,9 @@ Standardized traceability of per-system request fulfillment and deletion semanti
 
 ### Enforcing exclusion of data from processing
 
-There is no simple, universal solution here, but we can get closer to the expected state when all systems that store personal data subscribe to and backfill deletion requests, and systems that retain personal data for required business use cases implement access controls to suppress use of data subject to deletion requests by downstream services.
+There is no simple, universal solution to enforce that data subject to deletion is never processed outside of legally permitted exceptions.
+
+However, we can get closer to the expected state when all systems that store personal data subscribe to and backfill deletion requests, and when systems that retain personal data that is subject to deletion implement access controls to suppress use by downstream services.
 
 ## Closing thoughts
 
