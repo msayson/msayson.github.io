@@ -6,7 +6,7 @@ categories: privacy-engineering right-to-be-forgotten
 excerpt: "Most deletion programs can prove a request was processed. Far fewer can prove that personal data was actually removed everywhere it existed and remained absent over time."
 ---
 
-All systems reported "Deletion succeeded" after Kathy submitted a data deletion request on the company website last month.  Yet she is still receiving personalized marketing emails, internal services are still passing around her data, and her order history still appears in business analytics reports.
+All systems reported "Deletion succeeded" after Kathy submitted a data deletion request on the company website last month. Yet she is still receiving personalized marketing emails, internal services are still passing around her data, and her order history still appears in business analytics reports.
 
 Something has clearly gone wrong.
 
@@ -100,9 +100,7 @@ When a customer finds evidence that their data was not actually deleted, this ca
 
 ### Automated inventories and compliance tracking
 
-We need continuous discovery of systems and datasets containing personal data, and unified deletion state tracking.
-
-This is an incremental process that may initially only cover a few technologies where automation is easiest.
+We need continuous discovery of systems and datasets containing personal data, and unified deletion state tracking. This is an incremental process that may initially only cover a few technologies where automation is easiest.
 
 Many organizations may rely on periodic manual processes where service owners attest to new personal data processing use cases and follow guidance on privacy expectations.
 
@@ -112,7 +110,7 @@ Compliance outcomes improve when we have automatic tracking and accountability f
 
 This is not one-size-fits-all, as each system may have different deletion semantics, such as hard deletion, retention but suppression from downstream processing, scheduled archival and eventual deletion, or anonymization.
 
-However, organizations can achieve more consistent deletion outcomes when reusable tooling and patterns exist for common deletion strategies.
+Organizations can achieve more consistent deletion outcomes when reusable tooling and patterns exist for common deletion strategies.
 
 ### Standardizing proof of deletion
 
