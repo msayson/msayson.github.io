@@ -6,8 +6,6 @@ categories: privacy-engineering right-to-be-forgotten
 excerpt: A persistent challenge in complex data architectures is keeping data that is subject to deletion from continuing to resurface, as systems re-ingest and propagate data even after executing a deletion request.
 ---
 
-# Deleted and back again: mitigating unintended data resurrection
-
 Kathy submits a personal data deletion request.  Ordering, marketing, and personalization systems remove her records, and yet, a week later, her data is back as if nothing had happened.
 
 In complex data architectures, keeping deleted personal data *deleted* is a persistent engineering challenge.  Systems re-ingest, recompute, replay, and repopulate data long after a deletion request has been processed.
