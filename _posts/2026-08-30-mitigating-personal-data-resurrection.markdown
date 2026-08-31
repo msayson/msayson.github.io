@@ -28,7 +28,7 @@ A deleted record can come back because something:
 1. Never deleted it - upstream systems not onboarded to deletion
 2. Hasn't deleted it *yet* - asynchronous, out-of-order deletion
 3. Disagrees what "deleted" means - soft deletion across boundaries
-4. Replays or caches an old versions - event history, backfills, caches
+4. Replays or caches an old version - event history, backfills, caches
 5. Restores an old version - backups, snapshots
 6. Said it deleted, but didn't - silent failures
 
