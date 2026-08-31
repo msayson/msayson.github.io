@@ -144,3 +144,4 @@ The challenge is explicitly defining deletion semantics, ensuring each system en
 2. (Current post) Why deletion means different things in different systems
 3. [Gaps in data deletion verification and auditability]({% post_url 2026-06-12-gaps-in-data-deletion-verification-auditability %})
 4. [Deletion is not always deletion: retention exceptions and competing obligations]({% post_url 2026-06-20-deletion-is-not-always-deletion %})
+5. [Deleted and back again: mitigating unintended data resurrection]({% post_url 2026-08-30-mitigating-personal-data-resurrection %})

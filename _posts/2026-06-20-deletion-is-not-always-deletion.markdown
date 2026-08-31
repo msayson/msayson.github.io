@@ -83,3 +83,4 @@ Ultimately, compliance in deletion programs is less about proving that data was 
 2. [Why deletion means different things in different systems]({% post_url 2026-06-03-why-deletion-means-different-things %})
 3. [Gaps in data deletion verification and auditability]({% post_url 2026-06-12-gaps-in-data-deletion-verification-auditability %})
 4. (Current post) Deletion is not always deletion: retention exceptions and competing obligations
+5. [Deleted and back again: mitigating unintended data resurrection]({% post_url 2026-08-30-mitigating-personal-data-resurrection %})

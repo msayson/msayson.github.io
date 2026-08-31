@@ -140,3 +140,4 @@ Without system-wide visibility into deletion state and enforcement outcomes, org
 2. [Why deletion means different things in different systems]({% post_url 2026-06-03-why-deletion-means-different-things %})
 3. (Current post) Gaps in data deletion verification and auditability
 4. [Deletion is not always deletion: retention exceptions and competing obligations]({% post_url 2026-06-20-deletion-is-not-always-deletion %})
+5. [Deleted and back again: mitigating unintended data resurrection]({% post_url 2026-08-30-mitigating-personal-data-resurrection %})
