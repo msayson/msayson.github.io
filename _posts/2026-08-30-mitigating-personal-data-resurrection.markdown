@@ -36,7 +36,7 @@ The common theme is that the organization has multiple surviving representations
 
 ### 1. Upstream systems not onboarded to deletion
 
-Any upstream system that still holds personal data continues emitting events, syncing records, or serving APIs that downstream systems consume.  Even if downstream systems correctly delete a customer's personal data upon request, they will re-ingest whatever their upstream dependencies continue to publish.
+Upstream system that still hold personal data continue emitting events, syncing records, or serving APIs that downstream systems consume.  Even if downstream systems correctly delete a customer's personal data upon request, they will re-ingest whatever their upstream dependencies continue to publish.
 
 ### 2. Out-of-order deletion
 
