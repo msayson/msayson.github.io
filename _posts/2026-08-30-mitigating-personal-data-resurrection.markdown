@@ -43,7 +43,7 @@ Even if deletion requests are sent to upstream systems first, workflows are ofte
 
 ### 3. Soft deletion across system boundaries
 
-When an upstream system soft-deletes a record by setting a "deleted" flag and continues propagating it, the record carries its deletion state in a field that downstream consumers must be aware of.  Consumers may ignore that flag, especially if it was added after the integration was built.  The result is that soft-deleted records can still be treated as active downstream.
+When an upstream system soft-deletes a record by setting a "deleted" flag and continues propagating it, the record carries its deletion state in a field that downstream consumers must be aware of.  Consumers may not act on that flag, especially if it was added after the integration was built.  The result is that soft-deleted records can still be treated as active downstream.
 
 ### 4. Event replay and cached data
 
@@ -55,7 +55,7 @@ Replay and sync workflows need to propagate deletion markers or tombstones.  Cac
 
 Disaster recovery workflows restore data from backups that predate the deletion request.  Unless backup recovery and data sharing workflows are deletion-aware, restoring a single upstream backup can repopulate dozens of downstream systems with previously deleted personal data.
 
-Organizations often do not remove customer data from backups, but recovery processes must account for recent deletion requests.  Centralized resurrection detection and re-deletion workflows can reduce service-specific recovery logic, with the tradeoff of risking temporary propagation of resurrected data.
+Organizations often do not remove customer data from backups, but recovery processes must account for deletion requests since the backup was taken.  Centralized resurrection detection and re-deletion workflows can reduce service-specific recovery logic, with the tradeoff of risking temporary propagation of resurrected data.
 
 ### 6. Silent deletion failures
 
@@ -71,7 +71,7 @@ In practice, this is not feasible in large organizations.  You cannot guarantee 
 
 Backfills aren't a silver bullet either.  Continually polling for re-emergence of deleted data and retriggering deletion requests creates churn, increased service load, and does not scale when accumulating hundreds of thousands or millions of historical deletion requests.  When the underlying resurrection pathways remain open, backfills simply repeat the same work indefinitely.
 
-The practical goal is not perfect ordering of deletion.  It is *eventual deletion*: every system should converge to their expected deletion state within the applicable deletion window, and the organization should detect those that do not.
+The practical goal is not perfect ordering of deletion.  It is *eventual deletion*: every system should converge to its expected deletion state within the applicable deletion window, and the organization should detect those that do not.
 
 Not all systems require complex deletion workflows.  Many only need recent data to operate.  For these services, it's often simpler to automatically delete records after a defined time period, using time-to-live or object expiry lifecycles.  These services may not need explicit deletion onboarding if they can demonstrate that personal data is automatically removed within the applicable deletion window.
 
@@ -96,7 +96,7 @@ With these controls in place, resurrection becomes contained, and deletion backf
 
 ## What this means for privacy compliance teams
 
-A successful deletion response does not prove that personal data has stopped being processing across systems with deletion expectations.
+A successful deletion response does not prove that personal data has stopped being processed across systems with deletion expectations.
 
 Organizations need to understand how personal data subject to deletion can continue to propagate across their systems.  They should enforce containment controls in systems with legitimate retention exceptions, and build verification mechanisms that test both successful deletion and reintroduction of previously deleted data.
 
