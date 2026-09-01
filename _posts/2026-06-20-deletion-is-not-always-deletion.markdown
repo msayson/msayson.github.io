@@ -28,7 +28,7 @@ For many organizations, a single deletion request can produce different outcomes
 Additional considerations:
 * Already trained ML/AI models may retain implicit knowledge about personal data subject to deletion requests.
 * Deletion obligations extend to third-party data processors, and organizations must propagate deletion requests to them. However, it may be difficult or impossible to prove deletion by external vendors.
-* There is rarely a clean way to wipe single records from data archives or rolling backups. A common pattern is to configure lifecycle rules to automatically delete data over an age threshold. Preventing rehydration of personal data from restored backups is a larger problem we will discuss in a future article.
+* There is rarely a clean way to wipe single records from data archives or rolling backups. A common pattern is to configure lifecycle rules to automatically delete data over an age threshold. Preventing resurrection of personal data is a larger problem we will discuss in a future article.
 
 ## Retention does not allow unrestricted processing
 

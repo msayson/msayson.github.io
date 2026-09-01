@@ -78,7 +78,7 @@ That means treating privacy as a first-class architectural concern rather than a
 ## What comes next
 If deletion is fundamentally an infrastructure problem, the next step is understanding how and why it fails in practice at scale.
 
-In upcoming posts, we'll explore common failure modes in deletion programs, including inconsistent deletion semantics, coverage gaps as architectures evolve, rehydration of previously deleted data, and gaps in verification and auditability.
+In upcoming posts, we'll explore common failure modes in deletion programs, including inconsistent deletion semantics, coverage gaps as architectures evolve, resurrection of previously deleted data, and gaps in verification and auditability.
 
 After that, we'll examine the structural properties of deletion programs that allow organizations to consistently orchestrate, execute, and verify deletion across distributed systems.
 
