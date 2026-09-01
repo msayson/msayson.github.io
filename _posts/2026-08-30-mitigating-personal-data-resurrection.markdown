@@ -22,15 +22,6 @@ This is distinct from:
 
 ## Common sources of unintended data resurrection
 
-Resurrection of deleted personal data often comes from one of the following failure modes:
-
-1. Upstream systems not onboarded to deletion
-2. Out-of-order deletion
-3. Soft deletion across system boundaries
-4. Event replay and cached data
-5. Restored backups
-6. Silent deletion failures
-
 ### 1. Upstream systems not onboarded to deletion
 
 Upstream systems that still hold personal data continue emitting events, syncing records, or serving APIs that downstream systems consume.  Even if downstream systems correctly delete a customer's personal data upon request, they will re-ingest whatever their upstream dependencies continue to publish.
