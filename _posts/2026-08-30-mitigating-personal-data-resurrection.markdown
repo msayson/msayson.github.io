@@ -81,6 +81,8 @@ The simplest implementation is a query layer that checks a central deletion regi
 
 These controls create deletion boundaries.  Even if some upstream systems have not yet onboarded to deletion, data propagation stops at the boundary of any system that enforces deletion-aware access controls.
 
+![Diagram illustrating how deletion-aware controls contain deleted data to consumers with retention exceptions](/images/20260831_HowDeletionControlsContainDeletedData.svg)
+
 Deletion-aware access controls do not by themselves satisfy an obligation to delete the underlying data.  Services that persist personal data must still ensure data is deleted or blocked from unauthorized processing.  Continuous detection via periodic sampling of data stores for deleted identifiers closes the loop, and allows deletion to be retriggered for affected services.
 
 With these controls in place, resurrection becomes contained, and deletion backfills become targeted, infrequent exercises focused only on the downstream systems affected by an upstream system recently onboarding to deletion.
