@@ -81,7 +81,7 @@ The simplest implementation is a query layer that checks a central deletion regi
 
 These controls create deletion boundaries.  Even if some upstream systems have not yet onboarded to deletion, data propagation stops at the boundary of any system that enforces deletion-aware access controls.
 
-Deletion-aware access controls do not by themselves satisfy an obligation to delete the underlying data.  Services that persist personal data without applicable retention exceptions must still ensure data is deleted or blocked from unauthorized processing.  Continuous detection via periodic sampling of data stores for deleted identifiers closes the loop, and allows deletion to be retriggered for affected services.
+Deletion-aware access controls do not by themselves satisfy an obligation to delete the underlying data.  Services that persist personal data must still ensure data is deleted or blocked from unauthorized processing.  Continuous detection via periodic sampling of data stores for deleted identifiers closes the loop, and allows deletion to be retriggered for affected services.
 
 With these controls in place, resurrection becomes contained, and deletion backfills become targeted, infrequent exercises focused only on the downstream systems affected by an upstream system recently onboarding to deletion.
 
@@ -89,9 +89,9 @@ With these controls in place, resurrection becomes contained, and deletion backf
 
 A successful deletion response does not prove that personal data has stopped being processed across systems with deletion expectations.
 
-Organizations need to understand how personal data subject to deletion can continue to propagate across their systems.  They should enforce containment controls in systems with legitimate retention exceptions, and build verification mechanisms that test both successful deletion and reintroduction of previously deleted data.
+Organizations need to understand how personal data subject to deletion can continue to propagate.  They should enforce containment controls in systems with legitimate retention exceptions, and build verification mechanisms that test both successful deletion and reintroduction of previously deleted data.
 
-Evidence should show which systems are subject to deletion, which have compensating measures such as automatic expiry, and which retain data under approved exceptions.  Retained data should nevertheless be prevented from being used for unapproved purposes.
+Evidence should show which systems are subject to deletion, which have compensating measures such as automatic expiry, and which retain data under approved exceptions.  Retained data should be blocked from use for unapproved purposes.
 
 ## A deletion resilience maturity model
 
