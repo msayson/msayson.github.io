@@ -32,6 +32,8 @@ Many deletion workflows have a hidden assumption that upstream systems delete fi
 
 Even if deletion requests are sent to upstream systems first, workflows are often asynchronous.  Some services delete immediately, while others batch deletions into daily or weekly jobs during periods of low customer traffic.
 
+![Diagram illustrating how out-of-order deletion results in resurrection of deleted personal data](/images/20260831_OutOfOrderDeletion.svg)
+
 ### 3. Soft deletion across system boundaries
 
 When an upstream system soft-deletes a record by setting a "deleted" flag and continues propagating it, the record carries its deletion state in a field that downstream consumers must be aware of.  Consumers may not act on that flag, especially if it was added after the integration was built.  The result is that soft-deleted records can still be treated as active downstream.
