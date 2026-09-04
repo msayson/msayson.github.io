@@ -48,7 +48,7 @@ Replay and sync workflows need to propagate deletion markers or tombstones.  Cac
 
 Disaster recovery workflows restore data from backups that predate the deletion request.  Unless backup recovery and data sharing workflows are deletion-aware, restoring a single upstream backup can repopulate dozens of downstream systems with previously deleted personal data.
 
-Organizations often do not remove customer data from backups, but recovery processes must account for deletion requests since the backup was taken.  Centralized resurrection detection and re-deletion workflows can reduce service-specific recovery logic, with the tradeoff of risking temporary propagation of resurrected data.
+Organizations often do not remove customer data from backups, but recovery processes must account for deletion requests since the backup was taken.  Centralized resurrection detection and re-deletion workflows can reduce service-specific recovery logic, at the cost of temporarily propagating resurrected data before it's caught.
 
 ### Source 6: Silent deletion failures
 
@@ -72,7 +72,7 @@ However, replaying deletion requests isn't a silver bullet.  Continually polling
 
 ### Control 2: Deletion-aware access controls
 
-Deletion-aware access controls prevent services from accessing or propagating data for customers whose data has been deleted.  Ideally these are provided through shared tooling, rather than requiring each service to implement its own controls.
+Deletion-aware access controls prevent services from accessing or propagating data for customers whose data has been deleted.  A platform team should build these once for reuse, rather than each service implementing its own.
 
 The simplest implementation is a query layer that checks a central deletion registry before returning a record, so that data subject to deletion is blocked from processing.  Where low latency is critical, services can instead embed a compressed local set of deleted identifiers, refreshed daily or weekly.  This trades a few days of enforcement lag for near-zero query cost.
 
@@ -96,18 +96,18 @@ Given the choice to invest weeks of effort on deletion workflows, or spend a day
 
 ## A deletion resilience maturity model
 
-Organizations evolve towards deletion resilience in stages.  Each stage reflects how deletion is implemented, how effectively resurrection is contained, and how reliably incorrect deletion is detected and remediated.
+Levels are defined by who owns deletion logic, and how effectively resurrection is caught and mitigated.
 
 |Level|How deletion is implemented|What resurrection looks like|
 |-----|---------------------------|----------------------------|
-|**1. Service-owned**|Each system builds its own deletion logic, often inconsistently.  Service owners self-identify when they need to onboard.|Common and invisible.  Upstream systems may not delete, downstream systems re-ingest.  Deletion replays and manual clean-up are frequent and expensive, or the risk is accepted.|
+|**1. Service-owned**|Each system builds its own deletion logic, often inconsistently.  Service owners self-identify when they need to onboard.|Common, and usually undetected.  Upstream systems may not delete, downstream systems re-ingest.  Deletion replays and manual clean-up are frequent and expensive, or the risk is accepted.|
 |**2. Platform-assisted**|Deletion is treated as privacy infrastructure rather than a cost each service absorbs.  Shared tooling offers hard deletion, TTL expiry, and deletion-aware access controls with common semantics.|Still occurs, but contained and easier to remediate.  Deletion replays run periodically across services where resurrection is detected.|
 |**3. Systemically resilient**|Controls are built into infrastructure by default, with centralized deletion state, deletion-aware boundaries, and minimal service team context needed to implement or validate.|Rare, localized, and quickly corrected.  Automated detection and reconciliation cover replay and recovery paths.|
 {:.table-small-bordered .top-bottom-padded}
 
 Most large organizations sit between Levels 1 and 2: tooling exists, but onboarding costs enough that a long tail never fully completes it, leaving resurrection a systemic defect.  Moving from Level 1 to Level 2 is mostly a tooling problem.  Level 3 requires changing how deletion state is tracked and enforced across an organization's architecture.
 
-## Summary
+## Deletion resilience is a systems property, not a per-service outcome
 
 A successful deletion response does not prove that personal data has stopped being processed across systems with deletion expectations.
 
