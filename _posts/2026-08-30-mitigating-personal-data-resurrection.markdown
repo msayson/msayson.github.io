@@ -22,11 +22,11 @@ This is distinct from:
 
 ## Common sources of unintended data resurrection
 
-### 1. Upstream systems not onboarded to deletion
+### Source 1: Upstream systems not onboarded to deletion
 
 Upstream systems that still hold personal data continue emitting events, syncing records, or serving APIs that downstream systems consume.  Even if downstream systems correctly delete a customer's personal data upon request, they will re-ingest whatever their upstream dependencies continue to publish.
 
-### 2. Out-of-order deletion
+### Source 2: Out-of-order deletion
 
 Many deletion workflows have a hidden assumption that upstream systems delete first and downstream systems follow.  When this ordering isn't enforced, downstream systems delete and re-ingest a customer's personal data from upstream systems that haven't deleted yet.
 
@@ -34,50 +34,45 @@ Even if deletion requests are sent to upstream systems first, workflows are ofte
 
 ![Diagram illustrating how out-of-order deletion results in resurrection of deleted personal data](/images/20260831_OutOfOrderDeletion.svg)
 
-### 3. Soft deletion across system boundaries
+### Source 3: Soft deletion across system boundaries
 
 When an upstream system soft-deletes a record by setting a "deleted" flag and continues propagating it, the record carries its deletion state in a field that downstream consumers must be aware of.  Consumers may not act on that flag, especially if it was added after the integration was built.  The result is that soft-deleted records can still be treated as active downstream.
 
-### 4. Event replay and cached data
+### Source 4: Event replay and cached data
 
 Systems that replay events, cache data, or ingest historical data snapshots from upstream services can inadvertently maintain or reintroduce personal data that was deleted from primary data stores.
 
 Replay and sync workflows need to propagate deletion markers or tombstones.  Caches and search indexes also need an explicit deletion path.
 
-### 5. Restored backups
+### Source 5: Restored backups
 
 Disaster recovery workflows restore data from backups that predate the deletion request.  Unless backup recovery and data sharing workflows are deletion-aware, restoring a single upstream backup can repopulate dozens of downstream systems with previously deleted personal data.
 
 Organizations often do not remove customer data from backups, but recovery processes must account for deletion requests since the backup was taken.  Centralized resurrection detection and re-deletion workflows can reduce service-specific recovery logic, with the tradeoff of risking temporary propagation of resurrected data.
 
-### 6. Silent deletion failures
+### Source 6: Silent deletion failures
 
 When systems report "success" after receiving or processing a deletion request but silently fail to delete or anonymize all records, they can continue to be sources of unredacted personal data long after a deletion request.
 
 Silent failures can stem from schema drift or deletion logic that does not cover all secondary or derived datasets.
 
-## How to prevent data resurrection
+## Controls to mitigate data resurrection
 
 It's tempting to say that every system should simply implement deletion and that orchestrators should enforce a global deletion order across the dependency graph.
 
 In practice, this is not feasible in large organizations.  You cannot guarantee deletion order across thousands of systems with different semantics, asynchronous workflows, independent scheduling, bidirectional data flows, and varied failure modes.
 
-Backfills aren't a silver bullet either.  Continually polling for re-emergence of deleted data and retriggering deletion requests creates churn, increased service load, and does not scale when accumulating hundreds of thousands or millions of historical deletion requests.  When the underlying resurrection pathways remain open, backfills simply repeat the same work indefinitely.
-
 The practical goal is not perfect ordering of deletion.  It is *eventual deletion*: every system should converge to its expected deletion state within the applicable deletion window, and the organization should detect those that do not.
 
-Not all systems require complex deletion workflows.  Many only need recent data to operate.  For these services, it's often simpler to automatically delete records after a defined time period, using time-to-live or object expiry lifecycles.  These services may not need explicit deletion onboarding if they can demonstrate that personal data is automatically removed within the applicable deletion window.
+### Control 1: Automatic detection and deletion replay
 
-For systems that do persist long-lived personal data, a simpler approach than global ordering is to give service owners a clear set of options:
+Periodic checks for deleted identifiers in services onboarded to deletion workflows can help find data that was missed or later introduced, and trigger another deletion.
 
-|Control|Primary function|
-|-|-|
-|**Hard deletion**|Remove personal data upon request|
-|**Automatic expiry**|Remove all data within a fixed period shorter than the deletion window|
-|**Deletion-aware access controls**|Block deleted data from propagation or use|
-{:.table-small-bordered .top-bottom-padded}
+However, replaying deletion requests isn't a silver bullet.  Continually polling for re-emergence of deleted data and retriggering deletion requests creates churn, increased service load, and does not scale when accumulating hundreds of thousands or millions of historical deletion requests.  When the underlying resurrection pathways remain open, deletion replays simply repeat the same work indefinitely.
 
-Ideally, deletion-aware controls are implemented through centrally owned tooling to avoid duplication of effort.
+### Control 2: Deletion-aware access controls
+
+Deletion-aware access controls prevent services from accessing or propagating data for customers whose data has been deleted.  Ideally these are provided through shared tooling, rather than requiring each service to implement its own controls.
 
 The simplest implementation is a query layer that checks a central deletion registry before returning a record, so that data subject to deletion is blocked from processing.  Where low latency is critical, services can instead embed a compressed local set of deleted identifiers, refreshed daily or weekly.  This trades a few days of enforcement lag for near-zero query cost.
 
@@ -85,17 +80,17 @@ These controls create deletion boundaries.  Even if some upstream systems have n
 
 ![Diagram illustrating how deletion-aware controls contain deleted data to consumers with retention exceptions](/images/20260831_HowDeletionControlsContainDeletedData.svg)
 
-Deletion-aware access controls do not by themselves satisfy an obligation to delete the underlying data.  Services that persist personal data must still ensure data is deleted or blocked from unauthorized processing.  Continuous detection via periodic sampling of data stores for deleted identifiers closes the loop, and allows deletion to be retriggered for affected services.
+### Control 3: Automatic expiry of data
 
-With these controls in place, resurrection becomes contained, and deletion backfills become targeted, infrequent exercises focused only on the downstream systems affected by an upstream system recently onboarding to deletion.
+Some systems only need recent data to operate.  These can automatically delete records after a defined time period shorter than the applicable deletion window, using time-to-live (TTL) or object expiry lifecycles.
 
-## What this means for privacy compliance teams
+These services may not need explicit deletion onboarding if they can demonstrate that data is automatically removed within the deletion window.
 
-A successful deletion response does not prove that personal data has stopped being processed across systems with deletion expectations.
+### Control 4: Data minimization
 
-Organizations need to understand how personal data subject to deletion can continue to propagate.  They should enforce containment controls in systems with legitimate retention exceptions, and build verification mechanisms that test both successful deletion and reintroduction of previously deleted data.
+Where possible, the simplest option is often to stop processing personal data in the first place.
 
-Evidence should show which systems are subject to deletion, which have compensating measures such as automatic expiry, and which retain data under approved exceptions.  Retained data should be blocked from use for unapproved purposes.
+Given the choice to invest weeks of effort on deletion workflows, or spend a day dropping fields and stale datasets that are no longer needed, many teams may pick the latter, reducing compliance risk and storage costs in the process.
 
 ## A deletion resilience maturity model
 
@@ -103,14 +98,20 @@ Organizations evolve towards deletion resilience in stages.  Each stage reflects
 
 |Level|How deletion is implemented|What resurrection looks like|
 |-----|---------------------------|----------------------------|
-|**1. Service-owned**|Each system builds its own deletion logic, often inconsistently.  Service owners self-identify when they need to onboard.|Common and invisible.  Upstream systems may not delete, downstream systems re-ingest.  Backfills and manual clean-up are frequent and expensive, or the risk is accepted.|
-|**2. Platform-assisted**|Deletion is treated as privacy infrastructure rather than a cost each service absorbs.  Shared tooling offers hard deletion, TTL expiry, and deletion-aware access controls with common semantics.|Still occurs, but contained and easier to remediate.  Backfills run periodically across services where resurrection is detected.|
+|**1. Service-owned**|Each system builds its own deletion logic, often inconsistently.  Service owners self-identify when they need to onboard.|Common and invisible.  Upstream systems may not delete, downstream systems re-ingest.  Deletion replays and manual clean-up are frequent and expensive, or the risk is accepted.|
+|**2. Platform-assisted**|Deletion is treated as privacy infrastructure rather than a cost each service absorbs.  Shared tooling offers hard deletion, TTL expiry, and deletion-aware access controls with common semantics.|Still occurs, but contained and easier to remediate.  Deletion replays run periodically across services where resurrection is detected.|
 |**3. Systemically resilient**|Controls are built into infrastructure by default, with centralized deletion state, deletion-aware boundaries, and minimal service team context needed to implement or validate.|Rare, localized, and quickly corrected.  Automated detection and reconciliation cover replay and recovery paths.|
 {:.table-small-bordered .top-bottom-padded}
 
 Most large organizations sit between Levels 1 and 2: tooling exists, but onboarding costs enough that a long tail never fully completes it, leaving resurrection a systemic defect.  Moving from Level 1 to Level 2 is mostly a tooling problem.  Level 3 requires changing how deletion state is tracked and enforced across an organization's architecture.
 
 ## Summary
+
+A successful deletion response does not prove that personal data has stopped being processed across systems with deletion expectations.
+
+Organizations need to understand how personal data subject to deletion can continue to propagate.  They should enforce containment controls in systems with legitimate retention exceptions, and build verification mechanisms that test both successful deletion and reintroduction of previously deleted data.
+
+Evidence should show which systems are subject to deletion, which have compensating measures such as automatic expiry, and which retain data under approved exceptions.  Retained data should be blocked from use for unapproved purposes.
 
 Deletion resilience is not achieved by making every system delete perfectly or by enforcing a single global deletion order.
 
