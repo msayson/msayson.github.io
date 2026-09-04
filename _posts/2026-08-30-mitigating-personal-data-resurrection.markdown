@@ -66,7 +66,7 @@ The practical goal is not perfect ordering of deletion.  It is *eventual deletio
 
 ### Control 1: Automatic detection and deletion replay
 
-Periodic checks for deleted identifiers in services onboarded to deletion workflows can help find data that was missed or later introduced, and trigger another deletion.
+Periodic checks for deleted identifiers can help find data that was missed or later introduced, and trigger a notification to onboard to deletion workflows or replay deletion if the service was already onboarded.
 
 However, replaying deletion requests isn't a silver bullet.  Continually polling for re-emergence of deleted data and retriggering deletion requests creates churn, increased service load, and does not scale when accumulating hundreds of thousands or millions of historical deletion requests.  When the underlying resurrection pathways remain open, deletion replays simply repeat the same work indefinitely.
 
