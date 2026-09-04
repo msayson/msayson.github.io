@@ -80,6 +80,8 @@ These controls create deletion boundaries.  Even if some upstream systems have n
 
 ![Diagram illustrating how deletion-aware controls contain deleted data to consumers with retention exceptions](/images/20260831_HowDeletionControlsContainDeletedData.svg)
 
+Deletion-aware controls do not eliminate the need for deletion replay, since data can still reach systems that do not enforce these controls before it reaches a deletion boundary.  Those systems remain in scope for detection and remediation, but the boundary limits how far the resurrected data can propagate.
+
 ### Control 3: Automatic expiry of data
 
 Some systems only need recent data to operate.  These can automatically delete records after a defined time period shorter than the applicable deletion window, using time-to-live (TTL) or object expiry lifecycles.
