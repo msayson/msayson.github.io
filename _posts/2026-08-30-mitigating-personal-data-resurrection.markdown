@@ -60,7 +60,7 @@ Silent failures can stem from schema drift or deletion logic that does not cover
 
 It's tempting to say that every system should simply implement deletion and that orchestrators should enforce a global deletion order across the dependency graph.
 
-In practice, this is not feasible in large organizations.  You cannot guarantee deletion order across thousands of systems with different semantics, asynchronous workflows, independent scheduling, bidirectional data flows, and varied failure modes.
+In practice, this is not feasible in large organizations.  You cannot guarantee deletion order across a large number of systems with different semantics, asynchronous workflows, independent scheduling, bidirectional data flows, and varied failure modes.
 
 The practical goal is not perfect ordering of deletion.  It is *eventual deletion*: every system should converge to its expected deletion state within the applicable deletion window, and the organization should detect those that do not.
 
@@ -68,7 +68,7 @@ The practical goal is not perfect ordering of deletion.  It is *eventual deletio
 
 Periodic checks for deleted identifiers can help find data that was missed or later introduced, and trigger a notification to onboard to deletion workflows or replay deletion if the service was already onboarded.
 
-However, replaying deletion requests isn't a silver bullet.  Continually polling for re-emergence of deleted data and retriggering deletion requests creates churn, increased service load, and does not scale when accumulating hundreds of thousands or millions of historical deletion requests.  When the underlying resurrection pathways remain open, deletion replays simply repeat the same work indefinitely.
+However, replaying deletion requests isn't a silver bullet.  Continually polling for re-emergence of deleted data and retriggering deletion requests creates churn, increased service load, and does not scale with high numbers of accumulated deletion requests.  When the underlying resurrection pathways remain open, deletion replays simply repeat the same work indefinitely.
 
 ### Control 2: Deletion-aware access controls
 
@@ -96,7 +96,7 @@ Given the choice to invest weeks of effort on deletion workflows, or spend a day
 
 ## A deletion resilience maturity model
 
-Levels are defined by who owns deletion logic, and how effectively resurrection is caught and mitigated.
+The following maturity model is a conceptual framework for thinking about deletion resilience.  Levels are defined by who owns deletion logic, and how effectively resurrection is caught and mitigated.
 
 |Level|How deletion is implemented|What resurrection looks like|
 |-----|---------------------------|----------------------------|
@@ -105,7 +105,7 @@ Levels are defined by who owns deletion logic, and how effectively resurrection 
 |**3. Systemically resilient**|Controls are built into infrastructure by default, with centralized deletion state, deletion-aware boundaries, and minimal service team context needed to implement or validate.|Rare, localized, and quickly corrected.  Automated detection and reconciliation cover replay and recovery paths.|
 {:.table-small-bordered .top-bottom-padded}
 
-Most large organizations sit between Levels 1 and 2: tooling exists, but onboarding costs enough that a long tail never fully completes it, leaving resurrection a systemic defect.  Moving from Level 1 to Level 2 is mostly a tooling problem.  Level 3 requires changing how deletion state is tracked and enforced across an organization's architecture.
+Many organizations can have characteristics of both Levels 1 and 2: tooling may exist, while onboarding costs enough that a long tail never fully completes it, leaving resurrection a systemic risk.  Moving from Level 1 to Level 2 is mostly a tooling problem.  Level 3 requires deletion state to be treated as an organization-level architectural concern rather than solely as service-local logic.
 
 ## Deletion resilience is a systems property, not a per-service outcome
 
