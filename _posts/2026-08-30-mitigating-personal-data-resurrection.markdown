@@ -74,7 +74,7 @@ However, replaying deletion requests isn't a silver bullet.  Continually polling
 
 Deletion-aware access controls prevent services from accessing or propagating data for customers whose data has been deleted.  A platform team should build these once for reuse, rather than each service implementing its own.
 
-The simplest implementation is a query layer that checks a central deletion registry before returning a record, so that data subject to deletion is blocked from processing.  Where low latency is critical, services can instead embed a compressed local set of deleted identifiers, refreshed daily or weekly.  This trades a few days of enforcement lag for near-zero query cost.
+The simplest implementation is a query layer that checks a central deletion registry before returning a record, so that data subject to deletion is blocked from processing.  Where low latency is critical, services can maintain a locally replicated set of deleted identifiers with a defined maximum delay between a deletion decision and its availability to the service.  The tradeoff is between enforcement latency and query-time overhead.
 
 These controls create deletion boundaries.  Even if some upstream systems have not yet onboarded to deletion, data propagation stops at the boundary of any system that enforces deletion-aware access controls.
 
