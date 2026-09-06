@@ -12,9 +12,9 @@ In other words, deletion is not always deletion. While the intent of a customer'
 
 ![Diagram illustrating differing retention use cases for same deletion request](/images/20260620_OneDeletionRequestMultipleRetentionOutcomes.svg)
 
-For many organizations, a single deletion request can produce different outcomes across systems depending on the purpose of processing personal data, applicable retention requirements, and the legal basis for continued retention or processing.
+For many organizations, a single deletion request can produce different outcomes across systems depending on the purpose of processing personal data, applicable retention requirements, and the justification for continued retention or processing.
 
-| Use Case | Example Retention Policy | Legal Basis for Continued Processing |
+| Use Case | Example Retention Policy | Potential Justification |
 |---|---|---|
 | Marketing and advertising | Delete upon deletion request | None for marketing use |
 | Customer accounts | Retain 30 days - 18 months after account closure | Legitimate interest (account recovery, service quality, dispute resolution) |

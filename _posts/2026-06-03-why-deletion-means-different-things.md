@@ -59,11 +59,12 @@ Soft deletes can become problematic if the personal data is still readily availa
 
 Organizations may use anonymization or de-identification when full deletion is not required or feasible. However, preserving analytical utility while removing all identifying information can be difficult. Re-identification risks increase when joining datasets across systems.
 
-**Key destruction**: Encryption keys are deleted so that data can no longer be decrypted.
+**Key destruction** (crypto-shredding): Encryption keys are deleted so that data can no longer be decrypted.
 
 * Common in cloud architectures
 * Encrypted data remains stored
 * Access is prevented via inability to decrypt the data rather than through physical deletion
+* Potentially acceptable only where resulting data is beyond recovery
 
 **Suppression**: Data is retained but excluded from operational processing.
 
@@ -106,7 +107,7 @@ The problem arises when organizations assume they are equivalent.
 
 **Example 3: Anonymized data re-identified in derived datasets**
 
-* Privacy team expects customer personally identifiable information (PII) to be removed.
+* Privacy team expects customer personal data to be removed.
 * Analytics platform de-identifies records rather than deleting.
 * Data scientists continue querying aggregated datasets.
 * Privacy reviewers discover that individuals become re-identified when datasets are joined.
