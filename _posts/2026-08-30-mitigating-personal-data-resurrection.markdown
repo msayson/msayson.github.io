@@ -126,3 +126,4 @@ It comes from making deletion state durable, containing deleted data at system b
 3. [Gaps in data deletion verification and auditability]({% post_url 2026-06-12-gaps-in-data-deletion-verification-auditability %})
 4. [Deletion is not always deletion: retention exceptions and competing obligations]({% post_url 2026-06-20-deletion-is-not-always-deletion %})
 5. (Current post) Deleted and back again: mitigating unintended data resurrection
+6. [Model a deletion graph, but don't execute it]({% post_url 2026-09-26-modeling-the-deletion-graph %})
