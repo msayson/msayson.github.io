@@ -51,7 +51,7 @@ Under strictly ordered execution, every dependency change must be immediately di
 
 Automation can improve completeness and freshness of the inventory, but it doesn't eliminate the underlying problem: the inventory itself becomes another system that must be maintained, validated, and trusted.
 
-A map that's 90% accurate still produces a useful list of remediation work. An orchestrator that's 90% accurate can stall every request that routes through the stale 10%. **Discovery tolerates staleness; strictly ordered execution doesn't.**
+A map that's 90% accurate still produces a useful list of remediation work. An orchestrator that's 90% accurate can stall every request that routes through the stale 10%.
 
 ## One failure shouldn't block everything else
 
@@ -89,11 +89,9 @@ The required sequence might be:
 
 Without that ordering, a queued job could execute after the source has been deleted and recreate data that was supposed to be removed, or fail because the referenced state no longer exists.
 
-Strict ordering isn't the only solution. A worker can sometimes be made deletion-aware and reject or discard work for data that is subject to deletion. In that case, the invariant is enforced locally rather than making the entire deletion workflow wait.
-
 ## Model the constraints, enforce them locally
 
-A graph used for orchestration should distinguish data-flow dependencies from the much smaller set that impose deletion ordering.
+A graph used for orchestration should distinguish the smallest set of dependencies that require deletion ordering.
 
 In the example, customer data reaches every system, but the only real constraint may be that Ordering deletes before Customer Accounts.
 
@@ -113,7 +111,7 @@ Asynchronous deletion introduces race conditions, which I cover in more detail i
 
 Search deletes a customer's data, but Ordering may not have processed the deletion yet, so it continues working normally and sends that data back to Search, which stores it again.
 
-Strict ordering could help prevent this by making Search wait for Ordering. The more robust fix is to make Ordering deletion-aware. Once a customer is subject to deletion, Ordering can filter its exports and reject API requests for that customer. This approach also covers retries and replays, which deletion ordering alone doesn't.
+Strict ordering could help prevent this by making Search wait for Ordering. The more robust fix is to make Ordering deletion-aware. Once a customer is subject to deletion, Ordering can filter its exports and reject API requests for that customer.
 
 > Downstream systems shouldn't have to wait for upstream systems to delete. Upstream systems should stop sending data that's subject to deletion.
 
@@ -139,7 +137,7 @@ This distinction matters beyond engineering. A request isn't complete until ever
 
 Mapping the graph is still worthwhile, because it tells you where the work is.
 
-If your privacy program maintains a data map or record of processing activities, you already have most of this graph. What those artifacts usually lack is what deletion depends on: which flows impose ordering, where data can flow back after deletion, which retention exceptions apply to each system, and how each system proves it deleted. Adding those fields turns a compliance inventory into a deletion remediation plan.
+Most privacy programs already have most of this graph through records of processing activities. What they usually lack is what deletion depends on: which flows impose ordering, where data can flow back after deletion, which retention exceptions apply to each system, and how each system proves it deleted.
 
 For each dependency, ask:
 
@@ -155,7 +153,7 @@ For each dependency, ask:
 
 The output isn't a graph you can hand to an orchestration team. It's a list of prioritized engineering work. For a privacy program, that's the real value of the graph: a structured way to find owners, invariants, verification gaps, and remediation priorities.
 
-Distributed deletion should be asynchronous by default. Enforce ordering only where correctness requires it, as close to the invariant as possible, and make every system that receives personal data robust to deletion happening somewhere else at the same time.
+In summary, deletion should be asynchronous by default. Enforce ordering only where correctness requires it, as close to the invariant as possible, and make every system that receives personal data robust to deletion happening somewhere else at the same time.
 
 Model the deletion graph. Don't execute it.
 
