@@ -39,17 +39,11 @@ And even if we knew, enforcing the order across a live graph runs into two probl
 
 ## The graph is never stable
 
-The first problem with making the graph part of the deletion workflow is keeping it accurate.
-
-In a large organization, the graph becomes stale almost as soon as you build it.
-
-New consumers appear. Services are split apart. Data flows change. Caches and derived stores are introduced. Pipelines are rewritten.
+In a large organization, the graph becomes stale almost as soon as you build it. New consumers appear. Services are split apart. Data flows change. Caches and derived stores are introduced. Pipelines are rewritten.
 
 Deprecations are particularly problematic. If a decommissioned service is still in the graph, an ordered workflow can wait indefinitely for a completion signal that will never arrive, silently blocking every downstream deletion.
 
-Under strictly ordered execution, every dependency change must be immediately discovered and incorporated into the graph, or deletions stall.
-
-Automation can improve completeness and freshness of the inventory, but it doesn't eliminate the underlying problem: the inventory itself becomes another system that must be maintained, validated, and trusted.
+Strictly ordered execution needs every one of those changes to be reflected in the graph immediately. Automation helps, but the inventory then becomes another system that must be maintained, validated, and trusted.
 
 A map that's 90% accurate still produces a useful list of remediation work. An orchestrator that's 90% accurate can stall every request that routes through the stale 10%.
 
@@ -91,7 +85,7 @@ Without that ordering, a queued job could execute after the source has been dele
 
 ## Model the constraints, enforce them locally
 
-A graph used for orchestration should distinguish the smallest set of dependencies that require deletion ordering.
+A graph used for orchestration should identify the smallest set of dependencies that require deletion ordering.
 
 In the example, customer data reaches every system, but the only real constraint may be that Ordering deletes before Customer Accounts.
 
@@ -119,23 +113,17 @@ That changes the question from "What order should these systems delete in?" to "
 
 ## Asynchronous doesn't mean fire-and-forget
 
-Once deletion is asynchronous, a request will spend time completed in some systems and pending in others. That's expected, because systems differ in processing time, retry behavior, and availability.
-
-But that means the program needs to distinguish deletion that's in progress and on track for its deadline from deletion that's stalled, failed, or unverified.
-
-That requires every system to report on where each request stands:
+Once deletion is asynchronous, a request will be complete in some systems and pending in others. That's expected, but the program needs to distinguish deletion that's in progress and on track for its deadline from deletion that's stalled, failed, or unverified. That requires every system to report where each request stands:
 
 1. Accepted: the system received the request
 2. Processed: the system ran its deletion
 3. Verified: the organization can prove deletion or de-identification
 
-A system that accepts a deletion request but never processes it hasn't deleted anything. A system that processes it but can't produce evidence leaves an auditability gap.
+Accepted without Processed means nothing was deleted. Processed without Verified is an auditability gap.
 
-This distinction matters beyond engineering. A request isn't complete until every system has reached Verified or has a documented exception, and the response to the individual shouldn't say otherwise. Verified state is also what lets the organization demonstrate compliance, not just assert it.
+A request isn't complete until every system has reached Verified or has a documented exception, and the response to the individual shouldn't say otherwise. Verified state is what lets the organization demonstrate compliance, not just state it.
 
 ## Use the graph to find the work
-
-Mapping the graph is still worthwhile, because it tells you where the work is.
 
 Most privacy programs already have most of this graph through records of processing activities. What they usually lack is what deletion depends on: which flows impose ordering, where data can flow back after deletion, which retention exceptions apply to each system, and how each system proves it deleted.
 
@@ -143,15 +131,15 @@ For each dependency, ask:
 
 |Question|Gap it reveals|Typical fix|
 |--------|--------------|-----------|
-|Does this dependency impose a deletion invariant?|Ordering constraints|Enforce locally where the invariant lives; otherwise model an explicit constraint|
-|Can data flow after deletion begins?|Resurrection paths|Make data transfers deletion-aware and add durable deletion state|
-|Can queued or in-flight work outlive the source data?|In-flight races|Drain queues, or make workers reject work for data subject to deletion|
-|How do we know deletion completed?|Verification gaps|Report accepted, processed, and verified states per system|
-|Who owns the dependency?|Operational gaps|Assign an owner; build shared tooling where many systems have the same gap|
-|Is data shared with a processor or third party?|Recipient gaps|Propagate deletion requests to recipients and track their confirmation|
+|Does this dependency impose a deletion invariant?|Ordering constraints|Enforce locally, or model an explicit constraint|
+|Can data flow after deletion begins?|Resurrection paths|Deletion-aware transfers and durable deletion state|
+|Can queued or in-flight work outlive the source data?|In-flight races|Drain queues or reject stale work|
+|How do we know deletion completed?|Verification gaps|Per-system accepted, processed, and verified states|
+|Who owns the dependency?|Operational gaps|Assign owners; build shared tooling for common gaps|
+|Is data shared with a processor or third party?|Recipient gaps|Propagate deletion requests and track confirmation|
 {:.table-small-bordered .top-bottom-padded}
 
-The output isn't a graph you can hand to an orchestration team. It's a list of prioritized engineering work. For a privacy program, that's the real value of the graph: a structured way to find owners, invariants, verification gaps, and remediation priorities.
+The output isn't a graph you hand to an orchestration team. It's a prioritized list of engineering work.
 
 In summary, deletion should be asynchronous by default. Enforce ordering only where correctness requires it, as close to the invariant as possible, and make every system that receives personal data robust to deletion happening somewhere else at the same time.
 
