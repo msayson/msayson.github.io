@@ -119,7 +119,7 @@ Once deletion is asynchronous, the same request can be finished in one system an
 2. Processed: the system ran its deletion
 3. Verified: there is evidence of expected deletion or de-identification state
 
-This distinction matters because a service responding "success" to a request isn't necessarily enough evidence for an audit. For privacy deletion programs, I'd consider a system verified when we have evidence that personal data is no longer operationally available, except where there are documented retention exemptions.
+This distinction matters because a service responding "success" to a request isn't necessarily enough evidence for an audit. For privacy deletion programs, I'd consider a system verified when we have evidence that personal data is no longer operationally available except where there are documented retention exemptions.
 
 ## Use the graph to find the work
 
