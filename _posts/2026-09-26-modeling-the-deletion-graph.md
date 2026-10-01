@@ -39,7 +39,7 @@ And even if we knew, enforcing the order across a live graph runs into two probl
 
 ## The graph is never stable
 
-In a large organization, the graph becomes stale almost as soon as you build it. New consumers appear. Services are split apart. Data flows change. Caches and derived stores are introduced. Pipelines are rewritten.
+In a large organization, the graph becomes stale almost immediately. Teams add data sources and consumers, split services, and introduce caches and derived data sets. None of these changes necessarily show up in the deletion workflow.
 
 Deprecations are particularly problematic. If a decommissioned service is still in the graph, an ordered workflow can wait indefinitely for a completion signal that will never arrive, silently blocking every downstream deletion.
 
@@ -51,7 +51,7 @@ A map that's 90% accurate still produces a useful list of remediation work. An o
 
 Suppose Customer Accounts has a deletion problem. Under the naive plan, Ordering can't start until Customer Accounts succeeds, Search can't start until Ordering succeeds, and so on.
 
-At scale, a single unhealthy service, queue, database, or deletion implementation becomes a bottleneck for the entire deletion process. One team's incident turns into missed compliance deadlines, such as GDPR's one month or CCPA's 45 days (without valid extensions), across every downstream system, for every affected request.
+One team's outage shouldn't block deletion for hundreds of other services.
 
 A better model is to treat deletion as asynchronous. The request propagates to every system, and each does its own work. Some delete immediately. Others take longer, fail temporarily, and retry.
 
@@ -65,7 +65,7 @@ Ordering is required when deleting in the wrong order would break an **invariant
 
 Within a single database, this is familiar: if orders reference a customer and there's no cascading delete, the orders must be removed first.
 
-The same pattern exists across services. Suppose Ordering holds a hard reference to each customer account, and Customer Accounts refuses to delete an account while orders still reference it. Data flows from Customer Accounts to Ordering, but deletion has to run the other way. Ordering must delete its records first, or de-identify them where retention rules require keeping order history, before the account becomes eligible for deletion. Step 1 of the naive plan would fail.
+The same pattern exists across services. Suppose Ordering holds a hard reference to each customer account, and Customer Accounts refuses to delete an account while orders still reference it. Data flows from Customer Accounts to Ordering, but Ordering must delete its records before the account becomes eligible for deletion.
 
 Represent this explicitly as an ordering constraint. Ordering deletes asynchronously, and the account becomes eligible for deletion once those references are gone.
 
@@ -119,9 +119,7 @@ Once deletion is asynchronous, a request will be complete in some systems and pe
 2. Processed: the system ran its deletion
 3. Verified: the organization can prove deletion or de-identification
 
-Accepted without Processed means nothing was deleted. Processed without Verified is an auditability gap.
-
-A request isn't complete until every system has reached Verified or has a documented exception, and the response to the individual shouldn't say otherwise. Verified state is what lets the organization demonstrate compliance, not just state it.
+This distinction matters because a service responding "success" to a request isn't necessarily enough evidence for an audit. For privacy deletion programs, I'd consider a system verified when we have evidence that personal data is no longer operationally available, except where there are documented retention exemptions.
 
 ## Use the graph to find the work
 
@@ -138,8 +136,6 @@ For each dependency, ask:
 |Who owns the dependency?|Operational gaps|Assign owners; build shared tooling for common gaps|
 |Is data shared with a processor or third party?|Recipient gaps|Propagate deletion requests and track confirmation|
 {:.table-small-bordered .top-bottom-padded}
-
-The output isn't a graph you hand to an orchestration team. It's a prioritized list of engineering work.
 
 In summary, deletion should be asynchronous by default. Enforce ordering only where correctness requires it, as close to the invariant as possible, and make every system that receives personal data robust to deletion happening somewhere else at the same time.
 
