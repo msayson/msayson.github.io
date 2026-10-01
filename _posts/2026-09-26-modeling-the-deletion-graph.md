@@ -113,11 +113,11 @@ That changes the question from "What order should these systems delete in?" to "
 
 ## Asynchronous doesn't mean fire-and-forget
 
-Once deletion is asynchronous, a request will be complete in some systems and pending in others. That's expected, but the program needs to distinguish deletion that's in progress and on track for its deadline from deletion that's stalled, failed, or unverified. That requires every system to report where each request stands:
+Once deletion is asynchronous, the same request can be finished in one system and pending in another. That's expected, but the program needs to distinguish deletion that's in progress and on track for its deadline from deletion that's stalled, failed, or unverified. That requires every system to report where each request stands:
 
 1. Accepted: the system received the request
 2. Processed: the system ran its deletion
-3. Verified: the organization can prove deletion or de-identification
+3. Verified: there is evidence of expected deletion or de-identification state
 
 This distinction matters because a service responding "success" to a request isn't necessarily enough evidence for an audit. For privacy deletion programs, I'd consider a system verified when we have evidence that personal data is no longer operationally available, except where there are documented retention exemptions.
 
