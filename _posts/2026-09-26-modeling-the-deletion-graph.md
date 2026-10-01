@@ -137,9 +137,12 @@ For each dependency, ask:
 |Is data shared with a processor or third party?|Recipient gaps|Propagate deletion requests and track confirmation|
 {:.table-small-bordered .top-bottom-padded}
 
-In summary, deletion should be asynchronous by default. Enforce ordering only where correctness requires it, as close to the invariant as possible, and make every system that receives personal data robust to deletion happening somewhere else at the same time.
+## Summary
 
-Model the deletion graph. Don't execute it.
+* Make deletion asynchronous by default.
+* Add ordering only where a concrete correctness constraint requires it, and enforce that ordering as close to the constraint as possible.
+* Make systems robust to deletion happening somewhere else at the same time.
+* Model the deletion graph to find engineering work. Don't execute it.
 
 ## Posts in this series
 
