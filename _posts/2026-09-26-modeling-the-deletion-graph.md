@@ -127,15 +127,47 @@ Most privacy programs already have most of this graph through records of process
 
 For each dependency, ask:
 
-|Question|Gap it reveals|Typical fix|
-|--------|--------------|-----------|
-|Does this dependency impose a deletion invariant?|Ordering constraints|Enforce locally, or model an explicit constraint|
-|Can data flow after deletion begins?|Resurrection paths|Deletion-aware transfers and durable deletion state|
-|Can queued or in-flight work outlive the source data?|In-flight races|Drain queues or reject stale work|
-|How do we know deletion completed?|Verification gaps|Per-system accepted, processed, and verified states|
-|Who owns the dependency?|Operational gaps|Assign owners; build shared tooling for common gaps|
-|Is data shared with a processor or third party?|Recipient gaps|Propagate deletion requests and track confirmation|
-{:.table-small-bordered .top-bottom-padded}
+<table class="table-small-bordered top-bottom-padded">
+  <thead>
+    <tr>
+      <th>Question</th>
+      <th>Gap it reveals</th>
+      <th>Typical fix</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Does this dependency impose a deletion invariant?</td>
+      <td>Ordering constraints</td>
+      <td>Enforce locally, or model an explicit constraint</td>
+    </tr>
+    <tr>
+      <td>Can data flow after deletion begins?</td>
+      <td>Resurrection paths</td>
+      <td>Deletion-aware transfers and durable deletion state</td>
+    </tr>
+    <tr>
+      <td>Can queued or in-flight work outlive the source data?</td>
+      <td>In-flight races</td>
+      <td>Drain queues or reject stale work</td>
+    </tr>
+    <tr>
+      <td>How do we know deletion completed?</td>
+      <td>Verification gaps</td>
+      <td>Per-system accepted, processed, and verified states</td>
+    </tr>
+    <tr>
+      <td>Who owns the dependency?</td>
+      <td>Operational gaps</td>
+      <td>Assign owners; build shared tooling for common gaps</td>
+    </tr>
+    <tr>
+      <td>Is data shared with a processor or third party?</td>
+      <td>Recipient gaps</td>
+      <td>Propagate deletion requests and track confirmation</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Summary
 

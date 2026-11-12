@@ -36,12 +36,32 @@ _Privileged access in the ISM context refers to having extended permissions on s
 
 ### Maturity levels
 
-|Level 1|Level 2|Level 3|
-|-|-|-|
-|Privileged access to systems, applications and information is validated when first requested.|Privileged access to systems, applications and information is validated when first requested <i>and revalidated on an annual or more frequent basis.</i>|Privileged access to systems, applications and information is validated when first requested <i>and revalidated on an annual or more frequent basis.</i>|
-|<i>Policy</i> security controls are used to prevent privileged users from reading emails, browsing the Web and obtaining files via online services.|<i>Policy</i> security controls are used to prevent privileged users from reading emails, browsing the Web and obtaining files via online services.|<i>Technical</i> security controls are used to prevent privileged users from reading emails, browsing the Web and obtaining files via online services.|
-|||Privileged access to systems, applications and information is limited to that required for personnel to undertake their duties.|
-{:.table-with-minimal-border}
+<table class="table-with-minimal-border">
+  <thead>
+    <tr>
+      <th>Level 1</th>
+      <th>Level 2</th>
+      <th>Level 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Privileged access to systems, applications and information is validated when first requested.</td>
+      <td>Privileged access to systems, applications and information is validated when first requested <i>and revalidated on an annual or more frequent basis.</i></td>
+      <td>Privileged access to systems, applications and information is validated when first requested <i>and revalidated on an annual or more frequent basis.</i></td>
+    </tr>
+    <tr>
+      <td><i>Policy</i> security controls are used to prevent privileged users from reading emails, browsing the Web and obtaining files via online services.</td>
+      <td><i>Policy</i> security controls are used to prevent privileged users from reading emails, browsing the Web and obtaining files via online services.</td>
+      <td><i>Technical</i> security controls are used to prevent privileged users from reading emails, browsing the Web and obtaining files via online services.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Privileged access to systems, applications and information is limited to that required for personnel to undertake their duties.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Comments on restricting administrative privileges
 
@@ -63,12 +83,32 @@ As referenced in the ISM security controls, in addition to only granting permiss
 
 ### Maturity levels
 
-|Level 1|Level 2|Level 3|
-|-|-|-|
-|Security vulnerabilities in operating systems and firmware assessed as extreme risk are patched, updated or mitigated within <i>one month</i> of the security vulnerabilities being identified by vendors, independent third parties, system managers or users.|Security vulnerabilities in operating systems and firmware assessed as extreme risk are patched, updated or mitigated within <i>two weeks</i> of the security vulnerabilities being identified by vendors, independent third parties, system managers or users.|Security vulnerabilities in operating systems and firmware assessed as extreme risk are patched, updated or mitigated within <i>48 hours</i> of the security vulnerabilities being identified by vendors, independent third parties, system managers or users.|
-|Operating systems for workstations, servers and ICT equipment that are no longer supported by vendors with patches or updates for security vulnerabilities are updated or replaced with vendor-supported versions.|Operating systems for workstations, servers and ICT equipment that are no longer supported by vendors with patches or updates for security vulnerabilities are updated or replaced with vendor-supported versions.|Operating systems for workstations, servers and ICT equipment that are no longer supported by vendors with patches or updates for security vulnerabilities are updated or replaced with vendor-supported versions.|
-|||An automated mechanism is used to confirm and record that deployed operating system and firmware patches or updates have been installed, applied successfully and remain in place.|
-{:.table-with-minimal-border}
+<table class="table-with-minimal-border">
+  <thead>
+    <tr>
+      <th>Level 1</th>
+      <th>Level 2</th>
+      <th>Level 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Security vulnerabilities in operating systems and firmware assessed as extreme risk are patched, updated or mitigated within <i>one month</i> of the security vulnerabilities being identified by vendors, independent third parties, system managers or users.</td>
+      <td>Security vulnerabilities in operating systems and firmware assessed as extreme risk are patched, updated or mitigated within <i>two weeks</i> of the security vulnerabilities being identified by vendors, independent third parties, system managers or users.</td>
+      <td>Security vulnerabilities in operating systems and firmware assessed as extreme risk are patched, updated or mitigated within <i>48 hours</i> of the security vulnerabilities being identified by vendors, independent third parties, system managers or users.</td>
+    </tr>
+    <tr>
+      <td>Operating systems for workstations, servers and ICT equipment that are no longer supported by vendors with patches or updates for security vulnerabilities are updated or replaced with vendor-supported versions.</td>
+      <td>Operating systems for workstations, servers and ICT equipment that are no longer supported by vendors with patches or updates for security vulnerabilities are updated or replaced with vendor-supported versions.</td>
+      <td>Operating systems for workstations, servers and ICT equipment that are no longer supported by vendors with patches or updates for security vulnerabilities are updated or replaced with vendor-supported versions.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>An automated mechanism is used to confirm and record that deployed operating system and firmware patches or updates have been installed, applied successfully and remain in place.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Comments on patching operating systems
 
@@ -95,13 +135,37 @@ The easiest way to consistently patch computers across an organization is by set
 
 ### Maturity levels
 
-|Level 1|Level 2|Level 3|
-|-|-|-|
-|Multi-factor authentication is used to authenticate all users of remote access solutions.|Multi-factor authentication is used to authenticate all users of remote access solutions.|Multi-factor authentication is used to authenticate all users of remote access solutions.|
-|Multi-factor authentication uses at least two of the following authentication factors: <i>passwords with six or more characters, Universal 2nd Factor security keys, physical one-time password tokens, biometrics, smartcards, mobile app one-time password tokens, SMS messages, emails, voice calls or software certificates.</i>|Multi-factor authentication uses at least two of the following authentication factors: <i>passwords with six or more characters, Universal 2nd Factor security keys, physical one-time password tokens, biometrics, smartcards or mobile app one-time password tokens.</i>|Multi-factor authentication uses at least two of the following authentication factors: <i>passwords with six or more characters, Universal 2nd Factor security keys, physical one-time password tokens, biometrics or smartcards.</i>|
-||Multi-factor authentication is used to authenticate all privileged users and any other positions of trust.|Multi-factor authentication is used to authenticate all privileged users and any other positions of trust.|
-|||Multi-factor authentication is used to authenticate all users when accessing important data repositories.|
-{:.table-with-minimal-border}
+<table class="table-with-minimal-border">
+  <thead>
+    <tr>
+      <th>Level 1</th>
+      <th>Level 2</th>
+      <th>Level 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Multi-factor authentication is used to authenticate all users of remote access solutions.</td>
+      <td>Multi-factor authentication is used to authenticate all users of remote access solutions.</td>
+      <td>Multi-factor authentication is used to authenticate all users of remote access solutions.</td>
+    </tr>
+    <tr>
+      <td>Multi-factor authentication uses at least two of the following authentication factors: <i>passwords with six or more characters, Universal 2nd Factor security keys, physical one-time password tokens, biometrics, smartcards, mobile app one-time password tokens, SMS messages, emails, voice calls or software certificates.</i></td>
+      <td>Multi-factor authentication uses at least two of the following authentication factors: <i>passwords with six or more characters, Universal 2nd Factor security keys, physical one-time password tokens, biometrics, smartcards or mobile app one-time password tokens.</i></td>
+      <td>Multi-factor authentication uses at least two of the following authentication factors: <i>passwords with six or more characters, Universal 2nd Factor security keys, physical one-time password tokens, biometrics or smartcards.</i></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Multi-factor authentication is used to authenticate all privileged users and any other positions of trust.</td>
+      <td>Multi-factor authentication is used to authenticate all privileged users and any other positions of trust.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>Multi-factor authentication is used to authenticate all users when accessing important data repositories.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Comments on multi-factor authentication
 
@@ -138,14 +202,42 @@ Physical security tokens are more expensive since a unique token has to be distr
 
 ### Maturity levels
 
-|Level 1|Level 2|Level 3|
-|-|-|-|
-|Backups of important information, software and configuration settings are performed <i>monthly</i>.|Backups of important information, software and configuration settings are performed <i>weekly</i>.|Backups of important information, software and configuration settings are performed <i>at least daily</i>.|
-|Backups are stored for at least <i>one month</i>.|Backups are stored for at least <i>one month</i>.|Backups are stored for at least <i>three months</i>.|
-|Partial restoration of backups is tested <i>annually</i>.|Partial restoration of backups is tested <i>every six months</i>.|Partial restoration of backups is tested <i>quarterly</i>.|
-||Backups are stored offline, or online but in a non-rewritable and non-erasable manner.|Backups are stored offline, or online but in a non-rewritable and non-erasable manner.|
-||Full restoration of backups is tested at least once.|Full restoration of backups is tested at least once when initially implemented <i>and each time fundamental information technology infrastructure changes occur</i>.|
-{:.table-with-minimal-border}
+<table class="table-with-minimal-border">
+  <thead>
+    <tr>
+      <th>Level 1</th>
+      <th>Level 2</th>
+      <th>Level 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Backups of important information, software and configuration settings are performed <i>monthly</i>.</td>
+      <td>Backups of important information, software and configuration settings are performed <i>weekly</i>.</td>
+      <td>Backups of important information, software and configuration settings are performed <i>at least daily</i>.</td>
+    </tr>
+    <tr>
+      <td>Backups are stored for at least <i>one month</i>.</td>
+      <td>Backups are stored for at least <i>one month</i>.</td>
+      <td>Backups are stored for at least <i>three months</i>.</td>
+    </tr>
+    <tr>
+      <td>Partial restoration of backups is tested <i>annually</i>.</td>
+      <td>Partial restoration of backups is tested <i>every six months</i>.</td>
+      <td>Partial restoration of backups is tested <i>quarterly</i>.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Backups are stored offline, or online but in a non-rewritable and non-erasable manner.</td>
+      <td>Backups are stored offline, or online but in a non-rewritable and non-erasable manner.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Full restoration of backups is tested at least once.</td>
+      <td>Full restoration of backups is tested at least once when initially implemented <i>and each time fundamental information technology infrastructure changes occur</i>.</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Comments on daily backups
 
@@ -171,13 +263,42 @@ Backups are rarely called upon, but their important can't be stressed enough whe
 
 ## Effectiveness and difficulty scores
 
-|Mitigation strategy|Potential user resistance|Upfront cost|Ongoing maintenance|
-|-|-|-|-|
-|**Restricting administrative privileges**|Medium|High|Medium|
-|**Patching operating systems**|Low|Medium|Medium|
-|**Multi-factor authentication**|Medium|High|Medium|
-|**Daily backups**|Low|High|High|
-{:.table-with-minimal-border}
+<table class="table-with-minimal-border">
+  <thead>
+    <tr>
+      <th>Mitigation strategy</th>
+      <th>Potential user resistance</th>
+      <th>Upfront cost</th>
+      <th>Ongoing maintenance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Restricting administrative privileges</strong></td>
+      <td>Medium</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Patching operating systems</strong></td>
+      <td>Low</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Multi-factor authentication</strong></td>
+      <td>Medium</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Daily backups</strong></td>
+      <td>Low</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Summary
 

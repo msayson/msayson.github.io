@@ -73,15 +73,54 @@ Organizations may use anonymization or de-identification when full deletion is n
 
 ### Comparison of deletion patterns and their desired outcomes
 
-| Deletion pattern | Original data retained? | Recoverable? | Desired outcome                             |
-| ---------------- | ----------------------- | ------------ | ------------------------------------------- |
-| Hard delete      | No                      | No           | Data should no longer exist                 |
-| Soft delete      | Yes                     | Yes          | Data may need to be restored                |
-| Tombstone        | Temporarily             | Sometimes    | Deletion must be communicated to other systems |
-| Anonymization    | Partially               | No           | Identity should be removed while preserving analytical value |
-| Key destruction  | Yes                     | No           | Data should become permanently inaccessible |
-| Suppression      | Yes                     | Yes          | Data must be retained but not actively used |
-{:.table-small-bordered .top-bottom-padded}
+<table class="table-small-bordered top-bottom-padded">
+  <thead>
+    <tr>
+      <th>Deletion pattern</th>
+      <th>Original data retained?</th>
+      <th>Recoverable?</th>
+      <th>Desired outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hard delete</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Data should no longer exist</td>
+    </tr>
+    <tr>
+      <td>Soft delete</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Data may need to be restored</td>
+    </tr>
+    <tr>
+      <td>Tombstone</td>
+      <td>Temporarily</td>
+      <td>Sometimes</td>
+      <td>Deletion must be communicated to other systems</td>
+    </tr>
+    <tr>
+      <td>Anonymization</td>
+      <td>Partially</td>
+      <td>No</td>
+      <td>Identity should be removed while preserving analytical value</td>
+    </tr>
+    <tr>
+      <td>Key destruction</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>Data should become permanently inaccessible</td>
+    </tr>
+    <tr>
+      <td>Suppression</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Data must be retained but not actively used</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Why inconsistent deletion semantics create operational problems
 

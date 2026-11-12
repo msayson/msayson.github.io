@@ -63,14 +63,27 @@ async function collectHtml(directory) {
 }
 await collectHtml(outputDirectory);
 
+let renderedTableClasses = 0;
 for (const filename of htmlFiles) {
   const html = await readFile(filename, "utf8");
   if (/{%\s*(?:highlight|endhighlight|post_url|include)\b|\{\{\s*page\.title\s*\}\}/.test(html)) {
     failures.push(`Unconverted Jekyll Liquid markup in ${path.relative(outputDirectory, filename)}`);
   }
+  if (/\{:\s*[^}]+\}/.test(html)) {
+    failures.push(`Unconverted Jekyll Markdown attributes in ${path.relative(outputDirectory, filename)}`);
+  }
+  renderedTableClasses += [...html.matchAll(/<table\b[^>]*\bclass="[^"]*table-(?:small|with-minimal)-[^"]*"/g)].length;
+}
+if (renderedTableClasses === 0) failures.push("No Jekyll-formatted tables were rendered");
+const deletionSemanticsPage = await readFile(
+  path.join(outputDirectory, "blog", "why-deletion-means-different-things", "index.html"),
+  "utf8",
+);
+if (!deletionSemanticsPage.includes('<table class="table-small-bordered top-bottom-padded">')) {
+  failures.push("The deletion semantics table is missing its Jekyll formatting classes");
 }
 
-const sourceImageCount = (await readdir(path.join(root, "images"))).length;
+const sourceImageCount = (await readdir(path.join(root, "src", "assets", "images"))).length;
 const publicImageCount = (await readdir(path.join(outputDirectory, "images"))).length;
 if (publicImageCount < sourceImageCount) {
   failures.push(`Only ${publicImageCount} of ${sourceImageCount} image assets were copied`);

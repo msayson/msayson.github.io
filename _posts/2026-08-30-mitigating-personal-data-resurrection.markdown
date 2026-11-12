@@ -98,12 +98,32 @@ Given the choice to invest weeks of effort on deletion workflows, or spend a day
 
 The following maturity model is a conceptual framework for thinking about deletion resilience.  Levels are defined by who owns deletion logic, and how effectively resurrection is caught and mitigated.
 
-|Level|How deletion is implemented|What resurrection looks like|
-|-----|---------------------------|----------------------------|
-|**1. Service-owned**|Each system builds its own deletion logic, often inconsistently.  Service owners self-identify when they need to onboard.|Common, and usually undetected.  Upstream systems may not delete, downstream systems re-ingest.  Deletion replays and manual clean-up are frequent and expensive, or the risk is accepted.|
-|**2. Platform-assisted**|Deletion is treated as privacy infrastructure rather than a cost each service absorbs.  Shared tooling offers hard deletion, TTL expiry, and deletion-aware access controls with common semantics.|Still occurs, but contained and easier to remediate.  Deletion replays run periodically across services where resurrection is detected.|
-|**3. Systemically resilient**|Controls are built into infrastructure by default, with centralized deletion state, deletion-aware boundaries, and minimal service team context needed to implement or validate.|Rare, localized, and quickly corrected.  Automated detection and reconciliation cover replay and recovery paths.|
-{:.table-small-bordered .top-bottom-padded}
+<table class="table-small-bordered top-bottom-padded">
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>How deletion is implemented</th>
+      <th>What resurrection looks like</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Service-owned</strong></td>
+      <td>Each system builds its own deletion logic, often inconsistently.  Service owners self-identify when they need to onboard.</td>
+      <td>Common, and usually undetected.  Upstream systems may not delete, downstream systems re-ingest.  Deletion replays and manual clean-up are frequent and expensive, or the risk is accepted.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Platform-assisted</strong></td>
+      <td>Deletion is treated as privacy infrastructure rather than a cost each service absorbs.  Shared tooling offers hard deletion, TTL expiry, and deletion-aware access controls with common semantics.</td>
+      <td>Still occurs, but contained and easier to remediate.  Deletion replays run periodically across services where resurrection is detected.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Systemically resilient</strong></td>
+      <td>Controls are built into infrastructure by default, with centralized deletion state, deletion-aware boundaries, and minimal service team context needed to implement or validate.</td>
+      <td>Rare, localized, and quickly corrected.  Automated detection and reconciliation cover replay and recovery paths.</td>
+    </tr>
+  </tbody>
+</table>
 
 Many organizations can have characteristics of both Levels 1 and 2: tooling may exist, while onboarding costs enough that a long tail never fully completes it, leaving resurrection a systemic risk.  Moving from Level 1 to Level 2 is mostly a tooling problem.  Level 3 requires deletion state to be treated as an organization-level architectural concern rather than solely as service-local logic.
 

@@ -14,16 +14,52 @@ In other words, deletion is not always deletion. While the intent of a customer'
 
 For many organizations, a single deletion request can produce different outcomes across systems depending on the purpose of processing personal data, applicable retention requirements, and the justification for continued retention or processing.
 
-| Use Case | Example Retention Policy | Potential Justification |
-|---|---|---|
-| Marketing and advertising | Delete upon deletion request | None for marketing use |
-| Customer accounts | Retain 30 days - 18 months after account closure | Legitimate interest (account recovery, service quality, dispute resolution) |
-| Security audit logs | Retain 1-2 years after log timestamp | Legitimate interest (security); legal obligation in some jurisdictions |
-| Analytical datasets | Anonymize upon deletion request | No longer personal data if anonymization is effective |
-| Financial transaction records | Retain 3-7 years after account closure | Legal obligation (tax, accounting regulations) |
-| Legal hold records | Retain until hold lifted | Legal obligation (litigation, regulatory investigation) |
-| ML/AI training datasets | Exclude deleted/suppressed records; retrain periodically from upstream sources | Legitimate interest (model improvement), subject to data minimization |
-{:.table-small-bordered .top-bottom-padded}
+<table class="table-small-bordered top-bottom-padded">
+  <thead>
+    <tr>
+      <th>Use Case</th>
+      <th>Example Retention Policy</th>
+      <th>Potential Justification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Marketing and advertising</td>
+      <td>Delete upon deletion request</td>
+      <td>None for marketing use</td>
+    </tr>
+    <tr>
+      <td>Customer accounts</td>
+      <td>Retain 30 days - 18 months after account closure</td>
+      <td>Legitimate interest (account recovery, service quality, dispute resolution)</td>
+    </tr>
+    <tr>
+      <td>Security audit logs</td>
+      <td>Retain 1-2 years after log timestamp</td>
+      <td>Legitimate interest (security); legal obligation in some jurisdictions</td>
+    </tr>
+    <tr>
+      <td>Analytical datasets</td>
+      <td>Anonymize upon deletion request</td>
+      <td>No longer personal data if anonymization is effective</td>
+    </tr>
+    <tr>
+      <td>Financial transaction records</td>
+      <td>Retain 3-7 years after account closure</td>
+      <td>Legal obligation (tax, accounting regulations)</td>
+    </tr>
+    <tr>
+      <td>Legal hold records</td>
+      <td>Retain until hold lifted</td>
+      <td>Legal obligation (litigation, regulatory investigation)</td>
+    </tr>
+    <tr>
+      <td>ML/AI training datasets</td>
+      <td>Exclude deleted/suppressed records; retrain periodically from upstream sources</td>
+      <td>Legitimate interest (model improvement), subject to data minimization</td>
+    </tr>
+  </tbody>
+</table>
 
 Additional considerations:
 * Already trained ML/AI models may retain implicit knowledge about personal data subject to deletion requests.

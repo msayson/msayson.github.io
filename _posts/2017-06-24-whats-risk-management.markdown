@@ -57,16 +57,52 @@ Business threats affect underlying business operations or resources, and often a
 
 System threats directly target the software and hardware, making them easier to recognize.  A user may attempt to access resources without authorization, or input data that crashes the server.
 
-| Human threats | Technical threats | Environmental threats |
-| --- | --- | --- |
-| Improper access of resources | Data corruption | Electromagnetic interference |
-| Data entry errors | System failures | Power fluctuations |
-| Fraud | Exploitation of known vulnerabilities | Changes in temperature |
-| Espionage | Denial of service attacks | Changes in humidity |
-| Policy violations | Data tampering | |
-| Other improper system use | | |
-| Design and development errors | | |
-{:.table-small-borderless}
+<table class="table-small-borderless">
+  <thead>
+    <tr>
+      <th>Human threats</th>
+      <th>Technical threats</th>
+      <th>Environmental threats</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Improper access of resources</td>
+      <td>Data corruption</td>
+      <td>Electromagnetic interference</td>
+    </tr>
+    <tr>
+      <td>Data entry errors</td>
+      <td>System failures</td>
+      <td>Power fluctuations</td>
+    </tr>
+    <tr>
+      <td>Fraud</td>
+      <td>Exploitation of known vulnerabilities</td>
+      <td>Changes in temperature</td>
+    </tr>
+    <tr>
+      <td>Espionage</td>
+      <td>Denial of service attacks</td>
+      <td>Changes in humidity</td>
+    </tr>
+    <tr>
+      <td>Policy violations</td>
+      <td>Data tampering</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Other improper system use</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Design and development errors</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 Natural disasters are rarely considered, but high potential costs may encourage companies to replicate high-value data in multiple regions.  Financial institutions can't risk losing all their data in case of a hurricane or earthquake, and the same goes for many other major organizations.
 
@@ -98,12 +134,36 @@ Insurance companies manage frequent events that cost a great deal of money, so i
 
 Software companies don't often have the same level of data reporting for security incidents, so it can be difficult to determine the probabilities of many threat actions.  It can also be difficult to determine the value of intangible assets such as user data, intellectual property, and reputation, so qualitative analyses are more often used for software projects.
 
-| | Low Impact | Medium Impact | High Impact |
-| --- | --- | --- | --- |
-| <b>Low Likelihood</b> | Low Risk | Low Risk | Medium Risk |
-| <b>Medium Likelihood</b> | Low Risk | Medium Risk | High Risk |
-| <b>High Likelihood</b> | Medium Risk | High Risk | Critical Risk |
-{:.table-small-bordered}
+<table class="table-small-bordered">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Low Impact</th>
+      <th>Medium Impact</th>
+      <th>High Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Low Likelihood</b></td>
+      <td>Low Risk</td>
+      <td>Low Risk</td>
+      <td>Medium Risk</td>
+    </tr>
+    <tr>
+      <td><b>Medium Likelihood</b></td>
+      <td>Low Risk</td>
+      <td>Medium Risk</td>
+      <td>High Risk</td>
+    </tr>
+    <tr>
+      <td><b>High Likelihood</b></td>
+      <td>Medium Risk</td>
+      <td>High Risk</td>
+      <td>Critical Risk</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Risk mitigation strategy
 

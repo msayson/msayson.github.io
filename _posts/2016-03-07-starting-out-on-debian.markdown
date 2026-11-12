@@ -13,8 +13,7 @@ I’ve been itching to try Arch Linux, but since I’m still a relative beginner
 
 <!--more-->
 
-{: .float-left }
-[![alt text](/images/20160307_debian_family_tree.jpg "Debian Family Tree")](https://upload.wikimedia.org/wikipedia/commons/6/69/DebianFamilyTree1210.svg)
+<p class="float-left"><a href="https://upload.wikimedia.org/wikipedia/commons/6/69/DebianFamilyTree1210.svg"><img src="/images/20160307_debian_family_tree.jpg" alt="alt text" title="Debian Family Tree" /></a></p>
 
 Debian is historically significant as one of the earliest massive (over one thousand developers) free/open source software projects.  It demonstrated that not only was it possible for such large decentralized teams to self-organize and build large-scale free software projects, but that such projects could continue to grow without sacrificing code quality or project stability.
 

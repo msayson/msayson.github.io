@@ -4,6 +4,10 @@ This project contains the source code for Mark Sayson's personal blog:
 [https://www.marksayson.com/](https://www.marksayson.com/)
 
 Astro generates the static site from the Markdown posts in `_posts/`.
+Image sources live in `src/assets/images/` so Astro can optimize them; the
+build also copies originals to the existing `/images/` URLs for compatibility.
+The Markdown pipeline translates legacy Jekyll block attributes to HTML classes,
+preserving table and image formatting.
 
 ### Developer notes
 #### Setting up a developer workspace

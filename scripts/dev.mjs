@@ -43,7 +43,7 @@ function prepareAfterChange() {
   }, 250);
 }
 
-const watchers = ["_posts", "src", "images", "css"].map((directory) =>
+const watchers = ["_posts", "src", "css"].map((directory) =>
   watch(path.join(root, directory), { recursive: true }, prepareAfterChange),
 );
 watchers.push(watch(path.join(root, "_headers"), prepareAfterChange));

@@ -15,6 +15,7 @@ const posts = defineCollection({
     categories: z.union([z.string(), z.array(z.string())]).optional(),
     excerpt: z.string().optional(),
     featuredImage: z.string().optional(),
+    featuredImageAlt: z.string().optional(),
     redirect_from: z.union([z.string(), z.array(z.string())]).optional(),
   }),
 });

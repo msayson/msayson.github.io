@@ -7,6 +7,7 @@ import * as sass from "sass";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const postsDirectory = path.join(root, "_posts");
 const generatedPostsDirectory = path.join(root, ".astro-content", "posts");
+const imageAssetsDirectory = path.join(root, "src", "assets", "images");
 const publicDirectory = path.join(root, "public");
 const sourceFiles = (await readdir(postsDirectory, { withFileTypes: true }))
   .filter((entry) => entry.isFile() && /\.(md|markdown)$/.test(entry.name))
@@ -65,10 +66,19 @@ function renderImageInclude(attributes) {
   );
   if (!values.img) throw new Error("An image.html include is missing its img attribute");
 
+  if (!values.url) {
+    const imagePath = `./images/${values.img.split("/").at(-1)}`;
+    const title = values.title ?? "";
+    const escapedTitle = title.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
+    const image = `![${title.replaceAll("]", "\\]")}](${imagePath}${title ? ` "${escapedTitle}"` : ""})`;
+    const caption = values.caption
+      ? `\n\n<p class="image-caption">${escapeHtml(values.caption)}</p>`
+      : "";
+    return `${image}${caption}`;
+  }
+
   const image = `<img src="${escapeHtml(values.img)}" alt="${escapeHtml(values.title ?? "")}"/>`;
-  const content = values.url
-    ? `<a href="${escapeHtml(values.url)}" title="${escapeHtml(values.title ?? "")}" target="_blank">${image}</a>`
-    : image;
+  const content = `<a href="${escapeHtml(values.url)}" title="${escapeHtml(values.title ?? "")}" target="_blank">${image}</a>`;
   const caption = values.caption
     ? `\n  <p class="image-caption">${values.caption}</p>`
     : "";
@@ -102,7 +112,10 @@ function transformPostBody(body, data, filename, infoSecTableOfContents) {
     /{{\s*page\.title\s*}}/g,
     escapeHtml(data.title ?? ""),
   );
-
+  transformed = transformed.replace(
+    /(!\[[^\]]*\]\()\/images\/([^)\s]+)([^)]*\))/g,
+    "$1./images/$2$3",
+  );
   if (/{%[^%]*%}|{{[\s\S]*?}}/.test(transformed)) {
     throw new Error(`${filename} contains an unhandled Jekyll Liquid expression`);
   }
@@ -111,6 +124,9 @@ function transformPostBody(body, data, filename, infoSecTableOfContents) {
 
 await rm(generatedPostsDirectory, { recursive: true, force: true });
 await mkdir(generatedPostsDirectory, { recursive: true });
+await cp(imageAssetsDirectory, path.join(generatedPostsDirectory, "images"), {
+  recursive: true,
+});
 
 const infoSecTableOfContents = (
   await readFile(
@@ -149,7 +165,7 @@ addJekyllRedirect("/categories", "/blog/categories/");
 
 await mkdir(path.join(publicDirectory, "images"), { recursive: true });
 await mkdir(path.join(publicDirectory, "css"), { recursive: true });
-await cp(path.join(root, "images"), path.join(publicDirectory, "images"), {
+await cp(imageAssetsDirectory, path.join(publicDirectory, "images"), {
   recursive: true,
   force: true,
 });

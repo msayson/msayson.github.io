@@ -116,13 +116,42 @@ Relative security effectiveness ratings range from Limited to Essential, and as 
 
 The mitigation strategies covered in this post have the following difficulty scores in the ASD guide:
 
-|Mitigation strategy|Potential user resistance|Upfront cost|Ongoing maintenance|
-|-|-|-|-|
-|**Application whitelisting**|Medium|High|Medium|
-|**Patching applications**|Low|High|High|
-|**Configuring Microsoft Office macro settings**|Medium|Medium|Medium|
-|**Hardening user applications**|Medium|Medium|Medium|
-{:.table-with-minimal-border}
+<table class="table-with-minimal-border">
+  <thead>
+    <tr>
+      <th>Mitigation strategy</th>
+      <th>Potential user resistance</th>
+      <th>Upfront cost</th>
+      <th>Ongoing maintenance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Application whitelisting</strong></td>
+      <td>Medium</td>
+      <td>High</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Patching applications</strong></td>
+      <td>Low</td>
+      <td>High</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td><strong>Configuring Microsoft Office macro settings</strong></td>
+      <td>Medium</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td><strong>Hardening user applications</strong></td>
+      <td>Medium</td>
+      <td>Medium</td>
+      <td>Medium</td>
+    </tr>
+  </tbody>
+</table>
 
 Not surprisingly, it's fairly difficult to implement application whitelisting, particularly in blocking mode.  However, servers that are used for specific business functions (eg. email servers, Sharepoint servers, payment processing servers) may be easier to begin with as well as a higher priority to protect.  Whitelisting in these domains can help you to build familiarity with best practises before moving on to client devices.  Once you've set up a good baseline and validated that your whitelist works, it's easier to maintain while still requiring attention as applications are added, replaced, or updated.
 
