@@ -200,6 +200,13 @@
     display: block;
 }
 
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+}
+
 .table-with-minimal-border {
     border-collapse: collapse;
     margin-bottom: 15px;
