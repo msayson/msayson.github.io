@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import BlogListing from "../../components/BlogListing.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { sortPosts } from "../../utils/blog";
+
+const posts = sortPosts(await getCollection("posts"));
+const pageSize = 8;
+---
+
+<BaseLayout>
+  <BlogListing
+    posts={posts.slice(0, pageSize)}
+    page={1}
+    totalPages={Math.ceil(posts.length / pageSize)}
+  />
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import githubIcon from "../assets/github.svg?raw";
+
+interface Props {
+  username: string;
+}
+
+const { username } = Astro.props;
+---
+
+<a href={`https://github.com/${username}`}>
+  <span class="icon icon--github" set:html={githubIcon}></span>
+  <span class="username">{username}</span>
+</a>

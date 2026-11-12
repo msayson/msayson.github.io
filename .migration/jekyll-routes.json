@@ -1,0 +1,226 @@
+{
+    "capturedFrom":  "Jekyll build",
+    "canonicalFiles":  [
+                           "/about/index.html",
+                           "/blog/adding-a-new-sudo-user/index.html",
+                           "/blog/adding-user-specific-start-menu-items/index.html",
+                           "/blog/advances-in-computer-vision-and-chasing-long-tail/index.html",
+                           "/blog/aws-caching-options/index.html",
+                           "/blog/aws-compute-options/index.html",
+                           "/blog/aws-data-pipeline-lessons-learned/index.html",
+                           "/blog/aws-organization-members-cost-explorer-access/index.html",
+                           "/blog/aws-organizations/index.html",
+                           "/blog/categories/index.html",
+                           "/blog/checking-in-on-the-lets-use-linux-experiment/index.html",
+                           "/blog/choosing-kotlin-logging-library-for-aws-lambda/index.html",
+                           "/blog/concurrency-from-app-to-massively-distributed-service/index.html",
+                           "/blog/concurrency-is-beautiful-with-the-go-programming-language/index.html",
+                           "/blog/creating-git-aliases/index.html",
+                           "/blog/debian-releases-and-deciding-to-upgrade/index.html",
+                           "/blog/debian-setting-environment-variables/index.html",
+                           "/blog/deletion-is-not-always-deletion/index.html",
+                           "/blog/developers-must-write-tests/index.html",
+                           "/blog/dijkstras-algorithm/index.html",
+                           "/blog/enabling_regular_expressions_in_sqlite_with_rails/index.html",
+                           "/blog/enabling-adhoc-ecs-task/index.html",
+                           "/blog/epson-configuring-printers-on-linux/index.html",
+                           "/blog/essential-eight-mitigation-strategies-part-1/index.html",
+                           "/blog/essential-eight-mitigation-strategies-part-2/index.html",
+                           "/blog/financial-checklist-moving-to-us/index.html",
+                           "/blog/functional-programming-ideas-in-object-oriented-languages/index.html",
+                           "/blog/gaps-in-data-deletion-verification-auditability/index.html",
+                           "/blog/golang-channels/index.html",
+                           "/blog/hash-functions-for-cryptography-vs-lookup/index.html",
+                           "/blog/improving-authentication-usability/index.html",
+                           "/blog/index.html",
+                           "/blog/information-security-principles/index.html",
+                           "/blog/investigating-space-issues-in-var-cache-apt-archives/index.html",
+                           "/blog/jdk-distributions-everywhere/index.html",
+                           "/blog/lambda-power-tuning/index.html",
+                           "/blog/lessons-from-go/index.html",
+                           "/blog/linux-setting-up-ruby-on-rails-using-rvm/index.html",
+                           "/blog/living-in-seattle-or-vancouver-on-a-budget/index.html",
+                           "/blog/lxde-customizing-key-bindings/index.html",
+                           "/blog/lxde-customizing-the-log-in-background/index.html",
+                           "/blog/matlab-plots/index.html",
+                           "/blog/mitigating-personal-data-resurrection/index.html",
+                           "/blog/modeling-the-deletion-graph/index.html",
+                           "/blog/monitoring-battery-life/index.html",
+                           "/blog/page2/index.html",
+                           "/blog/page3/index.html",
+                           "/blog/page4/index.html",
+                           "/blog/page5/index.html",
+                           "/blog/page6/index.html",
+                           "/blog/page7/index.html",
+                           "/blog/page8/index.html",
+                           "/blog/page9/index.html",
+                           "/blog/polymorphic-json-deserialization-java-sealed-interfaces-jackson/index.html",
+                           "/blog/reviving-a-dead-laptop-with-linux/index.html",
+                           "/blog/ruby-on-rails-not-so-slow-on-unix/index.html",
+                           "/blog/s3-bucket-creation-dates-s3-master-regions/index.html",
+                           "/blog/scalability-of-data-processing/index.html",
+                           "/blog/secure-s3-config-with-cloudformation/index.html",
+                           "/blog/security-engineering-by-ross-anderson/index.html",
+                           "/blog/serializing-deserializing-dynamodb-pagination-tokens/index.html",
+                           "/blog/setting_http_security_headers_in_rails/index.html",
+                           "/blog/setting-up-sublime-text-editor-for-ruby-on-rails/index.html",
+                           "/blog/setting-vim-colour-schemes/index.html",
+                           "/blog/simple-git-workflows-for-teams/index.html",
+                           "/blog/staging-environments-and-deployment-pipelines/index.html",
+                           "/blog/starting-out-on-debian/index.html",
+                           "/blog/step-by-step-process-designing-distributed-systems/index.html",
+                           "/blog/strategies-for-querying-snapshot-s3-data/index.html",
+                           "/blog/supervised-learning/index.html",
+                           "/blog/top-mitigation-strategies-from-acsc/index.html",
+                           "/blog/types-of-failures-in-distributed-systems/index.html",
+                           "/blog/upgrading-to-debian-testing/index.html",
+                           "/blog/using-jquery-to-show-or-hide-related-elements/index.html",
+                           "/blog/wait-until-docker-containers-initialized/index.html",
+                           "/blog/whats-risk-management/index.html",
+                           "/blog/why-data-deletion-is-still-unsolved/index.html",
+                           "/blog/why-deletion-means-different-things/index.html",
+                           "/index.html"
+                       ],
+    "redirects":  [
+                      {
+                          "source":  "/linux/2016/05/16/reviving-a-dead-laptop-with-linux.html",
+                          "target":  "/blog/reviving-a-dead-laptop-with-linux/"
+                      },
+                      {
+                          "source":  "/linux/2016/04/28/upgrading-to-debian-testing.html",
+                          "target":  "/blog/upgrading-to-debian-testing/"
+                      },
+                      {
+                          "source":  "/linux/2016/06/13/checking-in-on-the-lets-use-linux-experiment.html",
+                          "target":  "/blog/checking-in-on-the-lets-use-linux-experiment/"
+                      },
+                      {
+                          "source":  "/linux/2016/05/17/epson-configuring-printers-on-linux.html",
+                          "target":  "/blog/epson-configuring-printers-on-linux/"
+                      },
+                      {
+                          "source":  "/linux/2016/03/11/monitoring-battery-life.html",
+                          "target":  "/blog/monitoring-battery-life/"
+                      },
+                      {
+                          "source":  "/linux/2016/03/09/lxde-customizing-key-bindings.html",
+                          "target":  "/blog/lxde-customizing-key-bindings/"
+                      },
+                      {
+                          "source":  "/linux/2016/04/25/debian-releases-and-deciding-to-upgrade.html",
+                          "target":  "/blog/debian-releases-and-deciding-to-upgrade/"
+                      },
+                      {
+                          "source":  "/linux/2016/03/25/debian-setting-environment-variables.html",
+                          "target":  "/blog/debian-setting-environment-variables/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/04/30/ruby-on-rails-not-so-slow-on-unix.html",
+                          "target":  "/blog/ruby-on-rails-not-so-slow-on-unix/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/12/18/golang-channels.html",
+                          "target":  "/blog/golang-channels/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/10/10/matlab-plots.html",
+                          "target":  "/blog/matlab-plots/"
+                      },
+                      {
+                          "source":  "/software-development/2016/08/22/developers-must-test.html",
+                          "target":  "/blog/developers-must-write-tests/"
+                      },
+                      {
+                          "source":  "/security/2016/06/25/security-engineering-by-ross-anderson.html",
+                          "target":  "/blog/security-engineering-by-ross-anderson/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/05/03/concurrency-is-beautiful-with-the-go-programming-language.html",
+                          "target":  "/blog/concurrency-is-beautiful-with-the-go-programming-language/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/05/01/linux-setting-up-ruby-on-rails-using-rvm.html",
+                          "target":  "/blog/linux-setting-up-ruby-on-rails-using-rvm/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/09/03/functional-programming-ideas-in-object-oriented-languages.html",
+                          "target":  "/blog/functional-programming-ideas-in-object-oriented-languages/"
+                      },
+                      {
+                          "source":  "/programming-languages/2016/07/17/using-jquery-to-show-or-hide-related-elements.html",
+                          "target":  "/blog/using-jquery-to-show-or-hide-related-elements/"
+                      },
+                      {
+                          "source":  "/linux/2016/03/08/starting-out-on-debian.html",
+                          "target":  "/blog/starting-out-on-debian/"
+                      },
+                      {
+                          "source":  "/artificial-intelligence/2016/10/21/supervised-learning.html",
+                          "target":  "/blog/supervised-learning/"
+                      },
+                      {
+                          "source":  "/artificial-intelligence/2016/06/07/advances-in-computer-vision-and-chasing-long-tail.html",
+                          "target":  "/blog/advances-in-computer-vision-and-chasing-long-tail/"
+                      },
+                      {
+                          "source":  "/blog/failure-recovery-in-distributed-systems/index.html",
+                          "target":  "/blog/types-of-failures-in-distributed-systems/"
+                      },
+                      {
+                          "source":  "/blog/developers-must-test/index.html",
+                          "target":  "/blog/developers-must-write-tests/"
+                      },
+                      {
+                          "source":  "/page2.html",
+                          "target":  "/blog/"
+                      },
+                      {
+                          "source":  "/categories.html",
+                          "target":  "/blog/categories/"
+                      },
+                      {
+                          "source":  "/page4.html",
+                          "target":  "/blog/"
+                      },
+                      {
+                          "source":  "/page3.html",
+                          "target":  "/blog/"
+                      },
+                      {
+                          "source":  "/debian/linux/2016/03/08/adding-a-new-sudo-user.html",
+                          "target":  "/blog/adding-a-new-sudo-user/"
+                      },
+                      {
+                          "source":  "/ides-and-editors/2016/11/30/setting-vim-colour-schemes.html",
+                          "target":  "/blog/setting-vim-colour-schemes/"
+                      },
+                      {
+                          "source":  "/ides-and-editors/2016/05/05/setting-up-sublime-text-editor-for-ruby-on-rails.html",
+                          "target":  "/blog/setting-up-sublime-text-editor-for-ruby-on-rails/"
+                      },
+                      {
+                          "source":  "/linux/2016/03/08/lxde-customizing-the-log-in-background.html",
+                          "target":  "/blog/lxde-customizing-the-log-in-background/"
+                      },
+                      {
+                          "source":  "/linux/2016/03/08/adding-a-new-sudo-user.html",
+                          "target":  "/blog/adding-a-new-sudo-user/"
+                      },
+                      {
+                          "source":  "/git/2016/04/24/creating-git-aliases.html",
+                          "target":  "/blog/creating-git-aliases/"
+                      },
+                      {
+                          "source":  "/distributed-systems/2017/01/16/failure-recovery-in-distributed-systems.html",
+                          "target":  "/blog/types-of-failures-in-distributed-systems/"
+                      },
+                      {
+                          "source":  "/golang/2016/05/03/concurrency-is-beautiful-with-the-go-programming-language.html",
+                          "target":  "/blog/concurrency-is-beautiful-with-the-go-programming-language/"
+                      },
+                      {
+                          "source":  "/git/2017/02/03/simple-git-workflows-for-teams.html",
+                          "target":  "/blog/simple-git-workflows-for-teams/"
+                      }
+                  ]
+}

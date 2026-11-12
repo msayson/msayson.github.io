@@ -1,0 +1,73 @@
+---
+import type { BlogPost } from "../utils/blog";
+import { excerptHtml, formatDate, postUrl } from "../utils/blog";
+
+interface Props {
+  posts: BlogPost[];
+  page: number;
+  totalPages: number;
+}
+
+const { posts, page, totalPages } = Astro.props;
+---
+
+<div class="home">
+  <h1 class="page-heading">Posts</h1>
+  <p><a class="page-link" href="/blog/categories/">View Categories</a></p>
+
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <span class="post-meta">{formatDate(post.data.date)}</span>
+          <h2>{post.data.title}</h2>
+          <div set:html={excerptHtml(post)} />
+          {post.data.featuredImage && (
+            <img src={post.data.featuredImage} alt="Featured image" />
+          )}
+          <p>
+            <a class="post-link" href={postUrl(post)}>
+              Continue reading...
+            </a>
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  {
+    totalPages > 1 && (
+      <nav class="pagination" aria-label="Blog pages">
+        {page > 1 ? (
+          <a href={page === 2 ? "/blog/" : `/blog/page${page - 1}/`}>
+            &laquo; Newer
+          </a>
+        ) : (
+          <span>&laquo; Newer</span>
+        )}
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+          (pageNumber) =>
+            pageNumber === page ? (
+              <em aria-current="page">{pageNumber}</em>
+            ) : (
+              <a href={pageNumber === 1 ? "/blog/" : `/blog/page${pageNumber}/`}>
+                {pageNumber}
+              </a>
+            ),
+        )}
+        {page < totalPages ? (
+          <a href={`/blog/page${page + 1}/`}>Older &raquo;</a>
+        ) : (
+          <span>Older &raquo;</span>
+        )}
+      </nav>
+    )
+  }
+
+  <br />
+  <div>
+    <p class="rss-subscribe">
+      subscribe <a href="/feed.xml">via RSS</a>
+    </p>
+  </div>
+</div>

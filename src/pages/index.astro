@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { excerptHtml, formatDate, postUrl, sortPosts } from "../utils/blog";
+import { getCollection } from "astro:content";
+
+const posts = sortPosts(await getCollection("posts"));
+const featuredSlugs = [
+  "why-deletion-means-different-things",
+  "gaps-in-data-deletion-verification-auditability",
+  "mitigating-personal-data-resurrection",
+  "modeling-the-deletion-graph",
+  "aws-organizations",
+  "step-by-step-process-designing-distributed-systems",
+];
+const featuredPosts = featuredSlugs.map((slug) => {
+  const post = posts.find((entry) => entry.id === slug);
+  if (!post) throw new Error(`Featured post not found: ${slug}`);
+  return post;
+});
+---
+
+<BaseLayout>
+  <div class="introduction">
+    <p>
+      Senior software engineer and tech lead building security and privacy
+      infrastructure for distributed systems. My recent posts focus on system
+      design, privacy engineering, and data deletion.
+    </p>
+  </div>
+
+  <div class="horizontal-rule"></div>
+
+  <div class="featured-posts">
+    <h2>Selected Articles</h2>
+    {
+      featuredPosts.map((post) => (
+        <>
+          <article class="featured-post">
+            <h3>
+              <a href={postUrl(post)}>{post.data.title}</a>
+            </h3>
+            <span class="post-meta">{formatDate(post.data.date)}:</span>
+            <div set:html={excerptHtml(post)} />
+          </article>
+          <br />
+        </>
+      ))
+    }
+  </div>
+
+  <div id="more-posts-link">
+    <a class="page-heading" href="/blog/">View all posts</a>
+  </div>
+</BaseLayout>

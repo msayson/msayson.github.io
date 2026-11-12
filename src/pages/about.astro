@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import GithubLink from "../components/GithubLink.astro";
+---
+
+<BaseLayout title="About">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">About</h1>
+    </header>
+
+    <div class="post-content">
+      <p><img src="/images/profile_picture.jpg" alt="Profile Picture" /></p>
+
+      <p>
+        I currently work as a software engineering tech lead at Amazon, where I
+        lead and collaborate on cross-team initiatives to build systems that
+        automate security controls and privacy enforcement.
+      </p>
+
+      <p>Principles I strive to live by:</p>
+      <ul>
+        <li>Always be learning and taking on new challenges.</li>
+        <li>Be an effective and dependable member of any team.</li>
+        <li>
+          Listen to team members, partners, and customers, and help them succeed.
+        </li>
+        <li>
+          Understand the "why" before diving into the "how" to ensure we're
+          solving the right problem.
+        </li>
+        <li>Have a positive impact.</li>
+      </ul>
+
+      <p>
+        I enjoy learning and exploring new ideas, spending time with my wife and
+        children, reading, and playing and teaching the strategic board game Go.
+      </p>
+
+      <p>
+        You can find the source code for this blog at
+        <GithubLink username="msayson" /> /
+        <a href="https://github.com/msayson/msayson.github.io">
+          msayson.github.io
+        </a>.
+      </p>
+    </div>
+  </article>
+</BaseLayout>

@@ -3,6 +3,11 @@ _site
 .sass-cache
 
 .bundle
+node_modules
+dist
+.astro
+.astro-content
+public
 
 # Temp files
 *.swp

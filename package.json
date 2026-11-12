@@ -1,0 +1,17 @@
+{
+  "name": "msayson.github.io",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare-site": "node scripts/prepare-site.mjs",
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run prepare-site && astro build",
+    "preview": "astro preview",
+    "verify:migration": "node scripts/verify-migration.mjs"
+  },
+  "dependencies": {
+    "astro": "^7.4.11",
+    "gray-matter": "^4.0.3",
+    "sass": "^1.108.2"
+  }
+}

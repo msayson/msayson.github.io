@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { categoriesFor, formatDate, postUrl, sortPosts } from "../../utils/blog";
+
+const posts = sortPosts(await getCollection("posts"));
+const categoryMap = new Map<string, typeof posts>();
+for (const post of posts) {
+  for (const category of categoriesFor(post)) {
+    const categoryPosts = categoryMap.get(category) ?? [];
+    categoryPosts.push(post);
+    categoryMap.set(category, categoryPosts);
+  }
+}
+const categories = [...categoryMap].sort(([a], [b]) => a.localeCompare(b));
+---
+
+<BaseLayout>
+  <div class="categories">
+    <h1 class="page-heading">Categories</h1>
+    <p><a class="page-link" href="/blog/">Return to Posts</a></p>
+
+    <div class="categories-list">
+      {
+        categories.map(([category, categoryPosts]) => (
+          <>
+            <h2>
+              {category} ({categoryPosts.length})
+            </h2>
+            <ul class="post-list">
+              {categoryPosts.map((post) => (
+                <li>
+                  <a href={postUrl(post)}>
+                    <span class="post-meta">{formatDate(post.data.date)}: </span>
+                    {post.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>
