@@ -1,8 +1,10 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 import BlogListing from "../../components/BlogListing.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { descriptionFor, formatDate, postUrl, sortPosts } from "../../utils/blog";
+import deletionSuccessDiagram from "../../assets/images/20260612_WhatDeletionSuccessActuallyMeasures.svg";
 
 export async function getStaticPaths() {
   const pageSize = 8;
@@ -29,6 +31,16 @@ export async function getStaticPaths() {
 
 const { post, page, posts, totalPages } = Astro.props;
 const PostContent = post ? (await render(post)).Content : null;
+const diagramMarker = "<!-- astro-image:deletion-verification -->";
+const renderedPostHtml = post?.rendered?.html ?? "";
+const diagramMarkerIndex = renderedPostHtml.indexOf(diagramMarker);
+const postContentParts =
+  diagramMarkerIndex >= 0
+    ? {
+        before: renderedPostHtml.slice(0, diagramMarkerIndex),
+        after: renderedPostHtml.slice(diagramMarkerIndex + diagramMarker.length),
+      }
+    : undefined;
 ---
 
 {
@@ -52,7 +64,18 @@ const PostContent = post ? (await render(post)).Content : null;
           </p>
         </header>
         <div class="post-content" itemprop="articleBody">
-          {PostContent && <PostContent />}
+          {postContentParts ? (
+            <>
+              <div set:html={postContentParts.before} />
+              <Image
+                src={deletionSuccessDiagram}
+                alt="Diagram illustrating what deletion succeeded actually measures"
+                loading="eager"
+                fetchpriority="high"
+              />
+              <div set:html={postContentParts.after} />
+            </>
+          ) : PostContent && <PostContent />}
         </div>
       </article>
       <div class="horizontal-rule"></div>

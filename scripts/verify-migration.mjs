@@ -83,6 +83,33 @@ if (!deletionSemanticsPage.includes('<table class="table-small-bordered top-bott
   failures.push("The deletion semantics table is missing its Jekyll formatting classes");
 }
 
+const verificationPage = await readFile(
+  path.join(
+    outputDirectory,
+    "blog",
+    "gaps-in-data-deletion-verification-auditability",
+    "index.html",
+  ),
+  "utf8",
+);
+const diagramImage = verificationPage.match(
+  /<img\b[^>]*\balt="Diagram illustrating what deletion succeeded actually measures"[^>]*>/,
+)?.[0];
+if (
+  !diagramImage ||
+  !/src="\/_astro\/20260612_WhatDeletionSuccessActuallyMeasures\.[^"]+\.svg"/.test(
+    diagramImage,
+  ) ||
+  !/\bloading="eager"/.test(diagramImage) ||
+  !/\bfetchpriority="high"/.test(diagramImage)
+) {
+  failures.push("The deletion verification diagram is not rendered as an eager Astro image");
+}
+const stylesheet = await readFile(path.join(outputDirectory, "css", "main.css"), "utf8");
+if (!/img\s*\{[^}]*height:\s*auto;/.test(stylesheet)) {
+  failures.push("Images are missing proportional height styling");
+}
+
 const sourceImageCount = (await readdir(path.join(root, "src", "assets", "images"))).length;
 const publicImageCount = (await readdir(path.join(outputDirectory, "images"))).length;
 if (publicImageCount < sourceImageCount) {

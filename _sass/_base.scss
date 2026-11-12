@@ -48,6 +48,7 @@ ul, ol, dl, figure,
  */
 img {
     max-width: 100%;
+    height: auto;
     vertical-align: middle;
 }
 
@@ -200,6 +201,9 @@ pre {
 
     > code {
         border: 0;
+        background-color: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
         padding-right: 0;
         padding-left: 0;
     }
