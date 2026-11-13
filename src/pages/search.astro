@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Search | Mark Sayson"
+  description="Search Mark Sayson's blog posts."
+>
+  <Fragment slot="head">
+    <link rel="stylesheet" href="/pagefind/pagefind-component-ui.css" />
+    <script
+      type="module"
+      src="/pagefind/pagefind-component-ui.js"
+      is:inline
+    ></script>
+  </Fragment>
+
+  <section class="search-page">
+    <h1 class="page-heading">Search posts</h1>
+    <p>Search blog posts by title or content.</p>
+    <label>
+      Search
+      <pagefind-input placeholder="Search posts"></pagefind-input>
+    </label>
+    <pagefind-summary default-message="Enter a search term to find a post." />
+    <pagefind-results />
+  </section>
+</BaseLayout>

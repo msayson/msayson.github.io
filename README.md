@@ -20,11 +20,15 @@ Run `npm run dev` and open the local URL printed by Astro. Changes to posts,
 styles, images, and shared includes are regenerated during development.
 
 #### Building and previewing
-* Run `npm run build` to generate the static site in `dist/`.
+* Run `npm run build` to generate the static site and Pagefind search index in
+  `dist/`.
 * Run `npm run preview` to preview the production build locally.
 * Run `npm test` to build the site, check generated files, and run browser tests
   against the production preview. Playwright runs Chromium; install its browser
   once with `npx playwright install chromium`.
+* Search is available at `/search/` and indexes blog post content. The Pagefind
+  index is generated as the final build step; it is not available in the
+  development server until `npm run build` has run.
 
 Cloudflare Pages can continue serving the site on the existing domain. Set its
 build command to `npm run build` and its build output directory to `dist`.

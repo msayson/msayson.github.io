@@ -5,7 +5,7 @@
   "scripts": {
     "prepare-site": "node scripts/prepare-site.mjs",
     "dev": "node scripts/dev.mjs",
-    "build": "npm run prepare-site && astro build",
+    "build": "npm run prepare-site && astro build && pagefind --site dist",
     "preview": "astro preview",
     "test": "npm run build && npm run test:artifacts && npm run test:e2e",
     "test:artifacts": "node --test tests/artifacts.test.mjs",
@@ -17,6 +17,7 @@
     "sass": "^1.108.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.65.0"
+    "@playwright/test": "^1.65.0",
+    "pagefind": "^1.6.0"
   }
 }

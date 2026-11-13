@@ -37,6 +37,20 @@ test("blog pagination and category navigation work", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "Categories" })).toBeVisible();
 });
 
+test("site navigation opens search and finds blog posts", async ({ page }) => {
+  await page.goto("/blog/");
+  await page.getByRole("link", { name: "Search", exact: true }).click();
+  await expect(page).toHaveURL(/\/search\/$/);
+  await expect(page.getByRole("heading", { name: "Search posts" })).toBeVisible();
+
+  await page.locator("pagefind-input input").fill("data deletion verification");
+  await expect(
+    page.locator(
+      'pagefind-results a[href="/blog/gaps-in-data-deletion-verification-auditability/"]',
+    ),
+  ).toBeVisible();
+});
+
 test("RSS feed is served as XML", async ({ request, baseURL }) => {
   const response = await request.get(new URL("/feed.xml", baseURL).toString());
   expect(response.status()).toBe(200);

@@ -155,7 +155,12 @@ if (contentOffset < renderedPostHtml.length) {
       title={post.data.title}
       description={descriptionFor(post)}
     >
-      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <article
+        class="post"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+        data-pagefind-body
+      >
         <header class="post-header">
           <h1 class="post-title" itemprop="name headline">{post.data.title}</h1>
           <p class="post-meta">

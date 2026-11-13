@@ -48,13 +48,25 @@ test("Cloudflare redirects preserve the legacy URL targets", async () => {
 });
 
 test("required static resources and RSS feed are generated", async () => {
-  for (const file of ["feed.xml", "_headers", "css/main.css"]) {
+  for (const file of [
+    "feed.xml",
+    "_headers",
+    "css/main.css",
+    "search/index.html",
+    "pagefind/pagefind.js",
+    "pagefind/pagefind-component-ui.js",
+    "pagefind/pagefind-component-ui.css",
+  ]) {
     await access(path.join(outputDirectory, file));
   }
 
   const feed = await readOutput("feed.xml");
   assert.match(feed, /<rss\b/);
   assert.equal([...feed.matchAll(/<item>/g)].length, 10);
+
+  const searchPage = await readOutput("search/index.html");
+  assert.match(searchPage, /<pagefind-input\b/);
+  assert.match(searchPage, /href="\/pagefind\/pagefind-component-ui\.css"/);
 });
 
 test("rendered pages contain no unconverted Jekyll syntax", async () => {

@@ -25,6 +25,7 @@ const canonical = new URL(Astro.url.pathname, "https://www.marksayson.com").href
       title="Mark Sayson"
       href="https://www.marksayson.com/feed.xml"
     />
+    <slot name="head" />
     {
       import.meta.env.PROD && (
         <>
@@ -64,6 +65,7 @@ const canonical = new URL(Astro.url.pathname, "https://www.marksayson.com").href
           </a>
           <div class="trigger">
             <a class="page-link" href="/blog/">Blog</a>
+            <a class="page-link" href="/search/">Search</a>
             <a class="page-link" href="/about/">About</a>
           </div>
         </nav>
