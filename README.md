@@ -22,8 +22,9 @@ styles, images, and shared includes are regenerated during development.
 #### Building and previewing
 * Run `npm run build` to generate the static site in `dist/`.
 * Run `npm run preview` to preview the production build locally.
-* Run `npm run verify:migration` after a build to compare canonical routes and
-  redirects against the saved Jekyll baseline.
+* Run `npm test` to build the site, check generated files, and run browser tests
+  against the production preview. Playwright runs Chromium; install its browser
+  once with `npx playwright install chromium`.
 
 Cloudflare Pages can continue serving the site on the existing domain. Set its
 build command to `npm run build` and its build output directory to `dist`.

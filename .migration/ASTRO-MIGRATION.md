@@ -66,8 +66,11 @@ only the build settings needed to deploy Astro.
   pagination, categories, and RSS. The saved parity check verifies all 79
   canonical outputs, 35 legacy redirect targets, 10 feed items, and 112 copied
   images. All 67 rendered post date labels match the Jekyll baseline.
-- 2026-11-11: Clean `npm ci`, production `npm run build`, and
-  `npm run verify:migration` all succeeded. Development and production preview
+- 2026-11-11: Clean `npm ci`, production `npm run build`, and the original
+  route/content parity checks all succeeded. Development and production preview
   smoke tests returned HTTP 200 for home, post, category/feed, CSS, and image
   routes. The cutover itself is pending the Cloudflare Pages project settings
   and deployment preview.
+- 2026-11-12: Replaced the one-off migration verifier with Node artifact tests
+  and Playwright production-preview tests. The saved Jekyll route manifest
+  remains as a compatibility baseline for routes and redirects.

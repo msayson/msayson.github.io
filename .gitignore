@@ -8,6 +8,8 @@ dist
 .astro
 .astro-content
 public
+playwright-report
+test-results
 
 # Temp files
 *.swp
