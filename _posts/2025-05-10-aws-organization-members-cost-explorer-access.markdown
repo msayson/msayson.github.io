@@ -16,7 +16,7 @@ This post walks through how to allow member accounts to access cost management s
 
 Cost Explorer allows you to analyze AWS service costs and usage changes over time, and is free to access through the AWS UI.  You can filter and group costs and usage across multiple dimensions including AWS service, resource, usage type, region, and tag.
 
-![Cost Explorer Screenshot](/images/20250510_CostExplorer.png)
+<!-- astro-image:cost-explorer-screenshot -->
 
 After logging into the Organization management account using the root user, navigate to the Cost Explorer service to automatically enable it from the current time onwards.  You will need to do this once per account in your Organization, logging in as the root user for each account.
 

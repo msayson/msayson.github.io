@@ -1,10 +1,30 @@
 ---
 import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 import { getCollection, render } from "astro:content";
 import BlogListing from "../../components/BlogListing.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { descriptionFor, formatDate, postUrl, sortPosts } from "../../utils/blog";
 import deletionSuccessDiagram from "../../assets/images/20260612_WhatDeletionSuccessActuallyMeasures.svg";
+import deletionRequestPathDiagram from "../../assets/images/20260530_TypicalDataFlowBehindDeletionRequestExcalidraw.svg";
+import costExplorerScreenshot from "../../assets/images/20250510_CostExplorer.png";
+
+const imageAssets = import.meta.glob<ImageMetadata>("../../assets/images/*", {
+  eager: true,
+  import: "default",
+});
+const eagerImageFilenames = new Set([
+  "20161129_vimDefaultColourScheme.png",
+  "20170404_singleSocket.jpg",
+  "20231130_DistributedComputeToHandleMillionTps-MultiThreadedApp.png",
+  "20160515_lxlewebsite.jpg",
+  "20160624_securityengineering_anderson_cover.jpg",
+  "20160606_terrykimura_stuffedanimals_facialrecognition.jpg",
+  "20160606_vislab_followingaperson.jpg",
+  "20160307_debian_family_tree.jpg",
+  "20160324_go_version.png",
+  "20160307_orion_nebula_nasa_images600.jpg",
+]);
 
 export async function getStaticPaths() {
   const pageSize = 8;
@@ -31,16 +51,102 @@ export async function getStaticPaths() {
 
 const { post, page, posts, totalPages } = Astro.props;
 const PostContent = post ? (await render(post)).Content : null;
-const diagramMarker = "<!-- astro-image:deletion-verification -->";
 const renderedPostHtml = post?.rendered?.html ?? "";
-const diagramMarkerIndex = renderedPostHtml.indexOf(diagramMarker);
-const postContentParts =
-  diagramMarkerIndex >= 0
-    ? {
-        before: renderedPostHtml.slice(0, diagramMarkerIndex),
-        after: renderedPostHtml.slice(diagramMarkerIndex + diagramMarker.length),
-      }
-    : undefined;
+const specialImages = [
+  {
+    marker: "<!-- astro-image:deletion-verification -->",
+    src: deletionSuccessDiagram,
+    alt: "Diagram illustrating what deletion succeeded actually measures",
+    eager: true,
+  },
+  {
+    marker: "<!-- astro-image:deletion-request-path -->",
+    src: deletionRequestPathDiagram,
+    alt: "Diagram illustrating data flow behind a deletion request",
+    eager: true,
+  },
+  {
+    marker: "<!-- astro-image:cost-explorer-screenshot -->",
+    src: costExplorerScreenshot,
+    alt: "Cost Explorer Screenshot",
+    eager: true,
+  },
+];
+const imageMarkerPattern =
+  /<img\b[^>]*\b__ASTRO_IMAGE_="([^"]+)"[^>]*>|<!-- astro-image:(.*?) -->/g;
+const postContentParts: (
+  | { type: "html"; html: string }
+  | {
+      type: "image";
+      src: ImageMetadata;
+      alt: string;
+      title?: string;
+      href?: string;
+      width?: number;
+      eager?: boolean;
+    }
+)[] = [];
+let contentOffset = 0;
+for (const match of renderedPostHtml.matchAll(imageMarkerPattern)) {
+  const markerIndex = match.index;
+  if (markerIndex > contentOffset) {
+    postContentParts.push({
+      type: "html",
+      html: renderedPostHtml.slice(contentOffset, markerIndex),
+    });
+  }
+
+  const specialImage = specialImages.find(({ marker }) => marker === match[0]);
+  if (specialImage) {
+    postContentParts.push({ type: "image", ...specialImage });
+  } else {
+    const rawImage = match[1]
+      ? match[1]
+          .replaceAll("&quot;", '"')
+          .replaceAll("&#x22;", '"')
+          .replaceAll("&apos;", "'")
+          .replaceAll("&#x27;", "'")
+          .replaceAll("&amp;", "&")
+          .replaceAll("&#x26;", "&")
+      : match[2];
+    if (!rawImage) throw new Error(`Unknown image marker: ${match[0]}`);
+    const parsed: unknown = JSON.parse(
+      rawImage,
+    );
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      !("src" in parsed) ||
+      typeof parsed.src !== "string"
+    ) {
+      throw new Error("Invalid Astro image reference in rendered post");
+    }
+
+    const filename = parsed.src.split("/").at(-1);
+    const imageAssetEntry = Object.entries(imageAssets).find(([assetPath]) =>
+      assetPath.endsWith(`/${filename}`),
+    );
+    if (!imageAssetEntry) {
+      throw new Error(`Unable to resolve post image asset: ${parsed.src}`);
+    }
+    postContentParts.push({
+      type: "image",
+      src: imageAssetEntry[1],
+      alt: "alt" in parsed && typeof parsed.alt === "string" ? parsed.alt : "",
+      title: "title" in parsed && typeof parsed.title === "string" ? parsed.title : undefined,
+      href: "href" in parsed && typeof parsed.href === "string" ? parsed.href : undefined,
+      width: "width" in parsed && typeof parsed.width === "number" ? parsed.width : undefined,
+      eager: filename !== undefined && eagerImageFilenames.has(filename),
+    });
+  }
+  contentOffset = markerIndex + match[0].length;
+}
+if (contentOffset < renderedPostHtml.length) {
+  postContentParts.push({
+    type: "html",
+    html: renderedPostHtml.slice(contentOffset),
+  });
+}
 ---
 
 {
@@ -64,17 +170,32 @@ const postContentParts =
           </p>
         </header>
         <div class="post-content" itemprop="articleBody">
-          {postContentParts ? (
-            <>
-              <div set:html={postContentParts.before} />
-              <Image
-                src={deletionSuccessDiagram}
-                alt="Diagram illustrating what deletion succeeded actually measures"
-                loading="eager"
-                fetchpriority="high"
-              />
-              <div set:html={postContentParts.after} />
-            </>
+          {postContentParts.some((part) => part.type === "image") ? postContentParts.map((part) =>
+            part.type === "html" ? (
+              <Fragment set:html={part.html} />
+            ) : (
+              part.href ? (
+                <a href={part.href} title={part.title} target="_blank">
+                  <Image
+                    src={part.src}
+                    alt={part.alt}
+                    title={part.title}
+                    width={part.width}
+                    loading={part.eager ? "eager" : undefined}
+                    fetchpriority={part.eager ? "high" : undefined}
+                  />
+                </a>
+              ) : (
+                <Image
+                  src={part.src}
+                  alt={part.alt}
+                  title={part.title}
+                  width={part.width}
+                  loading={part.eager ? "eager" : undefined}
+                  fetchpriority={part.eager ? "high" : undefined}
+                />
+              )
+            ),
           ) : PostContent && <PostContent />}
         </div>
       </article>

@@ -20,6 +20,8 @@ That gap between "operation completed" and "data is fully removed from processin
 
 <!-- astro-image:deletion-verification -->
 
+<br/>
+
 In distributed systems, a deletion request typically passes through an orchestrated workflow:
 
 * a central service receives the request

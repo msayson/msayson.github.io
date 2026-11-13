@@ -11,9 +11,7 @@ It's highly readable, unlike most textbooks, and provides an accessible view int
 
 <!--more-->
 
-{% include image.html img="/images/20160624_securityengineering_anderson_cover.jpg"
-  title="Security Engineering - A Guide to Building Dependable Distributed Systems"
-  url="https://www.cl.cam.ac.uk/~rja14/book.html" %}
+<!-- astro-image:{"src":"/images/20160624_securityengineering_anderson_cover.jpg","alt":"Security Engineering - A Guide to Building Dependable Distributed Systems","href":"https://www.cl.cam.ac.uk/~rja14/book.html"} -->
 <br>
 
 Software Engineering 2/E website: [https://www.cl.cam.ac.uk/~rja14/book.html](https://www.cl.cam.ac.uk/~rja14/book.html)

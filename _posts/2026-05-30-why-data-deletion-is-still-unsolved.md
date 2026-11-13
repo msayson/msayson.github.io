@@ -18,7 +18,7 @@ Many of these failures were invisible to the company until the compliance team h
 
 A single request initiated from a customer-facing application may propagate across multiple services, storage systems, analytical platforms, and downstream consumers. Each system may implement deletion differently, operate on different schedules, or fail independently.
 
-![Diagram illustrating data flow behind a deletion request](/images/20260530_TypicalDataFlowBehindDeletionRequestExcalidraw.svg)
+<!-- astro-image:deletion-request-path -->
 
 No single team owns the entire lifecycle. Application teams own services, platform teams operate infrastructure, analytics teams maintain data pipelines and data warehouses, and additional systems produce or consume derived datasets.
 

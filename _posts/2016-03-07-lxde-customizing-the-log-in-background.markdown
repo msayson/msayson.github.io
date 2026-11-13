@@ -4,6 +4,7 @@ title:  "(LXDE) Customizing the log in background"
 date:   2016-03-07 21:30:00 -0800
 categories: linux
 redirect_from: "/linux/2016/03/08/lxde-customizing-the-log-in-background"
+excerpt: "For this next post I’ll update the background image for the log in screen.  I’m using Debian LXDE, so the instructions may differ if you are using another distribution or desktop."
 ---
 For this next post I’ll update the background image for the log in screen.  I’m using Debian LXDE, so the instructions may differ if you are using another distribution or desktop.  I have verified these steps on Debian GNU/Linux 8.3 (jessie) using the LXDE desktop.
 
@@ -27,11 +28,11 @@ Aside: In general, I’ll try a command without using sudo first, and only use s
 
 For example:
 
-<img alt="Permission denied when copy to desktop-base without sudo" src="/images/20160307_cptodesktoppermissiondenied.png" width="600" />
+<!-- astro-image:{"src":"/images/20160307_cptodesktoppermissiondenied.png","alt":"Permission denied when copy to desktop-base without sudo","width":600} -->
 
 We need sudo here:
 
-<img alt="Successful sudo copy to desktop-base" src="/images/20160307_cptodesktopbasesuccess.png" width="600" />
+<!-- astro-image:{"src":"/images/20160307_cptodesktopbasesuccess.png","alt":"Successful sudo copy to desktop-base","width":600} -->
 
 Success!  Replace orion-nebula.jpg with any image file you’d like to use for your login background.
 

@@ -12,7 +12,15 @@ import profilePicture from "../assets/images/profile_picture.jpg";
     </header>
 
     <div class="post-content">
-      <p><Image src={profilePicture} alt="Mark Sayson" format="webp" /></p>
+      <p>
+        <Image
+          src={profilePicture}
+          alt="Mark Sayson"
+          format="webp"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </p>
 
       <p>
         I currently work as a software engineering tech lead at Amazon, where I
@@ -40,10 +48,8 @@ import profilePicture from "../assets/images/profile_picture.jpg";
       </p>
 
       <p>
-        You can find the source code for this blog at
-        <GithubLink username="msayson" /> /
-        <a href="https://github.com/msayson/msayson.github.io">
-          msayson.github.io
+        You can find the source code for this blog at <a href="https://github.com/msayson/msayson.github.io">
+          msayson/msayson.github.io
         </a>.
       </p>
     </div>

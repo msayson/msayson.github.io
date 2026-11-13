@@ -26,14 +26,72 @@ export function categoriesFor(post: BlogPost): string[] {
 }
 
 export function excerptHtml(post: BlogPost): string {
-  if (post.data.excerpt) return post.data.excerpt;
+  let excerpt = post.data.excerpt;
+  if (!excerpt) {
+    const html = post.rendered?.html ?? "";
+    const separator = html.indexOf("<!--more-->");
+    excerpt =
+      separator >= 0
+        ? html.slice(0, separator)
+        : (html.match(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/i)?.[0] ?? html);
+  }
 
-  const html = post.rendered?.html ?? "";
-  const separator = html.indexOf("<!--more-->");
-  if (separator >= 0) return html.slice(0, separator);
+  return resolveAstroImagePlaceholders(excerpt);
+}
 
-  const firstParagraph = html.match(/<p(?:\s[^>]*)?>[\s\S]*?<\/p>/i);
-  return firstParagraph?.[0] ?? html;
+export function resolveAstroImagePlaceholders(html: string): string {
+  return html.replace(
+    /<img\b[^>]*\b__ASTRO_IMAGE_="([^"]+)"[^>]*>/g,
+    (_match, encodedImage) => {
+      const parsed: unknown = JSON.parse(
+        encodedImage
+          .replaceAll("&quot;", '"')
+          .replaceAll("&#x22;", '"')
+          .replaceAll("&apos;", "'")
+          .replaceAll("&#x27;", "'")
+          .replaceAll("&amp;", "&")
+          .replaceAll("&#x26;", "&"),
+      );
+      if (
+        typeof parsed !== "object" ||
+        parsed === null ||
+        !("src" in parsed) ||
+        typeof parsed.src !== "string"
+      ) {
+        throw new Error("Invalid Astro image reference in rendered HTML");
+      }
+
+      const image = {
+        src: parsed.src,
+        alt:
+          "alt" in parsed && typeof parsed.alt === "string"
+            ? parsed.alt
+            : undefined,
+        title:
+          "title" in parsed && typeof parsed.title === "string"
+            ? parsed.title
+            : undefined,
+      };
+      const source = image.src.startsWith("./images/")
+        ? `/images/${image.src.slice("./images/".length)}`
+        : image.src;
+      const attributes = [
+        `src="${escapeHtmlAttribute(source)}"`,
+        image.alt !== undefined && `alt="${escapeHtmlAttribute(image.alt)}"`,
+        image.title !== undefined && `title="${escapeHtmlAttribute(image.title)}"`,
+      ].filter(Boolean);
+
+      return `<img ${attributes.join(" ")}>`;
+    },
+  );
+}
+
+function escapeHtmlAttribute(value: string): string {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
 }
 
 export function descriptionFor(post: BlogPost): string {

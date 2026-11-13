@@ -36,24 +36,24 @@ Step 3. Now when we start up our printers utility, we can choose our printer's d
 <table style="width: 80%;">
   <tr>
     <td>
-      <img alt="Printer configuration - detecting your printer" src="/images/20160516_printerconfig_1_findprinter.png" width="250" />
+      <!-- astro-image:{"src":"/images/20160516_printerconfig_1_findprinter.png","alt":"Printer configuration - detecting your printer","width":250} -->
     </td>
     <td>
-      <img alt="Printer configuration - detecting your printer" src="/images/20160516_printerconfig_2_chooselocaldriver.png" width="250" />
+      <!-- astro-image:{"src":"/images/20160516_printerconfig_2_chooselocaldriver.png","alt":"Printer configuration - detecting your printer","width":250} -->
     </td>
     <td>
-      <img alt="Printer configuration - detecting your printer" src="/images/20160516_printerconfig_3_localepsondriver.png" width="250" />
+      <!-- astro-image:{"src":"/images/20160516_printerconfig_3_localepsondriver.png","alt":"Printer configuration - detecting your printer","width":250} -->
     </td>
   </tr>
   <tr>
     <td>
-      <img alt="Printer configuration - detecting your printer" src="/images/20160516_printerconfig_4_chooseepsondriver.png" width="250" />
+      <!-- astro-image:{"src":"/images/20160516_printerconfig_4_chooseepsondriver.png","alt":"Printer configuration - detecting your printer","width":250} -->
     </td>
     <td>
-      <img alt="Printer configuration - detecting your printer" src="/images/20160516_printerconfig_5_nameprinter.png" width="250" />
+      <!-- astro-image:{"src":"/images/20160516_printerconfig_5_nameprinter.png","alt":"Printer configuration - detecting your printer","width":250} -->
     </td>
     <td>
-      <img alt="Printer configuration - detecting your printer" src="/images/20160516_printerconfig_6_testpage.png" width="250" />
+      <!-- astro-image:{"src":"/images/20160516_printerconfig_6_testpage.png","alt":"Printer configuration - detecting your printer","width":250} -->
     </td>
   </tr>
 </table>
