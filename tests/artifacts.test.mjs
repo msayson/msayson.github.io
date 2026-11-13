@@ -64,6 +64,10 @@ test("required static resources and RSS feed are generated", async () => {
   assert.match(feed, /<rss\b/);
   assert.equal([...feed.matchAll(/<item>/g)].length, 10);
 
+  const headers = await readOutput("_headers");
+  assert.match(headers, /img-src 'self' data:/);
+  assert.match(headers, /script-src[^;]*'wasm-unsafe-eval'/);
+
   const searchPage = await readOutput("search/index.html");
   assert.match(searchPage, /<pagefind-input\b/);
   assert.match(searchPage, /href="\/pagefind\/pagefind-component-ui\.css"/);
