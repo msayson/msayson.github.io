@@ -67,6 +67,11 @@ test("required static resources and RSS feed are generated", async () => {
   const headers = await readOutput("_headers");
   assert.match(headers, /img-src 'self' data:/);
   assert.match(headers, /script-src[^;]*'wasm-unsafe-eval'/);
+  assert.match(headers, /connect-src[^;]*https:\/\/static\.cloudflareinsights\.com/);
+  assert.match(
+    headers,
+    /\/pagefind\/\*[\s\S]*?Cache-Control: public, max-age=0, must-revalidate/,
+  );
 
   const searchPage = await readOutput("search/index.html");
   assert.match(searchPage, /<pagefind-input\b/);
