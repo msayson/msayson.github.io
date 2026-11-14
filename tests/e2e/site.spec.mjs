@@ -29,12 +29,25 @@ test("home page links to featured posts and the blog index", async ({ page }) =>
 test("blog pagination and category navigation work", async ({ page }) => {
   await page.goto("/blog/");
   await expect(page.getByRole("heading", { name: "Posts" })).toBeVisible();
+  await expect(page.locator(".post-list .post-link")).toHaveCount(0);
   await expect(page.getByRole("navigation", { name: "Blog pages" })).toBeVisible();
   await page.getByRole("link", { name: "Older »" }).click();
   await expect(page).toHaveURL(/\/blog\/page2\/$/);
   await page.getByRole("link", { name: "View Categories" }).click();
   await expect(page).toHaveURL(/\/blog\/categories\/$/);
   await expect(page.getByRole("heading", { name: "Categories" })).toBeVisible();
+});
+
+test("blog post titles navigate to their articles", async ({ page }) => {
+  await page.goto("/blog/");
+  const firstPostTitle = page.locator(".post-list > li h2 a").first();
+  const title = await firstPostTitle.textContent();
+  const href = await firstPostTitle.getAttribute("href");
+  expect(href).toMatch(/^\/blog\/[^/]+\/$/);
+
+  await firstPostTitle.click();
+  await expect(page).toHaveURL(new RegExp(`${href.replaceAll("/", "\\/")}$`));
+  await expect(page.locator("article.post h1")).toHaveText(title);
 });
 
 test("site navigation opens search and finds blog posts", async ({ page }) => {

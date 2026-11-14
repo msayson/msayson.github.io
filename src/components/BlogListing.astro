@@ -41,7 +41,9 @@ function featuredImageFor(post: BlogPost): ImageMetadata | undefined {
         return (
           <li>
             <span class="post-meta">{formatDate(post.data.date)}</span>
-            <h2>{post.data.title}</h2>
+            <h2>
+              <a href={postUrl(post)}>{post.data.title}</a>
+            </h2>
             <div set:html={excerptHtml(post)} />
             {featuredImage && (
               <Image
@@ -50,11 +52,6 @@ function featuredImageFor(post: BlogPost): ImageMetadata | undefined {
                 format="webp"
               />
             )}
-            <p>
-              <a class="post-link" href={postUrl(post)}>
-                Continue reading...
-              </a>
-            </p>
           </li>
         );
       })
